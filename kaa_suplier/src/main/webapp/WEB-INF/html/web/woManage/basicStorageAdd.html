@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/basicStorageAdd.css"/>
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">新增商品</div>
+                        <div id="position" style="width: 310px;background-color: #fff;color: #999;">
+
+                        </div>
+                        <div class="section-wrap">
+                            <div class="order-detail-wrap clearfix">
+                                <div class="order-detail w17 l">供应商产品编号</div>
+                                <div class="order-detail w81 r"><input type="text" id="pno" maxlength="50"></div>
+                            </div>
+                            <div class="order-detail-wrap clearfix">
+                                <div class="order-detail w17 l">商品名称</div>
+                                <div class="order-detail w81 r"><input type="text" id="name" maxlength="100"></div>
+                            </div>
+                            <div class="order-detail-wrap clearfix">
+                                <div class="order-detail h170 w17 l">商品图片</div>
+                                <div class="order-detail h170 w81 r" id="img2">
+                                    <img id="example" src="../assets/img/join.png" alt="" style="border: 1px solid #f1f1f1;padding: 30px 37px;border-radius: 6px;">
+                                    <div id="addPosition2"><a href="javascript:;" class="file">选择文件 <input multiple id="upLoad2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                                </div>
+                                <span style="color: red;font-size: 14px;position: relative;top: -10px;margin-left: 300px">最多可上传5张图片，每张不能超过10M</span>
+                            </div>
+                            <div class="order-detail-wrap clearfix">
+                                <div class="order-detail w17 l">分类</div>
+                                <div class="order-detail w81 r" style="height: auto">
+                                    <select class="order-client" id="category">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-wrap" style="margin-top: 10px;">
+                            <div class="order-detail-wrap clearfix">
+                                <div class="order-detail w17 l">颜色</div>
+                                <div class="order-detail w81 r" id="color" style="height: auto;">
+                                </div>
+                            </div>
+                            <div class="order-detail-wrap clearfix">
+                                <div class="order-detail w17 l">尺码</div>
+                                <div class="order-detail w81 r" id="size" style="height: auto">
+                                </div>
+                            </div>
+                            <!--表格-->
+                            <table class="table" style="width: 760px;margin-left: 17%">
+                                <tr>
+                                    <td>胸围</td>
+                                    <td><span><input type="number" id="bust" placeholder="厘米"></span></td>
+                                    <td>腰围</td>
+                                    <td><span><input type="number" id="waist" placeholder="厘米"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>臀围</td>
+                                    <td><span><input type="number" id="hipline" placeholder="厘米"></span></td>
+                                    <td>喉到地</td>
+                                    <td><span><input type="number" id="throatheight" placeholder="厘米"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>身高</td>
+                                    <td><span><input type="number" id="height" placeholder="厘米"></span></td>
+                                    <td>体重</td>
+                                    <td><span><input type="number" id="weight" placeholder="公斤"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>肩宽</td>
+                                    <td><span><input type="number" id="shoulder" placeholder="厘米"></span></td>
+                                    <td>销售单价</td>
+                                    <td><span><input type="number" id="price"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="section-wrap" style="margin-top: 10px;">
+                        <div class="order-detail-wrap clearfix" style="border-bottom: 1px solid #ddd">
+                            <div class="order-detail w17 l">工序、工价维护</div>
+                            <div class="order-detail w81 r" style="height: auto;padding-bottom: 30px" id="workerSort">
+                            </div>
+                        </div>
+                        <div style="width: calc(20% + 1000px);text-align: right;color: rgb(97,102,133);margin-top: -30px">
+                            *工序工价关联工资自动计算，请谨慎维护
+                        </div>
+                        <div class="order-detail-wrap clearfix" style="margin-top: 10px">
+                            <div class="order-detail w17 l">面辅料</div>
+                            <div class="order-detail w81 r" style="height: auto" id="rawmaterial">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">材料说明</div>
+                            <div class="order-detail w81 r"><input style="width: 600px" id="material" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">工艺说明</div>
+                            <div class="order-detail w81 r"><input style="width: 600px" id="technics" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">重要说明</div>
+                            <div class="order-detail w81 r"><input style="width: 600px" id="description" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">备注</div>
+                            <div class="order-detail w81 r"><input style="width: 600px" id="remark" type="text"></div>
+                        </div>
+                        </div>
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script src="../assets/js/WOManage/basicStorageAdd.js"></script>
+</body>
+</html>

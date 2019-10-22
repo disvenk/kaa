@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>修改昵称</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/changeName.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="wrap">
+    <div class="main-container">
+        <div class="goods-add-info">新昵称：<input class="goods-add-input" type="text" placeholder="请输入新昵称" id="name"></div>
+    </div>
+</div>
+
+<div class="save-change">保存</div>
+
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+
+<script>
+    $(".save-change").click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '../account/updateName',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({name: $("#name").val()}),
+            success: function (res) {
+                if (res.stateCode == 100) {
+                    alert("修改成功");
+                    location.href='../suplierHome/personalInfoHtml';
+                } else {
+                    alert(res.message);
+                }
+            },
+            error: function (err) {
+                alert(err.message)
+            }
+        })
+    })
+
+</script>
+</body>
+
+</html>

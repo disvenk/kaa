@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>本地工单管理</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.css">
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOoperate.css"/>
+
+</head>
+<body>
+
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-1">
+                        <div class="admin-detail-topic">工单操作</div>
+                        <ul class="wo-items">
+                            <li class="wo-item active" id="state1">收货</li>
+                            <li class="wo-item" id="state2">质检</li>
+                            <li class="wo-item" id="state3">入库</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-11">
+                        <div class="admin-detail">收货</div>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1"><button id="btn1" class="admin-btn w100">收货</button><button id="btn2" class="admin-btn w100">质检</button><button id="btn3" class="admin-btn w100">入库</button></li>
+                            <li class="admin-operate-item w2">
+                                <span class="goodsNoInput">工单号 <input id="goodsNoInput" type="text"></span>
+                                <span class="woInput">操作人 <input id="name" type="text"></span>
+                            </li>
+                            <li class="admin-operate-item w3"><button id="btnQuery" class="admin-btn w60">搜索</button></li>
+                        </ul>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1"></li>
+                            <li class="admin-operate-item w2">
+                                时间<input style="width: 150px" name="startTm" id="datepickerStart" type='text' class="input-sm" readonly="readonly" placeholder="开始日期"/>
+                                <span class="date-span">——</span><input placeholder="结束日期" style="width: 150px" name="startTm" id="datepickerEnd" type='text' class="input-sm" readonly="readonly"/>
+                            </li>
+                            <li class="admin-operate-item w3"><button id="resert" class="admin-btn w60" onclick="resert()">重置</button></li>
+                        </ul>
+
+                        <!--表格-->
+                        <table id="sample-table-2" class="table table-bordered">
+                            <thead>
+
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                        </table>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--摸态窗-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">删除确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>您确认要删除吗？</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" id="suredelete">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+    <script src="../assets/js/WOManage/WOoperate.js"></script>
+<script type="text/javascript">
+
+    $( "#datepickerStart" ).datetimepicker({
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: true,
+        startView: 2,
+        minView: 2,
+        forceParse: false,
+        language: 'zh-CN'
+    });
+    $( "#datepickerEnd" ).datetimepicker({
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: true,
+        startView: 2,
+        minView: 2,
+        forceParse: false,
+        language: 'zh-CN'
+    });
+
+</script>
+
+</body>
+</html>

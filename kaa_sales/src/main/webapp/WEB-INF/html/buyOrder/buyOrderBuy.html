@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<![CDATA[$]]>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/buyOrderBuy.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/infoTable.css"/>
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--复用样式-->
+    <link rel="stylesheet" href="../assets/css/salePlat/orderDetailEdit.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="order-detail mt0">采购订单下单页</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">订单编号</div>
+                            <div class="order-detail w81 r" id="orderNo">${orderNo}</div>
+                            <div style="display:none" id="salesOrderId">${salesOrderId}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人</div>
+                            <div class="order-detail w81 r">
+                                <input type="text" id="receive">
+
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人电话</div>
+                            <div class="order-detail w81 r">
+                                <input type="text" id="receivedTel">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 h178 l">收件人地址</div>
+                            <div class="w81 r pdl0">
+                                <div class="order-detail h56" style="padding-left: 20px"><!-- 省市区三级联动 -->
+                                    <select id="cmbProvince" name="cmbProvince"></select>
+                                    <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                    <select id="cmbArea" name="cmbArea"></select>
+                                </div>
+                                <div class="order-detail h118">
+                                    <textarea class="input-address" id="textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">期望发货日期</div>
+                            <div class="order-detail w81 r">
+                                <!--<input type="text">-->
+                               <input style="width: 170px" name="startTm" id="datepickerStart" type='text' class="input-sm" readonly="readonly"/><span style="left: -21px;" class="glyphicon glyphicon-calendar"></span></span>
+
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix mb30">
+                            <div class="order-detail h118 w17 l">备注</div>
+                            <div class="order-detail h118 w81 r"><textarea class="input-address" id="remark"></textarea></div>
+                        </div>
+                        <!--货号筛选-->
+                        <!--<div class="order-detail mb4">-->
+                            <!--<ul class="to-buy-items clearfix">-->
+                                <!--<li class="to-buy-item w12 pdl60">请输入货号</li>-->
+                                <!--<li class="to-buy-item w12"><input type="text" id="pno"></li>-->
+                                <!--<li class="to-buy-item w48"><button id="add">添加</button></li>-->
+                                <!--<li class="to-buy-item w16">您可以前往商品库添加商品</li>-->
+                                <!--<li class="to-buy-item w12"><button id="toGoodsStorage">商品库</button></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--表格-->
+                        <table id="sample-table-1" class="table">
+                            <!-- 采购订单列表标题 -->
+                            <thead>
+                            <tr>
+                                <th class="center">商品名称</th>
+                                <th class="center">图片</th>
+                                <th class="center">分类</th>
+                                <th class="center">颜色</th>
+                                <th class="center">尺寸</th>
+                                <th class="center">喉到地</th>
+                                <th class="center">肩宽</th>
+                                <th class="center">胸围</th>
+                                <th class="center">腰围</th>
+                                <th class="center">臀围</th>
+                                <th class="center">身高</th>
+                                <th class="center">体重</th>
+                                <th class="center">其他</th>
+                                <th class="center">件数</th>
+                                <th class="center">单价</th>
+                                <th class="center">总价</th>
+                            </tr>
+                            </thead>
+                            <!-- 循环加载订单列表 -->
+                            <tbody class="center" id="proList">
+                            <!--#foreach($pro in $data)-->
+                                <!--<tr id="$pro.id">-->
+                                    <!--<td><div class="detail-edit-topic">$pro.name</div></td>-->
+                                    <!--<td><img class="order-info-img" src="$pro.href" alt=""></td>-->
+                                    <!--<td><div >$pro.categoryName</div></td>-->
+                                    <!--<td>-->
+                                        <!--<select class="color">-->
+                                            <!--<option value="">请选择</option>-->
+                                        <!--</select>-->
+                                    <!--</td>-->
+                                    <!--<td>-->
+                                        <!--<select class="size">-->
+                                            <!--<option value="">请选择</option>-->
+                                        <!--</select>-->
+                                    <!--</td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text"></td>-->
+                                    <!--<td><input type="text" value="1"></td>-->
+                                    <!--&lt;!&ndash;<td><input type="text" value="$pro.price"></td>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<td><input type="text" value="$pro.price"></td>&ndash;&gt;-->
+                                    <!--<td><div >$pro.price</div></td>-->
+                                    <!--<td><div >$pro.price</div></td>-->
+                                <!--</tr>-->
+                            <!--#end-->
+
+                            #foreach($pro in $data)
+                            <tr id="$pro.id">
+                                <td><div class="detail-edit-topic">$pro.name</div></td>
+                                <td><img class="order-info-img" src="$pro.href" alt=""></td>
+                                <td><div >$pro.categoryName</div></td>
+                                <td>
+                                    <select class="color1">
+                                        <option value="">$pro.color</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="size1">
+                                        <option value="">$pro.size</option>
+                                    </select>
+                                </td>
+
+                                <td><input type="text" readonly value="$pro.throatheight"></td>
+                                <td><input type="text" readonly value="$pro.shoulder"></td>
+                                <td><input type="text" readonly value="$pro.bust"></td>
+                                <td><input type="text" readonly value="$pro.waist"></td>
+                                <td><input type="text" readonly value="$pro.hipline"></td>
+                                <td><input type="text" readonly value="$pro.height"></td>
+                                <td><input type="text" readonly value="$pro.weight"></td>
+                                <td><input type="text" readonly value="$pro.other"></td>
+                                <td><input type="number" readonly value="$pro.qty"></td>
+
+                                <td><div >$pro.price</div></td>
+                                <td><div >$pro.subtotal</div></td>
+                            </tr>
+                            #end
+                            </tbody>
+                        </table>
+
+                        <!-- 总和 -->
+                        <!--<div class="order-detail txr">共<span class="order-detail-amount">4</span>件   &nbsp;&nbsp;合计：<span class="order-detail-account">￥1000</span></div>-->
+
+                        <!--pay-->
+                        <!--<div class="order-detail-wrap clearfix">-->
+                            <!--<div class="order-detail h80 w17 l">请选择您的支付方式</div>-->
+                            <!--<div class="order-detail h80 w81 r clearfix">-->
+                                <!--&lt;!&ndash;<div class="order-pay bg1"></div>&ndash;&gt;-->
+                                <!--<div class="order-pay bg2"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+
+                        <!-- 底部三个操作按钮 -->
+                        <div class="order-detail-operate">
+                            <button class="order-detail-btn" id="submitOrder">提交</button>
+                            <button class="order-detail-btn ml42" onclick="buyOrder()">返  回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap-datetimepicker.js"></script>
+
+    <script>
+        $('#datepickerStart').datetimepicker({
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            autoclose: true,
+            startView: 2,
+            minView: 2,
+            forceParse: false,
+            language: 'zh-CN'
+        });
+        //地址
+        function loadDelivery() {
+            if ("${salesOrderId}" == "") return;
+            $("#receive").val('${salesOrderDelivery.receiver}')
+            $("#receivedTel").val('${salesOrderDelivery.mobile}')
+            $("#textarea").val('${salesOrderDelivery.address}')
+            $("#datepickerStart").val('${salesOrderDelivery.expectsendDate}')
+
+            var provinceId = '${salesOrderDelivery.province}';
+            var province = '${salesOrderDelivery.provinceName}';
+            var areaCit = '${salesOrderDelivery.cityName}';
+            var areaCitId = '${salesOrderDelivery.city}';
+            var areaZoom = '${salesOrderDelivery.zoneName}';
+            var proSelect = $('#cmbProvince').find('option');
+            for(var i = 0; i < proSelect.length; i++){
+                if(proSelect.eq(i).text() == province){
+                    proSelect.eq(i).attr('selected', 'selected');
+                }
+            }
+            $.ajax({
+                type: 'POST',
+                url: '../area/findCity',
+                contentType: 'application/json; charset=utf-8',
+                headers: {
+                    'Accept': 'application/json; charset=utf-8',
+                    'Authorization': 'Basic ' + sessionStorage.getItem('token')
+                },
+                data: JSON.stringify({code: provinceId}),
+                success: function (res) {
+                    $('#cmbCity').html('');
+                    for(var i = 0;i < res.data.length; i++){
+                        var cmbCity = '';
+                        cmbCity += '<option value="'+res.data[i].code+'">'+res.data[i].name+'</option>';
+                        $('#cmbCity').append(cmbCity)
+                    }
+                    var citySelect = $('#cmbCity').find('option');
+                    for(var i = 0; i < citySelect.length; i++){
+                        if(citySelect.eq(i).text() == areaCit){
+                            citySelect.eq(i).attr('selected', 'selected')
+                        }
+                    }
+                    $('#cmbArea').html('');
+                    $.ajax({
+                        type: 'POST',
+                        url: '../area/findCity',
+                        contentType: 'application/json; charset=utf-8',
+                        headers: {
+                            'Accept': 'application/json; charset=utf-8',
+                            'Authorization': 'Basic ' + sessionStorage.getItem('token')
+                        },
+                        data: JSON.stringify({code: areaCitId}),
+                        success: function (res) {
+                            for(var i = 0;i < res.data.length; i++){
+                                var cmbArea = '';
+                                cmbArea += '<option value="'+res.data[i].code+'">'+res.data[i].name+'</option>';
+                                $('#cmbArea').append(cmbArea)
+                            }
+                            var areaSelect = $('#cmbArea').find('option');
+                            for(var i = 0; i < areaSelect.length; i++){
+                                if(areaSelect.eq(i).text() == areaZoom){
+                                    areaSelect.eq(i).attr('selected', 'selected')
+                                }
+                            }
+                        },
+                        error: function (err) {
+                            alert(err.message)
+                        }
+                    })
+                },
+                error: function (err) {
+                    alert(err.message)
+                }
+            })
+        }
+
+        //加载门店商品信息  与订单信息不会同时出现
+        if ("${storePid}" != '') {
+            var tr = '<tr id="$storeProduct.id">\n' +
+                '                                <td><div class="detail-edit-topic">$storeProduct.name</div></td>\n' +
+                '                                <td><img class="order-info-img" src="$storeProduct.href" alt=""></td>\n' +
+                '                                <td><div >$storeProduct.categoryName</div></td>\n' +
+                '                                <td>\n' +
+                '                                    <select class="color1">\n' +
+                '                                        #foreach($color in $storeProduct.colors)\n' +
+                '                                        <option value="$color">$color</option>\n' +
+                '                                        #end\n' +
+                '                                    </select>\n' +
+                '                                </td>\n' +
+                '                                <td>\n' +
+                '                                    <select class="size1">\n' +
+                '                                        #foreach($size in $storeProduct.sizes)\n' +
+                '                                        <option value="$size">$size</option>\n' +
+                '                                        #end\n' +
+                '                                    </select>\n' +
+                '                                </td>\n' +
+                '\n' +
+                '                                <td><input type="number" value=""></td>\n' +
+                '                                <td><input type="number" value=""></td>\n' +
+                '                                <td><input type="number" value=""></td>\n' +
+                '                                <td><input type="number" value=""></td>\n' +
+                '                                <td><input type="number" value=""></td>\n' +
+                '                                <td><input type="number" value=""></td>\n' +
+                '                                <td><input type="number" value=""></td>\n' +
+                '                                <td><input type="text" value=""></td>\n' +
+                '                                <td><input class="qty" type="number" value="1"></td>\n' +
+                '\n' +
+                '                                <td><div>$storeProduct.price</div></td>\n' +
+                '                                <td><div>$storeProduct.price</div></td>\n' +
+                '                            </tr>';
+            $("#proList").html(tr);
+            var prices = JSON.parse('$storeProduct.priceList');
+
+            $(function(){
+                $('.color1').bind('input propertychange', function() {
+                    findPrice(this);
+                });
+                $('.size1').bind('input propertychange', function() {
+                    findPrice(this);
+                });
+
+                $('.qty').bind('input propertychange', function() {
+                    parQty(this)
+                });
+            })
+
+            //更具颜色尺寸取价格、
+            var price = '$storeProduct.price';
+            function findPrice(ts) {
+                var color = $(".color1").val();
+                var size = $(".size1").val();
+                for (var i=0; i<prices.length; i++) {
+                    if (color == prices[i].color && size == prices[i].size) {
+                        var tdArr = $(ts).parent().parent().find("td");
+                        tdArr.eq(tdArr.length-2).find('div').val(prices[i].price);
+                        price = prices[i].price;
+                        parQty(tdArr.eq(tdArr.length-3).find('input'));
+                    }
+                }
+            }
+
+            //校验总价
+            function parQty(ts) {
+                console.log($(ts))
+                var qty = $(ts).val();
+                if (qty <= 0) {
+                    qty = 1;
+                    $(ts).val(1);
+                }
+                var tdArr = $(ts).parent().parent().find("td");
+                console.log(price)
+                tdArr.eq(tdArr.length-1).find('div').html(qty * price)
+            }
+
+        }
+
+
+
+    </script>
+//支付的开端
+    <script src="../assets/js/salePlat/buyOrderBuy.js"></script>
+</body>
+</html>

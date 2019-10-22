@@ -1,0 +1,100 @@
+body {
+    background-color: #fff;
+}
+
+.order-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.order-topic {
+    height: 114px;
+    padding-top: 60px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.order-info {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 40px;
+    font-size: 16px;
+}
+
+.receiver-info {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 64px;
+    font-size: 16px;
+}
+
+.receiver-info-topic {
+    display: inline-block;
+    width: 80px;
+}
+
+.receiver-info-input {
+    width: 324px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+
+.receiver-info-tip {
+    display: none;
+    color: red;
+    margin-left: 50px;
+}
+
+.order-list {
+    margin-top: 60px;
+    /*background-color: #eff3f5;*/
+}
+
+.order-topic-item {
+    float: left;
+    font-size: 20px;
+}
+
+.order-topic-item.w60 {
+     width: 60%;
+}
+
+.order-topic-item.w20 {
+    width: 20%;
+}
+
+.order-list-item {
+    float: left;
+    height: 180px;
+    line-height: 180px;
+    border-bottom: 1px solid #ccc;
+}
+
+.order-list-item.w60 {
+    width: 60%;
+}
+
+.order-list-item.w20 {
+    width: 20%;
+}
+
+.order-list-name {
+    display: inline-block;
+    width: 188px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 16px;
+}
+
+.confirm-btn {
+    width: 165px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    color: #67aedd;
+    border: 1px solid #67aedd;
+    border-radius: 5px;
+    margin: 50px auto 50px;
+    cursor: pointer;
+}

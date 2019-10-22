@@ -1,0 +1,38 @@
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.h170 {
+    height: 170px;
+    line-height: 170px;
+}
+
+.goods-video {
+    width: 288px;
+    height: 138px;
+    margin-top: 14px;
+    margin-right: 10px;
+    background-color: teal;
+    border-radius: 5px;
+    float: left;
+}
+
+.storage-admin-select {
+    width: 200px;
+}
+
+.goods-detail-show {
+    height: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.table-count {
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+

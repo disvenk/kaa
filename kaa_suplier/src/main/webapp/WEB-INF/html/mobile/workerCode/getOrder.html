@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>领取工单</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <!--<link rel="stylesheet" href="../assets/css/scale.css" />-->
+    <link rel="stylesheet" href="../assets/css/workerCode/common.css" />
+    <link rel="stylesheet" href="../assets/css/workerCode/getOrder.css" />
+</head>
+<body>
+
+<div class="main-content" style="margin-bottom: 70px">
+
+    <div class="my-salary">领取工单</div>
+    <div class="order-wrap">
+        工单号：<span id="workerOrderNo"></span>
+    </div>
+    <div class="order-wrap">
+        操作者：<span id="userName"></span>
+    </div>
+    <div class="order-wrap">
+        工序：
+        <select id="procedures">
+            <option value="">暂无工序</option>
+            <!--<option value="2">印花</option>-->
+        </select>
+    </div>
+    <div class="section"></div>
+    <!--<div class="order-wrap">-->
+        <!--时间：<span>2018-01-19 19:18</span>-->
+    <!--</div>-->
+    <div class="my-salary mt30">工单详情</div>
+    <div class="order-wrap">
+        工单编号：<span id="orderNo"></span>
+    </div>
+    <div class="order-wrap">
+        内部编号：<span id="insideOrderNo"></span>
+    </div>
+    <div class="order-wrap">
+        创建日期：<span id="supOrderDate"></span>
+    </div>
+    <div class="order-wrap">
+        交货日期：<span id="deliveryDate"></span>
+    </div>
+    <div class="order-wrap">
+        生产状态：<span id="producedStatusName"></span>
+    </div>
+    <div class="section"></div>
+    <div class="my-salary mt30">商品图片</div>
+
+    <div class="imgs-box list" id="img_box">
+    </div>
+    <!--<div>-->
+        <!--&lt;!&ndash;<img class="goods-img" src="../assets/img/img1.jpg" alt="">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img class="goods-img" src="../assets/img/img1.jpg" alt="">&ndash;&gt;-->
+    <!--</div>-->
+
+
+    <button class="sure-get">确认领取</button>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<!--<script src="../assets/js/bootstrap.min.js"></script>-->
+<!--<script type="text/javascript" src="../assets/js/md5.js"></script>-->
+<script type="text/javascript" src="../assets/js/preview.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script>
+
+    var token = '${token}';
+    if (token != '') {
+        sessionStorage.setItem("token", token);
+    }
+    //登录校验
+    var token = sessionStorage.getItem('token');
+    if (!token) {
+        location.href = "../suplierHome/loginHtml";
+    }
+
+</script>
+<script type="text/javascript" src="../assets/js/workerCode/getOrder.js"></script>
+
+</body>
+</html>

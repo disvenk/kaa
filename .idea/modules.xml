@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kaa.iml" filepath="$PROJECT_DIR$/kaa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_3part/kaa_3part.iml" filepath="$PROJECT_DIR$/kaa_3part/kaa_3part.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_admin/kaa_admin.iml" filepath="$PROJECT_DIR$/kaa_admin/kaa_admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_core/kaa_core.iml" filepath="$PROJECT_DIR$/kaa_core/kaa_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_model/kaa_model.iml" filepath="$PROJECT_DIR$/kaa_model/kaa_model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_pay/kaa_pay.iml" filepath="$PROJECT_DIR$/kaa_pay/kaa_pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_sales/kaa_sales.iml" filepath="$PROJECT_DIR$/kaa_sales/kaa_sales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_store/kaa_store.iml" filepath="$PROJECT_DIR$/kaa_store/kaa_store.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_suplier/kaa_suplier.iml" filepath="$PROJECT_DIR$/kaa_suplier/kaa_suplier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_user/kaa_user.iml" filepath="$PROJECT_DIR$/kaa_user/kaa_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaa_utils/kaa_utils.iml" filepath="$PROJECT_DIR$/kaa_utils/kaa_utils.iml" />
+    </modules>
+  </component>
+</project>

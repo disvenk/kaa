@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--<link rel="stylesheet" href="../assets/css/ace.min.css"/>-->
+    <!--<link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />-->
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.css">
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOrecord.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">生产记录</div>
+                        <div class="inquire-wrap">
+                            <span style="padding-left: 14px;">工单号 <input id="woInput" type="text"></span>
+                            <span style="margin-left: 100px;">供应商产品编号 <input id="goodsNoInput" type="text"></span>
+                            <span style="margin-left: 100px;">商品ID <input id="goodsIdInput" type="text"></span><br>
+                            当前工序
+                            <select id="type" style="width: 186px;">
+
+                            </select>
+                            <span style="margin-left: 100px;padding-left: 42px;">工单状态
+                            <select id="orderState" style="width: 186px;">
+                                <option value="">全部</option>
+                                <option value="1">待分配</option>
+                                <option value="2">待接单</option>
+                                <option value="3">生产中</option>
+                                <option value="4">已发货</option>
+                                <option value="5">待质检</option>
+                                <option value="6">质检不合格</option>
+                                <option value="7">质检通过</option>
+                                <option value="8">已入库</option>
+                                <option value="9">已取消</option>
+                                <option value="10">确认取消</option>
+                            </select>
+                                </span>
+                            <input type="checkbox" name="checkbox" id="time" style="margin-left: 60px;">显示当前工序超过24小时
+                        </div>
+                        <div class="operate-wrap">
+                            <button id="btnQuery" class="admin-btn">搜索</button>
+                            <button id="resert" class="admin-btn">重置</button>
+                        </div>
+
+                        <!--表格-->
+                        <table id="sample-table-2" class="table table-bordered table-hover">
+                            <thead id="thead">
+
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                        </table>
+                        <!--分页-->
+                        <!--暂无数据-->
+                        <div style="width: 100%;text-align: center;font-size: 26px;margin-top: 135px;color: #999;display: none" id="display">
+                            暂无数据
+                        </div>
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--摸态窗-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">删除确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>您确认要删除吗？</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" id="suredelete">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/WOManage/WOrecord.js"></script>
+</body>
+</html>

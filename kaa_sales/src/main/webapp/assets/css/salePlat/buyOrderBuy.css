@@ -1,0 +1,104 @@
+.tip-blue {
+    color: #3c9ed8;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.to-buy-item {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.to-buy-item input {
+    width: 90%;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 5px !important;
+}
+
+.to-buy-item button {
+    outline: 0;
+    border: 1px solid #fff;
+    display: inline-block;
+    width: 124px;
+    height: 38px;
+    line-height: 36px;
+    border-radius: 100px;
+    background-color: #3c9ed8;
+    color: #fff;
+    margin-top: 8px;
+}
+
+.to-buy-item button:hover {
+    border: 1px solid #3c9ed8;
+    background-color: #fff;
+    color: #3c9ed8;
+}
+
+.order-detail.h80 {
+    height: 80px;
+    line-height: 80px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.order-pay {
+    float: left;
+    width: 154px;
+    height: 66px;
+    margin-top: 6px;
+    border-radius: 5px;
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.order-pay.bg1 {
+    background: url("../../img/salePlat/zfb.png") center 1px no-repeat;
+    border:1px solid #f3f2f4;
+}
+
+.order-pay.bg1:hover {
+    border:1px solid #2382ff;
+}
+
+.order-pay.bg2 {
+    background: url("../../img/salePlat/wx.png") center 1px no-repeat;
+    border:1px solid #f3f2f4;
+}
+
+.order-pay.bg2:hover {
+    border:1px solid #3ec11b;
+}
+
+.order-detail-operate {
+    height: 172px;
+    line-height: 172px;
+    text-align: center;
+}
+
+.order-detail-btn {
+    width: 222px;
+    height: 52px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border:1px solid #4c8fbd;
+    color: #4c8fbd;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.order-detail-btn:hover {
+    background-color: #4c8fbd;
+    color: #fff;
+}
+
+
+.order-info-img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-right: 14px;
+}

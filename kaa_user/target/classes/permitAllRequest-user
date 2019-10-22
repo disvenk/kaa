@@ -1,0 +1,14 @@
+/account/login
+/account/resetPassword
+/account/register
+/account/findUserPhone
+/account/verifyLogin
+/verify/verificationCode
+/verify/checkVerificationCode
+/base/getPlaProductCategoryListAll
+/base/getPlaProductCategoryLevelOneList
+/base/getPlaProductCategoryList
+/base/getBaseDataList
+/area/findProvinceCityZone
+/area/findProvince
+/area/findCity

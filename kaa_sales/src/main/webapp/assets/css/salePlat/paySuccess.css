@@ -1,0 +1,35 @@
+body {
+    background-color: #fff;
+}
+
+.pay-container {
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 260px;
+    background: url("../../../assets/img/salePlat/pay-success.png") center 100px no-repeat;
+    text-align: center;
+}
+
+.pay-tip {
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.pay-tip a {
+    color: #3c9ed8;
+}
+
+.continue-btn {
+    width: 180px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background-color: #3c9ed8;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 90px auto;
+    cursor: pointer;
+}
+

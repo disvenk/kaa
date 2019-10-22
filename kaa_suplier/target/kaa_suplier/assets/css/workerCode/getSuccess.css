@@ -1,0 +1,32 @@
+.back-home {
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    border: 0;
+    background-color: #1976d2;
+}
+
+.detail-btn {
+    margin: 50px auto;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.success-img {
+    display: block;
+    margin: 80px auto 20px;
+}
+
+.success-wrap1 {
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.success-wrap2 {
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+}

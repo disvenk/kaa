@@ -1,0 +1,281 @@
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.h170 {
+    height: 170px;
+    line-height: 170px;
+}
+
+.order-textarea {
+    width: 500px;
+    height: 120px;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding: 14px 12px 14px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+.h178 {
+    height: 178px;
+
+}
+
+.h118 {
+    height: 122px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.pdl0 {
+    padding-left: 0;
+}
+
+.input-address {
+    width: 470px;
+    height: 94px;
+    line-height: 18px;
+    border-radius: 5px !important;
+    padding: 14px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.modal-footer div {
+    width: 100%;
+}
+
+#img1{
+    position: relative;
+}
+#img1 .img_container1{
+    height: 170px;
+}
+#img1 .img_container1 > div{
+    display: inline-block;
+    width: 160px;
+    height: 170px;
+}
+.goods-img{
+    width: 128px;
+    height: 93px;
+}
+#img1 div .glyphicon{
+    top: -40px;
+    left: -9px;
+    font-size: 19px;
+    color: rgb(220,82,74);
+    cursor: pointer;
+}
+#img1 #addPosition1{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 296px;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    width: 85px;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+
+#img2{
+    position: relative;
+}
+
+#img2 .img_container2{
+    height: 170px;
+    display: inline-block;
+    width: 170px;
+}
+#img2 .img_container2 > div{
+    display: inline-block;
+    width: 160px;
+    height: 170px;
+}
+#img2 .img_container2 img{
+    width: 128px;
+    height:102px;
+}
+#img2 div .glyphicon{
+    top: -40px;
+    left: -9px;
+    font-size: 19px;
+    color: rgb(220,82,74);
+    cursor: pointer;
+}
+#img2 #addPosition2{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 96px;
+}
+
+
+
+#img3{
+    position: relative;
+}
+#img3 .img_container3{
+    height: 170px;
+}
+#img3 .img_container3 > div{
+    display: inline-block;
+    width: 160px;
+    height: 170px;
+}
+
+#img3 div .glyphicon{
+    top: -40px;
+    left: -9px;
+    font-size: 19px;
+    color: rgb(220,82,74);
+    cursor: pointer;
+}
+#img3 #addPosition3{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 296px;
+}
+
+/*loading flash*/
+
+
+.spinner-wrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none;
+}
+
+.spinner-x {
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 10px;
+
+}
+
+.spinner-x > div {
+    background-color: #67CF22;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner-x .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner-x .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner-x .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner-x .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+.spinner {
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 10px;
+}
+
+.spinner > div {
+    background-color: #67CF22;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+    20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }  20% {
+           transform: scaleY(1.0);
+           -webkit-transform: scaleY(1.0);
+       }
+}
+
+
+

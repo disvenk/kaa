@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/buyOrderDetail.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/infoTable.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="order-detail mt0">采购订单详情</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">订单编号</div>
+                            <div class="order-detail w81 r">${data.suplierOrderNo}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人</div>
+                            <div class="order-detail w81 r">${data.receiver}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人电话</div>
+                            <div class="order-detail w81 r">${data.mobile}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人地址</div>
+                            <div class="order-detail w81 r">${data.provinceName}-${data.cityName}-${data.zoneName}-${data.address}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix mb30">
+                            <div class="order-detail w17 l h136">备注</div>
+                            <div class="order-detail w81 r h136">
+                                <textarea class="order-textarea">${data.remarks}</textarea>
+                            </div>
+                        </div>
+                        <!--采购订单商品信息-->
+                        <div class="order-detail mt0">采购订单商品信息</div>
+                        <!-- 循环加载订单列表 -->
+                        <table id="sample-table-1" class="table">
+                            <!-- 采购订单列表标题 -->
+                            <thead>
+                            <tr>
+                                <th class="center">商品名称</th>
+                                <th class="center">图片</th>
+                                <th class="center">分类</th>
+                                <th class="center">颜色</th>
+                                <th class="center">尺寸</th>
+                                <th class="center">喉到地</th>
+                                <th class="center">肩宽</th>
+                                <th class="center">胸围</th>
+                                <th class="center">腰围</th>
+                                <th class="center">臀围</th>
+                                <th class="center">身高</th>
+                                <th class="center">体重</th>
+                                <th class="center">其他</th>
+                                <th class="center">件数</th>
+                                <th class="center">单价</th>
+                                <th class="center">总价</th>
+                            </tr>
+                            </thead>
+                            <!-- 循环加载订单列表 -->
+                            <tbody class="center" id="tbody">
+                            #foreach($product in $data.productList)
+                                <tr>
+                                <td>$product.name</td>
+                                <td><img class="order-info-img" src="$product.href" alt=""></td>
+                                <td>$product.categoryName</td>
+                                <td>$product.color</td>
+                                <td>$product.size</td>
+                                <td>$product.throatheight</td>
+                                <td>$product.shoulder</td>
+                                <td>$product.bust</td>
+                                <td>$product.waist</td>
+                                <td>$product.hipline</td>
+                                <td>$product.height</td>
+                                <td>$product.weight</td>
+                                <td>$product.other</td>
+                                <td>$product.qty</td>
+                                <td>$product.price</td>
+                                <td>$product.subtotal</td>
+                            </tr>
+                            #end
+                            <!--<tr>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td><img src="../assets/img/salePlat/pic2.png" alt=""></td>-->
+                                <!--<td>齐地</td>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td>111</td>-->
+                                <!--<td>齐地</td>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td>婚纱</td>-->
+                                <!--<td>343</td>-->
+                                <!--<td>65</td>-->
+                                <!--<td>32432</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                        <!-- 总和 -->
+                        <div class="order-detail txr mb30">共<span class="order-detail-amount">${data.qtySum}</span>件 &nbsp;&nbsp;合计：<span
+                                class="order-detail-account">￥${data.subtotalSum}</span>
+                        </div>
+                        <!--支付下单信息-->
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">支付方式</div>
+                            <div class="order-detail w81 r">${data.payTypeName}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">支付金额</div>
+                            <div class="order-detail w81 r">${data.actualPay}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">支付时间</div>
+                            <div class="order-detail w81 r">${data.payTime}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">下单时间</div>
+                            <div class="order-detail w81 r">${data.orderDate}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">期望发货日期</div>
+                            <div class="order-detail w81 r">${data.expectsendDate}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">状态</div>
+                            <div class="order-detail w81 r">${data.statusName}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">门店销售订单号</div>
+                            <div class="order-detail w81 r">${data.salesOrderNo}</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">快递公司</div>
+                            <div class="order-detail w81 r">${data.deliveryCompanyName}</div>
+                        </div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">快递单号</div>
+                            <div class="order-detail w81 r" onclick="delivery(${data.orderId})" style="color: rgb(101,161,199);cursor: pointer">${data.deliveryNo}</div>
+                        </div>
+
+                        <div class="order-detail-operate">
+                            <button class="order-detail-btn" onclick="history.go('-1')">返  回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--快递记录摸态窗-->
+<div class="modal fade" id="deliveryModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 600px">
+        <div class="modal-content" style="width: 600px;margin-top: 0">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">快递记录</h4>
+            </div>
+            <div class="modal-body" style="padding-top: 0">
+                <table style="width: 100%" class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>时间</th><th>快递公司</th><th>快递单号</th><th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <iframe src="" frameborder="0" style="width: 100%;height: 340px"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/salePlat/buyGoodsDetail.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script>
+</script>
+
+</body>
+</html>

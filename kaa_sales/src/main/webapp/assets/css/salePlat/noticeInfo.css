@@ -1,0 +1,30 @@
+/*#bottom {*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+/*}*/
+
+.notice-topic {
+    font-size: 26px;
+    font-weight: bold;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.notice-date {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.weixin {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#nitice p{
+    line-height: 0;
+    margin: 0;
+}

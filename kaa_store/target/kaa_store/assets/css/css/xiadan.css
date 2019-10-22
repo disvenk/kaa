@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 980px !important;
+    max-width: 1980px !important;
+    background-color: rgb(238,236,239);
+}
+.main-content{
+    margin-left: 11%;
+}
+@-moz-document url-prefix() {
+    fieldset { display: table-cell; }
+}
+#breadcrumbs{
+    height: 70px;
+    border-bottom: 2px solid rgb(194, 194, 194);
+    font-size: 19px;
+    padding: 0;
+    line-height: 70px;
+}
+#breadcrumbs .breadcrumbs_nav{
+    padding: 0 50px;
+    height: 100%;
+}
+#breadcrumbs .breadcrumbs_nav>span:nth-child(1){
+    float: left;
+}
+#breadcrumbs .breadcrumbs_nav>span:nth-child(2){
+    float: right;
+}
+#breadcrumbs .breadcrumbs_nav #buyCar>span{
+    background-color: rgb(20, 95, 154);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    padding: 8px 18px;
+}
+.page-content1{
+    background-color: #f5f5f5;
+    padding: 20px 50px 50px 50px;
+    position: relative;
+    min-height: calc(100vh - 5vw);
+}
+.page-content{
+    background-color: #f5f5f5;
+    padding-top: 20px;
+}
+#container .page-content-area .recivedInformation_container{
+    width: 100%;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+#container .page-content-area .page_area .recivedInformation{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #f2f2f2;
+    line-height: 60px;
+    color: rgb(49, 111, 163);
+    font-size: 14px;
+    padding: 0 40px;
+}
+#container .page-content-area .page_area .address{
+    font-size: 14px;
+    padding: 20px 40px;
+}
+#container .page-content-area .page_area .address select{
+    height: 26px;
+    width: 120px;
+    text-align: center;
+}
+#container #textatea{
+    border-radius: 5px !important;
+    resize: none;
+}
+#container .page-content-area .page_area .address .receivedMan span input{
+    height: 26px;
+    border-radius: 5px !important;
+    width: 80px;
+}
+#container .page-content-area .page_area .col_container{
+    background-color: #f9f9f9;
+    margin-bottom: 20px !important;
+}
+#container .page-content-area .page_area .row{
+    margin: 0;
+}
+#container .page-content-area .page_area .row .col-xs-12{
+    padding: 0;
+}
+#sample-table-1{
+    margin-bottom: 0;
+}
+#sample-table-1 .information{
+    width: 20%;
+    text-align: left;
+    float: left;
+    min-width: 50px;
+}
+#sample-table-1 .information img{
+    width: 100%;
+    border-radius: 6px;
+    margin-right: 5%;
+}
+#sample-table-1 th{
+    min-width: 86px;
+}
+#sample-table-1 .information_container{
+    max-width: 300px;
+    font-size: 12px;
+    color: rgb(69,72,79);
+    position: relative;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+#sample-table-1 .introduce_container{
+    width: 75%;
+    margin-left: 25%;
+    text-align: left;
+    padding-top: 1%;
+}
+#sample-table-1 .introduce_container .color{
+    color: rgb(172,172,172);
+    position: absolute;
+    bottom: 13%;
+    left:calc(25% + 4px);
+}
+#sample-table-1 .introduce_container .chinese_introduce{
+    max-height: 34px;
+    overflow: hidden;
+    position: relative;
+    top:3%;
+}
+#sample-table{
+    margin-bottom: 0;
+}
+#sample-table th{
+    min-width: 86px;
+}
+#sample-table .custormInformation{
+    font-size: 12px;
+}
+#sample-table .custormInformation td input{
+    width: 50px;
+    height: 23px;
+    border-radius: 5px !important;
+}
+#container .table-container {
+    width: 100%;
+    overflow-y: auto;
+    _overflow: auto;
+    margin: 0 0 1em;
+    background-color: #f9f9f9;
+}
+#container .noteInformation{
+    background-color: #f9f9f9;
+    width: 100%;
+    padding: 20px 40px;
+    position: relative;
+    margin-bottom: 15px;
+}
+#container .noteInformation span{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+#container .noteInformation textarea{
+    background-color: #f9f9f9;
+    margin-left: 60px;
+    resize: none;
+    border-radius: 5px !important;
+}
+#submitOrders{
+    color: #fff;
+    display: inline-block;
+    background-color: rgb(20,95,154);
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 19px;
+}

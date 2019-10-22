@@ -1,0 +1,36 @@
+/*body {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+
+/*.list-item {*/
+    /*width: 300px;*/
+    /*cursor: pointer;*/
+    /*box-sizing: border-box;*/
+/*}*/
+
+/*.list-item.bg1 {*/
+    /*background-color: #3c9ed8;*/
+    /*height: 40px;*/
+    /*line-height: 40px;*/
+    /*font-size: 18px;*/
+    /*font-weight: bold;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.list-item.bg2 {*/
+    /*height: 40px;*/
+    /*line-height: 40px;*/
+    /*padding-left: 30px;*/
+    /*font-weight: bold;*/
+/*}*/
+
+/*.list-item.bg3 {*/
+    /*height: 34px;*/
+    /*line-height: 34px;*/
+    /*padding-left: 70px;*/
+/*}*/
+
+/*.list-item.bg3:hover{*/
+    /*background-color: #eee;*/
+/*}*/

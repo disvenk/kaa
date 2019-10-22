@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>我的云店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="Shortcut Icon" href="../assets/img/head-lodo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.css">
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../assets/css/ace-part2.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="../assets/css/css/index.css">
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    .checkSp {
+        background-color: rgb(19, 95, 154) !important;
+        color: #ffffff;
+    }
+    .notCheckSp {
+        background-color: #9e9e9e !important;
+        color: #ffffff;
+    }
+</style>
+<body>
+<div class="main-container" id="main-container">
+    <!-- /section:basics/sidebar -->
+    <div id="sidebar" class="sidebar" style="position: fixed;top: 0;left: 0;height: 100%">
+        <ul class="nav nav-list" style="background-color: rgb(19, 95, 154)">
+            <div>
+                <img id="logo" style="width: 100%;height: 71px" src="" alt="">
+            </div>
+        </ul>
+    </div>
+    <div class="main-content">
+        <!-- #section:basics/content.breadcrumbs -->
+        <div class="breadcrumbs" id="breadcrumbs">
+            <div class="breadcrumbs_nav">
+                <span id="storeName"></span>
+                <span id="buyCar">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"><span style="margin-left: 6px;position: relative;top: -1px;">购物车</span></span>
+                        </span>
+            </div>
+        </div>
+
+        <div class="page-content" id="homePage">
+            <!-- /section:settings.box -->
+            <div class="page-content-nav">
+                <ol class="breadcrumb">
+                    <li id="synthesise">综合</li>
+                    <li id="salesVolume">销量</li>
+                    <li id="prices">价格</li>
+                    <li id="new">最新</li>
+                </ol>
+                <span style="color:rgb(72, 173, 252);margin-right: 15px" id="">价格</span>
+                <input type="number" id="startPrice"> <span style="margin:0 12px;color:rgb(183, 182, 186)">-</span> <input id="endPrice" type="number">
+                <span class="button" id="search">确 定</span>
+            </div>
+            <!-- /.page-content-nav -->
+            <div class="row" id="container">
+
+            </div>
+            <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0;display: none"></div>
+            <!--分页-->
+        </div>
+        <!--详情-->
+        <div class="page-content1" id="detail" style="display: none">
+            <div id="container1">
+                <div class="page-content">
+                    <!-- /section:settings.box -->
+                    <div class="page-content-area">
+                        <div class="row">
+                            <div class="col-xs-12" style="padding: 0">
+                                <div id="user-profile-2" class="user-profile">
+                                    <div class="tabbable">
+                                        <div class="tab-content no-border padding-24">
+                                            <div id="home" class="tab-pane in active">
+                                                <div class="row">
+                                                    <div class="col-sm-8 col-lg-6">
+                                                        <div class="preview" style="float:left;">
+                                                            <div class="smallImg">
+                                                                <div id="imageMenu">
+                                                                    <ul>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div><!--smallImg end-->
+                                                            <div id="vertical" class="bigImg">
+                                                                <video id="video" src="" width="400" height="400" controls autobuffer style="display: none;background-color: #000"></video>
+                                                                <img id="play" style="position: absolute;left: 20px;bottom: 20px;z-index: 800;cursor: pointer" src="../assets/img/video.png" alt="">
+                                                                <img src=""  alt="天" id="midimg" />
+                                                                <!--<div style="display:none;" id="winSelector"></div>-->
+                                                            </div><!--bigImg end-->
+
+                                                            <!--<div id="bigView" style="display:none;"><img width="700" height="700" alt="" src="" /></div>-->
+
+                                                        </div><!--preview end-->
+                                                    </div><!-- /span -->
+
+                                                    <div class="col-sm-4 col-lg-6">
+                                                        <h4>
+                                                            <span class="middle" id="goodsName"></span>
+                                                        </h4>
+
+                                                        <div class="profile-user-info" style="width: 100%">
+                                                            <div class="profile-info-row">
+                                                                <div style="text-align: left" class="profile-info-name"> 商品ID </div>
+
+                                                                <div class="profile-info-value" id="modalType">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row" style="width: 100%">
+                                                                <div style="text-align: left" class="profile-info-name"> 产品颜色 </div>
+
+                                                                <div class="profile-info-value">
+                                                                    <div id="seletor">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row" style="width: 100%">
+                                                                <div style="text-align: left" class="profile-info-name"> 产品尺码 </div>
+
+                                                                <div class="profile-info-value" id="size">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="profile-info-row" style="width: 100%">
+                                                                <div  style="text-align: left" class="profile-info-name"> 商品数量 </div>
+
+                                                                <div class="profile-info-value" id="price">
+                                                                    <span class="glyphicon glyphicon-plus-sign"></span><input id="num" class="number" type="number" value="1" onkeyup="this.value=(this.value.match(/^[1-9]\d*$/)||[''])[0]"><span class="glyphicon glyphicon-minus-sign"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="hr hr-8 dotted"></div>
+
+                                                        <div class="profile-user-info" style="width: 100%">
+                                                            <div class="profile-info-row">
+
+                                                                <div class="profile-info-value" style="padding: 6px">
+                                                                    <span style="color: rgb(20,95,154);font-size: 33px" id="goodsPrice">0</span>
+                                                                    <span style="color: rgb(91,93,98);font-size: 20px">RMB</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="profile-user-info" style="width: 100%">
+                                                            <div class="profile-info-row">
+
+                                                                <div class="profile-info-value" style="padding-left: 6px" id="nowBuy">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!-- /span -->
+                                                </div><!-- /row-fluid -->
+                                            </div><!-- #home -->
+                                            <!--商品详情-->
+                                            <div id="goodsDetail">
+                                                <span style="font-size: 19px;margin-right: 10px">商品详情</span>
+                                                <span style="font-size: 17px;color: #999;">Commodity  details</span>
+                                                <div style="margin-top: 20px" id="description">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                        <div id="banner_right">
+
+                        </div>
+                    </div>
+                    <!-- /.page-content -->
+                </div>
+            </div>
+        </div>
+        <!--下单-->
+        <div class="page-content1" id="xiadans" style="display: none">
+            <div class="page-content-nav" style="height: 50px;line-height: 50px">
+                <ol class="breadcrumb">
+                    <li style="color:rgb(49, 111, 163);font-size: 17px">下单<span  style="font-size: 16px;color:rgb(195,195,195);margin-left: 10px">Place an order</span></li>
+                </ol>
+            </div>
+            <div id="container2">
+                <div class="page-content">
+                    <!-- /section:settings.box -->
+                    <div class="page-content-area">
+                        <div class="page_area">
+                            <div class="recivedInformation_container">
+                                <div class="recivedInformation">
+                                    收货信息
+                                </div>
+                                <div class="address">
+                                    <span>收件人地址：</span>
+                                    <select id="cmbProvince" name="cmbProvince"></select>
+                                    <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                    <select id="cmbArea" name="cmbArea"></select>
+                                    <div style="padding-left: 86px;margin: 15px 0">
+                                        <textarea id="textarea" name="" placeholder="请填写详细收货地址，例如街道名称，门牌号码等" cols="60" rows="5"></textarea>
+                                    </div>
+                                    <div style="padding-left: 25px" class="receivedMan">
+                                        <span style="margin-right: 50px"><span class="necessary">*</span>收件人： <input type="text" id="receive"></span>
+                                        <span><span class="necessary">*</span>收件人电话：<input style="width: 150px" type="tel" id="receivedTel" onblur="checkTel()"></span>
+                                        <span>期望发货时间： <input style="width: 170px" name="startTm" id="datetimepicker" type='text' class="input-sm" readonly="readonly"/><span style="left: -21px;" class="glyphicon glyphicon-calendar"></span></span>
+                                        <div class="receiver-validate">
+                                            <!--<span class="receiver-validate-receiver">aaa</span>-->
+                                            <span class="receiver-validate-mobile">手机号码格式不正确</span>
+                                        </div>
+                                        <div style="font-size: 12px;margin-top: 10px">由于每件均量身定做，具体的发货周期请看商品内容中的约定时间。如果期望日期提前于约定时间，以约定时间为准。</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--商品信息-->
+                            <div class="row col_container">
+                                <div class="col-xs-12">
+                                    <!-- PAGE CONTENT BEGINS -->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <table id="sample-table-1" class="table table-hover">
+                                                <thead><tr style="color: rgb(25,98,155)" id="xiadanInform">
+                                                    </tr><th class="center">商品信息</th><th class="center">单价</th><th class="hidden-480 center">数量</th><th class="center">合计</th></thead>
+                                                <tbody class="center" id="customer">
+
+                                                </tbody>
+                                            </table>
+
+                                        </div><!-- /.span -->
+                                    </div><!-- /.row -->
+                                </div>
+                            </div><!--商品信息结束-->
+                            <!--顾客信息-->
+                            <div class="table-container" style="margin-top: 30px">
+                                <table id="sample-table" class="table">
+                                    <thead>
+                                    <tr style="color: rgb(25,98,155)" id="xiadanInforms">
+
+                                    </tr>
+                                    </thead>
+
+                                    <tbody class="center" id="xiadanTbody">
+
+                                    </tbody>
+                                </table>
+
+                            </div><!--顾客信息结束-->
+                            <div class="cm">单位：cm</div>
+                            <!--备注信息-->
+                            <div class="noteInformation"><span>备注信息：</span>
+                                <textarea name="" id="remark" cols="60" rows="5" placeholder="请填写备注信息"></textarea>
+                            </div>
+                            <!--备注信息结束-->
+                        </div>
+                    </div>
+                    <!-- /.page-content -->
+                    <!--提交订单-->
+                    <div class="center">
+                        <span id="submitOrders" style="cursor: pointer">提交订单</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--购物车-->
+        <div class="page-content1" id="buyCars" style="display: none">
+            <!-- /section:settings.box -->
+            <div class="page-content-nav">
+                <ol class="breadcrumb">
+                    <li style="color:rgb(49, 111, 163);font-size: 17px">购物车<span  style="font-size: 16px;color:rgb(195,195,195);margin-left: 10px">Shopping  trolley</span></li>
+                </ol>
+            </div>
+            <!-- /.page-content-nav -->
+            <div id="container3">
+                <div class="page-content">
+                    <!-- /section:settings.box -->
+                    <div class="page-content-area">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- PAGE CONTENT BEGINS -->
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <table id="sample-table-2" class="table table-hover">
+                                            <thead>
+
+                                            </thead>
+
+                                            <tbody class="center" id="tbody">
+
+                                            </tbody>
+                                        </table>
+                                    </div><!-- /.span -->
+                                </div><!-- /.row -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.page-content -->
+                    <div id="footer">
+                        <div>
+                 <span style="float: left">
+                   <span class="delete_all"><span class="glyphicon glyphicon-trash" aria-hidden="true" style="margin-right: 10px"></span>清空购物车</span>
+                 </span>
+                            <span>数量总计<span id="goodsNums">0</span>件</span>
+                            <span style="float: right">
+                       <span>货品金额总计：<span style="color:rgb(49, 111, 163);font-size: 18px;margin-left: 10px"><span id="money">0</span>元</span></span>
+                   <span class="jiesuan" id="check">结算</span>
+                   </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.page-content -->
+    </div>
+    <!-- /.main-content -->
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">订单确认</h4>
+            </div>
+            <div class="modal-body">
+                <span style="font-size: 16px">您确认要删除该件商品吗？</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure">确认</div>
+                <div data-dismiss="modal">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--清空摸态窗-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">订单确认</h4>
+            </div>
+            <div class="modal-body">
+                </span><span style="font-size: 16px">您确认全部删除吗？</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure">确认</div>
+                <div data-dismiss="modal">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--加入购物车摸态窗-->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel3">提示</h4>
+            </div>
+            <div class="modal-body">
+                </span><span style="font-size: 16px">已加入购物车</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" style="width: 100%;font-size: 16px;text-align: center">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--下单成功摸态窗-->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel4">提示</h4>
+            </div>
+            <div class="modal-body">
+                </span><span style="font-size: 16px">下单成功</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" style="width: 100%;font-size: 16px;text-align: center">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.main-container -->
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>" + "<" + "/script>");
+</script>
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='../assetsjs/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    var token = sessionStorage.getItem('token');
+    var userName = sessionStorage.getItem('userName');
+    if(token != '${authToken}'){
+        sessionStorage.setItem('token', '${authToken}');
+    }else {
+
+    }
+    $('#logo').attr('src', '${storeImg}');
+    if(userName != '${userName}'){
+        sessionStorage.setItem('userName', '${userName}');
+    }else {
+
+    }
+    $('#storeName').html('我的云店 • ${userName}');
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.js"></script>
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+<script>
+    var date = new Date().getFullYear() +'-'+ (new Date().getMonth() + 1) + '-' + (new Date().getDate() + 2);
+    $('#datetimepicker').datetimepicker({
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: true,
+        startView: 2,
+        minView: 2,
+        forceParse: false,
+        language: 'zh-CN',
+        startDate: date
+    });
+</script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/js/index.js"></script>
+</body>
+
+</html>

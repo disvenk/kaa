@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.SuplierOrderMapper">
+
+    <select id="findSuplierOrderList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select * from (
+            Select
+            sso.id, sso.orderno suplierOrderNo, sso.orderdate orderDate, sso.status, sso.channel_name channelName,
+            sso.channel_type channelType, salo.orderno salesOrderNo
+            ,det.id detId, det.href, det.product_name productName, det.color, det.size, det.qty, det.price, det.subtotal, det.pid
+--             ,so.produced_status producedStatus, so.order_no supOrderNo, ss.id suplierId, ss.`name` suplierName
+            ,pub.name, pub.mobile, ppr.product_code productCode
+            From sto_suplierorder sso
+            LEFT JOIN sto_suplierorder_detail det ON sso.id = det.order_id
+            LEFT JOIN sto_salesorder salo ON salo.id = sso.salesorder_id
+            LEFT JOIN sup_order_detail sod on sod.pid = det.pid And sod.color = det.color And sod.size = det.size
+            LEFT JOIN pla_product ppr on ppr.id = det.pid
+--             LEFT JOIN sup_order so ON sod.order_id = so.id and so.order_id = sso.id
+--             LEFT JOIN sup_suplier ss ON ss.id = so.suplier_id
+            LEFT JOIN sto_storeinfo ssi ON ssi.id = sso.store_id
+            LEFT JOIN pub_user_login pul ON pul.id = ssi.user_id
+            LEFT JOIN pub_user_base pub ON pul.id = pub.user_id
+            WHERE
+            1=1
+            <if test="productName!=null and productName!=''">And det.product_name LIKE '%${productName}%'</if>
+            <if test="nameMobile!=null and nameMobile!=''">And (pub.name LIKE '%${nameMobile}%' OR pub.mobile LIKE '%${nameMobile}%')</if>
+            <if test="suplierOrderNo!=null and suplierOrderNo!=''">And sso.orderno LIKE '%${suplierOrderNo}%'</if>
+            <if test="channelName!=null and channelName!=''">And sso.channel_name LIKE '%${channelName}%'</if>
+            <if test="channelType!=null and channelType!=''">And sso.channel_type = ${channelType}</if>
+            <if test="orderStatus!=null and orderStatus!='' || orderStatus == 0">And sso.status = ${orderStatus}</if>
+            <if test="startTime!=null and startTime!=''">And sso.orderdate &gt; ${startTime}</if>
+            <if test="endTime!=null and endTime!=''">And sso.orderdate &lt; ${endTime}</if>
+--             order by so.suplier_id desc,sso.orderdate desc
+        ) a
+        GROUP BY id,detId
+        ORDER BY a.orderDate DESC
+    </select>
+
+
+    <!-- 工单各生产状态数量 -->
+    <select id="producedStatusCount" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select produced_status producedStatus, COUNT(1) `count`
+        from sup_order WHERE order_type = #{orderType} And logicDeleted = 0
+        GROUP BY produced_status
+    </select>
+
+    <!-- 获取订阅盒子的商品数 -->
+    <select id="findOrderCount" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT count(1) 'orderCount',box_product_id boxProductId FROM `box_use_log_product`
+        where box_product_id = #{orderCount} And logicDeleted = 0
+        AND status = 1
+        group by boxProductId;
+    </select>
+
+</mapper>

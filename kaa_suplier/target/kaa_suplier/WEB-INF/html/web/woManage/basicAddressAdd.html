@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/basicAddressAdd.css"/>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">地址</div>
+                        <div id="position" style="width: 310px;background-color: #fff;color: #999;">
+
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人</div>
+                            <div class="order-detail w81 r"><input type="text" maxlength="100"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人电话</div>
+                            <div class="order-detail w81 r"><input type="text" maxlength="30"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 h178 l" style="font-size: 16px">收货地址</div>
+                            <div class="w81 pdl0 r">
+                                <div class="order-detail pdl0">
+                                    <div class="order-detail h56" id="province" style="padding-left: 4px">
+                                        <select id="cmbProvince" name="cmbProvince"></select>
+                                        <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                        <select id="cmbArea" name="cmbArea"></select>
+                                    </div>
+                                </div>
+                                <div class="order-detail pdl0 h118">
+                                    <textarea  class="input-address" maxlength="200" placeholder="地址信息最多100字"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script src="../assets/js/WOManage/basicAddressAdd.js"></script>
+</body>
+</html>

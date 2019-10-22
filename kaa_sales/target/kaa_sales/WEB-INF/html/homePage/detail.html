@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/detail.css"/>
+
+</head>
+<body>
+<div id="head"></div>
+<!--<div class="content_header" id="header">-->
+    <!--<img src="../assets/img/salePlat/logo1.png" alt="">-->
+    <!--<a href="../salesHome/designHtml">设计师区</a>-->
+    <!--<span class="search"><input type="text" placeholder="搜索商品名称/编号" id="search"><span class="glyphicon glyphicon-search"></span></span>-->
+<!--</div>-->
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+<div class="main-container" id="main-container" style="margin-top: 105px;margin-bottom: 80px">
+    <div class="main-content">
+        <div class="page_left content_content">
+            <div class="left_container">
+                <h5>最热款式<span style="color: rgb(164,168,173);margin-left: 6px">HOT</span></h5>
+                <div class="hot_container">
+
+                </div>
+            </div>
+        </div>
+        <div class="page-content" id="detail">
+            <div class="page-content-area">
+                <div class="row">
+                        <div class="col-xs-12" style="padding: 0">
+                            <div id="user-profile-2" class="user-profile">
+                                <div class="tabbable">
+                                    <div class="tab-content no-border padding-24" style="background-color: #ffffff">
+                                        <div id="home" class="tab-pane in active">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-lg-6">
+                                                    <div class="preview" style="float:left;">
+                                                        <div id="vertical" class="bigImg">
+                                                            <video id="video" src="" width="400" height="400" controls autobuffer style="display: none;background-color: #000"></video>
+                                                            <img id="play" style="position: absolute;left: 20px;bottom: 20px;z-index: 800;cursor: pointer" src="../assets/img/salePlat/video.png" alt="">
+                                                            <img src=""  alt="" id="midimg" />
+                                                            <!--<div style="display:none;" id="winSelector"></div>-->
+                                                        </div><!--bigImg end-->
+                                                        <div class="smallImg">
+                                                            <div id="imageMenu">
+                                                                <ul>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div><!--smallImg end-->
+                                                        <!--<div id="bigView" style="display:none;"><img width="700" height="700" alt="" src="" /></div>-->
+
+                                                    </div><!--preview end-->
+                                                </div><!-- /span -->
+
+                                                <div class="col-sm-4 col-lg-6">
+                                                    <h4>
+                                                        <span class="middle" id="goodsName"></span>
+                                                    </h4>
+
+                                                    <div class="profile-user-info" style="width: 100%">
+                                                        <div class="profile-info-row">
+                                                            <div class="profile-info-value" id="modalType">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row" style="width: 100%">
+                                                            <div style="text-align: left" class="profile-info-name"> 产品颜色: </div>
+
+                                                            <div class="profile-info-value">
+                                                                <div id="seletor">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row" style="width: 100%">
+                                                            <div style="text-align: left;border: none" class="profile-info-name"> 产品尺码: </div>
+
+                                                            <div class="profile-info-value" id="size" style="border: none">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="profile-info-row" style="width: 100%">
+                                                            <div  style="text-align: left;border: none" class="profile-info-name"> 支付方式: </div>
+
+                                                            <div class="profile-info-value" id="price" style="border: none">
+                                                                <img src="../assets/img/salePlat/zhifubao.png" alt="">
+                                                                <img src="../assets/img/salePlat/weixin.png" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div style="width: 100%" id="dis">
+                                                        <div>已售： <span id="beSales"></span>件</div><div style="text-align: left"><span class="glyphicon glyphicon-eye-open"></span><span id="beViews" style="margin-left: 9px"></span></div>
+                                                    </div>
+                                                    <div class="profile-info-row" style="width: 100%;height: 56px;line-height: 56px">
+                                                        <div style="text-align: center;border: none" class="profile-info-name"> 价格: </div>
+
+                                                        <div class="profile-info-value" style="border: none">
+                                                            <span id="downPrice"></span> <span style="font-size: 26px;color: #999">RMB</span>
+                                                        </div>
+                                                    </div>
+                                                    <div id="placeOrder">
+                                                            <span class="glyphicon glyphicon-heart-empty" style="margin-right: 4px"></span>立即下单
+                                                    </div>
+                                                </div><!-- /span -->
+                                            </div><!-- /row-fluid -->
+                                        </div><!-- #home -->
+                                    </div>
+                                    <!--商品详情-->
+                                    <div style="margin-top: 12px;padding: 0">
+                                        <div style="height: 41px;line-height: 41px;border: 1px solid #fff;font-size: 16px;color: #999;padding: 0 8px">商品图文详情</div>
+                                        <div id="description" style="margin-top: 6px;padding: 0 8px">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+        </div>
+    </div>
+</div>
+</div>
+<!--footer部分-->
+<div id="bottom"></div>
+<!--摸态窗-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h5 class="modal-title" id="myModalLabel" style="text-align: left">立即下单</h5>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>颜色</th>
+                        <th>尺寸</th>
+                        <th>价格</th>
+                        <th>订购数量(件)</th>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                    <div id="total"><div style="float: left">合计：<span id="nums">0</span>件<span id="totalPrice">0元</span></div><div style="float: right"><div style="cursor: pointer" id="sure">确认下单</div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/salePlat/head.js"></script>
+<script src="../assets/js/salePlat/bottom.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/salePlat/detail.js"></script>
+
+</body>
+</html>

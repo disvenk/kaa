@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>工单详情页面</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOkaaDetail.css"/>
+
+</head>
+<body>
+
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">工单详情</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">采购订单编号</div>
+                            <div class="order-detail w81 r" id="supplierOrderNo"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">工单号</div>
+                            <div class="order-detail w81 r" id="supOrderNo"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">供应商</div>
+                            <div class="order-detail w81 r" id="supplierName"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">供应商手机号</div>
+                            <div class="order-detail w81 r" id="supplierPhone"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">下单时间</div>
+                            <div class="order-detail w81 r" id="supOrderDate"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">交货日期</div>
+                            <div class="order-detail w81 r" id="deliveryDate"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">期望发货时间</div>
+                            <div class="order-detail w81 r" id="expectsendDate"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">快递公司</div>
+                            <div class="order-detail w81 r" id="deliveryCompanyName"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">快递单号</div>
+                            <div class="order-detail w81 r" id="deliveryNo"></div>
+                        </div>
+                        <!--表格-->
+                        <table  class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>供应商产品编号</th>
+                                <th>图片</th>
+                                <th>分类</th>
+                                <th>颜色</th>
+                                <th>尺寸</th>
+                                <th>喉到地</th>
+                                <th>肩宽</th>
+                                <th>胸围</th>
+                                <th>腰围</th>
+                                <th>臀围</th>
+                                <th>身高</th>
+                                <th>体重</th>
+                                <th>其它</th>
+                                <th>件数</th>
+                                <th>价格</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">材料说明</div>
+                            <div class="order-detail w81 r" id="material"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">客户备注</div>
+                            <div class="order-detail w81 r" id="technics"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">重要说明</div>
+                            <div class="order-detail w81 r" id="description"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">商品图片</div>
+                            <div class="order-detail h170 w81 r" id="img">
+                                <!--这里放图片-->
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">二维码/条形码</div>
+                            <div class="order-detail h170 w81 r">
+                                <img id="imgcode" />
+                            </div>
+                        </div>
+
+                        <div class="bottom-operate">
+                            <button id="download" class="admin-btn w100">下载</button>
+                            <button class="admin-btn w100 ml10" onclick="history.go('-1')">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/jsBarCode.js"></script>
+<script src="../assets/js/WOManage/WOkaaDetail.js"></script>
+
+</body>
+</html>

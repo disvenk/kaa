@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>领取结果</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/workerCode/common.css" />
+    <link rel="stylesheet" href="../assets/css/workerCode/getSuccess.css" />
+</head>
+<body>
+
+<div class="main-content">
+
+    <img class="success-img" src="../assets/img/success.png" alt="">
+    <div class="success-wrap1">您已成功领取工单</div>
+    <div class="success-wrap2">工单号： <span id="orderNo"></span></div>
+    <div class="detail-btn">
+        <button class="back-home">返回首页</button>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/echarts.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/workerCode/getSuccess.js"></script>
+<script>
+    var url = window.location.href;
+    var orderNo = url.split('=')[1];
+    $("#orderNo").html(orderNo);
+</script>
+</body>
+</html>

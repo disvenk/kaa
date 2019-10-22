@@ -1,0 +1,104 @@
+.admin-operate-item {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.admin-operate-item.w1 {
+    width: 8%;
+}
+
+.admin-operate-item.w2 {
+    width: 22%;
+}
+
+.admin-operate-item.w3 {
+    width: 12%;
+}
+
+.admin-operate-item.w4 {
+    width: 18%;
+}
+
+.admin-operate-item.w5 {
+    width: 18%;
+}
+
+.admin-operate-item.w6 {
+    width: 12%;
+}
+
+.admin-operate-item.w7 {
+    width: 10%;
+}
+
+.admin-input {
+    width: 60%;
+    height: 30px;
+}
+
+/*loading flash*/
+
+.spinner {
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 10px;
+    z-index: 999;
+}
+
+.spinner > div {
+    background-color: #67CF22;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+    0%, 40%, 100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1.0)
+    }
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
+}

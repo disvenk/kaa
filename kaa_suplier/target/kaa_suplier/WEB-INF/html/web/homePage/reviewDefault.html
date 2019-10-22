@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一智造生产管理系统</title>
+    <link rel="Shortcut Icon" href="../assets/img/head-logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/homePage/joinIn.css"/>
+
+</head>
+<body style="height: 100vh;min-width: 1280px" onkeydown="keyLogin()">
+<div id="container">
+    <div class="logo"><img style="cursor: pointer" onclick="location.href = '../homePage/loginHtml'" src="../assets/img/loginLog.png" alt=""></div>
+    <div class="container_container">
+        <div class="enter">供应商入驻 ><span style="margin-left: 2px;color: rgb(47,84,149)">审核结果</span></div>
+        <div class="information" style="height: 700px;line-height: 700px;text-align: center">
+            <div style="width: 40%;height: 682px;float: left">
+                <img src="../assets/img/reviewDefault.png" alt="">
+            </div>
+            <div style="float: right;width: 60%;height: 682px">
+                <div style="color: rgb(60,90,151);font-size: 26px;height: 70px;margin-top: -160px">您的入驻审核不通过</div>
+                <span id="modification" style="padding: 10px 60px;background-color: rgb(60,90,151);color: #fff;border-radius: 6px;cursor: pointer">修改资料</span>
+                <div style="width: 500px;height: 160px;border: 1px dotted #999;margin-left: calc(50% - 250px);margin-top: -260px;line-height: 20px;color: red;font-size: 18px;text-align: left;padding: 8px">
+                  原因：您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过
+                    您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过您的入驻审核不通过
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script>
+ $('#modification').click(function () {
+    location.href = '../homePage/joinInHtml';
+ });
+</script>
+</body>
+</html>

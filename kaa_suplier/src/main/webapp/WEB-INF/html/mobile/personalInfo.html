@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/personalInfo.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="main-container">
+        <div id="changeHead" class="goods-add-info h100" style="height: 80px;line-height: 80px">头像：<span class="personal-info"><img style="margin-top: 13px" src="" class="head-icon" id="icon" alt=""><img style="top: 27px;" class="more-cate lower" src="../assets/images/img/more.png" alt=""></span></div>
+        <div id="changeName" class="goods-add-info">昵称：<span class="personal-info" id="name" style="padding-right: 0"></span><img class="more-cate" src="../assets/images/img/more.png" alt=""></div>
+        <div class="goods-add-info">手机：<span class="personal-info" id="mobile"></span></div>
+        <div id="changePassword" class="goods-add-info">修改密码 <img class="more-cate" src="../assets/images/img/more.png" alt=""></div>
+    </div>
+</div>
+
+
+<!--退出-->
+<div style="text-align: center;margin-top: 10px;background-color: #fff;height: 40px;line-height: 40px" onclick="location.href = '../suplierHome/loginHtml'">
+    退出当前帐号
+</div>
+
+<!--<div id="carema" style="display: none">-->
+    <!--<div class="weui-mask" id="ioMask"></div>-->
+    <!--<div class="weui-actionsheet" id="iosActionsheet" style="position: fixed;bottom: 150px">-->
+<!--<div class="weui-actionsheet__menu">-->
+<!--<div class="weui-actionsheet__cell camera">拍照</div>-->
+<!--<div class="weui-actionsheet__cell album">从手机相册选择</div>-->
+<!--</div>-->
+<!--<a style="display: block;color: #000000" class="weui-actionsheet__action">-->
+<!--<div class="weui-actionsheet__cell" id="iosActionsheetCancel" onclick="$('#carema').css('display', 'none')">取消</div>-->
+<!--</a>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--底部tab-->
+<div class="weui-tab">
+    <div class="weui-tab__panel">
+    </div>
+    <div class="weui-tabbar">
+        <a href="../suplierHome/homePageHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/homepage.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label selectTable">首页</p>
+        </a>
+
+        <a href="../suplierHome/orderHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/order.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">订单</p>
+        </a>
+
+        <a href="../suplierHome/goodsHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/goods.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">货品</p>
+        </a>
+        <a href="javascript:" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/selfL.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label" style="color: #ffffff;">个人</p>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/jweixin-1.2.0.js"></script>
+<!--<script type="text/javascript" src="../assets/js/weui/weui.min.js"></script>-->
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<!--<script type="text/javascript" src="../assets/js/common.js"></script>-->
+<!--<script type="text/javascript" src="../assets/js/personalInfo.js"></script>-->
+
+<script>
+    $('#changeName').click(function () {
+        location.href='../suplierHome/changeNameHtml';
+    });
+    $('#changePassword').click(function () {
+        location.href='../suplierHome/changePasswordHtml';
+    });
+    $.ajax({
+        type: 'POST',
+        url: '../account/loginInfo',
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+            'Accept': 'application/json; charset=utf-8',
+            'Authorization': 'Basic ' + sessionStorage.getItem('token')
+        },
+        success: function (res) {
+            if (res.stateCode == 100) {
+                $("#name").html(res.data.name)
+                $("#mobile").html(res.data.mobile)
+                $("#icon").attr('src',res.data.icon);
+            } else {
+                layer.msg(res.message);
+            }
+        },
+        error: function (err) {
+            layer.msg(err.message)
+        }
+    });
+    function saveHead(img) {
+        $.ajax({
+            type: 'POST',
+            url: '../suplierHome/updateIconWeChat',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({icon: img}),
+            success: function (res) {
+                    layer.msg(res.message);
+            },
+            error: function (err) {
+                layer.msg(err.message)
+            }
+        });
+
+    }
+    var url = window.location.href.split('#')[0];
+    $.ajax({
+        type: 'GET',
+        url: '../suplierHome/getshareinfo?url='+url,
+        dataType: 'json',
+        async: false,
+        contentType: "application/json; charset=utf-8",
+        headers: {
+            "Accept": "application/json; charset=utf-8",
+            'Authorization': 'Basic '
+        },
+        success: function(res){
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: res.data.appid, // 必填，公众号的唯一标识
+                timestamp: res.data.timestamp, // 必填，生成签名的时间戳
+                nonceStr: res.data.noncestr, // 必填，生成签名的随机串
+                signature: res.data.signature,// 必填，签名
+                jsApiList: ['chooseImage','uploadImage','downloadImage', 'getLocalImgData'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+            wx.ready(function(){
+                var headImgUrl = '';
+                $('#changeHead').click(function(){
+                    if(/android/i.test(navigator.userAgent)) {
+                        wx.chooseImage({
+                            count: 1, // 默认9
+                            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                            sourceType: ['camera', 'album'], // 可以指定来源是相册还是相机，默认二者都有
+                            success: function (res) {
+                                headImgUrl = res.localIds[0]; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                                $('#icon').attr('src', headImgUrl);
+                                wx.uploadImage({
+                                    localId: headImgUrl, // 需要上传的图片的本地ID，由chooseImage接口获得
+                                    isShowProgressTips: 0, // 默认为1，显示进度提示
+                                    success: function (res) {
+                                        headImgUrl = res.serverId; // 返回图片的服务器端ID
+                                        saveHead(headImgUrl);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                        wx.chooseImage({
+                            count: 1, // 默认9
+                            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                            sourceType: ['camera','album'], // 可以指定来源是相册还是相机，默认二者都有
+                            success: function (res) {
+                                headImgUrl = res.localIds[0]; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                                wx.getLocalImgData({
+                                    localId: headImgUrl, // 图片的localID
+                                    success: function (res) {
+                                        localData = res.localData; // localData是图片的base64数据，可以用img标签显示
+                                        $('#icon').attr('src', localData);
+                                    }
+                                });
+                                wx.uploadImage({
+                                    localId: headImgUrl, // 需要上传的图片的本地ID，由chooseImage接口获得
+                                    isShowProgressTips: 0, // 默认为1，显示进度提示
+                                    success: function (res) {
+                                        headImgUrl = res.serverId; // 返回图片的服务器端ID
+                                        saveHead(headImgUrl);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                })
+            });
+            wx.error(function(res){
+                layer.msg('网络错误');
+            });
+        },
+        error:function (err) {
+            layer.msg('配置错误');
+        }
+    })
+</script>
+</body>
+
+</html>

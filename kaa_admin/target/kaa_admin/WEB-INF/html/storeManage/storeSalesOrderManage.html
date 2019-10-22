@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>线下门店销售订单管理</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/common/infoTable.css"/>
+    <link rel="stylesheet" href="../assets/css/storeManage/storeSalesOrderManage.css"/>
+
+</head>
+<body>
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="admin-detail">线下销售订单管理</div>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item">
+                                购买人<input id="txtReceiver" class="admin-input" type="text" placeholder="请输入购买人姓名"></li>
+                            <li class="admin-operate-item">
+                                手机号 <input id="txtMobile" class="admin-input" type="text" placeholder="请输入购买人手机">
+                            </li>
+                            <li class="admin-operate-item">
+                                销售订单号 <input id="txtOrderNo" class="admin-input" type="text" placeholder="请输入销售订单号">
+                            </li>
+                            <li class="admin-operate-item">
+                                采购订单号 <input id="txtOrdernoSuplier" class="admin-input" type="text" placeholder="请输入采购订单号">
+                            </li>
+                            <li class="admin-operate-item">
+                                所属门店
+                                <select id="store" class="select1">
+                                </select>
+                            </li>
+                            <li class="admin-operate-item">
+                                <button id="btnQuery" class="admin-btn w60">搜索</button>
+                                <button id="btnReset" class="admin-btn w60 ml6p">重置</button>
+                            </li>
+                        </ul>
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="order-topic center">商品信息</th>
+                                <th class="order-topic center">单价</th>
+                                <th class="order-topic center">数量</th>
+                                <th class="order-topic center">价格</th>
+                                <th class="order-topic center">所属门店</th>
+                                <th class="order-topic center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            <!--<tr class="sales-order-state">-->
+                                <!--<td><span class="color-blue">订单号:</span>12321312</td>-->
+                                <!--<td><span class="color-blue">下单日期：</span>2017-10-21 12：00：00</td>-->
+                                <!--<td><span class="color-blue">交易状态：</span>未发货</td>-->
+                                <!--<td><span class="color-blue">合一智造采购状态：</span>未采购</td>-->
+                                <!--<td></td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td>-->
+                                    <!--<div class="order-info-wrap">-->
+                                        <!--<img class="order-info-img"  src="../assets/img/pic1.png" alt="">-->
+                                        <!--<div class="sales-order-info">-->
+                                            <!--<div class="order-info-name">2017新款婚纱礼服新娘拖尾简约奢华欧美风</div>-->
+                                            <!--<div class="order-info-desc">颜色：<span>白色</span>尺寸：<span>L</span></div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td>￥598</td>-->
+                                <!--<td>X1</td>-->
+                                <!--<td>￥598</td>-->
+                                <!--<td>-->
+                                    <!--<div class="sales-order-operate" id="orderDetail">订单详情</div>-->
+                                    <!--<div class="sales-order-operate">查看快递单号</div>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/storeManage/storeSalesOrderManage.js"></script>
+
+</body>
+</html>

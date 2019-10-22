@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title>我的收货地址“</title>
+    <!--<meta name="description" content="Restyling jQuery UI Widgets and Elements"/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="../assets/css/salePlat/infoTable.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/myAddress.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+</head>
+<body class="no-skin">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <!-- /section:settings.box -->
+            <div class="page-content-area">
+                <div class="spinner-wrap">
+                    <div class="spinner">
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4"></div>
+                        <div class="rect5"></div>
+                    </div>
+                </div>
+                <div class="vip-section">
+                    <div class="" id="addressId">收货地址</div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l"><span class="order-receiver">*</span>收件人</div>
+                    <div class="order-detail w81 r">
+                        <input id="storeName" type="text" onblur="checkUerName()">
+                        <span class="error-info error-user">收件人不存在</span>
+                    </div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l"><span class="order-receiver">*</span>手机号码</div>
+                    <div class="order-detail w81 r">
+                        <input id="telephone" type="tel" onblur="checkTel()">
+                        <span class="error-info error-phone">请输入正确的手机号</span>
+                    </div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 h178 l"><span class="order-receiver">*</span>收货地址</div>
+                    <div class="w81 pdl0 r">
+                        <div class="order-detail pdl0">
+                            <div class="order-detail h56" id="province" style="padding-left: 20px">
+                                <select id="cmbProvince" name="cmbProvince"></select>
+                                <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                <select id="cmbArea" name="cmbArea"></select>
+                            </div>
+                        </div>
+                        <div class="order-detail pdl0 h118">
+                            <textarea id="address" class="input-address" placeholder="地址信息最多100字"></textarea>
+                            <div class="setting-default"><input class="default-input" type="checkbox">设为默认地址</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="operation">
+                    <button id="btnSave" class="operation-btn">保存</button>
+                    <button class="operation-btn ml80" onclick="history.go('-1')">返回</button>
+                </div>
+                <div class="vip-section">
+                    <div class="">已保存的地址</div>
+                </div>
+                <!--table-->
+                <table class="table table-bordered mt10">
+                    <thead>
+                    <tr>
+                        <th class="order-topic center">收货人</th>
+                        <th class="order-topic center">所在地区</th>
+                        <th class="order-topic center">详细地址</th>
+                        <th class="order-topic center">手机号码</th>
+                        <th class="order-topic center">设为默认</th>
+                        <th class="order-topic center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div><!-- /.page-content-area -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+
+<!--摸态窗-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">删除确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>您确认要删除吗？</span>
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="suredelete">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="../assets/js/jquery-ui.min.js"></script>
+<!--验证JS-->
+<script src="../assets/js/salePlat/validate.js"></script>
+<script src="../assets/js/salePlat/myAddress.js"></script>
+
+
+</body>
+</html>

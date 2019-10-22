@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>工单状态</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/orderManage/orderManageStatus.css"/>
+
+</head>
+<body>
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="admin-detail">工单状态</div>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1"><input style="border: 0 ; width: 200px" id="supplierOrderNo" readonly></input></li>
+                            <li class="admin-operate-item w1"></li>
+                            <li class="admin-operate-item w2"></li>
+                            <li class="admin-operate-item w6"></li>
+                        </ul>
+
+                        <!--表格-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>工单号</th>
+                                <th>工单状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/orderManage/orderManageStatus.js"></script>
+
+
+</body>
+</html>

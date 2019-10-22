@@ -1,0 +1,255 @@
+body {
+    background-color: #f6f6f6 !important;
+    color: #333;
+    height:auto;
+    font-size: 14px;
+}
+
+.clearfix {
+    overflow:auto;
+    zoom:1;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main-header {
+    height: 70px;
+    line-height: 70px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1976d2;
+    text-align: center;
+    position: relative;
+    border-top: 1px solid #1970c6;
+}
+
+.main-container {
+    width: 92%;
+    margin: 10px auto 0;
+}
+
+.order-info {
+    line-height: 30px;
+    padding-left: 50px;
+}
+
+.order-info.bg1 {
+     background: url("../../assets/images/img/shr.png") left 2px no-repeat;
+}
+
+.order-info.bg2 {
+    background: url("../../assets/images/img/lxdh.png") left 2px no-repeat;
+}
+
+.order-info.bg3 {
+    background: url("../../assets/images/img/shdz.png") left 2px no-repeat;
+}
+
+.order-info-address {
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
+}
+
+.order-infos {
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.order-infos-model {
+    width: 25%;
+    max-width: 170px;
+    max-height: 100px;
+    float: left;
+
+}
+
+.order-infos-item {
+    width: 54%;
+    float: left;
+    line-height: 22px;
+    margin-top: 8px;
+    margin-left: 2%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.order-infos-span {
+    font-size: 12px;
+    color: #9c9da1;
+}
+
+.order-infos-count {
+    width: 18%;
+    float: right;
+    text-align: right;
+}
+
+.infos-count-num {
+    line-height: 70px;
+}
+
+.infos-count-price {
+    color: #000;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.pdl20 {
+    padding-left: 20px;
+}
+
+.order-count {
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    padding-left: 8px;
+}
+
+.order-count.bb1 {
+    border-bottom: 1px solid #cecece;
+}
+
+.order-count-sum {
+    float: right;
+    padding-right: 4px;
+    position: relative;
+    width: 30%;
+    text-align: right;
+}
+
+.order-state {
+    position: absolute;
+    line-height: 14px;
+    right: 0;
+    bottom: 4px;
+    color: red;
+    font-size: 12px;
+}
+
+.order-item {
+    line-height: 30px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.order-item span {
+    padding-left: 30px;
+}
+
+.order-item-name {
+    display: inline-block;
+    width: 38%;
+    text-align: right;
+}
+
+.order-confirm-btn {
+    width: 164px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 100px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background-color: #1976d2;
+    margin: 15px auto;
+}
+
+.order-confirm-btn:hover {
+    background-color: #2a2e36;
+}
+
+.instruction-head {
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+.instruction-text {
+    display: block;
+    width: 90%;
+    height: 80px;
+    padding: 4px;
+    margin: 0 auto;
+    border:1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+
+/*模态框样式*/
+
+.modal-footer {
+    text-align: center;
+}
+
+
+.modal-header {
+    padding: 0 !important;
+    text-align: center;
+    border-bottom: 0 !important;
+}
+
+.modal-header img {
+    max-width: 100%;
+}
+
+.modal-confirm {
+    max-width: 60%;
+}
+
+.btn-primary {
+    background-color: #fff!important;
+    border: 0 !important;
+}
+
+.btn {
+    padding: 0 !important;
+}
+
+.modal-info {
+    height: 60px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.modal-info-item {
+    display: inline-block;
+    float: left;
+    height: 50px;
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w40{
+    width: 40%;
+}
+

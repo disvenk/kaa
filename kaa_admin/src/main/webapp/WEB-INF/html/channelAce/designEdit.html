@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>后台管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="./../../../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./../../../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./../../../assets/css/ace.min.css" id="main-ace-style" />
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="./../../../assets/css/ace-part2.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="./../../../assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="./../../../assets/css/ace-rtl.min.css" />
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="./../../../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script src="./../../../assets/js/html5shiv.min.js"></script>
+    <script src="./../../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .page-content .table tr {
+            text-align: center;
+        }
+
+        .page-content .table tr th {
+            text-align: center;
+        }
+
+        .page-content .table tr td button {
+            background-color: rgb(70, 142, 183);
+            color: #fff;
+        }
+
+        .table>tbody>tr>td {
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .tcdPageCode {
+            padding: 15px 20px;
+            text-align: left;
+            color: #ccc;
+        }
+
+        .tcdPageCode a {
+            display: inline-block;
+            color: #428bca;
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            padding: 0 10px;
+            border: 1px solid #ddd;
+            margin: 0 2px;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        .tcdPageCode a:hover {
+            text-decoration: none;
+            border: 1px solid #428bca;
+        }
+
+        .tcdPageCode span.current {
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            padding: 0 10px;
+            margin: 0 2px;
+            color: #fff;
+            background-color: #428bca;
+            border: 1px solid #428bca;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        .tcdPageCode span.disabled {
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            padding: 0 10px;
+            margin: 0 2px;
+            color: #bfbfbf;
+            background: #f2f2f2;
+            border: 1px solid #bfbfbf;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        .page-content .recivedInformation_container {
+            width: 100%;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .page-content .recivedInformation {
+            width: 100%;
+            height: 60px;
+            border-bottom: 1px solid #f2f2f2;
+            line-height: 60px;
+            color: rgb(49, 111, 163);
+            font-size: 14px;
+            padding: 0 40px;
+        }
+
+        .page-content .address {
+            font-size: 14px;
+            padding: 20px 40px;
+        }
+
+        .page-content .address select {
+            height: 26px;
+            width: 120px;
+            text-align: center;
+        }
+
+        .page-content .address input {
+            border-radius: 5px !important;
+        }
+
+        .page-content #textatea {
+            border-radius: 5px !important;
+            resize: none;
+        }
+
+        .page-content .address .receivedMan span input {
+            height: 26px;
+            border-radius: 5px !important;
+            width: 80px;
+        }
+
+        a {
+            color: rgb(57, 57, 57);
+        }
+
+        .btn {
+            width: 120px;
+            height: 26px;
+            background-color: #fff !important;
+            border: 1px solid rgb(213, 213, 213);
+            line-height: 5px;
+            border-radius: 6px;
+            color: rgb(117, 117, 117) !important;
+            text-shadow: none !important;
+            text-align: left;
+            padding-left: 5px;
+        }
+
+        .page-content .address .dropdown {
+            margin: 20px 8px;
+        }
+
+        .btn-default:active,
+        .btn-default:hover,
+        .btn:active,
+        .btn:hover,
+        .open .btn-default.dropdown-toggle,
+        .open .btn.dropdown-toggle {
+            background-color: #fff !important;
+            color: rgb(117, 117, 117) !important;
+            border: 1px solid rgb(213, 213, 213) !important;
+        }
+
+        #goBack button {
+            margin-left: 70px;
+            padding: 0 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body class="no-skin">
+        <!-- /section:basics/sidebar -->
+        <div class="main-content">
+            <!-- #section:basics/content.breadcrumbs -->
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li style="font-size:18px">
+                        设计师编辑
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page-content">
+                <!-- /section:settings.box -->
+                <div class="page-content-area">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="recivedInformation_container">
+                                <div class="address">
+                                    <div style="margin-bottom: 10px">
+                                        <label for="tel">&nbsp;&nbsp;&nbsp;手机号：</label>
+                                        <input style="height:26px" type="tel" id="tel" placeholder="请输入手机号">
+                                    </div>
+                                    <div style="margin-bottom: 10px">
+                                        <label for="tel">真实姓名：</label>
+                                        <input style="height:26px" type="tel" id="name" placeholder="请输入真实姓名">
+                                    </div>
+                                    <div>
+                                        <span>用户身份：</span>
+                                        <select id="select">
+                                                            <option value="student">自由设计师</option>
+                                                            <option value="design">专业设计师</option>
+                                                            <option value="boss">大师</option>
+                                                          </select>
+                                    </div>
+                                    <div style="margin: 10px 0">
+                                        <label for="tel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备注：</label>
+                                        <input style="height:26px;width:230px" type="tel" id="beizhu" placeholder="请输入备注">
+                                    </div>
+                                    <div style="margin: 20px 0">
+                                        <span>门店展示：</span>
+                                        <select id="zhanshi">
+                                                                    <option value="student">是</option>
+                                                                    <option value="design">否</option>
+                                                                  </select>
+                                    </div>
+                                    <span>&nbsp;&nbsp;门店地址：</span>
+                                    <select id="cmbProvince" name="cmbProvince"></select>
+                                    <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                    <select id="cmbArea" name="cmbArea"></select>
+                                    <div style="padding-left: 84px;margin: 20px 0 40px 0">
+                                        <textarea id="textatea" name="" placeholder="请填写详细收货地址，例如街道名称，门牌号码等" cols="60" rows="5"></textarea>
+                                    </div>
+                                    <div id="goBack">
+                                        <button>提交</button>
+                                        <a href="designManage.html"><button>返回</button></a>
+                                    </div>
+                                </div>
+                                <!-- 提交 -->
+                            </div>
+                            <!-- PAGE CONTENT ENDS -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.page-content-area -->
+            </div>
+            <!-- /.page-content -->
+        </div>
+        <!-- /.main-content -->
+        <div class="footer">
+            <div class="footer-inner">
+                <!-- #section:basics/footer -->
+                <div class="footer-content">
+                    <span class="bigger-120">
+							 合一智造@2017
+						</span>
+                </div>
+
+                <!-- /section:basics/footer -->
+            </div>
+        </div>
+
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+    </div>
+    <!-- /.main-container -->
+
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='./../../../assets/js/jquery.min.js'>" + "<" + "/script>");
+    </script>
+    <!-- <![endif]-->
+    <!--[if IE]>
+			<script type="text/javascript">
+			 window.jQuery || document.write("<script src='./../../../assets/js/jquery1x.min.js'>"+"<"+"/script>");
+			</script>
+		<![endif]-->
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='./../../../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="./../../../assets/js/bootstrap.min.js"></script>
+    <!--[if lte IE 8]>
+    <script src="./../../../assets/js/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="./../../../assets/js/jquery-ui.custom.min.js"></script>
+    <script src="./../../../assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="./../../../assets/js/ace.min.js"></script>
+    <script src="./../../../assets/js/ace-elements.min.js"></script>
+    <script src="./../../../assets/js/jquery.page.js"></script>
+    <script src="./../../../assets/js/channelAce/designEdit.js"></script>
+    <script>
+        addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+    </script>
+</body>
+
+</html>

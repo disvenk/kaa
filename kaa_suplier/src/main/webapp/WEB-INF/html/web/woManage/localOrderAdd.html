@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/localOrderAdd.css"/>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">新增订单</div>
+                        <div id="position" style="width: 310px;background-color: #fff;color: #999;">
+
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">订单编号</div>
+                            <div class="order-detail w81 r"><input type="text" id="orderNo"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">内部编号</div>
+                            <div class="order-detail w81 r"><input type="text" id="insideOrderNo"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">客户</div>
+                            <div class="order-detail w81 r">
+                                <select class="order-client" id="select">
+                                </select>
+                                <button id="addClient" class="admin-btn" style="margin-left: 10px;">新增客户</button>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">联系人</div>
+                            <div class="order-detail w81 r"><input type="tel" id="conta"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">联系方式</div>
+                            <div class="order-detail w81 r"><input type="tel" id="contaTel"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h118" style="height: auto">地址信息</div>
+                            <div class="w81 r pdl0" id="address" style="line-height: 20px;margin: 10px 0;padding-left: 20px">
+                            </div>
+                        </div>
+                        <!--<div class="order-detail-wrap clearfix">-->
+                        <!--<div class="order-detail w17 l">收件人电话</div>-->
+                        <!--<div class="order-detail w81 r"><input type="tel" id="receiverTel"></div>-->
+                        <!--</div>-->
+                        <!--<div class="order-detail-wrap clearfix">-->
+                        <!--<div class="order-detail w17 h178 l">收件人地址</div>-->
+                        <!--<div class="w81 pdl0 r">-->
+                        <!--<div class="order-detail pdl0">-->
+                        <!--<div class="order-detail h56" id="province" style="padding-left: 20px">-->
+                        <!--<select id="cmbProvince" name="cmbProvince"></select>-->
+                        <!--<select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>-->
+                        <!--<select id="cmbArea" name="cmbArea"></select>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="order-detail pdl0 h118">-->
+                        <!--<textarea id="address" placeholder="请输入详细收件地址（不含省市区）" class="input-address"></textarea>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h118">备注</div>
+                            <div class="order-detail w81 r pdl0 h118"><textarea id="remark" class="input-address"></textarea></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">交货日期</div>
+                            <div class="order-detail w81 r"><input type="text" id="placeOrder" placeholder="交货日期" style="width: 180px"></div>
+                        </div>
+                        <div class="admin-detail">商品信息</div>
+                        <!--表格-->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>供应商产品编号</td>
+                                    <td style="width: 46px;">分类</td>
+                                    <td>颜色</td>
+                                    <td>尺寸</td>
+                                    <td>喉到地</td>
+                                    <td>肩宽</td>
+                                    <td>胸围</td>
+                                    <td>腰围</td>
+                                    <td>臀围</td>
+                                    <td>身高</td>
+                                    <td>体重</td>
+                                    <td>件数</td>
+                                    <td>销售单价</td>
+                                    <td>总价</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input class="local-order-input" id="pno" type="text"></td>
+                                    <td><select id="selectCate"></select></td>
+                                    <td>
+                                        <select id="seleteColor">
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="seleteSize">
+                                        </select>
+                                    </td>
+                                    <td><input class="local-order-input" id="throatheight" type="number" placeholder="厘米"></td>
+                                    <td><input class="local-order-input" id="shoulder" type="number" placeholder="厘米"></td>
+                                    <td><input class="local-order-input" id="bust" type="number" placeholder="厘米"></td>
+                                    <td><input class="local-order-input" id="waist" type="number" placeholder="厘米"></td>
+                                    <td><input class="local-order-input" id="hipline" type="number" placeholder="厘米"></td>
+                                    <td><input class="local-order-input" id="height" type="number" placeholder="厘米"></td>
+                                    <td><input class="local-order-input" id="weight" type="number" placeholder="公斤"></td>
+                                    <td><input class="local-order-input" id="qty" type="number"></td>
+                                    <td><input class="local-order-input" id="outputPrice" type="number"></td>
+                                    <td><input class="local-order-input" id="price" type="number" readonly></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">商品图片</div>
+                            <div class="order-detail h170 w81 r" id="img2">
+                                <img id="example" src="../assets/img/join.png" alt="" style="border: 1px solid #f1f1f1;padding: 30px 37px;border-radius: 6px;">
+                                <div id="addPosition2"><a href="javascript:;" class="file">选择文件 <input multiple id="upLoad2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                            <span style="color: red;font-size: 14px;position: relative;top: -10px;margin-left: 300px">最多可上传5张图片，每张不能超过10M</span>
+                        </div>
+                        <div class="order-detail-wrap clearfix" style="border-bottom: 1px solid #ddd">
+                            <div class="order-detail w17 l">工序、工价维护</div>
+                            <div class="order-detail w81 r" style="height: auto;padding-bottom: 30px" id="workerSort">
+                            </div>
+                        </div>
+                        <div style="width: calc(20% + 1000px);text-align: right;color: rgb(97,102,133);margin-top: -30px">
+                            *工序工价关联工资自动计算，请谨慎维护
+                        </div>
+                        <div class="order-detail-wrap clearfix" style="margin-top: 10px">
+                            <div class="order-detail w17 l">面辅料</div>
+                            <div class="order-detail w81 r" style="height: auto" id="rawmaterial">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">材料说明</div>
+                            <div class="order-detail w81 r"><input style="width: 600px" id="material" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">工艺说明</div>
+                            <div class="order-detail w81 r"><input style="width: 600px" id="technics" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">重要说明</div>
+                            <div class="order-detail w81 r"><input style="width: 600px" id="description" type="text"></div>
+                        </div>
+
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 600px">
+        <div class="modal-content" style="margin-top: 0">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增客户</h4>
+            </div>
+            <div class="modal-body">
+                <div><span class="add-name">客户</span><input type="text" id="customer1"></div>
+                <div style="margin-top: 10px;"><span class="add-name">联系人</span><input type="tel" id="contact1"></div>
+                <div style="margin-top: 10px;"><span class="add-name">联系方式</span><input type="tel" id="contel1"></div>
+                <div style="margin-top: 10px;"><span class="add-name">收件人</span><input type="text" id="receiver1"></div>
+                <div style="margin-top: 10px;"><span class="add-name">收件人电话</span><input type="tel" id="recetel1"></div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 h178 l" style="font-size: 15px">收货地址</div>
+                    <div class="w81 pdl0 r">
+                        <div class="order-detail pdl0">
+                            <div class="order-detail h56" id="province" style="padding-left: 4px">
+                                <select id="cmbProvince" name="cmbProvince"></select>
+                                <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                <select id="cmbArea" name="cmbArea"></select>
+                            </div>
+                        </div>
+                        <div class="order-detail pdl0 h118">
+                            <textarea  class="input-address" placeholder="地址信息最多100字" id="address2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal_self">
+                    <div><span id="sure3">保存</span></div>
+                    <div><span data-dismiss="modal">返回</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 600px">
+        <div class="modal-content" style="margin-top: 0">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">新增地址</h4>
+            </div>
+            <div class="modal-body">
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l">收件人</div>
+                    <div class="order-detail w81 r"><input id="receiver" type="text"></div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l">收件人电话</div>
+                    <div class="order-detail w81 r"><input id="mobile" type="text"></div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 h178 l">收件人地址</div>
+                    <div class="w81 pdl0 r">
+                        <div class="order-detail pdl0">
+                            <div class="order-detail h56" id="province1" style="padding-left: 20px">
+                                <select id="cmbProvince1" name="cmbProvince"></select>
+                                <select id="cmbCity1" name="cmbCity" style="margin: 0 20px"></select>
+                                <select id="cmbArea1" name="cmbArea"></select>
+                            </div>
+                        </div>
+                        <div class="order-detail pdl0 h118">
+                            <textarea id="address1" placeholder="请输入详细收件地址（不含省市区）" class="input-address"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal_self">
+                    <div><span data-dismiss="modal">返回</span></div>
+                    <div><span id="sure4">保存</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script src="../assets/js/WOManage/localOrderAdd.js"></script>
+</body>
+</html>

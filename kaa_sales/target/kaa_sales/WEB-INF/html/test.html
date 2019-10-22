@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一盒子  从心|从情|从景</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/salePlat/mobileBoxCommon.css">
+    <link rel="stylesheet" href="../assets/css/salePlat/mobilePay.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+
+<div class="mobile-container clearfix" style="margin: auto;text-align: center;padding-top: 180px">
+    <input id="id_securityCode_input" type="number" value="" style="border: 1px solid #000">
+    <div class="mobile-pay">扫一扫</div>
+</div>
+
+
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script>
+    $(function () {
+        var  url = window.location.href.split('#')[0];
+        var  encodeURI = encodeURIComponent(url);
+        $.ajax({
+            type: 'GET',
+            url: '../boxMobile/getshareinfo?url='+encodeURI,
+            dataType: 'json',
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            headers: {
+                "Accept": "application/json; charset=utf-8",
+                "Authorization": "Basic "
+            },
+            success: function(res){
+                if(res.stateCode == 100){
+                    wx.config({
+                        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: res.data.appid, // 必填，公众号的唯一标识
+                        timestamp: res.data.timestamp, // 必填，生成签名的时间戳
+                        nonceStr: res.data.noncestr, // 必填，生成签名的随机串
+                        signature: res.data.signature,// 必填，签名，见附录1
+                        jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                    });
+                    wx.error(function(res){
+                        layer.msg('配置错误')
+                    })
+                }else{
+                    layer.msg(res.message);
+                }
+            },
+            error:function (err) {
+                layer.msg(err.message);
+            }
+        });
+    });
+    $(".mobile-pay").click(function() {
+        wx.scanQRCode({
+            // 默认为0，扫描结果由微信处理，1则直接返回扫描结果
+            needResult : 1,
+            desc : 'scanQRCode desc',
+            success : function(res) {
+                //扫码后获取结果参数赋值给Input
+                var url = res.resultStr;
+                //商品条形码，取","后面的
+                if(url.indexOf(",")>=0){
+                    var tempArray = url.split(',');
+                    var tempNum = tempArray[1];
+                    $("#id_securityCode_input").val(tempNum);
+                }else{
+                    $("#id_securityCode_input").val(url);
+                }
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

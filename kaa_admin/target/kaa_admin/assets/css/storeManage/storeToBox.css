@@ -1,0 +1,48 @@
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.h170 {
+    height: 170px;
+    line-height: 170px;
+}
+
+.goods-video {
+    width: 288px;
+    height: 138px;
+    margin-top: 14px;
+    margin-right: 10px;
+    background-color: teal;
+    border-radius: 5px;
+    float: left;
+}
+
+.storage-admin-select {
+    width: 200px;
+}
+
+.goods-detail-show {
+    height: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.back-money {
+    display: inline-block;
+    outline: 0;
+    width: 100px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 5px;
+    border: 1px solid #8E8E8E;
+    background-color: #F2F2F2;
+    text-align: center;
+    margin-left: 10px;
+
+}
+
+.modal-footer div {
+    width: 100%;
+}

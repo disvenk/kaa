@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.SuplierMapper">
+
+    <select id="findHomeInfo" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+      select
+        (select COUNT(1) from sup_order so Where produced_status = 2 and so.suplier_id = #{suplierId} and logicDeleted = 0) orderSum,b.countSum ,b.categorySum, b.avgSum
+      from (SELECT COUNT(id) countSum,COUNT(DISTINCT category_id) categorySum ,IFNULL(AVG(price),0) avgSum from sup_product WHERE suplier_id = #{suplierId} and logicDeleted = 0 and status = 1) b
+    </select>
+
+    <select id="orderCount" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+      SELECT COUNT(id) countSum, IFNULL(SUM(total),0) totalSum, IFNULL(AVG(total),0) avgTotal
+      from sup_order WHERE suplier_id = #{suplierId} And produced_status != 1 And logicDeleted = 0 And createdDate BETWEEN #{startDate} AND #{endDate}
+    </select>
+
+    <!-- 工单各生产状态数量 -->
+    <select id="producedStatusCount" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select produced_status producedStatus, COUNT(1) `count`
+        from sup_order WHERE suplier_id = #{suplierId} And order_type = #{orderType} And logicDeleted = 0
+        GROUP BY produced_status
+    </select>
+
+    <!-- 获取供应商首页数据 -->
+    <select id="supplierHomeInfo" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        <![CDATA[
+           {
+           call supplier_home_info (
+            #{suplierId,mode=IN,jdbcType=INTEGER})
+           }
+        ]]>
+    </select>
+
+    <!-- 本地工单交货日期列表 -->
+    <select id="supOrderDeliveryList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT
+        so.order_no orderNo, DATE_FORMAT(sod.delivery_date, '%Y-%m-%d') deliveryDate
+        FROM sup_order so
+        LEFT JOIN sup_order_delivery sod ON so.id = sod.order_id
+        WHERE
+        so.logicDeleted = 0 AND so.produced_status = 3 AND so.order_type = 2 AND so.suplier_id = #{suplierId}
+        AND sod.delivery_date is not null
+        <if test="deliveryDateStr != null and deliveryDateStr != ''"> And sod.delivery_date &gt; #{deliveryDateStr} </if>
+        <if test="deliveryDateEnd != null and deliveryDateEnd != ''"> And sod.delivery_date &lt; #{deliveryDateEnd} </if>
+        ORDER BY sod.delivery_date DESC
+    </select>
+
+    <!-- 客户下单量 -->
+    <select id="supOrderCustomerList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select a.customer, COUNT(a.orderCount) orderCount, COUNT(a.deliveryCount) deliveryCount
+        From
+        (Select ssod.customer_id, ssod.customer,
+        (Select a.id From sup_sales_order_delivery a Where a.id = ssod.id
+        <if test="dateStr != null and dateStr != ''">  AND a.createdDate &gt; #{dateStr} </if>
+        <if test="dateEnd != null and dateEnd != ''">  AND a.createdDate &lt; #{dateEnd} </if>
+        ) orderCount,
+        (Select a.delivery_actual_date From sup_sales_order_delivery a Where a.id = ssod.id
+        <if test="dateStr != null and dateStr != ''">  AND a.delivery_actual_date &gt; #{dateStr} </if>
+        <if test="dateEnd != null and dateEnd != ''">  AND a.delivery_actual_date &lt; #{dateEnd} </if>
+        ) deliveryCount
+        From sup_sales_order sso
+        Left Join sup_sales_order_delivery ssod ON sso.id = ssod.order_id
+        Where sso.logicDeleted = 0 And sso.suplier_id = #{suplierId}
+        And ssod.customer_id is not null) a
+        GROUP BY a.customer_id
+        ORDER BY a.customer_id DESC
+    </select>
+
+    <!-- 工人工单量 -->
+    <select id="supOrderWorkerList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT
+        sw.id, sw.name, COUNT(so.id) orderCount, IFNULL(SUM(ssodp.price * sodet.qty), 0) priceSum
+        FROM sup_order so
+        LEFT JOIN sup_order_detail sodet ON so.id = sodet.order_id
+        LEFT JOIN sup_order_production_log sop ON so.id = sop.order_id
+        LEFT JOIN sup_sales_order_detail_procedure ssodp ON ssodp.id = sop.detail_procedure_id
+        LEFT JOIN sup_sales_order_detail ssod ON ssod.id = ssodp.detail_id
+        LEFT JOIN sup_worker sw ON sw.id = sop.worker_id
+        WHERE
+        so.logicDeleted = 0 AND so.suplier_id = #{suplierId}
+        And sw.id is not null
+        <if test="dateStr != null and dateStr != ''">  AND sop.createdDate &gt; #{dateStr} </if>
+        <if test="dateEnd != null and dateEnd != ''">  AND sop.createdDate &lt; #{dateEnd} </if>
+        GROUP BY sw.id
+        ORDER BY sw.id DESC
+    </select>
+</mapper>

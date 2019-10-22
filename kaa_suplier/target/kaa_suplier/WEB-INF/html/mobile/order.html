@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>订单</title>
+    <link rel="stylesheet" href="../assets/css/dropload.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/order.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+</head>
+<body>
+<div class="main-container" id="quanbu">
+    <!--<div class="order-wrap clearfix">-->
+        <!--<div class="order-info-topic">订单号：<span>2017548252</span><span class="pruduct-condition">生产中</span></div>-->
+        <!--<div id="toMakingDetail" class="order-infos clearfix">-->
+            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+            <!--<div class="order-infos-item">-->
+                <!--<span>货号<span>PW-H75</span></span><br>-->
+                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="order-confirm-btn">生产完成</div>-->
+    <!--</div>-->
+    <!--<div class="order-wrap clearfix">-->
+        <!--<div class="order-info-topic">订单号：<span>2017548252</span><span class="pruduct-condition">生产完成</span></div>-->
+        <!--<div id="toFinishDetail" class="order-infos clearfix">-->
+            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+            <!--<div class="order-infos-item">-->
+                <!--<span>货号<span>PW-H75</span></span><br>-->
+                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="order-confirm-btn" data-toggle="modal" data-target="#myModal">交付记录</div>-->
+    <!--</div>-->
+    <!--<div class="order-wrap clearfix">-->
+        <!--<div class="order-info-topic">订单号：<span>2017548252</span><span class="pruduct-condition">质检不通过</span></div>-->
+        <!--<div id="toNoPassDetail" class="order-infos clearfix">-->
+            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+            <!--<div class="order-infos-item">-->
+                <!--<span>货号<span>PW-H75</span></span><br>-->
+                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="order-confirm-btn">交付记录</div><div class="order-confirm-btn">修改完成</div>-->
+    <!--</div>-->
+    <!--<div class="order-wrap clearfix">-->
+        <!--<div class="order-info-topic">订单号：<span>2017548252</span><span class="pruduct-condition">质检完成</span></div>-->
+        <!--<div id="toPassDetail" class="order-infos clearfix">-->
+            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+            <!--<div class="order-infos-item">-->
+                <!--<span>货号<span>PW-H75</span></span><br>-->
+                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="order-confirm-btn">交付记录</div>-->
+    <!--</div>-->
+    <!--<div class="order-wrap clearfix">-->
+        <!--<div class="order-info-topic">订单号：<span>2017548252</span><span class="pruduct-condition">已完成</span></div>-->
+        <!--<div id="toOkDetail" class="order-infos clearfix">-->
+            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+            <!--<div class="order-infos-item">-->
+                <!--<span>货号<span>PW-H75</span></span><br>-->
+                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="order-confirm-btn">交付记录</div>-->
+    </div>
+</div>
+<!--底部mark-->
+<div class="main-bottom" style="width: 100%;position: fixed;left: 0;bottom: 55px;z-index: 1000">
+    <img src="../assets/images/img/mark.jpg" alt="">
+</div>
+
+<!--底部tab-->
+<div class="weui-tab">
+    <div class="weui-tab__panel">
+    </div>
+    <div class="weui-tabbar">
+        <a href="../suplierHome/homePageHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/homepage.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label selectTable">首页</p>
+        </a>
+        <a href="javascript:" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/orderL.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label" style="color: #ffffff">订单</p>
+        </a>
+        <a href="../suplierHome/goodsHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/goods.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">货品</p>
+        </a>
+        <a href="../suplierHome/personalInfoHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/self.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">个人</p>
+        </a>
+    </div>
+</div>
+
+
+<!--模态框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="../assets/images/img/modalHead.png" alt="">
+            </div>
+            <div class="modal-body" id="myModalInfo">
+                <!--<div class="modal-info">-->
+                    <!--<span class="modal-info-item w40">2017-11-1<br>14:18:22</span>-->
+                    <!--<span class="modal-info-item w30">这是一件很好看的婚纱这是一件很好看的婚纱</span>-->
+                    <!--<span class="modal-info-item w30">生产完成</span>-->
+                <!--</div>-->
+                <!--<div class="modal-info">-->
+                    <!--<span class="modal-info-item w40">2017-11-1<br>14:18:22</span>-->
+                    <!--<span class="modal-info-item w30">这是一件很好看的婚纱这是一件很好看的婚纱</span>-->
+                    <!--<span class="modal-info-item w30">生产完成</span>-->
+                <!--</div>-->
+                <!--<div class="modal-info">-->
+                    <!--<span class="modal-info-item w40">2017-11-1<br>14:18:22</span>-->
+                    <!--<span class="modal-info-item w30">这是一件很好看的婚纱这是一件很好看的婚纱</span>-->
+                    <!--<span class="modal-info-item w30">生产完成</span>-->
+                <!--</div>-->
+            </div>
+            <div class="modal-footer" style="border: none">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="border: none">
+                    <img class="modal-confirm" src="../assets/images/img/modalConfirm.png" alt="">
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/dropload.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/order.js"></script>
+<script type="text/javascript" src="../assets/js/delivery.js"></script>
+
+<script>
+//    if($('.weui-tabbar__label').hasClass('selectTable')){
+//        $('.menu-icon').src='./../../../../kaa_suplier/assets/images/img/homepageL.png';
+//    }
+
+
+</script>
+</body>
+
+</html>

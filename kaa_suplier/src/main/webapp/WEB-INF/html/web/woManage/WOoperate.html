@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--<link rel="stylesheet" href="../assets/css/ace.min.css"/>-->
+    <!--<link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />-->
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOoperate.css"/>
+
+</head>
+<body onkeydown="keyLogin()">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">工人维护</div>
+                        <div class="operate-wrap">
+                            <button id="btnAdd" class="admin-btn">新增</button>
+                        </div>
+                        <div class="inquire-wrap">
+                            工号 <input id="workerNo" type="text">
+                            <span style="margin-left: 40px;">姓名 <input id="workerName" type="text"></span>
+
+                            <span style="margin-left: 40px;">手机号 <input id="phoneNum" type="text"></span>
+                            所属工位
+                            <select id="type" style="width: 186px;margin-left: 40px;">
+                            </select>
+                        </div>
+                        <div class="operate-wrap">
+                            <button id="btnQuery" class="admin-btn">搜索</button>
+                            <button id="resert" class="admin-btn">重置</button>
+                        </div>
+                        <!--<ul class="admin-operate-items clearfix">-->
+                            <!--<li class="admin-operate-item w1"><button id="btnAdd" class="admin-btn" style="width: 68px">新增</button></li>-->
+                            <!--<li class="admin-operate-item w2">-->
+                                <!--工号 <input id="workerNo" type="text">-->
+                                <!--姓名 <input id="workerName" type="text">-->
+                            <!--</li>-->
+                            <!--<li class="admin-operate-item w3"><button id="btnQuery" class="admin-btn w60">搜索</button></li>-->
+                        <!--</ul>-->
+                        <!--<ul class="admin-operate-items clearfix">-->
+                            <!--<li class="admin-operate-item w1"></li>-->
+                            <!--<li class="admin-operate-item w2">-->
+                                <!--手机号 <input id="phoneNum" type="text">-->
+                                <!--所属工位-->
+                                <!--<select id="type">-->
+                                <!--</select>-->
+                            <!--</li>-->
+                            <!--<li class="admin-operate-item w3"><button id="resert" class="admin-btn w60">重置</button></li>-->
+                        <!--</ul>-->
+                        <!--表格-->
+                        <table id="sample-table-2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>工号</th>
+                                <th>姓名</th>
+                                <th>所属工位</th>
+                                <th>手机号</th>
+                                <th>更新时间</th>
+                                <th>备注</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                        </table>
+                        <!--暂无数据-->
+                        <div style="width: 100%;text-align: center;font-size: 26px;margin-top: 135px;color: #999;display: none" id="display">
+                            暂无数据
+                        </div>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--确认删除摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">确认删除</h4>
+            </div>
+            <div class="modal-body">
+                确定删除该工人吗？
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="suredelete">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--重置密码摸态窗-->
+<div class="modal fade" id="resertModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">确认</h4>
+            </div>
+            <div class="modal-body">
+                确认重置密码吗？<br>(重置后密码为888888)
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="sure">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/WOManage/WOoperate.js"></script>
+
+
+</body>
+</html>

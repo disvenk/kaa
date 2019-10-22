@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.WorkerMapper">
+
+    <!-- 工人订单量统计 -->
+    <select id="findWorkerOrder" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select COUNT(a.orderCount) orderCount, IFNULL(SUM(a.priceSum), 0) priceSum
+        From (
+            SELECT
+            sw.id workerId, COUNT(so.id) orderCount, IFNULL(SUM(ssodp.price * sodet.qty), 0) priceSum
+            FROM sup_order so
+            LEFT JOIN sup_order_detail sodet ON so.id = sodet.order_id
+            LEFT JOIN sup_order_production_log sop ON so.id = sop.order_id
+            LEFT JOIN sup_sales_order_detail_procedure ssodp ON ssodp.id = sop.detail_procedure_id
+            LEFT JOIN sup_sales_order_detail ssod ON ssod.id = ssodp.detail_id
+            LEFT JOIN sup_worker sw ON sw.id = sop.worker_id
+            WHERE
+            so.logicDeleted = 0 AND sw.id = #{workerId}
+            <if test="dateStr != null and dateStr != ''">  AND sop.createdDate &gt; #{dateStr} </if>
+            <if test="dateEnd != null and dateEnd != ''">  AND sop.createdDate &lt; #{dateEnd} </if>
+            GROUP BY so.id
+        ) a
+        GROUP BY a.workerId
+    </select>
+
+    <!-- 工人每月总工价统计 -->
+    <select id="findWorkerMonthOrder" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT
+        COUNT(so.id) orderCount, IFNULL(SUM(ssodp.price * sodet.qty), 0) priceSum, DATE_FORMAT(sop.createdDate, '%Y-%m') date
+        FROM sup_order so
+        LEFT JOIN sup_order_detail sodet ON so.id = sodet.order_id
+        LEFT JOIN sup_order_production_log sop ON so.id = sop.order_id
+        LEFT JOIN sup_sales_order_detail_procedure ssodp ON ssodp.id = sop.detail_procedure_id
+        LEFT JOIN sup_sales_order_detail ssod ON ssod.id = ssodp.detail_id
+        LEFT JOIN sup_worker sw ON sw.id = sop.worker_id
+        WHERE
+        so.logicDeleted = 0 AND sw.id = #{workerId}
+        <if test="dateStr != null and dateStr != ''">  AND sop.createdDate &gt; #{dateStr} </if>
+        <if test="dateEnd != null and dateEnd != ''">  AND sop.createdDate &lt; #{dateEnd} </if>
+        GROUP BY DATE_FORMAT(sop.createdDate, '%Y-%m')
+    </select>
+
+    <!-- 工人扫码工单列表 -->
+    <select id="findWorkerSupOrder" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT
+        DATE_FORMAT(sopl.production_date, '%Y-%m-%d %H:%i:%s') productionDate
+        ,IFNULL(DATE_FORMAT(sod.delivery_date, '%Y-%m-%d'),'') deliveryDate
+        , so.order_no orderNo, IFNULL(ssodp.procedure_name, '') procedureName, IFNULL(so.urgent, 1) urgent
+        ,IFNULL((ssodp.price * sodet.qty), 0) price
+        FROM sup_order_production_log sopl
+        LEFT JOIN sup_order so ON so.id = sopl.order_id
+        LEFT JOIN sup_order_delivery sod ON so.id = sod.order_id
+        LEFT JOIN sup_order_detail sodet ON so.id = sodet.order_id
+        LEFT JOIN sup_sales_order_detail_procedure ssodp ON ssodp.id = sopl.detail_procedure_id
+        LEFT JOIN sup_sales_order_detail ssod ON ssod.id = ssodp.detail_id
+        WHERE so.logicDeleted = 0 And sopl.worker_id = #{workerId}
+        <if test="dateStr != null and dateStr != ''">  AND sopl.production_date &gt; #{dateStr} </if>
+        <if test="dateEnd != null and dateEnd != ''">  AND sopl.production_date &lt; #{dateEnd} </if>
+        GROUP BY so.id, ssodp.procedure_id
+        ORDER BY productionDate DESC
+    </select>
+
+
+</mapper>

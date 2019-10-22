@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.StoreHomeMapper">
+
+    <select id="findProductCategoryList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT pc.id, pc.name
+        FROM sto_product sp
+        LEFT JOIN pla_product_category pc ON pc.id = sp.category_id
+        WHERE sp.store_id = #{storeId} AND pc.parent_id IS NOT NULL AND pc.logicDeleted = 0
+        GROUP BY sp.category_id
+    </select>
+
+</mapper>

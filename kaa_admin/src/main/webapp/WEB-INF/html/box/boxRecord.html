@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一盒子订阅记录</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css">
+    <link rel="stylesheet" href="../assets/css/box/boxRecord.css"/>
+
+</head>
+<body>
+
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+
+<div class="spinner-wrap">
+    <div class="spinner-x">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w2">
+                            <li class="admin-operate-item w2">
+                            <li class="admin-operate-item w2">
+                            <li class="admin-operate-item w2">用户 <input class="admin-input" type="text" id="username" placeholder="用户名"></li>
+                            <li class="admin-operate-item w1">
+                                日期 <input type="text" style="width:180px;height:30px" class="layui-input" id="placeOrder" placeholder="日期">
+                            </li>
+                            <li class="admin-operate-item w2">状态
+                                <select id="status">
+                                    <option value=""></option>
+                                    <option value="0">未发出</option>
+                                    <option value="1">已发出</option>
+                                    <option value="2">已退回</option>
+                                    <option value="3">已完成</option>
+                                </select>
+                            </li>
+                            <li class="admin-operate-item w7"><button id="orderSearch" class="admin-btn w60">搜索</button><button id="orderReset" class="admin-btn w60 ml6p">重置</button></li>
+                        </ul>
+
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="order-topic center">商品信息</th>
+                                <th class="order-topic center">单价</th>
+                                <th class="order-topic center">数量</th>
+                                <th class="order-topic center">付款状态</th>
+                                <th class="order-topic center">状态</th>
+                                <th class="order-topic center">用户</th>
+                                <th class="order-topic center">二维码</th>
+                                <th class="order-topic center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                        </table>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认删除</h4>
+            </div>
+            <div class="modal-body">
+                <span>您确认要删除该件商品吗？</span>
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="sure">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--发货摸态窗-->
+<div class="modal fade" id="sendModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">发货</h4>
+            </div>
+            <div class="modal-body">
+                <div class="info-wrap">
+                    快递公司
+                    <select style="width: 150px;height: 32px;margin-left: 25px;border: 1px solid #d5d5d5" id="company">
+                    </select>
+                </div>
+                <div class="info-wrap">
+                    快递单号
+                    <input id="orderNo" placeholder="请输入快递单号" type="text" style="width: 150px;height: 32px;margin-left: 25px;border-radius: 6px !important;border: 1px solid #d5d5d5">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div data-dismiss="modal">取消</div>
+                <div class="sure" id="sure1" style="color: #0e90d2">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--快递记录摸态窗-->
+<div class="modal fade" id="deliveryModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 600px">
+        <div class="modal-content" style="width: 600px;margin-top: 0">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">快递记录</h4>
+            </div>
+            <div class="modal-body" style="padding-top: 0">
+                <table style="width: 100%" class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>时间</th><th>快递公司</th><th>快递单号</th><th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <iframe src="" frameborder="0" style="width: 100%;height: 340px"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--二维码摸态窗-->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 333px;height: 410px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel3">二维码</h4>
+            </div>
+            <div class="modal-body" >
+                <span id="qrCode"></span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script src="../assets/js/qrcode.js"></script>
+<script src="../assets/js/box/boxRecord.js"></script>
+</body>
+</html>

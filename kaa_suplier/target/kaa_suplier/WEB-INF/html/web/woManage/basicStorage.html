@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/basicClient.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">商品库维护</div>
+                        <div class="operate-wrap">
+                            <button id="btnAdd" class="admin-btn">新增</button>
+                        </div>
+                        <div class="inquire-wrap">
+                            <span>供应商产品编号 <input type="text" id="pno"></span>
+                            <span style="margin-left: 100px;">商品名称 <input type="text" id="name"></span>
+                        </div>
+                        <div class="operate-wrap">
+                            <button id="btnQuery" class="admin-btn">搜索</button>
+                            <button id="resert" class="admin-btn">重置</button>
+                        </div>
+                        <!--<ul class="admin-operate-items clearfix">-->
+                            <!--<li class="admin-operate-item w1"><button id="btnAdd" class="admin-btn" style="width: 68px">新增</button></li>-->
+                            <!--<li class="admin-operate-item w2">-->
+                                <!--<span>供应商产品编号 <input type="text" id="pno"></span>-->
+                                <!--<span>商品名称 <input type="text" id="name"></span>-->
+                            <!--</li>-->
+                            <!--<li class="admin-operate-item w3"><button id="btnQuery" class="admin-btn w60">搜索</button><button id="resert" class="admin-btn w60" style="margin-left: 4px;">重置</button></li>-->
+                        <!--</ul>-->
+                        <!--暂无数据-->
+                        <div style="width: 100%;text-align: center;font-size: 26px;margin-top: 185px;color: #999;display: none" id="display">
+                            暂无数据
+                        </div>
+                        <!--表格-->
+                        <table id="sample-table-2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <td>供应商产品编号</td>
+                                <td>商品名称</td>
+                                <td>图片</td>
+                                <td>分类</td>
+                                <td>颜色</td>
+                                <td>尺寸</td>
+                                <td>更新时间</td>
+                                <td>备注</td>
+                                <td>操作</td>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--删除摸态窗-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">删除</h4>
+            </div>
+            <div class="modal-body">
+                确定删除吗？
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="sure5">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--生成工单摸态窗-->
+<div class="modal fade" id="finishModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">生成工单</h4>
+            </div>
+            <div class="modal-body">
+                <input type="radio" checked="true" name="1" style="position: relative;left: -5px;top: -2px;">生成多笔订单
+                <input type="radio" name="1" style="margin-left: 10px;position: relative;left: -5px;top: -2px;">生成单笔订单
+            </div>
+            <div class="modal-footer">
+                <div data-dismiss="modal">取消</div>
+                <div class="sure" id="sure3" style="color: #0e90d2">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/LodopFuncs.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script src="../assets/js/WOManage/basicStorage.js"></script>
+
+</body>
+</html>

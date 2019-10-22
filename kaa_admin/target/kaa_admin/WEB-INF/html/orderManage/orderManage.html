@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>平台端 订单管理</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.css">
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/common/infoTable.css"/>
+    <link rel="stylesheet" href="../assets/css/orderManage/orderManage.css"/>
+
+</head>
+<style>
+    body{
+        min-width: 1580px !important;
+    }
+</style>
+<body>
+
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12" style="min-width: 1285px">
+
+                        <div class="admin-detail">线下销售订单管理</div>
+
+
+                        <div class="order-right-info bg-324 mt2">
+                            <ul class="order-info-items clearfix">
+                                <li class="order-info-item l">商品名称<input id="productName" class="order-info-input" type="text" placeholder="请输入商品名称"></li>
+                                <li class="order-info-item l">下单日期<input style="width: 150px" name="startTm" id="datepickerStart" type='text' class="input-sm" readonly="readonly" placeholder="开始日期"/><span class="date-span">——</span><input placeholder="结束日期" style="width: 150px" name="startTm" id="datepickerEnd" type='text' class="input-sm" readonly="readonly"/></li>
+                                <li class="order-info-item l">下单人<input id="nameMobile" class="order-info-input" type="text" placeholder="请输入下单人"></li>
+                                <!--<li class="order-info-item l">-->
+                                <!--如要使用，需重新开发-->
+                                    <!--生产状态-->
+                                    <!--<select id="producedStatus">-->
+                                        <!--<option value="0"></option>-->
+                                        <!--<option value="1">待接单</option>-->
+                                        <!--<option value="2">生产中</option>-->
+                                        <!--<option value="3">生产完成</option>-->
+                                        <!--<option value="4">质检通过</option>-->
+                                        <!--<option value="5">质检未通过</option>-->
+                                        <!--<option value="6">已完成</option>-->
+                                    <!--</select>-->
+                                <!--</li>-->
+                            </ul>
+                        </div>
+                        <div class="order-right-info bg-324 mt2">
+                            <ul class="order-info-items clearfix">
+                                <li class="order-info-item l">订单编号<input id="suplierOrderNo" class="order-info-input" type="text" placeholder="请输入订单编号"></li>
+                                <li class="order-info-item l">
+                                    订单状态
+                                    <select id="orderStatus">
+                                        <option value=""></option>
+                                        <option value="0">待支付</option>
+                                        <option value="1">待发货</option>
+                                        <option value="4">待收货</option>
+                                        <option value="2">已完成</option>
+                                        <option value="3">已取消</option>
+                                    </select>
+                                </li>
+                                <li class="order-info-item l">
+                                    渠道
+                                    <select id="channelType">
+                                        <option value=""></option>
+                                        <option value="1">线上渠道</option>
+                                        <option value="0">线下渠道</option>
+                                    </select>
+                                </li>
+                                <li class="order-info-item l">渠道名称<input id="channelName" class="order-info-input" type="text" placeholder="请输入渠道名称"></li>
+                                <li class="order-info-item l">
+                                    <button class="buy-btn-search" id="search">搜  索</button>
+                                    <button class="buy-btn-reset" id="resert">重  置</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--<div class="buy-order-cate">-->
+                            <!--<ul class="order-cate-items clearfix">-->
+                                <!--<li class="order-cate-item">全部（<span>5</span>）</li>-->
+                                <!--<li class="order-cate-item">待支付（<span>5</span>）</li>-->
+                                <!--<li class="order-cate-item">待发货（<span>5</span>）</li>-->
+                                <!--<li class="order-cate-item">待收货（<span>5</span>）</li>-->
+                                <!--<li class="order-cate-item">已完成（<span>5</span>）</li>-->
+                                <!--<li class="order-cate-item br0">已取消（<span>5</span>）</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+
+                        <table id="table" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="order-topic">商品信息</th>
+                                <th class="order-topic">单价</th>
+                                <th class="order-topic">数量</th>
+                                <th class="order-topic">实付款</th>
+                                <th class="order-topic">渠道</th>
+                                <th class="order-topic">下单人</th>
+                                <th class="order-topic">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="mymodalSelf" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 700px">
+        <div class="modal-content" style="width: 700px;margin-top: 0">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" style="padding: 30px;text-align: left">
+                <div>质检人员：<input type="text" placeholder="请输入质检人员名字" maxlength="20" id="personnel"></div>
+                <!--<div style="margin: 15px 0">质检时间：<span id="time"></span></div>-->
+                <div style="margin: 15px 0">问题说明：<input type="text" placeholder="请输入质检说明" style="width: 554px" id="instruction"></div>
+                <div style="padding-left: 75px">
+                    <button onclick="updateProducedStatus(4)" style="margin-right: 20px;padding: 2px 19px;background-color: #0e90d2;color: #fff">通过</button>
+                    <button onclick="updateProducedStatus(5)" style="padding: 2px 19px;background-color: #0e90d2;color: #fff">不通过</button>
+                </div>
+                <div style="border-top: 1px solid #e5e5e5;margin-top: 15px;padding-top: 15px">质检记录</div>
+                <table class="table">
+                <thead>
+            <tr>
+                <th>时间</th>
+                <th>人员</th>
+                <th>说明</th>
+                <th>结果</th>
+            </tr>
+            </thead>
+                <tbody id="logTbody">
+                    <!--<tr>-->
+                        <!--<td>2017-10-12 09:44:90</td>-->
+                        <!--<td>三</td>-->
+                        <!--<td>没有</td>-->
+                        <!--<td>通过</td>-->
+                    <!--</tr>-->
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 970px">
+        <div class="modal-content" style="width: 970px;margin-top: 0">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" style="padding: 25px 45px;font-size: 14px">
+                <div style="margin-bottom: 20px">供应商名称 <input type="text" id="supplierName">
+                    <span style="margin: 0 36px">工厂面积 <input type="number" style="width: 80px" id="supplierSize"></span>
+                    <span>主营业务 <input type="text" id="supplierScope"></span>
+                    <button style="padding: 3px 16px;background-color: #0e90d2;color: #fff;margin-left: 60px" onclick="suplierList()">搜索</button>
+                </div>
+               <table class="table table-bordered">
+                   <thead>
+                   <th>供应商名称</th>
+                   <th>联系人</th>
+                   <th>联系电话</th>
+                   <th>工厂地址</th>
+                   <th>开厂年限</th>
+                   <th>主营业务</th>
+                   <th>生产价格</th>
+                   <th>操作</th>
+                   </thead>
+                   <tbody id="supplierList">
+                   <!--<tr>-->
+                       <!--<td>123</td>-->
+                       <!--<td>123</td>-->
+                       <!--<td>123</td>-->
+                       <!--<td>123</td>-->
+                       <!--<td>123</td>-->
+                       <!--<td>123</td>-->
+                       <!--<td><input type="number"></td>-->
+                       <!--<td><span>选择</span></td>-->
+                   <!--</tr>-->
+
+                   </tbody>
+               </table>
+            </div>
+            <!--<div class="modal-footer" style="font-size: 15px;color: #666;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px">-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="shipping" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" style="padding: 30px;text-align: left">
+                <div>快递公司：
+                    <select id="deliveryCompany">
+                    </select>
+                </div>
+                <div style="margin-top: 10px;">快递单号：<input type="text" placeholder="请输入快递单号" maxlength="30" id="deliveryNo"></div>
+
+            </div>
+            <div class="modal-footer" style="font-size: 15px;color: #666;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px">
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+                <div id="orderShipping">确定</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--摸态窗-->
+<div class="modal fade" id="sendInformation" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body" style="padding: 30px;text-align: left">
+                <div>快递公司：<span id="deliveryCompanyLogName"></span>
+                </div>
+                <div>快递单号：<span id="deliveryLogNo"></span>
+                </div>
+                <iframe id="iframe" src="" frameborder="0" width="90%" height="869px" style="zoom: 40%"></iframe>
+            </div>
+            <div class="modal-footer" style="font-size: 15px;color: #666;border-bottom-left-radius: 6px;border-bottom-right-radius: 6px">
+                <!--<div data-dismiss="modal" style="color: #0e90d2">返回</div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--工单状态摸态窗-->
+<div class="modal fade" id="remarkLogModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width: 600px">
+        <div class="modal-content" style="width: 600px;margin-top: 0">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">工单状态</h4>
+            </div>
+            <div class="modal-body" style="padding-top: 0">
+                <table style="width: 100%" class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>工单号</th><th>工单状态</th><th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/bootstrap-datetimepicker.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+
+
+<script src="../assets/js/orderManage/orderManage.js"></script>
+<script type="text/javascript">
+
+    $( "#datepickerStart" ).datetimepicker({
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: true,
+        startView: 2,
+        minView: 2,
+        forceParse: false,
+        language: 'zh-CN'
+    });
+    $( "#datepickerEnd" ).datetimepicker({
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: true,
+        startView: 2,
+        minView: 2,
+        forceParse: false,
+        language: 'zh-CN'
+    });
+
+</script>
+
+
+</body>
+</html>

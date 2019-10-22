@@ -1,0 +1,199 @@
+.admin-operate-item {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+#addFromStorage{
+    width: 160px;
+}
+.admin-operate-item.w1 {
+    width: 8%;
+}
+
+
+#addFromStore{
+    width: 120%;
+}
+.admin-operate-item.w2 {
+    width: 20%;
+}
+
+.admin-operate-item.w3 {
+    width: 16%;
+}
+
+.admin-operate-item.w4 {
+    width: 16%;
+}
+
+.admin-operate-item.w5 {
+    width: 10%;
+}
+
+.admin-operate-item.w6 {
+    width: 14%;
+}
+
+.admin-operate-item.w7 {
+    width: 12%;
+}
+
+.admin-input {
+    width: 60%;
+    height: 30px;
+}
+.tcdPageCode a:hover {
+    text-decoration: none;
+    border: 1px solid #428bca;
+}
+.tcdPageCode a {
+    display: inline-block;
+    color: #428bca;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    margin: 0 2px;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.tcdPageCode span.current {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    margin: 0 2px;
+    color: #fff;
+    background-color: #428bca;
+    border: 1px solid #428bca;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+.tcdPageCode span.disabled {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    margin: 0 2px;
+    color: #bfbfbf;
+    background: #f2f2f2;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+#myModal .modal-content{
+    border-radius: 8px;
+}
+#myModal .modal-dialog{
+    margin: 100px auto;
+    width: 450px;
+}
+#myModal .modal-body{
+    text-align: center;
+    color: #666;
+    padding: 30px 15px;
+    font-size: 16px;
+}
+#myModal .modal-title{
+    text-align: center;
+}
+#myModal .modal-header .close{
+    font-size: 26px;
+}
+#myModal .modal-footer{
+    background-color: #fff;
+    text-align: center;
+    padding: 0;
+    height: 46px;
+    line-height: 46px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#myModal .modal-footer div{
+    float: left;
+    width: 50%;
+    font-size: 15px;
+    color: #666;
+    height: 44px;
+    cursor: pointer;
+}
+#myModal .modal-footer div:nth-child(1){
+    border-right: 1px solid #e5e5e5;
+}
+.sure{
+    cursor: pointer;
+}
+.modal-content{
+    margin: auto auto;
+    margin-top: 200px;
+    width: 360px;
+}
+
+/*loading flash*/
+
+.spinner {
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 10px;
+    z-index: 999;
+}
+
+.spinner > div {
+    background-color: #67CF22;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+    0%, 40%, 100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1.0)
+    }
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
+}
+
+

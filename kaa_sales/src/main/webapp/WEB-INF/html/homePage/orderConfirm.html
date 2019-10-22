@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css">
+    <link rel="stylesheet" href="../assets/css/salePlat/orderConfirm.css">
+</head>
+<body>
+<div id="head"></div>
+
+<div class="main-content" style="margin-top: 100px">
+    <div class="order-container">
+        <div class="recivedInformation_container">
+            <div class="recivedInformation" style="padding: 20px 0;font-size: 20px">
+               收货地址
+            </div>
+            <div style="margin-top: 8px" id="address_container">
+
+            </div>
+            <div type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <label style="color: #999"><input id="add" style="margin-right: 6px" name="address" type="radio" value="2" />使用新地址</label>
+            </div>
+            <div class="collapse" id="collapseExample">
+                <div class="address well">
+                    <div style="height: 50px;margin-top: 8px;padding-left: 26px"><span style="margin-right: 50px">收件人： <input type="text" id="receive"></span></div>
+                    <span>收件人地址：</span>
+                    <select id="cmbProvince" name="cmbProvince"></select>
+                    <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                    <select id="cmbArea" name="cmbArea"></select>
+                    <div style="padding-left: 86px;margin: 15px 0">
+                        <textarea id="textarea" name="" placeholder="请填写详细收货地址，例如街道名称，门牌号码等" cols="60" rows="5"></textarea>
+                    </div>
+                    <div class="receivedMan" style="padding-left: 7px">
+                        <span>收件人电话：<input style="width: 150px" type="tel" id="receivedTel"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-list">
+            <ul class="order-topic-items clearfix">
+                <li class="order-topic-item w60">商品信息</li>
+                <li class="order-topic-item w20">价格</li>
+                <li class="order-topic-item w20">数量</li>
+            </ul>
+        </div>
+        <div class="confirm-btn">确认</div>
+    </div>
+
+</div>
+<!--footer部分-->
+<div id="bottom"></div>
+
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/bui.js"></script>
+<script type="text/javascript" src="../assets/js/config.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/orderConfirm.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/head.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/bottom.js"></script>
+
+</body>
+</html>

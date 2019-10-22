@@ -1,0 +1,40 @@
+body {
+    background-color: #f6f6f6 !important;
+    color: #333;
+    height:auto;
+    font-size: 14px;
+}
+
+.clearfix {
+    overflow:auto;
+    zoom:1;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main-header {
+    height: 70px;
+    line-height: 70px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1976d2;
+    text-align: center;
+    position: relative;
+    border-top: 1px solid #1970c6;
+}
+
+.supplier-show {
+    display: block;
+    width: 100%;
+    max-width: 414px;
+}

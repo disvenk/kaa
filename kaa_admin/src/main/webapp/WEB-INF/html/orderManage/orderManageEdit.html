@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>平台端采购订单详情</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/orderManage/orderManageEdit.css"/>
+
+</head>
+<style>
+    #province select{
+        width: 130px;
+    }
+</style>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+                        <div class="admin-detail">采购订单编辑</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">订单编号</div>
+                            <div class="order-detail w81 r" id="suplierOrderNo"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人</div>
+                            <div class="order-detail w81 r">
+                                <!--<input id="receiver" type="text">-->
+                                <input id="receiver" class="supplier-name check-name" type="text" onblur="checkUerName()">
+                                <span class="error-info error-user">名称长度超出限制,最长20个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人电话</div>
+                            <div class="order-detail w81 r">
+                                <!--<input id="mobile" type="tel" style="height: 37px;border-radius: 6px !important;">-->
+                                <input id="mobile" class="phone-num" type="tel" onblur="checkMobile()" style="height: 37px;border-radius: 6px !important;">
+                                <span class="error-info error-mobile">请输入正确的手机号</span>
+                            </div>
+                        </div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 h178 l">门店地址</div>
+                            <div class="w81 pdl0 r">
+                                <div class="order-detail h56" id="province" style="padding-left: 13px">
+                                    <select id="cmbProvince" name="cmbProvince"></select>
+                                    <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                    <select id="cmbArea" name="cmbArea"></select>
+                                </div>
+                                <div class="order-detail pdl0 h118">
+                                    <textarea class="input-address" id="address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 h118 l">备注</div>
+                            <div class="order-detail pdl0 w81 h118 r">
+                                <textarea class="input-address" id="remarks"></textarea>
+                            </div>
+                        </div>
+                        <!--表格-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>商品名称</th>
+                                <th>货号</th>
+                                <th>图片</th>
+                                <th>分类</th>
+                                <th>供应商</th>
+                                <th>生产状态</th>
+                                <th>颜色</th>
+                                <th>尺寸</th>
+                                <th>喉到地</th>
+                                <th>肩宽</th>
+                                <th>胸围</th>
+                                <th>腰围</th>
+                                <th>臀围</th>
+                                <th>身高</th>
+                                <th>体重</th>
+                                <th>件数</th>
+                                <th>单价</th>
+                                <th>总价</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                        <div style="height: 50px;text-align: right;padding-right: 30px">共计:<span style="margin-right: 50px" id="qtySum"></span>合计:<span id="subtotalSum"></span></div>
+                        <!--&lt;!&ndash; 总和 &ndash;&gt;-->
+                        <!--<div class="order-detail txr">共<span class="order-detail-amount">4</span>件   &nbsp;&nbsp;合计：<span class="order-detail-account">￥1000</span></div>-->
+
+                        <div class="order-detail-wrap clearfix mt-10">
+                            <div class="order-detail w17 l">支付方式</div>
+                            <div class="order-detail w81 r" id="payTypeName"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">支付金额</div>
+                            <div class="order-detail w81 r" id="actualPay"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">支付时间</div>
+                            <div class="order-detail w81 r" id="payTime"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">下单时间</div>
+                            <div class="order-detail w81 r" id="orderDate"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">期望发货日期</div>
+                            <div class="order-detail w81 r" id="expectsendDate"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">交易状态</div>
+                            <div class="order-detail w81 r">
+                                <select class="storage-admin-select" id="statusName">
+                                    <option value="0">待支付</option>
+                                    <option value="1">待发货</option>
+                                    <option value="2">已完成</option>
+                                    <option value="3">已取消</option>
+                                    <option value="4">待收货</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">对应线下/线上销售订单号</div>
+                            <div class="order-detail w81 r" id="salesOrderNo"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">对应线下/线上销售渠道名称</div>
+                            <div class="order-detail w81 r" id="channelName"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">快递公司</div>
+                            <div class="order-detail w81 r">
+                                <select class="storage-admin-select" id="deliveryCompanyName">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">快递单号</div>
+                            <div class="order-detail w81 r">
+                                <input type="text" id="deliveryNo" style="height: 30px">
+                            </div>
+                        </div>
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="save">保存</button><button class="admin-btn w100 ml6p" onclick="history.go('-1')">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body" style="padding: 40px 0;font-size: 17px">
+             修改成功
+            </div>
+            <div class="modal-footer">
+                <div id="sure" style="width: 100%">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" src="../assets/js/layer/layer.js"></script>-->
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/orderManage/orderManageEdit.js"></script>
+
+
+</body>
+</html>

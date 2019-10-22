@@ -1,0 +1,248 @@
+
+body {
+    background-color: #fff !important;
+    /*overflow: auto;*/
+}
+
+.box-detail {
+    width: 100%;
+}
+
+.box-product {
+    width: 100%;
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+}
+
+.box-product-items {
+    overflow-y: hidden;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.box-product-item {
+    position: relative;
+    float: left;
+    width: 282px;
+    height: 350px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 18px;
+    margin-top: 14px;
+    padding-top: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product-item-modal {
+    position: absolute;
+    z-index: 999;
+    width: 282px;
+    height: 350px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    margin-top: -12px;
+    display: none;
+}
+
+.box-product-item:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.box-model {
+    width: 260px;
+    height: 260px;
+    border-radius: 5px;
+}
+
+.box-product-intro {
+    width: 260px;
+    height: 44px;
+    line-height: 22px;
+    margin: 20px auto 0;
+    text-align: left;
+    font-size: 13px;
+    color: #999;
+    /*多行文本超出省略号*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+}
+
+.box-product-mark {
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    margin: 10px auto;
+}
+
+.box-product-mark img {
+    cursor: pointer;
+}
+
+.box-more {
+    height: 162px;
+    line-height: 162px;
+    text-align: center;
+}
+
+.box-more-btn {
+    cursor: pointer;
+}
+
+.box-second-step {
+    height: 112px;
+    line-height: 112px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.box-discount {
+    display: block;
+    width: 138px;
+    height: 38px;
+    text-align: center;
+    line-height: 34px;
+    border: 1px solid #2b3646;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #2b3646;
+    margin: 40px auto 0;
+}
+
+.product-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.info-wrap {
+    width: 848px;
+    margin: 0 auto;
+    /*height: 800px;*/
+}
+
+.info-head {
+
+}
+
+.info-head-img {
+    display: block;
+    float: left;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.info-head-right {
+    float: right;
+    width: 528px;
+}
+
+.info-right-topic {
+    height: 107px;
+    border-bottom: 1px solid #ccc;
+    line-height: 24px;
+    padding-top: 14px;
+}
+
+.product-name {
+    display: block;
+    font-size: 18px;
+}
+
+.product-num {
+    font-size: 12px;
+    padding-top: 14px;
+    display: inline-block;
+}
+
+.product-color,.product-size  {
+    height: 36px;
+    line-height: 36px;
+    margin-top: 44px;
+    color: #666;
+    font-size: 14px;
+}
+
+.product-color-option {
+    display: inline-block;
+    padding: 0 15px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px dashed #ccc;
+    margin-left: 10px;
+}
+.product-color-option:nth-of-type(1){
+    border: 1px solid #2b3646;
+    color: #bd946e;
+    background-color: #2b3646;
+}
+.product-size-option {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px dashed #ccc;
+    margin-left: 10px;
+    color: #ccc;
+}
+.product-size-option:nth-of-type(1) {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px solid #2b3646;
+    margin-left: 10px;
+    color: #bd946e;
+    background-color: #2b3646;
+}
+.product-detail {
+    height: 50px;
+    border-bottom: 1px solid #2b3646;
+    margin-top: 44px;
+}
+
+.product-detail-topic {
+    display: inline-block;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #2b3646;
+    font-size: 20px;
+    color: #fff;
+}
+
+.product-detail-area {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.product-detail-area p{
+    margin: 0 !important;
+    line-height: 0 !important;
+}
+
+.product-detail-area img {
+    width: 100%;
+}
+
+.hy-icon {
+    height: 186px;
+    background: #f2f2f2 url("../../../assets/img/salePlat/hy-icon.jpg") center 60px no-repeat;
+}
+

@@ -1,0 +1,65 @@
+body {
+    background-color: #fff;
+}
+
+.video-container {
+    width: 1050px;
+    margin: 0 auto;
+}
+
+.video-list {
+    height: 310px;
+    border-top:1px solid #ccc;
+    padding-top: 40px;
+}
+
+.video-list:nth-child(0) {
+    border-top: 0;
+}
+
+.video-list-left {
+    float: left;
+    width: 336px;
+}
+
+.video-list-img {
+    width: 100%;
+    height: 190px;
+    cursor: pointer;
+}
+
+.video-list-right {
+    float: right;
+    width: 700px;
+    padding-left: 15px;
+}
+
+.list-right-topic {
+    font-size: 23px;
+    color: #000;
+}
+
+.list-right-num {
+    height: 36px;
+    line-height: 36px;
+    background: url("../../../assets/img/salePlat/eye.png") left 11px no-repeat;
+    padding-left: 30px;
+    font-size: 16px;
+    color: #727272;
+}
+
+.list-right-text {
+    font-size: 16px;
+    line-height: 28px;
+}
+.video-list-left{
+    position: relative;
+}
+.video-list-left .play{
+    position: absolute;
+    left:150px;
+    top:80px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}

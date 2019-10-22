@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>平台端商品管理添加页面</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css">
+    <link rel="stylesheet" href="../assets/css/DesignerGoodsManage/DesignerGoodsEdit.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!--loading flash-->
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+                        <div class="admin-detail">商品编辑</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">商品ID</div>
+                            <div class="order-detail w81 r" id="productCode"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>商品名称</div>
+                            <div class="order-detail w81 r">
+                                <!--<input type="text" id="goodsName">-->
+                                <input id="goodsName" class="supplier-name check-supplier" type="text" onblur="checkSupplierName()">
+                                <span class="error-info error-supplier">商品名称过长？最长30个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l"><span class="necessary">*</span>商品图片</div>
+                            <div class="order-detail h170 w81 r" id="img">
+                                <div class="img_container" style="display: inline-block">
+                                </div>
+                                <div id="addPosition"><a href="javascript:;" class="file">选择文件 <input multiple id="upLoad" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h230 w17 l">视频</div>
+                            <div class="order-detail w81 r" style="height: 230px;position: relative;line-height: 0">
+                                <div class="progress active" style="width: 330px;position: absolute;top: 100px;left: 50px;display: none">
+                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                        <span class="sr-only" style="position: relative">上传中</span>
+                                    </div>
+                                </div>
+                                <input id="videoUploader" name="file" type="file" value=""  class="file" style="position: absolute;left: 600px;top: 109px;width: 85px;height: 30px;z-index: 1000;opacity: 0" placeholder="点击上传" />
+                                <div>
+                                    <video style="width: 420px;height: 220px" value="" src="" id="video" controls="controls"></video>
+                                </div>
+                                <a style="position: absolute;left: 600px;top: 109px;" href="javascript:;" class="file">选择文件 <input id="upVideo" style="height: 30px" type="file" accept="video/*"> </a>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix" style="height: 70px">
+                            <div class="order-detail w17 l" style="height: 70px;line-height: 70px"><span class="necessary">*</span>商品标签</div>
+                            <div class="order-detail w81 r" id="labelNmae" style="height: 70px;line-height: 30px">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">品牌</div>
+                            <div class="order-detail w81 r">
+                                <input type="text" value="" id="brand">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>分类</div>
+                            <div class="order-detail w81 r">
+                                <select class="storage-admin-select" id="Suplierscope">
+                                </select>
+                                <select class="storage-admin-select" id="secCategory"></select>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>供应商产品编号</div>
+                            <div class="order-detail w81 r" id="pno"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">综合</div>
+                            <div class="order-detail w81 r"><input type="text" id="colligate"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">已售</div>
+                            <div class="order-detail w81 r"><input type="text" id="sales"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">浏览量</div>
+                            <div class="order-detail w81 r"><input type="text" id="views"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">状态</div>
+                            <div class="order-detail w81 r">
+                                <select id="status">
+                                    <option value="0">未上架</option>
+                                    <option value="1">已上架</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h136">备注</div>
+                            <div class="order-detail w81 r h136">
+                                <textarea class="input-tip" id="remark"></textarea>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix color_container" style="height: 220px">
+                            <div class="order-detail w17 l" style="height: 220px;line-height: 220px"><span class="necessary">*</span>颜色</div>
+                            <div class="order-detail w81 r" id="color" style="height: 220px;line-height: 30px">
+
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>尺寸</div>
+                            <div class="order-detail w81 r" id="size">
+                            </div>
+                        </div>
+
+
+                        <!--表格-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>颜色</th>
+                                <th>尺码</th>
+                                <th>库存</th>
+                                <th>价格</th>
+                                <th>备注</th>
+                                <th>删除</th>
+                            </tr>
+                            </thead>
+                            <tbody  id="tbody">
+
+                            </tbody>
+                        </table>
+                        <div class="wysiwyg-editor" id="editor1"></div>
+                        <!--<textarea class="fwb"></textarea>-->
+
+                        <div class="pdt20" style="text-align: center">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>修改成功！</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" id="sure">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--富文本编辑器-->
+<!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
+<!--<script>tinymce.init({ selector:'.fwb' });</script>-->
+<script src="../assets/js/jquery.min.js"></script>
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>" + "<" + "/script>");
+</script>
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+<script src="../assets/js/jquery-ui.custom.min.js"></script>
+<script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../assets/js/ace.min.js"></script>
+<script src="../assets/js/ace-elements.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/jquery.hotkeys.min.js"></script>
+<script src="../assets/js/bootstrap-wysiwyg.min.js"></script>
+<script src="../assets/js/bootbox.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/DesignerGoodsManage/DesignerGoodsEdit.js"></script>
+<script type="text/javascript">
+    jQuery(function($){
+
+        function showErrorAlert (reason, detail) {
+            var msg='';
+            if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+            else {
+                //console.log("error uploading file", reason, detail);
+            }
+            $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+
+                '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+        }
+
+        //$('#editor1').ace_wysiwyg();//this will create the default editor will all buttons
+
+        //but we want to change a few buttons colors for the third style
+        $('#editor1').ace_wysiwyg({
+            toolbar:
+                [
+                    'font',
+                    null,
+                    'fontSize',
+                    null,
+                    {name:'bold', className:'btn-info'},
+                    {name:'italic', className:'btn-info'},
+                    {name:'strikethrough', className:'btn-info'},
+                    {name:'underline', className:'btn-info'},
+                    null,
+                    {name:'insertunorderedlist', className:'btn-success'},
+                    {name:'insertorderedlist', className:'btn-success'},
+                    {name:'outdent', className:'btn-purple'},
+                    {name:'indent', className:'btn-purple'},
+                    null,
+                    {name:'justifyleft', className:'btn-primary'},
+                    {name:'justifycenter', className:'btn-primary'},
+                    {name:'justifyright', className:'btn-primary'},
+                    {name:'justifyfull', className:'btn-inverse'},
+                    null,
+                    {name:'createLink', className:'btn-pink'},
+                    {name:'unlink', className:'btn-pink'},
+                    null,
+                    {name:'insertImage', className:'btn-success'},
+                    null,
+                    'foreColor',
+                    null,
+                    {name:'undo', className:'btn-grey'},
+                    {name:'redo', className:'btn-grey'}
+                ],
+            'wysiwyg': {
+                fileUploadError: showErrorAlert
+            }
+        }).prev().addClass('wysiwyg-style2');
+
+        if ( typeof jQuery.ui !== 'undefined' && ace.vars['webkit'] ) {
+
+            var lastResizableImg = null;
+            function destroyResizable() {
+                if(lastResizableImg == null) return;
+                lastResizableImg.resizable( "destroy" );
+                lastResizableImg.removeData('resizable');
+                lastResizableImg = null;
+            }
+        }
+        // 转码照片为base64的字符串
+        var readFileIntoDataUrl = function (fileInfo) {
+            var loader = $.Deferred(),
+                fReader = new FileReader();
+            fReader.onload = function (e) {
+                loader.resolve(e.target.result);
+            };
+            fReader.onerror = loader.reject;
+            fReader.onprogress = loader.notify;
+            fReader.readAsDataURL(fileInfo);
+            return loader.promise();
+        };
+        var uploadFiles = [];
+        // 监听选取照片的按钮<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />，
+        // 把每次选取的照片文件放入数组中
+        $("#descripitionImg").change(function(){
+            $.each(this.files,function(index,fileObj){
+                uploadFiles.push(fileObj);
+            });
+        });
+        function uploadImgs(index){
+            // 使用FormData对象上传文件
+            // 这里上传使用递归上传，上传一个再次调用函数本身，再次上传，知道全部上传完成
+            var formData = new FormData();
+            if(0 >= index){
+                // 再次上传文本编辑器里的内容
+            }else{
+                //console.log('执行照片提交。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。');
+                index -=1;
+                formData.append(uploadFiles[index].name,uploadFiles[index]);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST",FILEUPLOAD_URL2,true);
+                xhr.send(formData);
+                xhr.onload = function(data){
+                    // 判断图片是否存在
+                    var imgTag = [];
+                    readFileIntoDataUrl(uploadFiles[index]).done(function (dataUrl) {
+                        imgTag = $("#editor").find("img[src='" + dataUrl + "']");
+                        if (imgTag.length > 0) {
+                            // 图片存在, 上传当前文件.
+                            // uploadImage方法为你的上传图片方法.
+                            var url = JSON.parse(data.currentTarget.response).resMsg;
+                            imgTag.attr("src", url);
+                            // 重新调用函数
+                            uploadImgs(index);
+
+                        }
+
+                    });
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

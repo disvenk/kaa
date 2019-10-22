@@ -1,0 +1,91 @@
+.order-btn {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 17px;
+    color: #fff;
+    background-color: #ec4545;
+}
+
+.buy-header {
+    padding-top: 20px;
+}
+
+.buy-header-left {
+    float: left;
+    width: 40%;
+    border: 1px solid #ccc;
+}
+
+.buy-header-right {
+    width: 60%;
+    float: right;
+    padding-left: 14px;
+}
+
+.header-right-topic {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+.header-right-cont {
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.price {
+    color: #ec4545;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.header-right-count {
+    font-size: 18px;
+    margin-top: 36px;
+}
+
+.header-right-tip {
+    color: #999;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.tip-img {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+.vip-type {
+    border-top: 1px dashed #ccc;
+    margin-top: 6px;
+    height: 120px;
+    padding-top: 20px;
+}
+
+.vip-type-name {
+    font-size: 18px;
+    color: #666;
+    height: 26px;
+}
+
+.vip-type-items {
+    padding-left: 0;
+    margin-top: 14px;
+}
+
+.vip-type-item {
+    float: left;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 4px;
+}
+
+.vip-type-item.active {
+    background-color: #2b3646;
+    color: #bd946e;
+    border: 1px solid #2b3646;
+}

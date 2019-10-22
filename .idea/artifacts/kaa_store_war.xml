@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kaa_store:war">
+    <output-path>$PROJECT_DIR$/kaa_store/target</output-path>
+    <root id="archive" name="kaa_store.war">
+      <element id="artifact" artifact-name="kaa_store:war exploded" />
+    </root>
+  </artifact>
+</component>

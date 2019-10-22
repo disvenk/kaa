@@ -1,0 +1,405 @@
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.h170 {
+    height: 170px;
+    line-height: 170px;
+}
+
+.order-textarea {
+    width: 500px;
+    height: 120px;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding: 14px 12px 14px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+.h178 {
+    height: 178px;
+
+}
+
+.h118 {
+    height: 122px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.pdl0 {
+    padding-left: 0;
+}
+
+.input-address {
+    width: 470px;
+    height: 94px;
+    line-height: 18px;
+    border-radius: 5px !important;
+    padding: 14px;
+    margin-left: 20px;
+    vertical-align: middle;
+    resize: none;
+}
+
+
+
+
+.goods-img{
+    width: 128px;
+    height: 93px;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    width: 85px;
+    height: 30px;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+
+#img2{
+    position: relative;
+}
+
+#img2 .img_container2{
+    height: 170px;
+    display: inline-block;
+    width: 170px;
+}
+#img2 .img_container2 > div{
+    display: inline-block;
+    width: 160px;
+    height: 170px;
+}
+#img2 .img_container2 img{
+    width: 128px;
+    height:102px;
+}
+#img2 div .glyphicon{
+    top: -40px;
+    left: -9px;
+    font-size: 19px;
+    color: rgb(220,82,74);
+    cursor: pointer;
+}
+#img2 #addPosition2{
+    display: inline-block;
+    margin-left: 30px;
+}
+.table tr td{
+    border-top: none !important;
+}
+/*.table{*/
+/*width: 750px;*/
+/*margin-left: 108px;*/
+/*}*/
+.table input{
+    border-radius: 5px !important;
+}
+
+.address-list {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 18px;
+}
+
+.address-radio {
+    display: inline-block;
+    margin-right: 4px;
+}
+#position > div:hover{
+    color: #000;
+}
+#position{
+    border: 1px solid #d5d5d5;
+    border-top: none;
+    display: none;
+}
+
+/*0108新增部分*/
+.order-client {
+    height: 38px;
+    width: 314px;
+}
+
+.local-order-input {
+    width: 80%;
+}
+
+.procedure-input {
+    width: 70px !important;
+    margin-left: 6px;
+}
+
+
+
+.procedure-wrap {
+    margin-left: 10px;
+}
+
+.modal-content {
+    width: 600px;
+}
+
+.modal-body {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.add-name {
+    display: inline-block;
+    width: 100px;
+}
+
+.modal-body .input-address {
+    width: 400px;
+}
+
+.modal-body .w17 {
+    text-align: left;
+}
+
+.modal-body .input-address {
+    margin-left: 4px;
+}
+.modal_self div{
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    margin-top: 30px;
+}
+.modal_self div span{
+    padding: 7px 58px;
+    background-color: rgb(63,90,152);
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#myModal input{
+    border-radius: 5px !important;%;
+}
+#myModal .add-name{
+    font-size: 15px;
+}
+#addAddress{
+    display: inline-block;
+    width: 170px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background-color: rgb(63,90,152);
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+.order-client {
+    height: 38px;
+    width: 314px;
+}
+
+.local-order-input {
+    width: 80%;
+}
+
+.procedure-input {
+    width: 70px !important;
+    margin-left: 6px;
+}
+
+
+
+.procedure-wrap {
+    display: inline-block;
+    margin-left: 10px;
+    width: 256px;
+    white-space:nowrap;
+}
+.procedure-wrap1 {
+    display: inline-block;
+    margin-left: 10px;
+    width: 190px;
+    white-space:nowrap;
+}
+.modal-content {
+    width: 600px;
+}
+
+.modal-body {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.add-name {
+    display: inline-block;
+    width: 100px;
+}
+
+.modal-body .input-address {
+    width: 400px;
+}
+
+.modal-body .w17 {
+    text-align: left;
+}
+
+.modal-body .input-address {
+    margin-left: 4px;
+}
+.order-detail input[type=checkbox]{
+    margin: 0;
+    position: relative;
+    top: -1px;
+    left: -4px;
+}
+#color label{
+    margin-right: 8px;
+}
+#size label{
+    margin-right: 8px;
+}
+.order-detail input[type=number]{
+    height: 19px;
+    line-height: 19px;
+    width: 53px !important;
+    border: none;
+    outline: none;
+}
+#workerSort{
+    position: relative;
+}
+#workerSort select{
+    height: 26px;
+    line-height: 26px;
+    outline: none;
+    border: none;
+    background-color: #f6f6f6;
+}
+#workerSort .procedure-wrap > span{
+    background-color: #f6f6f6;
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    line-height: 30px;
+    border-radius: 6px;
+    margin-left: 3px;
+}
+#workerSort .procedure-wrap .wor{
+    background-color: #f6f6f6;
+    border-radius: 0 !important;
+    border-right: 1px solid #d1d1d1;
+}
+#workerSort input[type=text]{
+    height: 32px;
+    line-height: 32px;
+    width: 53px !important;
+    outline: none;
+    border-radius: 6px !important;
+    border: none;
+    background-color: #f6f6f6;
+}
+#addgx{
+    color: #999;
+    display: inline-block;
+    position: absolute;
+    top: 11px;
+    left: 800px;
+    border-radius: 6px;
+    border: 1px dashed #d1d1d1;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    line-height: 29px;
+    text-align: center;
+}
+#addca{
+    color: #999;
+    display: inline-block;
+    position: absolute;
+    top: 11px;
+    left: 800px;
+    border-radius: 6px;
+    border: 1px dashed #d1d1d1;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    line-height: 29px;
+    text-align: center;
+}
+.glyphicon-remove{
+    color: rgb(97,102,133);
+    position: relative;
+    top: -10px;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 1px;
+    cursor: pointer;
+}
+#rawmaterial{
+    position: relative;
+}
+#rawmaterial select{
+    height: 26px;
+    line-height: 26px;
+    outline: none;
+    border: none;
+    background-color: #f6f6f6;
+}
+#rawmaterial .procedure-wrap > span{
+    background-color: #f6f6f6;
+    display: inline-block;
+    width: 112px;
+    height: 32px;
+    line-height: 30px;
+    border-radius: 6px;
+    margin-left: 3px;
+}
+#rawmaterial .procedure-wrap .wor{
+    background-color: #f6f6f6;
+    border-radius: 0 !important;
+    border-right: 1px solid #d1d1d1;
+}
+#rawmaterial input[type=text]{
+    height: 32px;
+    line-height: 32px;
+    width: 53px !important;
+    outline: none;
+    border-radius: 6px !important;
+    border: none;
+    background-color: #f6f6f6;
+}
+#rawmaterial input[type=number]{
+    height: 19px;
+    line-height: 19px;
+    width: 53px !important;
+    outline: none;
+    border-radius: 6px !important;
+    border: none;
+    background-color: #f6f6f6;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一智造生产管理系统</title>
+    <link rel="Shortcut Icon" href="../assets/img/head-logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/homePage/joinIn.css"/>
+
+</head>
+<body onkeydown="keyLogin()">
+<div id="container">
+    <div class="logo"><img style="cursor: pointer" src="../assets/img/loginLog.png" alt=""></div>
+    <div class="container_container">
+        <div class="enter">供应商入驻 <span style="margin-left: 12px;color: rgb(178,179,182)">Supplier enter</span></div>
+        <div class="information">
+            <div class="company">公司信息</div>
+           <div class="company_container">
+               <div>
+                   <label for="companyName"><span class="red">*</span>公司名称</label>
+                   <input type="text" id="companyName" placeholder="请输入公司名称">
+               </div>
+               <div>
+                   <label for="companyPosition"><span class="red">*</span>公司地址</label>
+                   <input type="text" id="companyPosition" placeholder="请输入公司地址">
+               </div>
+               <div>
+                   <label for="companyOld"><span class="red">*</span>开厂年限</label>
+                   <input type="number" id="companyOld" placeholder="请输入开厂年限">
+               </div>
+               <div>
+                   <label><span class="red">*</span>主营业务</label>
+                   <input type="checkbox" value="婚纱礼服" name="cateGory">婚纱礼服
+                   <input type="checkbox" value="秀禾" name="cateGory">秀禾
+                   <input type="checkbox" value="童装" name="cateGory">童装
+                   <input type="checkbox" value="男士西装" name="cateGory">男士西装
+                   <input type="checkbox" value="other" id="others" name="cateGory"><input id="other" style="width: 130px;margin-left: 0" type="text" placeholder="其它">
+               </div>
+               <div class="scale">
+                   <label><span style="margin: 0" class="red">*</span>工厂规模</label>
+                   车工 <input type="number" value="turner" id="turner"><span>人</span>
+                   裁剪 <input type="number" value="croper" id="croper"><span>人</span>
+                   版型师 <input type="number" value="version" id="version"><span>人</span>
+               </div>
+               <div>
+                   <label style="padding-left: 35px">模架</label>
+                   <input type="checkbox" value="0" name="modal">无
+                   <input type="checkbox" value="1" name="modal">外模
+                   <input type="checkbox" value="2" name="modal">内模
+               </div>
+               <div style="height: 146px;padding-top: 20px">
+                   <label style="position: relative;top: -98px;">&nbsp;&nbsp;公司介绍</label>
+                   <textarea name="" id="textarea" placeholder="请输入公司介绍"></textarea>
+               </div>
+           </div>
+            <!--资质信息-->
+            <div class="company" style="margin-top: 20px">资质信息</div>
+            <div class="company_container" style="height: 180px">
+                <div style="height: 180px;position: relative">
+                    <label style="margin-left: 7px;position: absolute;top: 70px;">资质图片</label>
+                    <div id="photo">
+                        <div id="photo1">
+                            <img style="margin-top: 26px" src="../assets/img/join.png" alt="">
+                            <input type="file" id="addPicture" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> <p style="color: #999">请上传您的营业执照</p>
+                        </div>
+                        <span style="position: relative;top: -84px;left: 253px;color: red;font-size: 14px">上传图片大小不能超过2M</span>
+                        <!--上传-->
+                        <div id="photo2" style="position: relative;display: none"><img src="" style="width: 280px;height: 130px;border-radius: 3px" class="goods-img" alt="">
+                            <span style="position: absolute;font-size: 22px;top: -11px;right: -11px;color: red;cursor: pointer;display: none" class="delete_img glyphicon glyphicon-remove-circle"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--联系人信息-->
+            <div class="company">联系人信息</div>
+            <div class="company_container">
+                <div>
+                    <label for="name"><span class="red" style="margin-right: 29px">*</span>姓名</label>
+                    <input type="text" id="name" placeholder="请输入姓名">
+                </div>
+                <div>
+                    <label><span class="red" style="margin-right: 29px">*</span>性别</label>
+                    <input type="radio" value="1" name="sex" checked>男
+                    <input type="radio" value="2" name="sex">女
+                </div>
+                <div>
+                    <label for="idCard"><span class="red">*</span>身份证号</label>
+                    <input type="text" id="idCard" placeholder="请输入身份证号">
+                </div>
+                <div>
+                    <label for="phone"><span class="red" style="margin-right: 16px">*</span>手机号</label>
+                    <input type="tel" id="phone" placeholder="请输入手机号">
+                </div>
+            </div>
+            <!--提交-->
+            <div style="text-align: center;margin: 50px 0 30px 0">
+                <span id="commit">提交</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/homePage/joinIn.js"></script>
+</body>
+</html>

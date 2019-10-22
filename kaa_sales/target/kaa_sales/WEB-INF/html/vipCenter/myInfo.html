@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title>会员中心</title>
+    <!--<meta name="description" content="Restyling jQuery UI Widgets and Elements"/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style"/>
+
+    <link rel="stylesheet" href="../assets/css/salePlat/infoTable.css"/>
+
+    <link rel="stylesheet" href="../assets/css/salePlat/myInfo.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+</head>
+
+<body class="no-skin">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <!-- /section:settings.box -->
+            <div class="page-content-area">
+                <div class="spinner-wrap">
+                    <div class="spinner">
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4"></div>
+                        <div class="rect5"></div>
+                    </div>
+                </div>
+                <div class="admin-detail">我的资料</div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l">用户名</div>
+                    <div id="userCode" class="order-detail w81 r">
+                    </div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail h170 w17 l">头像</div>
+                    <div class="order-detail h170 w81 r" id="img1">
+                        <div class="img_container1" style="display: inline-block">
+                        </div>
+                        <div id="addPosition1"><a href="javascript:;" class="file">选择文件 <input id="upLoad1" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                    </div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l"><span class="necessary">*</span>姓名</div>
+                    <div class="order-detail w81 r">
+                        <input id="name" type="text" onblur="checkUerName()">
+                        <span class="error-info error-user">名称长度超出限制,最长20个字符</span>
+                    </div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l">性别</div>
+                    <div class="order-detail w81 r" id="sex">
+                        <input style="margin-right: 5px" type="radio" name="sex" value="1">男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input style="margin-right: 5px" type="radio" name="sex" value="0">女
+                    </div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l"><span class="necessary">*</span>手机号</div>
+                    <div class="order-detail w81 r">
+                        <input id="telephone" type="tel"  onblur="checkTel()">
+                        <span class="error-info error-phone">请输入正确的手机号</span>
+                    </div>
+                </div>
+                <div class="order-detail-wrap clearfix">
+                    <div class="order-detail w17 l"><span class="necessary">*</span>验证码</div>
+                    <div class="order-detail w81 r"><input id="verifyCode" type="text"><button id="findVerifyCode" class="hello-btn">获取验证码</button></div>
+                </div>
+                <div class="operation">
+                    <button class="operation-btn" onclick="updateUserBase()">保存</button>
+                    <!--<button class="operation-btn ml80">返回</button>-->
+                </div>
+                <div class="store-wrap">
+                    <div class="admin-detail">门店信息</div>
+                    <div class="order-detail-wrap clearfix">
+                        <div class="order-detail w17 l">门店名称</div>
+                        <div class="order-detail w81 r"><span id="storeName"></span></div>
+                    </div>
+                    <div class="order-detail-wrap clearfix">
+                        <div class="order-detail w17 l">门店名称</div>
+                        <div class="order-detail w81 r"><span id="address"></span></div>
+                    </div>
+                    <div class="order-detail-wrap clearfix">
+                        <div class="order-detail h170 w17 l">门店图片</div>
+                        <div class="order-detail h170 w81 r" id="img2">
+
+                        </div>
+                    </div>
+                    <div class="order-detail-wrap clearfix">
+                        <div class="order-detail h170 w17 l">资质信息</div>
+                        <div class="order-detail h170 w81 r" id="img3">
+                            <div class="img_container3" style="display: inline-block">
+                                <img style="width: 138px;height: 138px" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-detail-wrap clearfix">
+                        <div class="order-detail w17 l">销售商品</div>
+                        <div class="order-detail w81 r" id="salesGoods">
+                        </div>
+                    </div>
+                    <div class="order-detail-wrap clearfix">
+                        <div class="order-detail w17 l">联系人</div>
+                        <div class="order-detail w81 r"><span id="storeContact"></span></div>
+                    </div>
+                    <div class="order-detail-wrap clearfix">
+                        <div class="order-detail w17 l">联系人电话</div>
+                        <div class="order-detail w81 r"><span id="storeContactPhone"></span></div>
+                    </div>
+
+                    <div class="operation" style="font-size: 16px">
+                       如需更改信息，请联系客服人员...
+                    </div>
+                </div>
+
+
+            </div><!-- /.page-content-area -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+
+<!--验证JS-->
+<script src="../assets/js/salePlat/validate.js"></script>
+<script src="../assets/js/salePlat/myInfo.js"></script>
+
+
+</body>
+</html>

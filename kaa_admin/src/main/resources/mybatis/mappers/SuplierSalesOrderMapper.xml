@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.SuplierSalesOrderMapper">
+
+    <!-- 订单列表 -->
+    <select id="findList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select
+        sso.id, sso.order_no orderNo, sso.inside_order_no insideOrderNo, DATE_FORMAT(sso.createdDate, '%Y-%m-%d') createdDate, sso.remarks, sso.produced_status producedStatus
+        ,det.pno, det.href, det.category_name categoryName, det.color, det.size, det.qty, det.price
+        ,del.customer,  DATE_FORMAT(del.delivery_date, '%Y-%m-%d') deliveryDate, del.delivery_companyName deliveryCompanyName, del.delivery_no deliveryNo
+        ,unix_timestamp(del.delivery_date) - unix_timestamp(NOW()) subTime, sup.`name` suplierName
+        From sup_sales_order sso
+        Left Join sup_sales_order_delivery del ON del.order_id = sso.id
+        Left Join sup_sales_order_detail det ON det.order_id = sso.id
+        Left Join sup_suplier sup ON sup.id = sso.suplier_id
+        Where sso.logicDeleted = 0
+        <if test="suplierId != null and suplierId != ''"> And sso.suplier_id = #{suplierId} </if>
+        <if test="orderNo != null and orderNo != ''"> And sso.order_no LIKE '%${orderNo}%' </if>
+        <if test="pno != null and pno != ''"> And det.pno LIKE '%${pno}%' </if>
+        <if test="producedStatus != null and producedStatus != ''"> And sso.produced_status = #{producedStatus} </if>
+        <if test="customerId != null and customerId != ''"> And del.customer_id = #{customerId} </if>
+        <if test="createdDateSta != null and createdDateSta != ''"> And sso.createdDate &gt; #{createdDateSta} </if>
+        <if test="createdDateEnd != null and createdDateEnd != ''"> And sso.createdDate &lt; #{createdDateEnd} </if>
+        <if test="deliveryDateStr != null and deliveryDateStr != ''"> And del.delivery_date &gt; #{deliveryDateStr} </if>
+        <if test="deliveryDateEnd != null and deliveryDateEnd != ''"> And del.delivery_date &lt; #{deliveryDateEnd} </if>
+        Order By sso.id DESC
+    </select>
+
+    <!-- 获取订单各状态的数量 -->
+    <select id="findOrderCount" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select
+        COUNT(1) orderCount, sso.produced_status producedStatus
+        From sup_sales_order sso
+        Where sso.logicDeleted = 0
+        GROUP BY sso.produced_status
+        ORDER BY sso.produced_status
+    </select>
+
+</mapper>

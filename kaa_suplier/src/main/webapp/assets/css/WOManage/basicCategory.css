@@ -1,0 +1,156 @@
+body {
+    min-width: 1490px !important;
+}
+
+.admin-operate-item {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.page-state {
+    color: #3b5999;
+}
+
+.admin-detail-topic {
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #d7d7d7;
+}
+
+.admin-operate-item.w1 {
+    width: 22%;
+    padding-left: 10px;
+
+}
+
+.admin-operate-item.w2 {
+    width: 68%;
+    text-align: right;
+
+}
+
+.admin-operate-item.w3 {
+    width: 10%;
+    text-align: right;
+}
+
+/*@media screen and (max-width:1668px)  {*/
+/*.admin-operate-item.w3 {*/
+/*width: 6%;*/
+/*text-align: right;*/
+/*}*/
+/*}*/
+
+.inquire-wrap input {
+    display: inline-block;
+    border-radius: 5px !important;
+    padding-left: 14px;
+    height: 40px;
+    line-height: 38px;
+    margin: 0 16px;
+}
+
+
+.order-info-item select {
+    width: 110px;
+    height: 27px;
+    margin-left: 16px;
+    border-radius: 5px;
+}
+
+.order-info-item input{
+    display: inline-block;
+    border-radius: 5px !important;
+    padding-left: 14px;
+    height: 27px;
+    line-height: 27px;
+    margin: 0 16px;
+}
+
+
+
+@media screen and (max-width:800px)  {
+    .order-info-input {
+        width: 40%;
+        padding-left: 14px;
+        margin-left: 0;
+    }
+
+    .order-info-item {
+        margin-left: 2%;
+    }
+}
+
+.date-span {
+    color: #c3c3c3;
+}
+
+.wo-items {
+    border-right: 1px solid #ddd;
+    height: 872px;
+}
+
+.wo-item {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px dashed #ddd;
+    cursor: pointer;
+}
+
+.wo-item:hover {
+    background-color: #3b5999;
+    color: #fff;
+}
+
+.wo-item.active {
+    background-color: #3b5999;
+    color: #fff;
+}
+
+.col-xs-1 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+
+#tbody tr div{
+    cursor: pointer;
+    color: rgb(113,161,197);
+}
+.modal-body thead th{
+    text-align: center !important;
+}
+.modal-body tbody tr td{
+    text-align: center;
+}
+
+.operate-wrap {
+    height: 90px;
+    line-height: 90px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+
+.inquire-wrap {
+    padding-left: 20px;
+    height: 70px;
+    line-height: 70px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.admin-btn {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+

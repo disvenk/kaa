@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>线下门店首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../assets/css/ace-part2.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="../assets/css/css/index.css">
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="../assets/css/ace-ie.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="../assets/css/css/store.css">
+    <!--[if lte IE 8]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <!-- /section:basics/sidebar -->
+    <!--首页-->
+    <div class="main-content">
+        <!-- #section:basics/content.breadcrumbs -->
+        <div class="breadcrumbs" id="breadcrumbs">
+            <div class="breadcrumbs_nav">
+                <span id="storeName"></span>
+                <span id="buyCar">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"><span style="margin-left: 6px;position: relative;top: -1px;">购物车</span></span>
+                        </span>
+            </div>
+        </div>
+
+        <div class="page-content" id="homePage">
+            <!-- /section:settings.box -->
+            <div class="page-content-nav">
+                <ol class="breadcrumb">
+                    <li id="synthesise">综合</li>
+                    <li id="salesVolume">销量</li>
+                    <li id="price">价格</li>
+                    <li id="new">最新</li>
+                    <li style="color:rgb(72, 173, 252)">价格</li>
+                </ol>
+                <input type="number" id="start"> <span style="margin:0 12px;color:rgb(183, 182, 186)">-</span> <input id="end" type="number">
+                <span class="button" id="priceSearch">确 定</span>
+            </div>
+            <!-- /.page-content-nav -->
+            <div class="row" id="container">
+
+            </div>
+            <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+            <!--分页-->
+        </div>
+    </div>
+</div>
+<!-- /.
+    <!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>" + "<" + "/script>");
+</script>
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    var token = sessionStorage.getItem('token');
+    var userName = sessionStorage.getItem('userName');
+    if(token){
+        if(token != '${authToken}'){
+            sessionStorage.setItem('token', '${authToken}');
+        }
+    }else {
+        sessionStorage.setItem('token', '${authToken}')
+    }
+    if(userName){
+        if(userName != '${userName}'){
+            sessionStorage.setItem('userName', '${userName}');
+        }
+    }else {
+        sessionStorage.setItem('userName', '${userName}')
+    }
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jqPaginator.min.js"></script>
+<!--[if lte IE 8]>
+<script src="../assets/js/excanvas.min.js"></script>
+<![endif]-->
+<script src="../assets/js/js/aside.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+</body>
+
+</html>

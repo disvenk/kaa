@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/clientManageAdd.css"/>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail" id="addSign"></div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>原材料名称</div>
+                            <div class="order-detail w81 r"><input type="text" maxlength="100" id="cateName"><span style="padding-left: 10px;" id="alert"></span>
+                                <input type="hidden" id="sign"/></div>
+
+                        </div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h118">备注</div>
+                            <div class="order-detail w81 r pdl0 h118"><textarea id="remark" maxlength="200" class="input-address"></textarea></div>
+                        </div>
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>提交成功！</span>
+            </div>
+            <div class="modal-footer">
+                <div id="sure" type="button" class="sure">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script src="../assets/js/WOManage/basicMaterialManageAdd.js"></script>
+
+</body>
+</html>

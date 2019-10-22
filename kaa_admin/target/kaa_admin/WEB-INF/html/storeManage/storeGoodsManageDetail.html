@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>商品详情页面</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/storeManage/storeGoodsManageDetail.css"/>
+
+</head>
+<body>
+
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="admin-detail">线下门店商品详情</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">商品ID</div>
+                            <div id="productCode"  class="order-detail w81 r"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">商品名称</div>
+                            <div id="productName"  class="order-detail w81 r"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">商品图片</div>
+                            <div id="picturediv" class="order-detail h170 w81 r">
+                                <!--这里放图片-->
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">品牌</div>
+                            <div id="brand" class="order-detail w81 r"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">分类</div>
+                            <div id="productCategory" class="order-detail w81 r"></div>
+
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">最低零售价</div>
+                            <div id="salesPrice" class="order-detail w81 r"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">供应商产品编号</div>
+                            <div id="pno" class="order-detail w81 r"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">单件供货周期</div>
+                            <div id="suplierDay" class="order-detail w81 r"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">更新日期</div>
+                            <div id="updateDate" class="order-detail w81 r"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">所属门店</div>
+                            <div id="storeName" class="order-detail w81 r"></div>
+                        </div>
+
+                        <!--表格-->
+                        <table  class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>颜色</th>
+                                <th>尺码</th>
+                                <th>价格</th>
+                                <th>库存</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbspec">
+                            </tbody>
+                        </table>
+
+                        <div class="admin-detail">商品图文详情</div>
+                        <div id="productdetail" class="goods-detail-show">
+                            <!--这里放置商品的图文详情-->
+                        </div>
+                        <div class="bottom-operate">
+                            <button id="back" class="admin-btn w100">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/storeManage/storeGoodsManageDetail.js"></script>
+
+</body>
+</html>

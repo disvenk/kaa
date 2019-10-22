@@ -1,0 +1,16 @@
+/
+/ueditorConfig
+/ueditor/*
+/*/*Html
+/channel/saveChannel
+/suplier/uploadSupplierManage
+/supOrder/exportExcelOffline
+/supOrder/exportExcelOnline
+/supOrder/exportWordOffline
+/supOrder/exportWordListOffline
+/supOrder/exportWordOnline
+/supOrder/exportWordListOnline
+/footerContent/*
+/permission/findMenuAll
+/channel/addFactory
+/channel/channelDesAdd

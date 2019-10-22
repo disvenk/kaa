@@ -1,0 +1,157 @@
+body {
+    background-color: #f0f1f6;
+}
+
+.workbench-left {
+    width: 50%;
+    float: left;
+}
+
+.workbench-right {
+    width: 50%;
+    float: right;
+    text-align: center;
+}
+
+.workbench-topic {
+    height: 60px;
+    line-height: 60px;
+    padding-left: 34px;
+    font-size: 24px;
+    background: url("../../../assets/img/slim.jpg") 20px 22px no-repeat;
+}
+
+.workbench-cont {
+    height: 160px;
+    width: 96%;
+    border-radius: 5px;
+    background-color: #f1f4f9;
+    padding-top: 44px;
+}
+
+
+
+.workbench-item {
+    float: left;
+    width: 25%;
+    height: 72px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.workbench-item.w50 {
+    width: 50%;
+}
+
+.workbench-item.w33 {
+    width: 33.3%;
+}
+
+.workbench-item.br0 {
+    border-right: 0;
+}
+
+.workbench-item-num {
+    height: 50px;
+    font-size: 40px;
+    color: #3b5999;
+    vertical-align: top;
+}
+
+.workbench-item-tip {
+    height: 22px;
+    line-height: 22px;
+    font-size: 17px;
+    color: #666;
+}
+
+.workbench-right {
+    padding-top: 24px;
+}
+
+.workbench-right-wrap {
+    width: 88%;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #fff;
+
+}
+
+.tab {
+    width: 50%;
+    height: 58px;
+    line-height: 58px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.tab.brc {
+    border-right: 1px solid #ccc;
+}
+
+.tab.active {
+    border-bottom: 2px solid #1976d2;
+}
+
+.state-num {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1976d2;
+    color: #fff;
+    border-radius: 100px;
+    margin-left: 4px;
+}
+
+.right-topic {
+    height: 58px;
+    border-bottom: 2px solid #ccc;
+    padding-top: 13px;
+}
+
+.right-topic-span {
+    display: inline-block;
+    width: 50%;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.right-topic-span.brc {
+    border-right: 1px solid #ccc;
+}
+
+.part-b {
+    display: none;
+}
+
+.right-item {
+    height: 58px;
+    background-color: #f7f7f7;
+    margin-top: 2px;
+    padding-top: 13px;
+}
+
+.right-item-span {
+    display: inline-block;
+    width: 50%;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.right-item-span.brc {
+    border-right: 1px solid #ccc;
+}
+.workbench-cont{
+    box-shadow: 5px 5px 5px 0.5px #aac2f5;
+    background-color: #ffffff;
+}
+.right-topic{
+    background-color: #f7f7f7;
+}

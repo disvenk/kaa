@@ -1,0 +1,253 @@
+tbody tr:nth-of-type(1) td{
+    border: none;
+}
+body{
+    min-width: 1280px !important;
+    overflow: auto;
+    background-color: #fff;
+}
+/*覆盖模板中的头部样式*/
+
+.navbar-brand img {
+    height: 45px;
+}
+
+.user-info {
+    vertical-align: middle;
+}
+
+.ace-nav>li {
+    line-height: 69px;
+    height: 69px;
+}
+
+/*主体部分样式*/
+
+.order-right-topic {
+    font-size: 16px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+.order-info-item {
+    font-size: 14px;
+
+}
+
+.new-btn {
+    outline: 0;
+    border: 0;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #3c9ed8;
+}
+
+.order-info-item input,.order-right-no input {
+    display: inline-block;
+    border-radius: 5px !important;
+    padding-left: 14px;
+    height: 27px;
+    line-height: 27px;
+    margin-left: 16px;
+}
+
+.order-info-input {
+    width: 70%;
+}
+
+@media screen and (max-width:800px)  {
+    .order-info-input {
+        width: 40%;
+        padding-left: 14px;
+        margin-left: 0;
+    }
+}
+
+.order-right-no {
+    text-align: right;
+}
+
+.order-info-input1 {
+    width: 16.8%;
+    margin-right: 26px;
+}
+tbody tr:nth-of-type(1) td{
+    border: none;
+    background-color: rgb(243,242,244);
+}
+
+/*table表格*/
+
+.order-topic {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.sales-order-state {
+    height: 50px;
+}
+
+.order-info-wrap {
+    vertical-align: middle;
+    position: relative;
+}
+
+.sales-order-info {
+    display: inline-block;
+
+}
+
+.order-info-img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-right: 14px;
+}
+
+.order-info-name {
+    width: 180px;
+    line-height: 22px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.order-info-desc {
+    position: absolute;
+    bottom: 6px;
+    width: 180px;
+    text-align: left;
+    color: grey;
+}
+
+.sales-order-operate:hover {
+    color: #3c9ed8;
+}
+
+.sales-order-operate {
+    cursor: pointer;
+}
+.editDel span{
+    padding: 3px 14px;
+    border-radius: 6px;
+    background-color: #0e90d2;
+    color: #fff;
+    margin: 0 6px;
+}
+#select{
+    width: 80px;
+}
+.order-info-item button {
+    outline: 0;
+    border: 1px solid #fff;
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 100px;
+    background-color: #3c9ed8;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.order-info-item button:hover {
+    border: 1px solid #3c9ed8;
+    background-color: #fff;
+    color: #3c9ed8;
+}
+#orderAdd,#storeUrl{
+    width: 130px;
+    height: 36px;
+    line-height: 33px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+.table{
+    margin-top: 10px;
+    background-color: rgb(243,242,244);
+}
+.table .number{
+    width: 60px !important;
+    height:26px;
+}
+.table td button{
+    padding: 3px 15px;
+    border: none;
+    background-color: #0e90d2;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+/*loading flash*/
+
+
+.spinner {
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 10px;
+}
+
+.spinner > div {
+    background-color: #67CF22;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+    animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+    20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+    0%, 40%, 100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    } 20% {
+          transform: scaleY(1.0);
+          -webkit-transform: scaleY(1.0);
+      }
+}
+#myModal1{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+}

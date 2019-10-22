@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>明细</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/workerCode/common.css" />
+    <link rel="stylesheet" href="../assets/css/workerCode/workerDetail.css" />
+</head>
+<body>
+
+<div class="main-content">
+
+    <div class="my-salary">时间范围</div>
+    <div class="date-wrap">
+        开始日期<input type="text" class="date-input" id="dateStart" placeholder="请输入开始日期">
+    </div>
+    <div class="date-wrap">
+        结束日期<input type="text" class="date-input" id="dateEnd" placeholder="请输入结束日期">
+    </div>
+    <div class="detail-btn">
+        <button class="toDetail">查询</button>
+    </div>
+    <div class="section"></div>
+    <div class="my-salary mt20">查询结果</div>
+    <div class="order-account">*共<span class="number">0</span>笔记录, 合计<span class="price">0</span>元</div>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <td>工单号</td>
+            <td>工序</td>
+            <td>工价</td>
+            <td>领取时间</td>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <!--<tr>-->
+            <!--<td>GYZZ</td>-->
+            <!--<td>排花</td>-->
+            <!--<td>2018-01-09 17:48:20</td>-->
+            <!--<td>2018-01-09 17:48:20</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>AAA</td>-->
+            <!--<td>排花</td>-->
+            <!--<td>2018-01-09 17:48:20</td>-->
+            <!--<td>2018-01-09 17:48:20</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>GYZZT</td>-->
+            <!--<td>排花</td>-->
+            <!--<td>2018-01-09 17:48:20</td>-->
+            <!--<td>2018-01-09 17:48:20</td>-->
+        <!--</tr>-->
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/echarts.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script type="text/javascript" src="../assets/js/workerCode/workerDetail.js"></script>
+</body>
+</html>

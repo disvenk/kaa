@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>合一智造</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+</head>
+<body>
+
+        <!--<div class="main-header"><img id="personalInfo" src="../assets/images/img/log_icon.jpg" alt="">合一智造</div>-->
+        <div class="main-container">
+            <div class="main-banner">
+                <img id="supplierShow" src="../assets/images/img/banner.jpg" alt="">
+            </div>
+            <div class="main-block h50 mt4">当前 <span style="color:red" id="orderSum">0</span> 笔订单生产中</div>
+            <div class="main-block mt10">
+                <div class="block-cont">
+                    <div class="block-cont-topic">订单统计<span>Order Statics</span></div>
+                    <div class="block-cont-cate">
+                        <ul class="cont-cate-items clearfix">
+                            <li class="cont-cate-item" onclick="orderCount(1)" id="day">日</li>
+                            <li class="cont-cate-item" onclick="orderCount(2)" id="month">月</li>
+                            <li class="cont-cate-item br0" onclick="orderCount(3)" id="year">年</li>
+                        </ul>
+                    </div>
+                    <ul class="order-info-items clearfix">
+                        <li class="order-info-item">
+                            <div class="info-item-name">订单数</div>
+                            <div class="info-item-no" id="orderCount">0</div>
+                        </li>
+                        <li class="order-info-item">
+                            <div class="info-item-name">总金额</div>
+                            <div class="info-item-no" id="totalSum">0</div>
+                        </li>
+                        <li class="order-info-item">
+                            <div class="info-item-name">平均单价</div>
+                            <div class="info-item-no">￥<span id="avgTotal">0</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-block mt10">
+                <div class="block-cont">
+                    <div class="block-cont-topic">货品统计<span>The Item Statics</span></div>
+                    <ul class="order-goods-items clearfix">
+                        <li class="order-goods-item">
+                            <div class="goods-item-name">货品总数</div>
+                            <div class="goods-item-no" id="countSum">0</div>
+                        </li>
+                        <li class="order-goods-item">
+                            <div class="goods-item-name">货品种类</div>
+                            <div class="goods-item-no" id="categorySum">0</div>
+                        </li>
+                        <li class="order-goods-item br0">
+                            <div class="goods-item-name">货品均价</div>
+                            <div class="goods-item-no">￥<span id="avgSum">0</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--待接单、生产中-->
+            <ul class="tab-items mt10 clearfix" id="tabItems">
+                <li class="tab-item current" id="waitingOrder">待接单</li>
+                <li class="tab-item" id="productionOrder">生产中</li>
+            </ul>
+            <div class="tab-content" id="tabContent">
+                <div class="tab-cont" style="display: block;" id="waitingContent">
+                    <!--<div class="order-wrap">-->
+                        <!--<div class="order-info-topic">订单号：<span></span></div>-->
+                        <!--<div class="order-infos clearfix">-->
+                            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+                            <!--<div class="order-infos-item">-->
+                                <!--<span>货号<span></span></span><br>-->
+                                <!--<span class="order-infos-span">单价：<span>￥</span>&nbsp;&nbsp;数量：<span></span></span><br>-->
+                                <!--<span class="order-infos-span">合计：<span>￥</span></span><br>-->
+                                <!--<span class="order-infos-span">期望发货日期：<span></span></span>-->
+                            <!--</div>-->
+                            <!--<div class="make-order" id="orderConfirm">确认<br>订单</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="order-wrap">-->
+                        <!--<div class="order-info-topic">订单号：<span>2017548252</span></div>-->
+                        <!--<div class="order-infos clearfix">-->
+                            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+                            <!--<div class="order-infos-item">-->
+                                <!--<span>货号<span>PW-H75</span></span><br>-->
+                                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+                            <!--</div>-->
+                            <!--<div class="make-order">确认<br>订单</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="order-wrap">-->
+                        <!--<div class="order-info-topic">订单号：<span>7852752</span></div>-->
+                        <!--<div class="order-infos clearfix">-->
+                            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+                            <!--<div class="order-infos-item">-->
+                                <!--<span>货号<span>PW-H75</span></span><br>-->
+                                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+                            <!--</div>-->
+                            <!--<div class="make-order">确认<br>订单</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="tab-cont" id="productionContent">
+                    <!--<div class="order-wrap">-->
+                        <!--<div class="order-info-topic">订单号：<span></span></div>-->
+                        <!--<div class="order-infos clearfix">-->
+                            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+                            <!--<div class="order-infos-item">-->
+                                <!--<span>货号<span></span></span><br>-->
+                                <!--<span class="order-infos-span">单价：<span>￥</span>&nbsp;&nbsp;数量：<span></span></span><br>-->
+                                <!--<span class="order-infos-span">合计：<span>￥</span></span><br>-->
+                                <!--<span class="order-infos-span">期望发货日期：<span></span></span>-->
+                            <!--</div>-->
+                            <!--<div class="make-order">生成<br>订单</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="order-wrap">-->
+                        <!--<div class="order-info-topic">订单号：<span>727575</span></div>-->
+                        <!--<div class="order-infos clearfix">-->
+                            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+                            <!--<div class="order-infos-item">-->
+                                <!--<span>货号<span>PW-H75</span></span><br>-->
+                                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+                            <!--</div>-->
+                            <!--<div class="make-order">生成<br>订单</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="order-wrap">-->
+                        <!--<div class="order-info-topic">订单号：<span>2017548252</span></div>-->
+                        <!--<div class="order-infos clearfix">-->
+                            <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+                            <!--<div class="order-infos-item">-->
+                                <!--<span>货号<span>PW-H75</span></span><br>-->
+                                <!--<span class="order-infos-span">单价：<span>￥504</span>&nbsp;&nbsp;数量：<span>2</span></span><br>-->
+                                <!--<span class="order-infos-span">合计：<span>￥1504</span></span><br>-->
+                                <!--<span class="order-infos-span">期望发货日期：<span>2017-10-31 10:0:00</span></span>-->
+                            <!--</div>-->
+                            <!--<div class="make-order">生成<br>订单</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+
+        </div>
+        <!--底部mark-->
+        <div class="main-bottom">
+            <img src="../assets/images/img/mark.jpg" alt="">
+        </div>
+
+
+
+        <!--底部tab-->
+        <div class="weui-tab">
+            <div class="weui-tab__panel">
+            </div>
+            <div class="weui-tabbar">
+                <a href="javascript:" class="weui-tabbar__item bottom_tabbar">
+                    <img src="../assets/images/img/homepageL.png" alt="" class="weui-tabbar__icon">
+                    <p class="weui-tabbar__label selectTable" style="color: #ffffff">首页</p>
+                </a>
+                <a href="../suplierHome/orderHtml" class="weui-tabbar__item bottom_tabbar">
+                    <img src="../assets/images/img/order.png" alt="" class="weui-tabbar__icon">
+                    <p class="weui-tabbar__label">订单</p>
+                </a>
+                <a href="../suplierHome/goodsHtml" class="weui-tabbar__item bottom_tabbar">
+                    <img src="../assets/images/img/goods.png" alt="" class="weui-tabbar__icon">
+                    <p class="weui-tabbar__label">货品</p>
+                </a>
+                <a href="../suplierHome/personalInfoHtml" class="weui-tabbar__item bottom_tabbar">
+                    <img src="../assets/images/img/self.png" alt="" class="weui-tabbar__icon">
+                    <p class="weui-tabbar__label">个人</p>
+                </a>
+            </div>
+        </div>
+
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/home.js"></script>
+<script type="text/javascript">
+    var token = sessionStorage.getItem('token');
+    if(!token){
+        location.href = "../suplierHome/loginHtml";
+    }
+</script>
+
+</body>
+
+</html>

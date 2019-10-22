@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>供应商商品列表 编辑</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/supplierManage/supplierGoodsListAdd.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!--loading flash-->
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+                        <div class="admin-detail">供应商商品列表新增</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>商品ID</div>
+                            <div class="order-detail w81 r">
+                                <input  class="supplier-id" type="text">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>商品名称</div>
+                            <div class="order-detail w81 r"><input style="border: 0" class="supplier-name" type="text" readonly></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary"></span>供应商产品编号</div>
+                            <div class="order-detail w81 r"><input  class="supplier-pno" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">商品图片</div>
+                            <div class="order-detail h170 w81 r">
+                                <img src="" alt="" class="img" style="width: 128px;height: 100px;">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>供应商</div>
+                            <div class="order-detail w81 r">
+                                <select id="supplierList">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>单件供货周期</div>
+                            <div class="order-detail w81 r"><input class="supplier-years" type="number">天</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>供货价</div>
+                            <div class="order-detail w81 r"><input class="supplier-prices" type="number"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h136">备注</div>
+                            <div class="order-detail w81 r h136"><textarea class="order-textarea"></textarea></div>
+                        </div>
+
+                        <div class="bottom-operate">
+                            <button id="submit" class="admin-btn w100">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button id="submit1" class="admin-btn w100">提交并继续</button>
+                            <button class="admin-btn w100 ml20" id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>提交成功！</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" id="sure">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/supplierManage/supplierGoodsListAdd.js"></script>
+
+
+</body>
+</html>

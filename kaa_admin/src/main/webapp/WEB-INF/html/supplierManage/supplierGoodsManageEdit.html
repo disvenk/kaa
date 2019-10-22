@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>供应商货品管理 编辑</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/supplierManage/supplierGoodsManageEdit.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!--loading flash-->
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+                        <div class="admin-detail">货品编辑</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="order-detail-tip">*</span>货品名称</div>
+                            <div class="order-detail w81 r">
+                                <!--<input type="text" id="goodsName">-->
+                                <input style="width: 568px" id="goodsName" class="supplier-name check-supplier" type="text" onblur="checkSupplierName()">
+                                <span class="error-info error-supplier">名称长度超出限制,最长100个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">货品图片</div>
+                            <div class="order-detail h170 w81 r" id="img">
+                                <div class="img_container" style="display: inline-block"></div>
+                                <div id="addPosition"><a href="javascript:;" class="file">选择文件 <input multiple id="upLoad" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">品牌</div>
+                            <div class="order-detail w81 r">
+                                <!--<input type="text" value="" id="brand">-->
+                                <input id="brand" class="supplier-name check-brand" type="text" onblur="checkBrandName()">
+                                <span class="error-info error-brand">品牌名称长度超出限制,最长20个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">分类</div>
+                            <div class="order-detail w81 r">
+                                <select class="storage-admin-select" id="Suplierscope">
+                                </select>
+                                <select class="storage-admin-select" id="secCategory"></select>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="order-detail-tip">*</span>供应商产品编号</div>
+                            <div class="order-detail w81 r"> <input type="text" value=""  id="pno"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">供应商</div>
+                            <div class="order-detail w81 r">
+                                <select class="storage-admin-select" id="productSupplierName">
+                                </select></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="order-detail-tip">*</span>单件供货周期</div>
+                            <div class="order-detail w81 r"><input type="number" value=""  id="suplierDay">天</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">面料使用</div>
+                            <div class="order-detail w81 r"><input type="text" value="" id="material"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">排序</div>
+                            <div class="order-detail w81 r"><input type="number" value="" id="sort"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h136">备注</div>
+                            <div class="order-detail w81 r h136"><textarea id="remark" class="order-textarea"></textarea></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix color_container">
+                            <div class="order-detail w17 l"><span class="order-detail-tip">*</span>颜色</div>
+                            <div class="order-detail w81 r" id="color">
+
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="order-detail-tip">*</span>尺寸</div>
+                            <div class="order-detail w81 r" id="size">
+                            </div>
+                        </div>
+                        <div style="clear: both"></div>
+                        <div id="unification" class="row" style="margin-right: 0;margin-left: 0;background-color: #f3f2f4;line-height: 54px;margin-top: 2px;height: 54px;padding: 0 20px">
+                            <span class="col col-md-2 col-lg-2 col-sm-2 col-xs-2">价格： <input style="width: 60px;height: 26px;line-height: 26px" class="price" type="number"></span>
+                            <span class="col col-md-2 col-lg-2 col-sm-2 col-xs-2">库存： <input style="width: 60px;height: 26px;line-height: 26px" class="stock" type="number"></span>
+                            <span class="col col-md-2 col-lg-2 col-sm-2 col-xs-2"><button style="width: 120px;height: 30px;line-height: 26px;background-color: #0e90d2;color: #fff" onclick="add()">批量添加</button></span>
+                        </div>
+                        <div id="assemblage" class="row" style="margin-right: 0;margin-left: 0;background-color: #f3f2f4;line-height: 26px;margin-top: 2px;min-height: 54px;padding: 8px 20px"></div>
+                        <!--表格-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>颜色</th>
+                                <th>尺码</th>
+                                <th>价格</th>
+                                <th>库存</th>
+                                <th>备注</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+                        <!--<div class="wysiwyg-editor" id="editor1"></div>-->
+                        <div class="pdt20" style="text-align: center">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body" style="padding: 40px 0;font-size: 17px">
+                修改成功
+            </div>
+            <div class="modal-footer">
+                <div id="sure" style="width: 100%">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/supplierManage/supplierGoodsManageEdit.js"></script>
+
+</body>
+</html>

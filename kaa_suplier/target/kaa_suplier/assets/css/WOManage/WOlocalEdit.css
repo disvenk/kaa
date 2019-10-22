@@ -1,0 +1,138 @@
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.h170 {
+    height: 170px;
+    line-height: 170px;
+}
+
+.order-textarea {
+    width: 500px;
+    height: 120px;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding: 14px 12px 14px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+.h178 {
+    height: 178px;
+
+}
+
+.h118 {
+    height: 122px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.pdl0 {
+    padding-left: 0;
+}
+
+.input-address {
+    width: 470px;
+    height: 94px;
+    line-height: 18px;
+    border-radius: 5px !important;
+    padding: 14px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.modal-footer div {
+    width: 100%;
+}
+
+
+.goods-img{
+    width: 128px;
+    height: 93px;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    width: 85px;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+
+#img2{
+    position: relative;
+}
+
+#img2 .img_container2{
+    height: 170px;
+    display: inline-block;
+    width: 160px;
+}
+#img2 .img_container2 > div{
+    display: inline-block;
+    width: 160px;
+    height: 170px;
+}
+#img2 .img_container2 img{
+    width: 128px;
+    height:102px;
+}
+#img2 div .glyphicon{
+    top: -40px;
+    left: -9px;
+    font-size: 19px;
+    color: rgb(220,82,74);
+    cursor: pointer;
+}
+#img2 #addPosition2{
+    display: inline-block;
+    margin-left: 30px;
+}
+.table tr td{
+    border-top: none !important;
+}
+.table{
+    width: 750px;
+    margin-left: 108px;
+}
+.table input{
+    border-radius: 5px !important;
+}
+
+.address-list {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 18px;
+}
+
+.address-radio {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+
+
+
+

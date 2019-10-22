@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一智造生产管理系统</title>
+    <link rel="Shortcut Icon" href="../assets/img/head-logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/homePage/login.css"/>
+
+</head>
+<body onkeydown="keyLogin()">
+<div id="container">
+    <div class="logo"><img style="cursor: pointer" src="../assets/img/loginLog.png" alt=""></div>
+    <div class="login_container">
+        <div class="title">注册帐号</div>
+        <div class="account">
+            <label for="phone"><img src="../assets/img/account.png" alt=""></label>
+            <input type="text" placeholder="请输入您的手机号" id="phone">
+        </div>
+        <div class="password">
+            <label for="password"><img src="../assets/img/password.png" alt=""></label>
+            <input type="password" placeholder="请输入您的密码" id="password" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false">
+        </div>
+        <div class="surePassword">
+            <label for="surePassword"><img src="../assets/img/password.png" alt=""></label>
+            <input type="password" placeholder="请再次确认密码" id="surePassword" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false">
+        </div>
+        <div class="code" style="margin-bottom: 20px">
+            <label for="code"><img src="../assets/img/code.png" alt=""></label>
+            <input type="text" placeholder="请输入验证码" id="code">
+            <span id="getCode">获取验证码</span>
+        </div>
+        <div class="agree" style="margin-bottom: 22px;margin-top: -6px;text-align: left;padding-left: 6px"><input id="checkbox" type="checkbox" style="margin-right: 3px;position: relative;top: -1px"><span>我同意<span id="reader" style="color: rgb(58,149,248)">《服务使用协议》</span></span></div>
+        <div class="login" style="background-color: rgb(242,242,242)">下一步</div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width: 850px">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center">
+                <h4 class="modal-title" id="myModalLabel">合一智造服务使用协议</h4>
+            </div>
+            <div class="modal-body" style="font-size: 13px;color: #666">
+                一、欢迎“您”（以下或称“生产商”）与“苏州知行合一网络科技有限公司”（下称“知行合一”）共同签署本《生产商入驻协议》协议（下称“本协议”），本协议阐述之条款和条件适用于您使用合一智造基于互联网，以包含合一智造网站、合一智造系统、合一智造客户端等在内的各种形态（包括未来技术发展出现的新的服务形态）向您提供的各项服务。<br>
+                二、定义<br>
+                2.1 合一智造：指由苏州知行合一网络科技有限公司运营的面向企业间贸易 (S-TO-B)的在线信息发布及交易平台及客户端。<br>
+                2.2 知行合一：指“苏州知行合一网络科技有限公司”，系合一智造平台、系统及客户端的经营者。<br>
+                2.3 合一智造服务：指合一智造基于互联网，以包含合一智造平台、系统、客户端等在内的各种形态（包括未来技术发展出现的新的服务形态）向您提供的各项服务（下称“服务”）。<br>
+                三、生产商的权利与义务<br>
+                3.1 生产商在合一智造平台进行商品发布与销售；<br>
+                3.2 生产商可通过合一智造平台接到订单并生产；<br>
+                3.3 生产商应按质、按量、按时送货；<br>
+                3.4如生产商提供的产品因质量问题产生退货、换货、维修等情况，乙方需负责退货、换货、维修并承担由此产生的费用；<br>
+                3.5生产商提供的货品如经质检不合格，包含但不限于外在产品瑕疵，款式、材质等未达预定品质等，知行合一有权随时书面或口头通知退换货，生产商应于收到知行合一退换通知之日起三个工作日内安排接受合一智造退换货，并无权要求知行合一承担任何经济损失；<br>
+                3.6生产商收到知行合一退换货通知后三日内不安排退换货或拒绝退换货要求的，视为该生产商违约，应承担相应的经济损失；<br>
+                3.7如客户因购买到生产商提供的该商品，出现严重的危及到人身健康及安全的质量问题，知行合一有权追究该生产商的法律责任与给知行合一造成的一切经济损失；<br>
+                3.8生产商货品的具体发货周期按照双方订单或相关单据上确定的各款发货时间/周期为准，若生产商产品缺货，应提前一个发货周期的时间书面通知知行合一并获得合一智造书面同意，若因该原因造成合一智造损失的，由乙方承担全部损失赔偿责任；<br>
+                3.9生产商逾期交货的，知行合一有权要求生产商支付货物总价千分之二/日的逾期违约金；逾期10日仍未交货的，知行合一有权随时书面通知解除协议，并要求该生产商支付货品30%的违约金，若违约金不足以弥补知行合一损失的，知行合一有权要求该生产商赔偿；<br>
+                3.10生产商交货数量不符合订单要求的，该生产商应在交货当日补足，否则不足部分的货品视为该生产商逾期交付，该生产商应按本协议的第九条约定向知行合一支付逾期违约金、赔偿损失、直至解除协议；<br>
+                3.11除非生产商发生本协议第3.4、3.5款所述的情况，知行合一不得无理由要求生产商退货；<br>
+                四、生产商信息变更<br>
+                4.1 协议期间如发生生产商法人变更等情况时，应提前7个工作日书面通知知行合一，并将更改后的有效证件传至合一智造平台备案，如该生产商停业、外出、变更通讯方式、变更经营地址等临时情况出现送货有变动的，要及时安排好临时接替人员，提前7个工作日书面通知知行合一，并将转交代理人员联系方式告知知行合一，以保持供货需要。若因一方原因导致合一智造无法联系生产商订单、供货、退货、换货、维修等，由次造成的一切损失及后果由乙方承担。<br>
+                4.2 生产商保证所供应货品，不存在商标、知识产权等相关法律风险，如果出现上述法律风险，将有该生产商承担一切损失赔偿责任，给知行合一造成损失的，知行合一有权向该生产商追偿。<br>
+                五、法律管辖和适用<br>
+                5.1 本协议的订立、执行和解释及争议的解决均应适用中国法律。<br>
+                5.2 如发生本站服务条款与中国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它合法条款则依旧保持对用户产生法律效力和影响。<br>
+                本协议的规定是可分割的，如本协议任何规定被裁定为无效或不可执行，该规定可被删除而其余条款应予以执行。<br>
+                5.3 如双方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向本站所在地的人民法院提起诉讼。<br>
+            </div>
+            <div class="modal-footer">
+                <div data-dismiss="modal" style="width: 100%;text-align: center;cursor: pointer">确定</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/homePage/register.js"></script>
+</body>
+</html>

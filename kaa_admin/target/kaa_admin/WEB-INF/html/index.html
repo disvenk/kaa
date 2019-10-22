@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/main-min.css" rel="stylesheet" type="text/css" />
+    <link rel="Shortcut Icon" href="../assets/img/head-logo.png" type="image/x-icon">
+    <!--[if lte IE 8]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+
+</style>
+
+
+<div class="header">
+
+    <div class="dl-title">
+        <img src="../assets/img/channelAce/logo.png" alt="">
+    </div>
+    <div class="dl-log"><span class="dl-log-user" ></span><a id="updatePassword" title="修改密码" class="dl-log-quit">[修改密码]</a>
+    </div>
+    <div class="dl-log">欢迎您，<span class="dl-log-user" id="userName"></span><a href="../home/loginHtml" title="退出系统" class="dl-log-quit">[退出]</a>
+    </div>
+
+</div>
+<div class="content">
+    <ul id="J_NavContent" class="dl-tab-conten">
+    </ul>
+</div>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/bui.js"></script>
+<script type="text/javascript" src="../assets/js/config.js"></script>
+<body>
+
+<script>
+
+   $.ajax({
+        type: 'POST',
+        url: '../permission/findMenuByUser',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+            'Accept': 'application/json; charset=utf-8',
+            'Authorization': 'Basic ' + sessionStorage.getItem('token')
+        },
+        success: function (res) {
+            if(res.stateCode == 100){
+                 BUI.use('common/main',function(){
+                   var data = res.data;
+        var config = [{
+            id:'menu',
+            homePage : '',
+            menu:data
+            /*menu:[{
+                  text:'渠道用户管理',
+                  items:[
+                      {id:'code',text:'渠道用户管理',href:'../channel/channelHtml',closeable : false},
+                      {id:'opinion',text:'意见反馈',href:'../feedback/opinionHtml'}
+                  ]
+              },{
+                  text:'设计师管理',
+                  items:[
+                      {id:'designManage',text:'设计师管理',href:'../designer/designerHtml'}
+                  ]
+              },{
+                  text:'商品库管理',
+                  items:[
+                      {id:'categoryManage',text:'分类管理',href:'../category/categoryShowHtml'},
+                      {id:'goodsManage',text:'商品管理',href:'../product/goodsManageHtml'}
+                  ]
+              },
+                  {
+                      text:'供应商管理',
+                      items:[
+                          {id:'supplierManage',text:'供应商管理',href:'../suplier/suplierHtml'},
+                          {id:'supplierGoodsManage',text:'货品管理',href:'../suplier/supplierGoodsManageHtml'},
+                          {id:'supplierGoodsList',text:'采购价管理',href:'../suplier/supplierGoodsListManageHtml'}
+                      ]
+                  },
+                  {
+                      text:'线下门店管理',
+                      items:[
+                          {id:'storeManage',text:'门店管理',href:'../store/storeHtml'},
+                          {id:'storeGoodsManage',text:'商品管理',href:'../store/storeGoodsManageHtml'},
+                          {id:'storeSalesOrderManage',text:'销售订单管理',href:'../store/storeSalesOrderManageHtml'}
+                      ]
+                  },
+                  {
+                      text:'订单管理',
+                      items:[
+                          {id:'orderManage',text:'采购订单',href:'../orderManage/orderManageHtml'}
+                      ]
+                  },
+                  {
+                      text:'工单管理',
+                      items:[
+                          {id:'WOorderlocal',text:'本地订单管理',href:'../WOManage/WOorderlocalHtml'},
+                          {id:'WOlocal',text:'本地工单管理',href:'../WOManage/WOlocalHtml'},
+                          {id:'WOkaa',text:'合一智造工单管理',href:'../WOManage/WOkaaHtml'},
+                          {id:'WOoperate',text:'工单操作',href:'../WOManage/WOoperateHtml'},
+                          {id:'WOrecord',text:'生产记录',href:'../WOManage/WOrecordHtml'},
+                          {id:'WOproduct',text:'供应商商品库',href:'../WOManage/WOproductHtml'}
+                      ]
+                  },
+                  {
+                      text:'首页设置',
+                      items:[
+                          {id:'homePageOperationManage',text:'首页运营管理',href:'../salesHeadCategory/salesHeadCategoryManageHtml'},
+                          {id:'homePageBannerManage',text:'Banner位管理',href:'../banner/bannerManageHtml'},
+                          {id:'announcementManage',text:'公告管理',href:'../announcementManage/announcementManageHtml'},
+                          {id:'bottomVideo',text:'底部内容管理',href:'../salesHeadCategory/bottomVideoHtml'}
+                      ]
+                  },
+                  {
+                      text:'销售平台商品',
+                      items:[
+                          {id:'showGoodsManage',text:'展示商品管理',href:'../salesProduct/showGoodsHtml'},
+                          {id:'desinerZoneGoods',text:'设计师专区商品',href:'../designerProduct/designerGoodsHtml'}
+                      ]
+                  },
+                  {
+                      text:'线上网销管理',
+                      items:[
+                          {id:'onlineUsersManage',text:'用户管理',href:'http://www.baidu.com'},
+                          {id:'onlineTaobaoOrderManage',text:'淘宝订单',href:'http://www.baidu.com'},
+                          {id:'onlineupLoadLogManage',text:'上传记录',href:'http://www.baidu.com'}
+                      ]
+                  },
+                  {
+                      text:'数据统计',
+                      items:[
+                          {id:'ordersCount',text:'采购订单统计',href:'http://www.baidu.com'},
+                          {id:'goodsCount',text:'商品统计',href:'http://www.baidu.com'}
+                      ]
+                  },
+                  {
+                      text:'合一盒子',
+                      items:[
+                          {id:'boxGoods',text:'商品管理',href:'../boxManage/boxManageHtml'},
+                          {id:'boxRecord',text:'订阅记录',href:'../boxManage/boxRecordHtml'},
+                          {id:'boxExperience',text:'体验师管理',href:'../boxManage/boxExperienceUserHtml'}
+                      ]
+                  },{
+                      text:'系统设置',
+                      items:[
+                          {id:'user',text:'用户管理',href:'../permission/userManagerHtml'},
+                          {id:'role',text:'角色管理',href:'../permission/roleManagerHtml'},
+                          {id:'menu',text:'菜单管理',href:'../permission/menuManagerHtml'}
+                      ]
+                  }]*/
+        }];
+
+        new PageUtil.MainPage({
+            modulesConfig : config
+        });
+    });
+           }else{
+                 alert(res.message);
+            }
+        },
+        error: function (err) {
+        }
+   });
+    var token = sessionStorage.getItem('token');
+    var urllen = sessionStorage.setItem('urllen','../');
+    if(!token){
+        location.href = '../home/loginHtml';
+    }else {
+        $.ajax({
+            type: 'POST',
+            url: '../account/loginInfo',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            success: function (res) {
+                if(res.stateCode == 100){
+                    $("#userName").html(res.data.name)
+                }else{
+                    // alert(res.message);
+                }
+            },
+            error: function (err) {
+            }
+        });
+    }
+</script>
+<script>
+    $('#updatePassword').click(function () {
+        layer.open({
+            title: '修改密码'
+            ,area: ['300px', '200px']
+            ,content: '<div>\n' + '<span>原密码：</span><input id="password" type="password" lay-verify="required" class="layer-select1" oncopy="return false" onpaste="return false"  ondragstart="return false" onselectstart="return false">' +'</br>' +
+            '' + '<span>新密码：</span><input id="passwordSure" type="password" lay-verify="required" class="layer-select1" oncopy="return false" onpaste="return false"  ondragstart="return false" onselectstart="return false">' +'</br>' +
+            '' + '<span>新密码：</span><input id="passwordSure1" type="password" lay-verify="required" class="layer-select1" oncopy="return false" onpaste="return false"  ondragstart="return false" onselectstart="return false">' +'</br>' +
+            '' + '<span style="color: red"  id="detail"></span>'+
+            '</div>'
+            ,btn: ['确定']
+            ,yes: function(index, layero){
+                var password = $('#password').val();
+                if(password == ""){
+                    $('#detail').html('密码不能为空');
+                    return;
+                }
+                var passwordSure = $('#passwordSure').val();
+                if(passwordSure == ""){
+                    layer.alert('新密码不能为空', {icon: 0});
+                    return;
+                }
+                var passwordSure1 = $('#passwordSure1').val();
+                if(passwordSure1 == ""){
+                    layer.alert('新密码不能为空', {icon: 0});
+                    return;
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '../account/updatePassword',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    headers: {
+                        'Accept': 'application/json; charset=utf-8',
+                        'Authorization': 'Basic ' + sessionStorage.getItem('token')
+                    },
+                    data: JSON.stringify({password:password,passwordSure:passwordSure,passwordSure1:passwordSure1}),
+                    success: function (res) {
+                        if(res.stateCode == 100){
+                            layer.alert('修改成功', {icon: 0});
+                            setTimeout(function () {
+                                location.href="../home/loginHtml";
+                            },1500)
+                        }else{
+                            $('#detail').html(res.message);
+//                        layer.open(index);
+                        }
+                    },
+                    error: function (err) {
+                        layer.alert(err.message, {icon: 0});
+                    }
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
+
+

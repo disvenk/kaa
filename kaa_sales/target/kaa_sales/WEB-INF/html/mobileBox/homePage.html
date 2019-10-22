@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造会员服务</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/salePlat/mobileBoxCommon.css">
+    <link rel="stylesheet" href="../assets/css/salePlat/mobileBox.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+
+<div class="mobile-container clearfix">
+    <img class="mobile-img" src="../assets/img/salePlat/v2-img1.jpg" alt="">
+    <div class="cont-wrap">
+        <img class="mobile-img" style="border-radius: 5px" src="../assets/img/salePlat/v2-img3.jpg" alt="">
+        <!--循环加载商品列表-->
+        <div class="product-list-items clearfix">
+
+        </div>
+        <!--<div class="product-second-step">抢驻第二步：点击“1元抢驻”，免费在家试婚纱</div>-->
+        <!--<button class="box-discount">1元抢会员</button>-->
+        <div class="product-second-step">
+            <img src="../assets/img/salePlat/v2-img4.jpg" alt="">
+            <button class="box-discount">1元抢驻</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/share.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/mobileBox.js"></script>
+<script>
+    //获取openId
+    var openId = '${openId}';
+    sessionStorage.setItem('openId', openId)
+</script>
+
+</body>
+</html>

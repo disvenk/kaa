@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title>会员中心</title>
+    <!--<meta name="description" content="Restyling jQuery UI Widgets and Elements"/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style"/>
+
+    <link rel="stylesheet" href="../assets/css/salePlat/infoTable.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/vipCenter.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+</head>
+<body class="no-skin">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <!-- /section:settings.box -->
+            <div class="page-content-area">
+
+                <!--part1-->
+                <div class="vip-welcome clearfix">
+                    <div class="vip-head">
+                        <img src="" alt="">
+                    </div>
+                    <div class="vip-hello">
+                        <div class="vip-hello-word">您好！<span class="vip-name"></span></div>
+                        <div class="vip-hello-btn">
+                            <button id="toMyAddress" class="hello-btn">地址信息</button>
+                            <span id="device"></span>
+                            <button id="toMyInformation" class="hello-btn">我的资料</button>
+                        </div>
+                    </div>
+                    <!--<div class="box-order">-->
+                        <!--<button class="box-order-btn">合一盒子订阅服务</button>-->
+                        <!--<div class="box-order-info">-->
+                            <!--您已订阅，剩余次数 <span>2</span>次<br>-->
+                            <!--有效期至2018年1月30日-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <!--part2-->
+                <div class="vip-section">
+                    <div class="">待发货订单</div>
+                </div>
+                <!--table-->
+                <table class="table table-bordered mt10">
+                    <thead>
+                    <tr>
+                        <th class="order-topic center">商品信息</th>
+                        <th class="order-topic center">价格</th>
+                        <th class="order-topic center">数量</th>
+                        <th class="order-topic center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    <!--<tr>-->
+                    <!--<td style="width: 38%">-->
+                    <!--<div class="order-info-wrap">-->
+                    <!--<img class="order-info-img" src="../assets/img/salePlat/girl1.png" alt="">-->
+                    <!--<div class="sales-order-info">-->
+                    <!--<div class="order-info-name">名称：<span>标准测试商品</span></div>-->
+                    <!--<div class="order-info-desc">颜色：<span>红色</span> &nbsp;&nbsp;尺寸：<span>M</span></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+                    <!--</td>-->
+                    <!--<td>1件</td>-->
+                    <!--<td>￥234</td>-->
+                    <!--<td style="width: 30%"><button class="hello-btn">查看订单</button></td>-->
+                    <!--</tr>-->
+                    </tbody>
+                </table>
+
+                <!--分页-->
+                <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+            </div><!-- /.page-content-area -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/salePlat/vipCenter.js"></script>
+<script type="text/javascript">
+
+    $("#datepickerStart").datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: false,
+    });
+    $("#datepickerEnd").datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: false,
+    });
+
+</script>
+
+</body>
+</html>

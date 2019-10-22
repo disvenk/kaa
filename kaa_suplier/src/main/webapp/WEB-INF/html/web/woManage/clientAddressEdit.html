@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/clientAddressAdd.css"/>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">地址编辑</div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人</div>
+                            <div class="order-detail w81 r"><input id="receiver" maxlength="100" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">收件人电话</div>
+                            <div class="order-detail w81 r"><input id="mobile" maxlength="30" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 h178 l">收件人地址</div>
+                            <div class="w81 pdl0 r">
+                                <div class="order-detail pdl0">
+                                    <div class="order-detail h56" id="province" style="padding-left: 20px">
+                                        <select id="cmbProvince" name="cmbProvince"></select>
+                                        <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                        <select id="cmbArea" name="cmbArea"></select>
+                                    </div>
+                                </div>
+                                <div class="order-detail pdl0 h118">
+                                    <textarea id="address" maxlength="200" placeholder="请输入详细收件地址（不含省市区）" class="input-address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>提交成功！</span>
+            </div>
+            <div class="modal-footer">
+                <div id="sure" type="button" class="sure">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/layDate-v5.0.9/laydate/laydate.js"></script>
+<script src="../assets/js/WOManage/clientAddressEdit.js"></script>
+
+</body>
+</html>

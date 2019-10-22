@@ -1,0 +1,374 @@
+body{
+    background-color: rgb(238,236,239);
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden
+}
+/*头部*/
+a{
+    text-decoration: none;
+    cursor: pointer !important;
+    color: #666;
+}
+a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+}
+.header {
+    background-color: #fff;
+    height: 40px;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #f2f2f2;
+    margin: 0;
+    position: fixed;
+    top:0;
+    z-index: 1000;
+}
+
+.dl-title {
+    float: left;
+    line-height: 40px;
+    font-size: 13px;
+    margin-right: 0;
+    color: #666;
+}
+.dl-title a{
+    color: #666;
+}
+/*!*尾部*!*/
+/*#bottom{*/
+    /*background-color: #fff;*/
+/*}*/
+/*.footer{*/
+    /*width: 100%;*/
+    /*background-color: #ffffff;*/
+    /*padding: 20px 8%;*/
+    /*height: 300px;*/
+    /*color: #666;*/
+/*}*/
+/*.footer-content{*/
+    /*width: 100%;*/
+    /*overflow: hidden;*/
+/*}*/
+/*.footer-content > div{*/
+    /*float: left;*/
+    /*width: 20%;*/
+    /*text-align: center;*/
+/*}*/
+/*.footer ul{*/
+    /*margin: 0;*/
+/*}*/
+/*#bottom .content{*/
+    /*padding-top: 12px;*/
+/*}*/
+/*.footer-content>li {*/
+    /*cursor: pointer;*/
+/*}*/
+/*#code{*/
+    /*width: 100px;*/
+/*}*/
+/*.clear{*/
+    /*clear: both;*/
+    /*margin: 15px 0;*/
+    /*border: 1px solid #f2f2f2;*/
+/*}*/
+/*.footer_footer{*/
+    /*width: 100%;*/
+    /*padding: 12px 8%;*/
+/*}*/
+/*.footer_footer > div{*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+/*}*/
+/*.footer_footer div a{*/
+    /*display: inline-block;*/
+    /*width: 13%;*/
+    /*text-align: center;*/
+/*}*/
+.main-container{
+    padding: 0 8%;
+}
+.header_content{
+    padding: 0 8%;
+    overflow: hidden;
+}
+.header_content .login{
+    margin: 0 30px;
+    color: rgb(213,118,120);
+}
+.content_header{
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    padding: 0 8%;
+    margin-top: 50px;
+}
+.content_header img{
+    float: left;
+    margin-left: 30px;
+    height: 46px;
+    margin-top: 7px;
+    margin-right: 60px;
+}
+.content_header .search{
+    float: right;
+}
+/*.content_header .search .glyphicon{*/
+    /*padding: 6px 15px;*/
+    /*background-color: #000;*/
+    /*color: rgb(236,236,236);*/
+    /*position: relative;*/
+    /*top:1px;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.content_header .search input{*/
+    /*height: 26px;*/
+    /*line-height: 26px;*/
+    /*width: 180px;*/
+    /*padding: 0 5px;*/
+/*}*/
+.content_header a{
+    display: inline-block;
+    color: #666;
+    cursor: pointer;
+}
+.content_header a:hover{
+    text-decoration: none;
+    font-size: 14px;
+}
+.dl-log {
+    float: right;
+    padding: 0;
+    line-height: 40px;
+    font-size: 13px;
+}
+.dl-log a{
+    padding: 3px 15px;
+    border-left: 1px solid #F2F2F2;
+}
+.dl-log a:nth-child(1){
+    border: none;
+}
+.main-container:before{
+    background-color: rgb(238,236,239);
+}
+#xiadans .page-content1{
+    background-color: #f5f5f5;
+    padding: 20px 50px 50px 50px;
+    position: relative;
+    min-height: calc(100vh - 5vw);
+}
+#xiadans .recivedInformation_container{
+    width: 100%;
+    background-color: rgb(243,242,244);
+    margin-bottom: 20px;
+    margin-top: 15px;
+    padding: 0 40px;
+    padding-bottom: 15px;
+}
+#xiadans .page_area .recivedInformation{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #f2f2f2;
+    line-height: 60px;
+    font-size: 14px;
+}
+#xiadans  .page-content-area .page_area .address{
+    font-size: 14px;
+    padding: 20px 40px;
+}
+#xiadans  .page-content-area .page_area .address select{
+    height: 26px;
+    width: 120px;
+    text-align: center;
+}
+#xiadans  #textatea{
+    border-radius: 5px !important;
+    resize: none;
+}
+#xiadans  .page-content-area .page_area .address .receivedMan span input{
+    height: 26px;
+    border-radius: 5px !important;
+    width: 80px;
+}
+#xiadans  .page-content-area .page_area .col_container{
+    background-color: rgb(243,242,244);
+    margin-bottom: 20px !important;
+}
+#xiadans  .page-content-area .page_area .row{
+    margin: 0 !important;
+}
+#xiadans  .page-content-area .page_area .row .col-xs-12{
+    padding: 0;
+}
+#xiadans #sample-table-1{
+    margin-bottom: 0;
+}
+#xiadans #sample-table-1 .information{
+    width: 20%;
+    text-align: left;
+    float: left;
+    min-width: 50px;
+}
+#xiadans #sample-table-1 .information img{
+    width: 100%;
+    border-radius: 6px;
+    margin-right: 5%;
+}
+#xiadans #sample-table-1 th{
+    min-width: 86px;
+}
+#xiadans #sample-table-1 .information_container{
+    max-width: 300px;
+    font-size: 12px;
+    color: rgb(69,72,79);
+    position: relative;
+}
+#xiadans .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+#xiadans #sample-table-1 .introduce_container{
+    width: 75%;
+    margin-left: 25%;
+    text-align: left;
+    padding-top: 1%;
+}
+#xiadans #sample-table-1 .introduce_container .color{
+    color: rgb(172,172,172);
+    position: absolute;
+    bottom: 13%;
+    left:calc(25% + 4px);
+}
+#xiadans #sample-table-1 .introduce_container .chinese_introduce{
+    max-height: 34px;
+    overflow: hidden;
+    position: relative;
+    top:3%;
+}
+#xiadans #sample-table{
+    margin-bottom: 0;
+}
+#xiadans #sample-table th{
+    min-width: 86px;
+}
+#xiadans #sample-table .custormInformation{
+    font-size: 12px;
+}
+#xiadans #sample-table .custormInformation td input{
+    width: 50px;
+    height: 23px;
+    border-radius: 5px !important;
+}
+#xiadans  .table-container {
+    width: 100%;
+    overflow-y: auto;
+    _overflow: auto;
+    margin: 0 0 1em;
+    background-color: rgb(243,242,244);
+}
+#xiadans  .noteInformation{
+    background-color: rgb(243,242,244);
+    width: 100%;
+    padding: 12px 40px;
+    position: relative;
+    border-top: 1px solid rgb(221,221,221);
+}
+#xiadans  .noteInformation span{
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+#xiadans  .noteInformation textarea{
+    background-color: #fff;
+    margin-left: 60px;
+    resize: none;
+    border-radius: 5px !important;
+}
+#xiadans #submitOrders{
+    color: #fff;
+    display: inline-block;
+    background-color: rgb(66,159,213);
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 19px;
+    margin: 50px 0;
+}
+.order-info-wrap {
+    vertical-align: middle;
+    position: relative;
+}
+
+.sales-order-info {
+    display: inline-block;
+
+}
+
+.order-info-img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-right: 14px;
+}
+
+.order-info-name {
+    width: 180px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    height: 52px;
+}
+
+.order-info-desc {
+    position: absolute;
+    bottom: 6px;
+    width: 180px;
+    text-align: left;
+    color: grey;
+}
+#customer tr{
+    background-color: rgb(243,242,244);
+}
+.total{
+    text-align: right;
+    padding-right: 90px;
+    height: 46px;
+    line-height: 46px;
+    background-color: rgb(243,242,244);
+    margin-top: 12px;
+}
+#xiadanInforms th{
+    color: #3c9ed8;
+    text-align: center !important;
+}
+#xiadanTbody td input{
+    width: 50px;
+    height: 26px;
+    border-radius: 6px !important;
+}
+#xiadanTbody td{
+    text-align: center;
+}
+
+/*.content_header .search .glyphicon{*/
+    /*padding: 6px 15px;*/
+    /*background-color: #000;*/
+    /*color: rgb(236,236,236);*/
+    /*position: relative;*/
+    /*top:1px !important;*/
+    /*cursor: pointer;*/
+/*}*/
+/*.content_header .search input{*/
+    /*height: 27px !important;*/
+    /*line-height: 27px !important;*/
+    /*width: 180px;*/
+    /*padding: 0 5px;*/
+/*}*/
+#description p{
+    line-height: 0;
+    margin: 0;
+}

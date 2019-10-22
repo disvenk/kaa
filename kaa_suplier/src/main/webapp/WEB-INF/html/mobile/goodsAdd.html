@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>货品新增</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/goodsAdd.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+</head>
+<body>
+<div class="goods-temp" style="position: relative;background-color: #ffffff">
+    <div class="swiper-container" style="width: 100%;height: 100%">
+        <div class="swiper-wrapper" id="swipe">
+        </div>
+    </div>
+    <img id="camera" src="../assets/images/img/camera.png" alt="">
+    <img id="delete" src="../assets/images/img/delete.png" alt="">
+</div>
+<div class="wrap">
+    <div class="main-container">
+        <div class="goods-add-info">名称：<input class="goods-add-input" type="text" placeholder="请输入商品名称" id="name"></div>
+        <div class="goods-add-info">货号：<input class="goods-add-input" type="text" placeholder="请输入货号" id="pno"></div>
+        <div class="goods-add-info">品牌：<input class="goods-add-input" type="text" placeholder="请输入品牌名称" id="brand"></div>
+        <div class="goods-add-info" id="label">分类：
+            <div style="display: inline-block;text-align: left;width: 85%;padding-left: 18px">
+                <select name="" id="one">
+
+                </select>
+                <select name="" id="two">
+
+                </select>
+            </div>
+        </div>
+        <div id="goodsInfo" class="goods-add-info">商品规格 <img class="more-cate" src="../assets/images/img/more.png" alt=""></div>
+        <div class="goods-add-info">面料使用：<input class="goods-add-input w60p" type="text" placeholder="请输入使用的面料" id="material"></div>
+        <div class="goods-add-info">供货周期：<input class="goods-add-input w60p" type="number" placeholder="请输入供货周期" id="suplierDay"></div>
+        <div class="goods-add-info">供货价：<input style="margin-left: 25px" class="goods-add-input w60p" type="number" placeholder="请输入供货价格" id="price"></div>
+        <div class="goods-add-info">库存：<input style="margin-left: 40px" class="goods-add-input w60p" type="number" placeholder="请输入库存" id="stock"></div>
+        <div class="goods-add-info bb0">备注</div>
+        <textarea class="goods-add-text" id="remarks" placeholder="请输入备注"></textarea>
+    </div>
+</div>
+<div class="order-confirm-btn" id="submit">保存</div>
+<!--规格选择自定义摸态窗-->
+<div id="modal">
+    <div class="main-container">
+        <div class="goods-info-topic">颜色</div>
+        <ul class="goods-color-items clearfix color">
+
+        </ul>
+        <div class="goods-info-topic">尺码</div>
+        <ul class="goods-color-items clearfix size">
+
+        </ul>
+
+        <div class="goods-info-topic">选定的规格</div>
+        <div class="info-show clearfix">
+            <span class="info-show-tip">您需要选择相应的销售属性，才能组合成完整的规格信息</span>
+            <div style="text-align: right;margin: 5px 0"></div>
+            <div id="spec" style="word-wrap: break-word">
+
+            </div>
+        </div>
+    </div>
+    <div class="order-confirm-btn" id="sure">确定</div>
+</div>
+<div class="weui-mask" id="ioMask" style="display: none"></div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<!--<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>-->
+<!--<script src="../assets/js/weui/weui.min.js"></script>-->
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/goodsAdd.js"></script>
+
+<script>
+    var id = '${id}';
+    var parentId;
+    var imgArr= [];
+    var arr = [];
+    var imgArr2 = [];
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: false,
+        autoplayDisableOnInteraction: false,
+        spaceBetween: 30,
+        loop: false,
+        autoplay: false
+    });
+    //一级分类
+    $.ajax({
+        type: 'POST',
+        url: '../base/getPlaProductCategoryLevelOneList',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+            'Accept': 'application/json; charset=utf-8',
+            'Authorization': 'Basic ' + sessionStorage.getItem('token')
+        },
+        success: function (res) {
+            if(res.stateCode == 100){
+                $('#one').html('');
+                var one = '';
+                for (var i=0; i<res.data.length; i++) {
+                    one += '<option value="'+res.data[i].id+'">'+res.data[i].name+'</option>'
+                }
+                $("#one").append(one);
+                parentId = $("#one").val();
+                getCategory(parentId)
+                $("#one").change(function(){
+                    $('#two').html('');
+                    parentId = $("#one").val();
+                    getCategory(parentId)
+                });
+                //二级分类
+              function getCategory(id) {
+                $.ajax({
+                    type: 'POST',
+                    url: '../base/getPlaProductCategoryList',
+                    dataType: 'json',
+                    contentType: 'application/json; charset=utf-8',
+                    headers: {
+                        'Accept': 'application/json; charset=utf-8',
+                        'Authorization': 'Basic ' + sessionStorage.getItem('token')
+                    },
+                    data: JSON.stringify({parentId: id}),
+                    success: function (res) {
+                        if(res.stateCode == 100){
+                            $('#two').html('');
+                            var two = '';
+                            for (var i=0; i<res.data.length; i++) {
+                                two += '<option value="'+res.data[i].id+'">'+res.data[i].name+'</option>'
+                            }
+                            $("#two").append(two);
+                        }else{
+                            layer.msg(res.message);
+                        }
+                    },
+                    error: function (err) {
+                        layer.msg(err.message);
+                    }
+                });
+            }
+            }else{
+                layer.msg(res.message);
+            }
+        },
+        error: function (err) {
+            layer.msg(err.message);
+        }
+    });
+    if (id && typeof(id)!="undefined" && typeof(id)!="null" && id!=null) {
+        $.ajax({
+            type: 'POST',
+            url: '../suplierProduct/productDetail',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({id:id}),
+            success: function (res) {
+                if (res.stateCode == 100) {
+                    for(var i = 0; i < res.data.pictures.length; i++){
+                        var picture = '';
+                        picture += '<div class="swiper-slide" style="width: 100%;height: 100%">' +
+                            '<img id="'+res.data.pictures[i].id+'" src="'+res.data.pictures[i].href+'" alt="" style="width:100%;height: 100%"></div>';
+                        $('#swipe').append(picture);
+                    }
+                    var swiper = new Swiper('.swiper-container', {
+                        pagination: '.swiper-pagination',
+                        nextButton: '.swiper-button-next',
+                        prevButton: '.swiper-button-prev',
+                        slidesPerView: 1,
+                        paginationClickable: false,
+                        autoplayDisableOnInteraction: false,
+                        spaceBetween: 30,
+                        loop: false,
+                        autoplay: false
+                    });
+                    $("#name").val(res.data.name);
+                    $("#pno").val(res.data.pno);
+                    $("#brand").val(res.data.brand);
+                    $("#material").val(res.data.material);
+                    $("#suplierDay").val(res.data.suplierDay);
+                    $("#remarks").val(res.data.remarks);
+                    $('#price').val(res.data.price);
+                    $('#stock').val(res.data.stock);
+
+                } else {
+                    layer.msg(res.message);
+                }
+            },
+            error: function (err) {
+                layer.msg(err.message)
+            }
+        })
+    }
+    $('#goodsInfo').click(function () {
+        $('#modal').css('display', 'block');
+        arr = [];
+    })
+    //加载颜色尺寸  ../base/getBaseDataList   parameterType-2/3
+    function getBaseDataList() {
+        $.ajax({
+            type: 'POST',
+            url: '../base/getBaseDataList',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({parameterType: 2}),
+            success: function (res) {
+                if(res.stateCode == 100){
+                    $('.color').html('');
+                    var color = '';
+                    for (var i=0; i<res.data.length; i++) {
+                        color += '<li class="goods-color-item" value="'+res.data[i].id+'">'+res.data[i].name+'</li>'
+                    }
+                    $(".color").append(color);
+                }else{
+                    layer.msg(res.message);
+                }
+            },
+            error: function (err) {
+                layer.msg(err.message);
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: '../base/getBaseDataList',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({parameterType: 3}),
+            success: function (res) {
+                if(res.stateCode == 100){
+                    $('.size').html('');
+                    var size = '';
+                    for (var i=0; i<res.data.length; i++) {
+                        size += '<li class="goods-size-item" value="'+res.data[i].id+'">'+res.data[i].name+'</li>'
+                    }
+                    $(".size").append(size);
+                }else{
+                    layer.msg(res.message);
+                }
+            },
+            error: function (err) {
+                layer.msg(err.message);
+            }
+        });
+
+    }
+    getBaseDataList();
+    //动态绑定颜色尺寸关系
+    var colors = new Map();
+    var sizes = new Map();
+    $(".color").on("click", ".goods-color-item",function () {
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            colors.delete($(this).html());
+        }else{
+            $(this).addClass('active');
+            colors.set($(this).html(), $(this).html());
+        }
+        each();
+    });
+    $(".size").on("click", ".goods-size-item",function () {
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            sizes.delete($(this).html());
+        }else{
+            $(this).addClass('active');
+            sizes.set($(this).html(), $(this).html());
+        }
+        each();
+    });
+
+    //生产颜色尺寸关系
+    function each() {
+        $("#spec").html("");
+        colors.forEach(function (color) {
+            sizes.forEach(function (size) {
+                var sp = '';
+                sp += '<span style="display: inline-block;width: 50%;padding: 3px 6px;text-align: center" value="'+ color +',' + size +'">' + color + '\+' + size +'</span>';
+                $("#spec").append(sp)
+            });
+        });
+    }
+
+    //保存
+    $("#sure").click(function () {
+        var list = $("#spec").children("span");
+        for (var i=0;i<list.length;i++) {
+            var spec = list.eq(i).attr("value").split(',');
+            var obj = {
+                color: spec[0],
+                size: spec[1],
+            };
+            arr.push(obj)
+        }
+        $('#modal').css('display', 'none');
+    });
+
+
+    //加载信息
+    if (id && typeof(id)!="undefined" && typeof(id)!="null" && id!=null) {
+        $.ajax({
+            type: 'POST',
+            url: '../suplierProduct/productPrice',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({id: id}),
+            success: function (res) {
+                if(res.stateCode == 100){
+                    $("#spec").html('');
+                    for (var i=0; i<res.data.length; i++) {
+                        var color = res.data[i].color;
+                        var size = res.data[i].size;
+                        var sp = '';
+                        sp += '<span style="display: inline-block;width: 50%;padding: 3px 6px;text-align: center" value="'+ color +',' + size +'">'+ color + '\+' + size +'</span>';
+                        $("#spec").append(sp);
+                        //追加选择样式
+                        if (colors.get(color) == null) {
+                            colors.set(color,color);
+                            var colorList  = $(".goods-color-item");
+                            for (var j=0; j<colorList.length; j++) {
+                                if (color == colorList.eq(j).html()) {
+                                    colorList.eq(j).addClass('active');
+                                }
+                            }
+                        }
+                        if (sizes.get(size) == null) {
+                            sizes.set(size,size);
+                            var sizeList  = $(".goods-size-item");
+                            for (var j=0; j<sizeList.length; j++) {
+                                if (size == sizeList.eq(j).html()) {
+                                    sizeList.eq(j).addClass('active');
+                                }
+                            }
+                        }
+                    }
+                }else{
+                    layer.msg(res.message);
+                }
+            },
+            error: function (err) {
+                layer.msg(err.message);
+            }
+        });
+    }
+    //上传图片
+    var url = window.location.href.split('#')[0];
+    $.ajax({
+        type: 'GET',
+        url: '../suplierHome/getshareinfo?url='+url,
+        dataType: 'json',
+        async: false,
+        contentType: "application/json; charset=utf-8",
+        headers: {
+            "Accept": "application/json; charset=utf-8",
+            'Authorization': 'Basic '
+        },
+        success: function(res){
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端layer.msg出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: res.data.appid, // 必填，公众号的唯一标识
+                timestamp: res.data.timestamp, // 必填，生成签名的时间戳
+                nonceStr: res.data.noncestr, // 必填，生成签名的随机串
+                signature: res.data.signature,// 必填，签名
+                jsApiList: ['chooseImage','uploadImage','downloadImage', 'getLocalImgData'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+            wx.ready(function(){
+                $('#camera').click(function(){
+                    var headImgUrl = '';
+                    var img = '';
+                    var obj = {};
+                    var obje = {};
+                    if(/android/i.test(navigator.userAgent)) {
+                        wx.chooseImage({
+                            count: 1, // 默认9
+                            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                            sourceType: ['camera','album'], // 可以指定来源是相册还是相机，默认二者都有
+                            success: function (res) {
+                                img = res.localIds[0]; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                                $('#swipe').append('<div class="swiper-slide" style="width: 100%;height: 100%">' +
+                                    '<img src="'+img+'" alt="" style="width:100%;height: 100%"></div>');
+                                obje.href = img;
+                                imgArr2.push(obje);
+                                var swiper = new Swiper('.swiper-container', {
+                                    pagination: '.swiper-pagination',
+                                    nextButton: '.swiper-button-next',
+                                    prevButton: '.swiper-button-prev',
+                                    slidesPerView: 1,
+                                    paginationClickable: false,
+                                    autoplayDisableOnInteraction: false,
+                                    spaceBetween: 30,
+                                    loop: false,
+                                    autoplay: false
+                                });
+                                wx.uploadImage({
+                                    localId: img, // 需要上传的图片的本地ID，由chooseImage接口获得
+                                    isShowProgressTips: 0, // 默认为1，显示进度提示
+                                    success: function (res) {
+                                        headImgUrl = res.serverId; // 返回图片的服务器端ID
+                                        obj.href = headImgUrl;
+                                        imgArr.push(obj);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                        wx.chooseImage({
+                            count: 1, // 默认9
+                            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                            sourceType: ['camera','album'], // 可以指定来源是相册还是相机，默认二者都有
+                            success: function (res) {
+                                img = res.localIds[0]; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                                wx.getLocalImgData({
+                                    localId: img, // 图片的localID
+                                    success: function (res) {
+                                        localData = res.localData; // localData是图片的base64数据，可以用img标签显示
+                                        $('#swipe').append('<div class="swiper-slide" style="width: 100%;height: 100%">' +
+                                            '<img src="'+localData+'" alt="" style="width:100%;height: 100%"></div>');
+                                        obje.href = localData;
+                                        imgArr2.push(obje);
+                                        var swiper = new Swiper('.swiper-container', {
+                                            pagination: '.swiper-pagination',
+                                            nextButton: '.swiper-button-next',
+                                            prevButton: '.swiper-button-prev',
+                                            slidesPerView: 1,
+                                            paginationClickable: false,
+                                            autoplayDisableOnInteraction: false,
+                                            spaceBetween: 30,
+                                            loop: false,
+                                            autoplay: false
+                                        });
+                                    }
+                                });
+                                wx.uploadImage({
+                                    localId: img, // 需要上传的图片的本地ID，由chooseImage接口获得
+                                    isShowProgressTips: 0, // 默认为1，显示进度提示
+                                    success: function (res) {
+                                        headImgUrl = res.serverId; // 返回图片的服务器端ID
+                                        obj.href = headImgUrl;
+                                        imgArr.push(obj);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                })
+            });
+            wx.error(function(res){
+                layer.msg('网络错误');
+            });
+        },
+        error:function (err) {
+            layer.msg('配置错误');
+        }
+    });
+    //删除
+    var productPictureIdList = [];
+    $('#delete').click(function () {
+        if($('.swiper-slide-active img').attr('id')){
+            var objec = {};
+            objec.id = $('.swiper-slide-active img').attr('id');
+            productPictureIdList.push(objec);
+        }
+       $('.swiper-slide-active').remove();
+        for(var i = 0; i < imgArr2.length; i++){
+            if($('.swiper-slide-active img').attr('src') == imgArr2[i].href){
+                      imgArr.splice(i, 1)
+            }
+        }
+    });
+    //保存数据
+    $("#submit").click(function () {
+        $('#ioMask').css('display', 'block');
+        var productPictureList = [];
+        var con = $('.swiper-container #swipe div');
+        for(var i = 0; i < con.length; i++){
+            var obj = {};
+            obj.href = con.eq(i).find('img').attr('src');
+            productPictureList[i] = obj;
+        }
+        var data = {
+            id: id,
+            name: $("#name").val(),
+            pno: $("#pno").val(),
+            brand: $("#brand").val(),
+            material: $("#material").val(),
+            suplierDay: $("#suplierDay").val(),
+            remarks: $("#remarks").val(),
+            categoryId: $('#two').find('option:selected').val(),
+            price: $('#price').val(),
+            stock: $('#stock').val(),
+            productPriceList: arr,
+            productPictureList: imgArr,
+            productPictureIdList: productPictureIdList
+        }
+       $.ajax({
+            type: 'POST',
+            url: '../suplierProduct/saveSuplierProduct',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify(data),
+            success: function (res) {
+                if (res.stateCode == 100) {
+                    location.href = "../suplierHome/goodsHtml"
+                } else {
+                    $('#ioMask').css('display', 'none');
+                    layer.msg(res.message);
+                }
+            },
+            error: function (err) {
+                $('#ioMask').css('display', 'none');
+                layer.msg(err.message)
+            }
+        })
+    })
+</script>
+</body>
+
+</html>

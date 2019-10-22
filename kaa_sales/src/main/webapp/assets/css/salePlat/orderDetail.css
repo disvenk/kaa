@@ -1,0 +1,65 @@
+
+.txr {
+     text-align: right;
+     font-size: 16px;
+     font-weight: bold;
+     padding-right: 30px;
+ }
+
+.order-detail-account {
+    color: #4c8fbd;
+}
+
+.order-detail-operate {
+    height: 172px;
+    line-height: 172px;
+    text-align: center;
+}
+
+.order-detail-btn {
+    width: 222px;
+    height: 52px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border:1px solid #4c8fbd;
+    color: #4c8fbd;
+    border-radius: 30px;
+    background-color: #fff;
+    outline: 0;
+}
+
+.order-detail-btn:hover {
+    background-color: #4c8fbd;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 800px) {
+    .order-detail-btn {
+        width: 162px;
+        height: 42px;
+        line-height: 42px;
+    }
+
+    .order-detail-btn.ml42 {
+        margin-left: 12px;
+    }
+    
+}
+
+#sample-table-1 td {
+    vertical-align: middle;
+}
+
+#sample-table-1 {
+    background-color: #f3f2f4;
+}
+
+.detail-goods-name {
+    margin: 0 auto;
+    width: 200px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}

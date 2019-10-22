@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>货品规格</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/goodsInfo.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+</head>
+<style>
+    .active{
+        border: 1px solid #1976d2;
+    }
+</style>
+<body>
+<div class="main-container">
+    <div class="goods-info-topic">颜色</div>
+    <ul class="goods-color-items clearfix color">
+        <!--<li class="goods-color-item"><span class="color-name bg1"></span>红色</li>-->
+        <!--<li class="goods-color-item"><span class="color-name bg2"></span>白色</li>-->
+        <!--<li class="goods-color-item"><span class="color-name bg3"></span>大红</li>-->
+        <!--<li class="goods-color-item"><span class="color-name bg4"></span>紫色</li>-->
+        <!--<li class="goods-color-item"><span class="color-name bg5"></span>宝蓝</li>-->
+        <!--<li class="goods-color-item"><span class="color-name bg6"></span>香槟色</li>-->
+        <!--<li class="goods-color-item"><span class="color-name bg7"></span>金色</li>-->
+        <!--<li class="goods-color-item"><span class="color-name bg8"></span>红色</li>-->
+        <!--<li class="goods-color-item bg-color"></span>自定义</li>-->
+    </ul>
+    <div class="goods-info-topic">尺码</div>
+    <ul class="goods-color-items clearfix size">
+        <!--<li class="goods-size-item">M</li>-->
+        <!--<li class="goods-size-item">S</li>-->
+        <!--<li class="goods-size-item">XS</li>-->
+        <!--<li class="goods-size-item">L</li>-->
+        <!--<li class="goods-size-item">XL</li>-->
+        <!--<li class="goods-size-item">XXL</li>-->
+        <!--<li class="goods-size-item">L</li>-->
+        <!--<li class="goods-size-item">XL</li>-->
+        <!--<li class="goods-size-item bg-color"></span>自定义</li>-->
+    </ul>
+
+    <div class="goods-info-topic">供货价/库存</div>
+    <div class="info-show clearfix">
+        <span class="info-show-tip">您需要选择相应的销售属性，才能组合成完整的规格信息</span>
+        <div style="text-align: right;margin: 5px 0"><span data-toggle="modal" data-target="#myModal" style="padding: 5px 11px;border-radius: 6px;background-color: #1976d2;color: #fff">批量设定</span></div>
+        <div id="spec">
+            <!--<span class="info-show-data">"红色+M"</span>-->
+            <!--<span class="info-show-data">-->
+                <!--<input type="text" placeholder="请输入供货价">-->
+                <!--<input type="text" placeholder="请输入库存">-->
+            <!--</span>-->
+        </div>
+
+    </div>
+
+</div>
+
+<div class="order-confirm-btn" id="submit">保存</div>
+
+<!--模态框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="../assets/images/img/setHeader.png" alt="">
+            </div>
+            <div class="modal-body">
+                <div class="modal-info">
+                    <input type="text" placeholder="请输入供货价" id="price">
+                </div>
+                <div class="modal-info">
+                    <input type="text" placeholder="请输入库存" id="stock">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="batchSave">
+                    <img class="modal-confirm" src="../assets/images/img/modalConfirm.png" alt="">
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/goodsInfo.js"></script>
+<script>
+
+    var id = "${id}";
+
+    //动态绑定颜色尺寸关系
+    var colors = new Map();
+    var sizes = new Map();
+    $(".color").on("click", ".goods-color-item",function () {
+        if($(this).hasClass('active')){
+            $(this).removeClass('active')
+            colors.delete($(this).html());
+        }else{
+            $(this).addClass('active');
+            colors.set($(this).html(), $(this).html());
+        }
+        each();
+    })
+    $(".size").on("click", ".goods-size-item",function () {
+        if($(this).hasClass('active')){
+            $(this).removeClass('active')
+            sizes.delete($(this).html());
+        }else{
+            $(this).addClass('active');
+            sizes.set($(this).html(), $(this).html());
+        }
+        each();
+    })
+
+    //生产颜色尺寸关系
+    function each() {
+        $("#spec").html("")
+        colors.forEach(function (color) {
+            sizes.forEach(function (size) {
+                var sp = '';
+                sp += '<div>' +
+                    '  <span class="info-show-data" value="'+ color +',' + size +'">' + '\"' + color + '\+' + size + '\"' +'</span>\n' +
+                    '  <span class="info-show-data">\n' +
+                    '       <input type="text" placeholder="请输入供货价" class="price">\n' +
+                    '       <input type="text" placeholder="请输入库存" class="stock">\n' +
+                    '  </span>' +
+                    '  </div>';
+                $("#spec").append(sp)
+            });
+        });
+    }
+
+    //保存
+    $("#submit").click(function () {
+        var list = $("#spec").children("div")
+        var arr = [];
+        for (var i=0;i<list.length;i++) {
+            var spec = list.eq(i).find("span").eq(0).attr("value").split(',');
+            var obj = {
+                color: spec[0],
+                size: spec[1],
+                price: list.eq(i).find("span").find(".price").val(),
+                stock: list.eq(i).find("span").find(".stock").val()
+            };
+            arr.push(obj)
+        }
+        $.ajax({
+            type: 'POST',
+            url: '../suplierProduct/saveProductPrice',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({id: id, productPriceList: arr}),
+            success: function (res) {
+                if(res.stateCode == 100){
+                    location.href= '../suplierProduct/productHtml?id='+res.data.id;
+                }else{
+                    alert(res.message);
+                }
+            },
+            error: function (err) {
+                alert(err.message);
+            }
+        });
+    });
+
+
+    //加载信息
+    if (id && typeof(id)!="undefined" && typeof(id)!="null" && id!=null) {
+        $.ajax({
+            type: 'POST',
+            url: '../suplierProduct/productPrice',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({id: id}),
+            success: function (res) {
+                if(res.stateCode == 100){
+                    for (var i=0; i<res.data.length; i++) {
+                        var color = res.data[i].color;
+                        var size = res.data[i].size;
+                        var sp = '';
+                        sp += '<div>' +
+                            '  <span class="info-show-data" value="'+ color +',' + size +'">' + '\"' + color + '\+' + size + '\"' +'</span>\n' +
+                            '  <span class="info-show-data">\n' +
+                            '       <input type="text" placeholder="请输入供货价" class="price" value="'+res.data[i].price+'">\n' +
+                            '       <input type="text" placeholder="请输入库存" class="stock" value="'+res.data[i].stock+'">\n' +
+                            '  </span>' +
+                            '  </div>';
+                        $("#spec").append(sp);
+
+                        //追加选择样式
+                        if (colors.get(color) == null) {
+                            colors.set(color,color);
+                            var colorList  = $(".goods-color-item");
+                            for (var j=0; j<colorList.length; j++) {
+                                if (color == colorList.eq(j).html()) {
+                                    colorList.eq(j).addClass('active');
+                                }
+                            }
+                        }
+                        if (sizes.get(size) == null) {
+                            sizes.set(size,size);
+                            var sizeList  = $(".goods-size-item");
+                            for (var j=0; j<sizeList.length; j++) {
+                                if (size == sizeList.eq(j).html()) {
+                                    sizeList.eq(j).addClass('active');
+                                }
+                            }
+                        }
+                    }
+                }else{
+                    alert(res.message);
+                }
+            },
+            error: function (err) {
+                alert(err.message);
+            }
+        });
+    }
+
+</script>
+</body>
+
+</html>

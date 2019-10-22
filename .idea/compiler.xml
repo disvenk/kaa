@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kaa_3part" />
+        <module name="kaa_admin" />
+        <module name="kaa_core" />
+        <module name="kaa_model" />
+        <module name="kaa_pay" />
+        <module name="kaa_sales" />
+        <module name="kaa_store" />
+        <module name="kaa_suplier" />
+        <module name="kaa_user" />
+        <module name="kaa_utils" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kaa" target="1.7" />
+      <module name="kaa_3part" target="1.7" />
+      <module name="kaa_admin" target="1.7" />
+      <module name="kaa_core" target="1.7" />
+      <module name="kaa_model" target="1.7" />
+      <module name="kaa_pay" target="1.7" />
+      <module name="kaa_sales" target="1.7" />
+      <module name="kaa_store" target="1.7" />
+      <module name="kaa_suplier" target="1.7" />
+      <module name="kaa_user" target="1.7" />
+      <module name="kaa_utils" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,16 @@
+.mobile-pay {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 17px;
+    color: #fff;
+    background-color: #ec4545;
+}
+
+#description img {
+    width: 100%;
+}
+

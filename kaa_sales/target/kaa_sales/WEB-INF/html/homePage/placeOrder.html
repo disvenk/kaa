@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/placeOrder.css"/>
+
+</head>
+<body>
+<div id="head"></div>
+<!--<div class="content_header" id="header">-->
+    <!--<img src="../assets/img/salePlat/logo1.png" alt="">-->
+    <!--<a href="../salesHome/designHtml">设计师区</a>-->
+    <!--<span class="search"><input type="text" placeholder="搜索商品名称/编号" id="search"><span class="glyphicon glyphicon-search"></span></span>-->
+<!--</div>-->
+<div class="main-container" style="margin-top: 105px;margin-bottom: 300px">
+        <div class="page-content1" id="xiadans">
+                        <div class="page_area">
+                            <div class="recivedInformation_container">
+                                <div class="recivedInformation">
+                                    相关商品
+                                </div>
+                                <div style="margin-top: 8px" id="address_container">
+
+                                </div>
+                                <div type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    <label style="color: #999"><input id="add" style="margin-right: 6px" name="address" type="radio" value="2" />使用新地址</label>
+                                </div>
+                                <div class="collapse" id="collapseExample">
+                                <div class="address well">
+                                    <div style="height: 50px;margin-top: 8px;padding-left: 26px"><span style="margin-right: 50px">收件人： <input type="text" id="receive"></span></div>
+                                    <span>收件人地址：</span>
+                                    <select id="cmbProvince" name="cmbProvince"></select>
+                                    <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                    <select id="cmbArea" name="cmbArea"></select>
+                                    <div style="padding-left: 86px;margin: 15px 0">
+                                        <textarea id="textarea" name="" placeholder="请填写详细收货地址，例如街道名称，门牌号码等" cols="60" rows="5"></textarea>
+                                    </div>
+                                    <div class="receivedMan" style="padding-left: 7px">
+                                        <span>收件人电话：<input style="width: 150px" type="tel" id="receivedTel"></span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!--商品信息-->
+                            <div class="row col_container">
+                                <div class="col-xs-12">
+                                    <!-- PAGE CONTENT BEGINS -->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <table id="sample-table-1" class="table">
+                                                <thead><tr style="color: rgb(25,98,155)" id="xiadanInform">
+                                                </tr><th class="center" style="color: #3c9ed8;">商品信息</th><th class="center" style="color: #3c9ed8;">规格</th><th style="color: #3c9ed8;" class="center">单价</th><th style="color: #3c9ed8;" class="hidden-480 center">数量</th><th style="color: #3c9ed8;" class="center">小计</th></thead>
+                                                <tbody class="center" id="customer">
+
+                                                </tbody>
+                                            </table>
+                                            <div class="noteInformation"><span>备注：</span>
+                                                <textarea name="" id="remark" cols="70" rows="1" placeholder="请填写备注信息"></textarea>
+                                            </div>
+                                    <div class="total">
+                                        <span style="margin-right: 60px">商品总计: <span id="totalNums"></span></span>
+                                        <span>商品金额: <span id="totalPrice"></span></span>
+                                    </div>
+                                        </div><!-- /.span -->
+                                    </div><!-- /.row -->
+                                </div>
+                            </div><!--商品信息结束-->
+                            <!--顾客信息-->
+                            <div class="table-container" style="margin-top: 30px;min-width: 1103px">
+                                <table id="sample-table" class="table">
+                                    <thead>
+                                    <tr style="color: rgb(25,98,155)" id="xiadanInforms">
+                                        <th>商品名称</th>
+                                        <th>商品ID</th>
+                                        <th>分类</th>
+                                        <th>颜色</th>
+                                        <th>尺寸</th>
+                                        <th>喉到地</th>
+                                        <th>肩宽</th>
+                                        <th>胸围</th>
+                                        <th>腰围</th>
+                                        <th>臀围</th>
+                                        <th>身高</th>
+                                        <th>体重</th>
+                                        <th>其他</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody class="center" id="xiadanTbody">
+
+                                    </tbody>
+                                </table>
+                            </div><!--顾客信息结束-->
+                        </div>
+            <!--提交订单-->
+            <div class="center">
+                <span id="submitOrders" style="cursor: pointer">立即支付</span>
+            </div>
+        </div>
+    </div>
+    <!--footer部分-->
+    <div id="bottom"></div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.page.js"></script>
+    <script src="../assets/js/salePlat/head.js"></script>
+    <script src="../assets/js/salePlat/bottom.js"></script>
+    <script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+    <script src="../assets/js/salePlat/placeOrder.js"></script>
+
+</body>
+</html>

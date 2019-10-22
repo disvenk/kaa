@@ -1,0 +1,56 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+
+.weui_select_bd{
+    /*border-bottom: 1px solid #cb5571;*/
+    color: #fd5a70;
+}
+.weui-navbar__item:after{
+    background-color: #FFFFFF;
+    border-right: none;
+}
+.weui-search-bar__form:after{
+    border-radius: 25px;
+}
+.weui-search-bar__label{
+    border-radius: 25px;
+}
+.itemSpan{
+    display: inline-block;
+    padding: 8px 5px;
+    font-size: 14px;
+}
+.itemSpan_color{
+    color: #d3d3d3;
+    font-size: 14px;
+}
+.selectColor{
+    color: #fd5a70;
+}
+/*#itemList .preject_item{*/
+    /*padding: 0px 5px 10px 5px;*/
+/*}*/
+#itemList .preject_item_right{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0px 5px 10px 5px;
+}
+#itemList .item_price{
+    float: right;
+    color: #fd5a70;
+}
+
+/*项目详情*/
+.time{
+    color: #aaaaaa;
+}

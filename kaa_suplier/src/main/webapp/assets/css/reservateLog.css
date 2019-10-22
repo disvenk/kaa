@@ -1,0 +1,29 @@
+.linearBacc{
+    width: 96%;
+    height: 2.2rem;
+    background: linear-gradient(to right,#F562BA, #FE5967);
+    border-bottom: 2px dotted #F46173;
+    color: #fff;
+    line-height: 2.3rem;
+    padding-left: 4%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.page__bd_spacing{
+    padding: 0 4%;
+    background-color: #fff;
+    border-top: 1px solid #f8f8f8;
+}
+.page__bd_spacing .weui-flex .weui-flex__item{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    padding: 5px 0;
+}
+.borderColor{
+    border-bottom: 3px solid #FD5CBC;
+    color: #FD5CBC;
+}
+.weui-cells:after{
+    border-bottom: none;
+}

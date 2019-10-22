@@ -1,0 +1,180 @@
+html{
+	font-size: 62.5%;
+}
+html,body{
+    margin:0;
+    font-size:1.4em;
+    font-family:"Droid Sans Fallback",   "Microsoft YaHei UI Light";
+}
+pre{
+    font-family:"Droid Sans Fallback",   "Microsoft YaHei UI Light" !important;
+}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,pre,form,fieldset,input,textarea,img{
+    margin:0;
+    padding:0;
+    list-style:none;
+    border:0;
+}
+a:link{
+    color: #000000;
+    text-decoration: none !important;
+}
+a:visited{
+    color: #000000;
+    text-decoration: none !important;
+}
+a:hover{
+    color:#323232;
+    text-decoration: none !important;
+}
+a:active{
+	color:#000;
+    text-decoration: none !important;
+}
+h1,h2,h3,h4,h5{
+    font-size:1.4em;
+    font-weight:normal;
+    color:#333;
+}
+h6{
+    font-size:1.2em;
+    font-weight:normal;
+}
+i{
+	font-style: normal;
+}
+p{
+    font-size:1.4em;
+}
+a{
+    color:#000;
+    text-decoration: none
+}
+button:disabled{
+	color:#999;
+}
+
+.choose_area,.choose_shcool,.choose_subject{
+	width:100%;
+	overflow:hidden;
+	margin-bottom: 10px;
+}
+.choose_subject{
+	margin: 0;
+}
+	.choose_area_title,.choose_shcool_title,.choose_subject_title{
+		width: 100%;
+		height: 45px;
+		background:#fff;
+		padding: 0 15px 0 20px;
+		position: relative;
+		z-index: 1;
+		border:none;
+		text-align: left;
+		outline: none;
+		box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+	}
+		.choose_area_title h3,.choose_shcool_title h3,.choose_subject_title h3{
+			width: 80%;
+			height: 45px;
+			line-height:45px; 
+			margin:0;
+			float: left;
+			font-size: 14px;
+		}
+		.choose_area_title img,.choose_shcool_title img,.choose_subject_title img{
+			width: 15px;
+			height:15px;
+			float: right;
+			margin-top:15px;
+		}
+		.choose_area_title img.on,.choose_shcool_title img.on,.choose_subject_title img.on{
+			transform: rotate(90deg);
+    		-webkit-transform: rotate(90deg);
+		}
+/*选择地区*/	
+	.choose_area_cont{
+		/*display: none;*/
+		width: 100%;
+		background:#fff;
+		overflow: hidden;
+		padding:15px 0;       
+	}
+		.choose_area_cont ul{
+			padding:0;
+			margin:0;
+		}
+			.choose_area_cont ul li{
+				width: 20%;
+				overflow: hidden;
+				text-align: center;
+				margin-bottom: 15px;
+				float: left;
+			}	
+				.choose_area_cont ul li:nth-child(5n){
+					margin-right: 0;
+				}
+				.choose_area_cont ul li h4{
+					margin:0;
+					color:#000;
+					font-size: 14px;
+				}
+/*选择学校*/				
+	.choose_shcool_cont{
+		display:none;
+		width: 100%;
+		overflow: hidden;
+		background: #fff;
+	}
+		.choose_shcool_cont ul{
+			margin: 0;
+		}
+		.choose_shcool_cont ul li{
+			width: 100%;
+			overflow: hidden;
+			padding: 15px 20px;
+			border-bottom: 1px solid #e4e4e4;
+		}
+		.choose_shcool_cont ul li:last-child{
+			border: none;
+		}
+			.choose_shcool_cont ul li h4{
+				font-size: 12px;
+				color:#999;
+				margin-top: 0;
+				margin-bottom: 8px;
+			}
+				.choose_shcool_cont ul li h3{
+					float: left;
+					padding: 0 10px;
+					margin-top: 3px;
+					font-size: 14px;
+				}
+/*选择科目*/
+	.choose_subject_cont{
+		display:none;
+		width: 100%;
+		overflow: hidden;
+		background: #fff;
+	}	
+		.choose_subject_cont ul{
+			margin: 0;
+		}
+		.choose_subject_cont ul li{
+			width: 100%;
+			overflow: hidden;
+			padding: 15px 20px 11px 20px;
+			border-bottom: 1px solid #e4e4e4;
+		}
+		.choose_subject_cont ul a{
+			display: inline-block;
+			width: 100%;
+			height: 16px;
+		}
+		.choose_subject_cont ul li:last-child{
+			border: none;
+		}
+			.choose_subject_cont ul li h4{
+				font-size: 14px;
+				margin: 0;
+			}		

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--<link rel="stylesheet" href="../assets/css/ace.min.css"/>-->
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/workbench.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">工作台</div>
+                        <div class="workbench-wrap clearfix">
+                            <div class="workbench-left">
+                                <div class="workbench-topic">订单情况</div>
+                                <div class="workbench-cont">
+                                    <ul class="workbench-items clearfix">
+                                        <li class="workbench-item" onclick="location.href='../WOManage/workbenchGoodsHtml?1'">
+                                            <div class="workbench-item-num" id="currentSalesOrderCount"></div>
+                                            <div class="workbench-item-tip">本月订单总数</div>
+                                        </li>
+                                        <li class="workbench-item" onclick="location.href='../WOManage/workbenchGoodsHtml?1'">
+                                            <div class="workbench-item-num" id="currentSalesOrderSum"></div>
+                                            <div class="workbench-item-tip">本月订单总额</div>
+                                        </li>
+                                        <li class="workbench-item" onclick="location.href='../WOManage/workbenchGoodsHtml?2'">
+                                            <div class="workbench-item-num" id="lastSalesOrderCount"></div>
+                                            <div class="workbench-item-tip">上月订单总数</div>
+                                        </li>
+                                        <li class="workbench-item br0" onclick="location.href='../WOManage/workbenchGoodsHtml?2'">
+                                            <div class="workbench-item-num" id="lastSalesOrderSum"></div>
+                                            <div class="workbench-item-tip">上月订单总额</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="workbench-topic">生产情况</div>
+                                <div class="workbench-cont">
+                                    <ul class="workbench-items clearfix">
+                                        <li class="workbench-item w33" onclick="location.href = '../WOManage/localOrderHtml?2'">
+                                            <div class="workbench-item-num" id="salesOrderCountBy2"></div>
+                                            <div class="workbench-item-tip">待生产订单</div>
+                                        </li>
+                                        <li class="workbench-item w33" onclick="location.href = '../WOManage/localOrderHtml?3'">
+                                            <div class="workbench-item-num" id="salesOrderCountBy3"></div>
+                                            <div class="workbench-item-tip">生产中订单</div>
+                                        </li>
+                                        <li class="workbench-item w33 br0" onclick="location.href = '../WOManage/WOlocalHtml?type=66'">
+                                            <div class="workbench-item-num" id="orderUrgent"></div>
+                                            <div class="workbench-item-tip">紧急工单</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="workbench-topic">生产力对比</div>
+                                <div class="workbench-cont">
+                                    <ul class="workbench-items clearfix">
+                                        <li class="workbench-item w50">
+                                            <div class="workbench-item-num" id="currentSalesOrderCountBy7" onclick="location.href = '../WOManage/localOrderHtml?99'"></div>
+                                            <div class="workbench-item-tip">本日完成订单</div>
+                                        </li>
+                                        <li class="workbench-item w50 br0">
+                                            <div class="workbench-item-num" id="lastSalesOrderCountBy7" onclick="location.href = '../WOManage/localOrderHtml?66'"></div>
+                                            <div class="workbench-item-tip">昨日完成订单</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="workbench-topic">工价统计</div>
+                                <div class="workbench-cont">
+                                    <ul class="workbench-items clearfix">
+                                        <li class="workbench-item to-salary">
+                                            <div class="workbench-item-num" id="currentOrderCount" onclick="location.href = '../WOManage/workbenchSalaryHtml?1'"></div>
+                                            <div class="workbench-item-tip">本月工单总数</div>
+                                        </li>
+                                        <li class="workbench-item to-goods" onclick="location.href='../WOManage/workbenchSalaryHtml?1'">
+                                            <div class="workbench-item-num" id="currentOrderSum"></div>
+                                            <div class="workbench-item-tip">本月工价总额</div>
+                                        </li>
+                                        <li class="workbench-item to-salary">
+                                            <div class="workbench-item-num" id="lastOrderCount" onclick="location.href = '../WOManage/workbenchSalaryHtml?2'"></div>
+                                            <div class="workbench-item-tip">上月工单总数</div>
+                                        </li>
+                                        <li class="workbench-item to-goods br0" onclick="location.href='../WOManage/workbenchSalaryHtml?2'">
+                                            <div class="workbench-item-num" id="lastOrderSum"></div>
+                                            <div class="workbench-item-tip">上月工价总额</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="workbench-right">
+                                <div class="workbench-right-wrap">
+                                    <div class="workbench-tab-wrap clearfix">
+                                        <div class="tab l brc active">临近交期 <span class="state-num" id="leftNum">0</span> </div>
+                                        <div class="tab r">已过交期<span class="state-num" id="rightNum">0</span></div>
+                                    </div>
+                                    <div class="right-topic">
+                                        <span class="right-topic-span l brc">工单号</span>
+                                        <span class="right-topic-span r">交货日期</span>
+                                    </div>
+                                    <!--以下两部分根据tab点击切换显示-->
+                                    <div class="part-a">
+                                        <!--<div class="right-item">-->
+                                            <!--<span class="right-item-span l brc">0001</span>-->
+                                            <!--<span class="right-item-span r">2018-01-09</span>-->
+                                        <!--</div>-->
+                                    </div>
+                                    <div class="part-b">
+                                        <!--<div class="right-item">-->
+                                            <!--<span class="right-item-span l brc">433</span>-->
+                                            <!--<span class="right-item-span r">2018-03-02</span>-->
+                                        <!--</div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/WOManage/workbench.js"></script>
+
+</body>
+</html>

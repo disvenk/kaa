@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造生产管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link rel="Shortcut Icon" href="../assets/img/head-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/WOManage/list.css"/>
+</head>
+<style>
+</style>
+<body>
+
+<div class="header">
+
+    <div class="dl-title">
+        <img src="../assets/img/hyzz.png" alt="">
+    </div>
+    <span class="header-name">生产管理系统</span>
+    <div class="dl-log">
+        <span style="margin-right: 40px"><img id="head" style="width: 30px;height: 30px;border-radius: 50%;margin-right: 9px" src="" alt=""><span id="userName"></span></span>
+        <a href="../homePage/forgetPasswordHtml" title="修改密码" class="dl-log-update">修改密码</a>
+        <a href="../homePage/loginHtml" title="退出系统" class="dl-log-quit">退出系统</a>
+    </div>
+</div>
+<div class="content">
+    <ul id="J_NavContent" class="dl-tab-conten">
+    </ul>
+</div>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui.js"></script>
+<script type="text/javascript" src="../assets/js/config.js"></script>
+
+<script>
+    BUI.use('common/main', function () {
+        var config = [{
+            id: 'menu',
+            homePage: 'WOlocal',
+            menu: [
+                {
+                    text: '工作台',
+                    items: [
+                        {id: 'workbench', text: '工作台', href: '../WOManage/workbenchHtml'}
+                    ]
+                },
+                {
+                    text: '本地订单管理',
+                    items: [
+                        {id: 'localOrder', text: '待生产', href: '../WOManage/localOrderHtml?2'},
+                        {id: 'localOrder', text: '生产中', href: '../WOManage/localOrderHtml?3'},
+                        {id: 'localOrder', text: '已发货', href: '../WOManage/localOrderHtml?4'},
+                        {id: 'localOrder', text: '已结束', href: '../WOManage/localOrderHtml?7'}
+                    ]
+                },
+                {
+                    text: '本地工单管理',
+                    items: [
+                        {id: 'WOlocal', text: '欢迎使用', href: '../homePage/welcomeHtml'},
+//                        {id: 'WOlocal', text: '新工单', href: '../WOManage/WOlocalHtml?type=2'},
+                        {id: 'WOlocal1', text: '生产中', href: '../WOManage/WOlocalHtml?type=3'},
+                        {id: 'WOlocal1', text: '已发货', href: '../WOManage/WOlocalHtml?type=4'},
+                        {id: 'WOlocal1', text: '已结束', href: '../WOManage/WOlocalHtml?type=7'}
+                    ]
+                },
+                {
+                    text: '基础资料维护',
+                    items: [
+                        {id: 'clientManage', text: '客户管理', href: '../WOManage/clientManageHtml'},
+                        {id: 'basicCategory', text: '分类维护', href: '../WOManage/basicCategoryHtml'},
+                        {id: 'basicColor', text: '颜色维护', href: '../WOManage/basicColorHtml'},
+                        {id: 'basicSize', text: '尺寸维护', href: '../WOManage/basicSizeHtml'},
+                        {id: 'basicMaterial', text: '面辅料维护', href: '../WOManage/basicMaterialHtml'},
+                        {id: 'basicProcedure', text: '工序维护', href: '../WOManage/basicProcedureHtml'},
+                        {id: 'basicStorage', text: '商品库', href: '../WOManage/basicStorageHtml'}
+                    ]
+                },
+//                {
+//                    text:'合一智造工单',
+//                    items:[
+//                        {id:'WOkaa',text:'合一智造工单管理',href:'../WOManage/WOkaaHtml?type=2'},
+//                        {id:'WOkaa',text:'待接单',href:'../WOManage/WOkaaHtml?type=2'},
+//                        {id:'WOkaa',text:'生产中',href:'../WOManage/WOkaaHtml?type=3'},
+//                        {id:'WOkaa',text:'已发货',href:'../WOManage/WOkaaHtml?type=4'},
+//                        {id:'WOkaa',text:'待质检',href:'../WOManage/WOkaaHtml?type=5'},
+//                        {id:'WOkaa',text:'质检不合格',href:'../WOManage/WOkaaHtml?type=6'},
+//                        {id:'WOkaa',text:'质检合格未入库',href:'../WOManage/WOkaaHtml?type=7'},
+//                        {id:'WOkaa',text:'已入库',href:'../WOManage/WOkaaHtml?type=8'},
+//                        {id:'WOkaa',text:'已取消',href:'../WOManage/WOkaaHtml?type=9'},
+//                        {id:'WOkaa',text:'确认取消',href:'../WOManage/WOkaaHtml?type=10'}
+//                    ]
+//                },
+
+                {
+                    text: '工人维护',
+                    items: [
+                        {id: 'WOoperate', text: '工人维护', href: '../WOManage/WOoperateHtml'}
+                    ]
+                }, {
+                    text: '生产记录',
+                    items: [
+                        {id: 'WOrecord', text: '生产记录', href: '../WOManage/WOrecordHtml'}
+                    ]
+                }]
+        }];
+
+        new PageUtil.MainPage({
+            modulesConfig: config
+        });
+    });
+    var token = sessionStorage.getItem('token');
+    var urllen = sessionStorage.setItem('urllen', '../');
+    if (!token) {
+        location.href = '../home/loginHtml';
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: '../account/loginInfo',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            success: function (res) {
+                if (res.stateCode == 100) {
+                    $("#userName").html(res.data.name);
+                    $('#head').attr('src', '' + res.data.icon + '');
+                    if (sessionStorage.getItem('loginType') == 4) {
+                        $('#J_menuTree li[data-id="menu-item1"]').eq(0).css('display', 'none');
+                        $('#J_menuTree li[data-id="menu-item2"]').eq(0).css('display', 'none');
+//                        $('#J_menuTree li[data-id="menu-item3"]').eq(0).css('display', 'none');
+                        $('#J_menuTree li[data-id="menu-item4"]').eq(0).css('display', 'none');
+                        $('#J_menuTree li[data-id="menu-item5"]').eq(0).css('display', 'none');
+                        $('#J_menuTree li[data-id="menu-item6"]').eq(0).css('display', 'none');
+                    } else {
+
+                    }
+                } else {
+                    // alert(res.message);
+                }
+            },
+            error: function (err) {
+            }
+        });
+    }
+    //订单
+    function order() {
+        $.ajax({
+            type: 'POST',
+            url: '../suplierSalesOrder/findOrderCount',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            success: function (res) {
+                if (res.stateCode == 100) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        var name = res.data[i].name + '（' + res.data[i].count + '）';
+                        $('.menu-leaf[data-id=localOrder]').eq(i).text(name);
+                        $('.menu-leaf[data-id=localOrder]').eq(i).css({
+                            'background-color': '#fff',
+                            'text-align': 'left',
+                            'height': '33px',
+                            'line-height': '33px',
+                            'text-indent': '24px',
+                            'color': '#79828d'
+                        });
+                    }
+                } else {
+                    // alert(res.message);
+                }
+            },
+            error: function (err) {
+            }
+        });
+    }
+    order();
+    //分类及数量
+    //平台
+    function platform() {
+        $.ajax({
+            type: 'POST',
+            url: '../suplierHome/producedStatusCountOnline',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            success: function (res) {
+                if (res.stateCode == 100) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        var name = res.data[i].name + '（' + res.data[i].count + '）';
+                        $('.menu-leaf[data-id=WOkaa]').eq(i + 1).text(name);
+                        $('.menu-leaf[data-id=WOkaa]').eq(i + 1).css({
+                            'background-color': '#fff',
+                            'text-align': 'left',
+                            'height': '33px',
+                            'line-height': '33px',
+                            'text-indent': '24px',
+                            'color': '#79828d'
+                        });
+                    }
+                } else {
+                    // alert(res.message);
+                }
+            },
+            error: function (err) {
+            }
+        });
+    }
+
+    //工厂
+    function factory() {
+        $.ajax({
+            type: 'POST',
+            url: '../suplierHome/producedStatusCountOffline',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            success: function (res) {
+                if (res.stateCode == 100) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        var name1 = res.data[i].name + '（' + res.data[i].count + '）';
+                        $('.menu-leaf[data-id=WOlocal1]').eq(i).text(name1);
+                        $('.menu-leaf[data-id=WOlocal1]').eq(i).css({
+                            'background-color': '#fff',
+                            'text-align': 'left',
+                            'height': '33px',
+                            'line-height': '33px',
+                            'text-indent': '24px',
+                            'color': '#79828d'
+                        });
+                    }
+                } else {
+                    // alert(res.message);
+                }
+            },
+            error: function (err) {
+            }
+        });
+    }
+    platform();
+    factory();
+</script>
+</body>
+</html>
+
+

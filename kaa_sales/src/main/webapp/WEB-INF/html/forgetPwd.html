@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--<link rel="stylesheet" href="../assets/css/salePlat/gloab.css">-->
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css">
+    <link rel="stylesheet" href="../assets/css/salePlat/forgetPwd.css">
+</head>
+<body>
+<div id="head"></div>
+<!--<div class="content_header" id="header">-->
+    <!--<img src="../assets/img/salePlat/logo1.png" alt="">-->
+    <!--<a href="../salesHome/designHtml">设计师区</a>-->
+    <!--<span class="search"><input type="text" placeholder="搜索商品名称/编号" id="search"><span class="glyphicon glyphicon-search"></span></span>-->
+<!--</div>-->
+<!--找回密码-->
+<div class="login-box f-mt10 f-pb50" style="margin-top: 105px">
+    <div class="main bgf">
+        <div class="reg-box-pan display-inline">
+            <div class="step">
+                <ul>
+                    <li class="col-xs-4 on">
+                        <span class="num"><em class="f-r5"></em><i>1</i></span>
+                        <span class="line_bg lbg-r"></span>
+                        <p class="lbg-txt">填写账户信息</p>
+                    </li>
+                    <li class="col-xs-4">
+                        <span class="num"><em class="f-r5"></em><i>2</i></span>
+                        <span class="line_bg lbg-l"></span>
+                        <span class="line_bg lbg-r"></span>
+                        <p class="lbg-txt">验证账户信息</p>
+                    </li>
+                    <li class="col-xs-4">
+                        <span class="num"><em class="f-r5"></em><i>3</i></span>
+                        <span class="line_bg lbg-l"></span>
+                        <p class="lbg-txt">完成</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="reg-box" id="verifyCheck" style="margin-top:20px;">
+                <div class="part1">
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>用户名/手机号：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="text" maxlength="20" class="txt03 f-r3 required" tabindex="1" data-valid="isNonEmpty" data-error="用户名/手机号不能为空"  id="adminNo"/>
+                            <label class="icon-sucessfill blank hide"></label>
+                            <!--<label class="focus"><span>3-20位，中文、字母、数字、下划线的组合，以中文或字母开头</span></label>-->
+                            <label class="focus valid"></label>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>验证码：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="text" maxlength="4" class="txt03 f-r3 f-fl required" tabindex="4" style="width:167px" id="randCode" data-valid="isNonEmpty" data-error="验证码不能为空" />
+                            <span class="ie8 icon-close close hide"></span>
+                                <span style="width: 80px;margin-left: 20px;background-color: #0e90d2" id="code" class="code_pic" title="看不清，换一张"></span>
+                            <label class="icon-sucessfill blank hide" style="left:380px"></label>
+                            <label class="focusa">看不清？<a class="c-blue" onclick="changeImg()">换一张</a></label>
+                            <label class="focus valid" style="left:370px" id="errorTips"></label>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl">&nbsp;</span>
+                        <div class="f-fl item-ifo">
+                            <a href="javascript:;" class="btn btn-blue f-r3" id="btn_part1">下一步</a>
+                        </div>
+                    </div>
+                </div>
+                <!--用户名手机号验证码-->
+                <div class="part2" style="display:none">
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>用户名：</span>
+                        <div class="f-fl item-ifo" id="userCode">
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>手机号：</span>
+                        <div class="f-fl item-ifo" id="phone">
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>验证码：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="text" maxlength="6" id="verifyNo" class="txt03 f-r3 f-fl required" tabindex="4" style="width:167px" data-valid="isNonEmpty||isInt" data-error="验证码不能为空||请输入数字验证码" />
+                            <span class="btn btn-gray" id="verify" style="width:90px;">发送验证码</span>
+                            <label class="focus"><span>请查收手机短信，并填写短信中的验证码（此验证码3分钟内有效）</span></label>
+                            <label class="focus valid"></label>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl">&nbsp;</span>
+                        <div class="f-fl item-ifo">
+                            <a href="javascript:;" class="btn btn-blue f-r3" id="btn_part2">下一步</a>
+                        </div>
+                    </div>
+                </div>
+                <!--新密码-->
+                <div class="part3" style="display:none">
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>密码：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="password" id="password" maxlength="20" class="txt03 f-r3 required" tabindex="3" style="ime-mode:disabled;" onpaste="return  false" autocomplete="off" data-valid="isNonEmpty||between:6-20||level:2" data-error="密码不能为空||密码长度6-20位||该密码太简单，有被盗风险，建议字母+数字的组合" />
+                            <span class="ie8 icon-close close hide" style="right:55px"></span>
+                            <span class="showpwd" data-eye="password"></span>
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">6-20位英文（区分大小写）、数字、字符的组合</label>
+                            <label class="focus valid"></label>
+                            <span class="clearfix"></span>
+                            <label class="strength">
+                                <span class="f-fl f-size12">安全程度：</span>
+                                <b><i>弱</i><i>中</i><i>强</i></b>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl"><b class="ftx04">*</b>确认密码：</span>
+                        <div class="f-fl item-ifo">
+                            <input type="password" maxlength="20" class="txt03 f-r3 required" tabindex="4" style="ime-mode:disabled;" onpaste="return  false" autocomplete="off" data-valid="isNonEmpty||between:6-16||isRepeat:password" data-error="密码不能为空||密码长度6-16位||两次密码输入不一致" id="rePassword" />
+                            <span class="ie8 icon-close close hide" style="right:55px"></span>
+                            <span class="showpwd" data-eye="rePassword"></span>
+                            <label class="icon-sucessfill blank hide"></label>
+                            <label class="focus">请再输入一遍上面的密码</label>
+                            <label class="focus valid"></label>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12">
+                        <span class="intelligent-label f-fl">&nbsp;</span>
+                        <div class="f-fl item-ifo">
+                            <a href="javascript:;" class="btn btn-blue f-r3" id="btn_part3">下一步</a>
+                        </div>
+                    </div>
+                </div>
+                <!--成功页面-->
+                <div class="part4 text-center" style="display:none">
+                    <h3>您已成功修改密码，即刻登录买买买吧！</h3>
+                    <p class="c-666 f-mt30 f-mb50">页面将在 <strong id="times" class="f-size18">10</strong> 秒钟后，跳转到 <a href="../salesHome/loginHtml" class="c-blue">登录</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer部分-->
+<div id="bottom"></div>
+
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/head.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/bottom.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/forgetPwd.js"></script>
+<script>
+    //分类
+//    $.ajax({
+//        type: 'POST',
+//        url: '../base/getPlaProductCategoryListAll',
+//        dataType: 'json',
+//        contentType: 'application/json; charset=utf-8',
+//        headers: {
+//            'Accept': 'application/json; charset=utf-8',
+//            'Authorization': 'Basic ' + sessionStorage.getItem('token')
+//        },
+//        success: function (res) {
+//            for(var i = 0; i < res.data.length; i++){
+//                for(var j = 0; j < res.data[i].categoryList.length; j++){
+//                    var a = '';
+//                    a += '<a value="'+res.data[i].categoryList[j].id+'" href="#">'+res.data[i].categoryList[j].name+'</a>';
+//                    $('#header img').after(a);
+//                }
+//            }
+//            //一级分类跳转
+//            $('#header a').click(function () {
+//                location.href = '../salesHome/searchHtml?id='+$(this).attr('value')+'';
+//            });
+//        },
+//        error: function (err) {
+//            layer.alert(err.message);
+//        }
+//    });
+    //验证码
+    // 声明一个变量用于存储生成的验证码
+    document.getElementById('code').onclick = changeImg;
+    function changeImg(){
+        // 验证码组成库
+        var arrays = new Array(
+            '1','2','3','4','5','6','7','8','9','0',
+            'a','b','c','d','e','f','g','h','i','j',
+            'k','l','m','n','o','p','q','r','s','t',
+            'u','v','w','x','y','z',
+            'A','B','C','D','E','F','G','H','I','J',
+            'K','L','M','N','O','P','Q','R','S','T',
+            'U','V','W','X','Y','Z'
+        );
+        // 重新初始化验证码
+        code ='';
+        // 随机从数组中获取四个元素组成验证码
+        for(var i = 0; i<4; i++){
+            // 随机获取一个数组的下标
+            var r = parseInt(Math.random()*arrays.length);
+            code += arrays[r];
+        }
+        // 验证码写入span区域
+        document.getElementById('code').innerHTML = code;
+
+    }
+    changeImg();
+    $(function(){
+        //第一页的确定按钮
+        $("#btn_part1").click(function(){
+            //验证码验证
+                var error;
+                // 获取用户输入的验证码
+                var codeInput = document.getElementById('randCode').value;
+                if(codeInput.toLowerCase() == code.toLowerCase()){
+                    //1.校验账户是否存在
+                    $.ajax({
+                        type: 'POST',
+                        url: '../account/findUserPhone',
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify({userCode: $("#adminNo").val(), loginType : 1}),
+                        success: function (res) {
+                            if(res.stateCode == 100){
+                                $("#userCode").html(res.data.userCode);
+                                $("#phone").html(res.data.mobile);
+                                $(".part1").hide();
+                                $(".part2").show();
+                                $(".step li").eq(1).addClass("on");
+                            }else{
+                                layer.alert(res.message,{icon:0});
+                                changeImg();
+                            }
+                        },
+                        error: function (err) {
+                            layer.alert(err.message,{icon:0});
+                            changeImg();
+                        }
+                    });
+                }else{
+                    error = '验证码错误，重新输入';
+                    document.getElementById('errorTips').innerHTML = error;
+                    changeImg();
+                    return false;
+                }
+            if(!verifyCheck._click()) return;
+
+        });
+        
+        //获取验证码
+        $("#verify").click(function () {
+            var waitTime = 60;
+            $('#verify').css('display', 'inline-block');
+            $.ajax({
+                type: 'POST',
+                url: '../verify/verificationCode',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({phonenumber: $("#phone").html()}),
+                success: function (res) {
+                    if (res.stateCode == 100) {
+                        layer.alert("发送成功",{icon:1});
+                        var time = setInterval(function () {
+                            waitTime--;
+                            $('#verify').html(waitTime + '秒');
+                            if(waitTime < 1){
+                                clearInterval(time);
+                                waitTime = 60;
+                                $('#verify').html('获取验证码');
+                            }
+                        }, 1000)
+                    } else {
+                        layer.alert(res.message,{icon:0});
+                    }
+                },
+                error: function (err) {
+                    layer.alert(err.message,{icon:0})
+                }
+            })
+        })
+        
+        //第二页的确定按钮
+        $("#btn_part2").click(function(){
+            if(!verifyCheck._click()) return;
+            $.ajax({
+                type: 'POST',
+                url: '../verify/checkVerificationCode',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({phonenumber: $("#phone").html(), verificationCode:$("#verifyNo").val()}),
+                success: function (res) {
+                    if (res.stateCode == 100) {
+                        $(".part2").hide();
+                        $(".part3").show();
+                    } else {
+                        layer.alert(res.message,{icon:0});
+                    }
+                },
+                error: function (err) {
+                    layer.alert(err.message,{icon:0})
+                }
+            })
+
+        });
+
+        //第三页的确定按钮
+        $("#btn_part3").click(function(){
+            if(!verifyCheck._click()) return;
+            data = {
+                phonenumber: $("#phone").html(),
+                verificationCode: $("#verifyNo").val(),
+                password: $("#password").val(),
+                loginType: 1
+            }
+            $.ajax({
+                type: 'POST',
+                url: '../account/resetPassword',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data),
+                success: function (res) {
+                    if (res.stateCode == 100) {
+                        $(".part3").hide();
+                        $(".part4").show();
+                        $(".step li").eq(2).addClass("on");
+                        countdown({
+                            maxTime:10,
+                            ing:function(c){
+                                $("#times").text(c);
+                            },
+                            after:function(){
+                                window.location.href="../salesHome/loginHtml";
+                            }
+                        });
+                    } else {
+                        layer.alert(res.message,{icon:0});
+                    }
+                },
+                error: function (err) {
+                    layer.alert(err.message,{icon:0})
+                }
+            })
+        });
+    });
+    function showoutc(){$(".m-sPopBg,.m-sPopCon").show();}
+    function closeClause(){
+        $(".m-sPopBg,.m-sPopCon").hide();
+    }
+    $('.glyphicon-search').click(function () {
+        var nameOrcode = $('#search').val();
+        location.href = '../salesHome/searchHtml?nameOrcode='+nameOrcode+'';
+    });
+</script>
+</body>
+</html>

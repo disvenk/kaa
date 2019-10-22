@@ -1,0 +1,218 @@
+
+.cont-wrap {
+    width: 94%;
+    margin: 0 auto 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    /*-moz-box-shadow: 0px 0px 5px #929599;*/
+    /*-webkit-box-shadow: 0px 0px 5px #929599;*/
+    /*box-shadow: 0px 0px 5px #929599;*/
+}
+
+.mobile-container {
+    width: 100%;
+}
+
+.mobile-container {
+    background: url("../../../assets/img/salePlat/v2-img2.jpg") center top repeat-y;
+}
+
+.product-list-item {
+    float: left;
+    width: 46vw;
+    margin-top: 20px;
+    margin-left: 2vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-top: 6px;
+    -moz-box-shadow: 0px 0px 5px #929599;
+    -webkit-box-shadow: 0px 0px 5px #929599;
+    box-shadow: 0px 0px 8px #929599;
+    position: relative;
+}
+
+.product-item-modal {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: calc(55vw);
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    margin-top: -12px;
+    display: none;
+}
+
+.product-list-item:nth-child(2n+1) {
+    margin-left: 0;
+}
+
+.product-info-wrap {
+    padding: 0 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pic-operate {
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    width: 60%;
+    margin-left: 20%;
+    background-color: #2b3646;
+    color: #bd946e;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.product-img {
+    display: block;
+    width: 100%;
+    height: calc(46vw - 20px);
+    min-width: 120px;
+}
+
+.product-name {
+    height: 43px;
+    line-height: 20px;
+    margin-top: 8px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 13px;
+    color: #999;
+
+}
+
+.product-icon {
+    width: 98%;
+    height: 44px;
+    line-height: 44px;
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.product-icon-img {
+    display: inline-block;
+    width: 67px;
+    height: 30px;
+}
+
+.product-second-step {
+    position: relative;
+}
+
+.product-second-step img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.box-discount {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 24px;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: #bd946e;
+    background-color: #2b3646;
+
+}
+
+.mobile-phone {
+    height: 60px;
+    border-bottom: 1px solid #ededed;
+    font-size: 15px;
+}
+
+.mobile-phone.bg1 {
+    background: url("../../../assets/img/salePlat/86.jpg") left 20px no-repeat;
+    background-size: 23%;
+    padding-top: 12px;
+    padding-left: 70px;
+}
+
+.mobile-phone.bg2 {
+    background: url("../../../assets/img/salePlat/mobile-code.jpg") 6px 17px no-repeat;
+    background-size: 6%;
+    padding-left: 32px;
+}
+
+.mobile-phone-num, .mobile-phone-code {
+    display: inline-block;
+    border: 0;
+    outline: 0;
+}
+
+.mobile-phone-num {
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.mobile-phone-code {
+    width: 140px;
+    height: 58px;
+    font-size: 15px;
+}
+
+.send-code {
+    display: inline-block;
+    width: 108px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    text-align: center;
+    color: #5d9ec8;
+    margin-top: 7px;
+    float: right;
+    background-color: #f0f0f0;
+}
+
+.mobile-no-code {
+    height: 40px;
+    line-height: 40px;
+}
+
+/*.layui-layer-content {*/
+/*height: 215px !important;*/
+/*}*/
+.layui-layer-btn a {
+    padding: 0 85px !important;
+    height: 36px !important;
+    line-height: 36px !important;
+    border-radius: 6px !important;
+}
+
+.layui-layer-title {
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    height: 45px !important;
+    line-height: 45px !important;
+}
+
+.layui-layer-dialog {
+    border-radius: 5px !important;
+}
+
+.layui-layer-btn {
+    padding: 0 30px !important;
+    position: relative;
+    top: -30px !important;
+}
+
+.layui-layer-btn a {
+    background-color: #2b3646 !important;
+}
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>供应商管理 编辑</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/supplierManage/supplierManageEdit.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!--loading flash-->
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>供应商编码</div>
+                            <div class="order-detail w81 r">
+                                <input class="supplier-code check-supplier" id="supplierCode" type="text" onblur="checkSupplierName()">
+                                <span class="error-info error-supplier">名称长度超出限制,最长30个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>供应商名称</div>
+                            <div class="order-detail w81 r">
+                                <input class="supplier-name check-supplier" type="text" onblur="checkSupplierName()">
+                                <span class="error-info error-supplier">名称长度超出限制,最长30个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">供应商头像</div>
+                                <div class="order-detail h170 w81 r" id="img">
+                                <div class="img_container" style="display: inline-block">
+
+                                </div>
+                                <div class="addPosition"><a href="javascript:;" class="file">选择文件 <input id="upLoad" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                        </div>
+                        <!--<div class="order-detail-wrap clearfix">-->
+                            <!--<div class="order-detail w17 l">公司名称</div>-->
+                            <!--<div class="order-detail w81 r"><input class="supplier-company" type="text"></div>-->
+                        <!--</div>-->
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>工厂地址</div>
+                            <div class="order-detail w81 r"><input class="supplier-address" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">工厂年限</div>
+                            <div class="order-detail w81 r"><input class="supplier-years" type="number">年</div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>主营业务</div>
+                            <div class="order-detail w81 r">
+                                <span><input type="checkbox" name="necessary" value="婚纱礼服">婚纱礼服</span>
+                                <span><input type="checkbox" name="necessary" value="秀禾">秀禾</span>
+                                <span><input type="checkbox" name="necessary" value="童装">童装</span>
+                                <span><input type="checkbox" name="necessary" value="男士西服">男士西服</span>
+                                <span><input type="checkbox" name="necessary" value="头纱、衬裙">头纱、衬裙</span>
+                                <span></span>其他 ：<input class="goods-add-input" type="text" name="necessary" placeholder="请填写其他分类" id="rests">
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">工厂规模</div>
+                            <div class="order-detail h170 w81 r">
+                                <div class="factory-sacle">
+                                    <span class="necessary">*</span>车工 <input class="chegong" type="number">人
+                                </div>
+                                <div class="factory-sacle">
+                                    <span class="necessary">*</span>裁剪 <input class="caijian" type="number">人
+                                </div>
+                                <div class="factory-sacle">
+                                    版型师 <input class="bxs" type="number">人
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">模架</div>
+                            <div class="order-detail w81 r" id="model">
+                                <input type="checkbox" name="model" value="无">无
+                                <input type="checkbox" name="model" value="外模">外模
+                                <input type="checkbox" name="model" value="内模">内模
+                                <!--<input style="margin-right: 5px" type="radio" name="model" value="无">无&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input style="margin-right: 5px" type="radio" name="model" value="外模">外模&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input style="margin-right: 5px" type="radio" name="model" value="内模">内模-->
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h136">公司介绍</div>
+                            <div class="order-detail w81 r h136"><textarea class="order-textarea"></textarea></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">资质信息</div>
+                            <div class="order-detail h170 w81 r" id="img3">
+                                <div class="img_container3" style="display: inline-block">
+                                </div>
+                                <div id="addPosition3"><a href="javascript:;" class="file">选择文件 <input id="upLoad3" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                        </div>
+                        <div class="admin-detail mt10">联系人信息</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>姓名</div>
+                            <div class="order-detail w81 r">
+                                <input class="contact-name check-name" type="text" onblur="checkUerName()">
+                                <span class="error-info error-user">名称长度超出限制,最长20个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>性别</div>
+                            <div id="sex" class="order-detail w81 r">
+                                <input style="margin-right: 5px" type="radio" name="sex" value="男">男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input style="margin-right: 5px" type="radio" name="sex" value="女">女
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">身份证号</div>
+                            <div class="order-detail w81 r"><input class="id-num" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>手机号</div>
+                            <div class="order-detail w81 r">
+                                <input id="telephone" class="phone-num" type="number" onblur="checkTel()">
+                                <span class="error-info error-phone">请输入正确的手机号</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">审核状态</div>
+                            <div class="order-detail w81 r">
+                                <select id="approveStatus">
+                                    <option value="0">待审核</option>
+                                    <option value="1">审核通过</option>
+                                    <option value="2">审核不通过</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="bottom-operate">
+                            <button id="submit" class="admin-btn w100">提交</button>
+                            <button class="admin-btn w100 ml20" id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>修改成功！</span>
+            </div>
+            <div class="modal-footer">
+                <div id="sure" style="width: 100%">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/supplierManage/supplierManageEdit.js"></script>
+
+</body>
+</html>

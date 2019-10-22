@@ -1,0 +1,125 @@
+body{
+    background-color: rgb(234,234,234);
+}
+.video-wrap {
+    height: 546px;
+    background-color: #2e2e36;
+}
+
+.video-container {
+    width: 1200px;
+    margin: 0 auto;
+    height: 546px;
+}
+
+.video-about {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.video-about-left {
+    width: 815px;
+    float: left;
+}
+.left-topic {
+    font-size: 22px;
+}
+
+.left-people {
+    height: 60px;
+    line-height: 60px;
+}
+
+.left-intro {
+    height: 120px;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.left-detail {
+
+}
+
+.right-topic {
+    width: 400px;
+    height: 25px;
+    background: url("../../../assets/img/salePlat/about-head.png") center top no-repeat;
+}
+
+.more-video {
+    width: 378px;
+    height: 242px;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.get-more {
+    font-size: 18px;
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+.video-js{
+    display: inline-block;
+}
+#relateVideo .video_title:hover{
+    color: rgb(66,159,214);
+}
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel{
+    background-color: #000 !important;
+}
+.left-detail p{
+    line-height: 0;
+    margin: 0;
+}
+#title_container{
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+.left-detail{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px 0;
+}
+.video-about-right{
+    float: right;
+    width: 375px;
+    overflow: hidden;
+}
+.work{
+    width: 375px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 20px;
+}
+#bottom ul{
+    padding: 0;
+}
+#relateVideo{
+    text-align: center;
+}
+#relateVideo > div{
+    height: 194px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+}
+#relateVideo > div img{
+    width: 336px;
+    height: 190px;
+    border-radius: 5px;
+}
+.content_header .search .glyphicon{
+    position: relative;
+    top:2px !important;
+}

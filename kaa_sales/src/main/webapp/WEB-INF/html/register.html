@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--[if lte IE 8]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css">
+    <link rel="stylesheet" href="../assets/css/salePlat/login.css">
+</head>
+<body>
+<div id="head"></div>
+<!--<div class="content_header" id="header">-->
+    <!--<img src="../assets/img/salePlat/logo1.png" alt="">-->
+    <!--<a href="../salesHome/designHtml">设计师区</a>-->
+    <!--<span class="search"><input type="text" placeholder="搜索商品名称/编号" id="search"><span class="glyphicon glyphicon-search"></span></span>-->
+<!--</div>-->
+<div class="main-content" style="margin-top: 105px;margin-bottom: 300px">
+    <!--<div class="login-wrap clearfix">-->
+        <!--<div class="login-left">-->
+            <!--<img src="../assets/img/salePlat/login_pic.png" alt="">-->
+        <!--</div>-->
+        <!--<div class="login-right">-->
+            <!--<div class="login-right-item">用户注册 <span class="login-english">USER REGISTRATION</span></div>-->
+            <!--<div class="login-right-item">-->
+                <!--<input type="text" placeholder="用户名为中文、字母、数字，最多12个字符" id="userCode">-->
+            <!--</div>-->
+            <!--<div class="login-right-item">-->
+                <!--<input type="text" placeholder="请输入手机号" id="phone">-->
+            <!--</div>-->
+            <!--<div class="login-right-item clearfix">-->
+                <!--<input style="width: 204px;float: left;" type="text" placeholder="验证码" id="verifyCode">-->
+                <!--<div class="vertify-code" id="findVerifyCode">获取验证码</div>-->
+            <!--</div>-->
+            <!--<div class="login-right-item">-->
+                <!--<input type="password" placeholder="请输入密码，密码为6-12位" id="password" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false">-->
+            <!--</div>-->
+            <!--<div class="login-right-item">-->
+                <!--<input type="password" placeholder="请再次输入密码" id="password2" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false">-->
+            <!--</div>-->
+            <!--<div class="login-right-item choose clearfix">-->
+                <!--身份选择：-->
+                <!--<select id="select">-->
+                    <!--<option value="1">网销店</option>-->
+                    <!--<option value="2">零售门店</option>-->
+                    <!--<option value="3">流量平台</option>-->
+                    <!--<option value="4">其它</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <!--<div class="login-right-item">-->
+                <!--<input style="margin: 0;margin-right: 3px" type="checkbox" id="checkbox"><span class="agreement" data-toggle="modal" data-target="#myModal">我同意《知行合一服务条款》</span>-->
+            <!--</div>-->
+            <!--<div class="login-btn" id="nextStep">立即注册</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="reg-bg">
+        <div class="reg-info-wrap">
+            <div class="login-right-item">
+            <input type="text" placeholder="用户名为中文、字母、数字，最多12个字符" id="userCode">
+            </div>
+            <div class="login-right-item">
+            <input type="text" placeholder="请输入手机号" id="phone">
+            </div>
+            <div class="login-right-item clearfix">
+            <input style="width: 204px;float: left;" type="text" placeholder="验证码" id="verifyCode">
+            <div class="vertify-code" id="findVerifyCode">获取验证码</div>
+            </div>
+            <div class="login-right-item">
+            <input type="password" placeholder="请输入密码，密码为6-12位" id="password" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false">
+            </div>
+            <div class="login-right-item">
+            <input type="password" placeholder="请再次输入密码" id="password2" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false">
+            </div>
+            <div class="login-right-item choose clearfix">
+            身份选择：
+            <select id="select">
+            <option value="2">零售门店</option>
+            <option value="1">网销店</option>
+            <option value="3">流量平台</option>
+            <option value="4">其它</option>
+            </select>
+            </div>
+            <div class="login-right-item">
+            <input style="margin: 0;margin-right: 3px" type="checkbox" id="checkbox"><span class="agreement" data-toggle="modal" data-target="#myModal">我同意《知行合一服务条款》</span>
+            </div>
+            <div class="login-btn" id="nextStep" style="background-color: grey;">立即注册</div>
+        </div>
+    </div>
+
+</div>
+<!--footer部分-->
+<div id="bottom"></div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-top: 0;width: 800px">
+            <div class="modal-header">
+                知行合一服务条款
+            </div>
+            <div class="modal-body">
+                <div class="modal-info" style="font-size: 13px;text-align: left">
+                    知行合一服务条款<br>
+                    欢迎“您”（以下或称“用户”）与“苏州知行合一网络科技有限公司”（下称“知行合一”）共同签署本《知行合一服务条款》协议（下称“本协议”），本协议阐述之条款和条件适用于您使用知行合一基于互联网，以包含合一智造网站、合一智造系统、合一智造客户端等在内的各种形态（包括未来技术发展出现的新的服务形态）向您提供的各项服务。<br>
+                    本协议为《知行合一服务条款》修订版本，自本协议发布之日起，合一智造平台各处所称“知行合一服务条款”均指本协议。<br>
+                    一、接受协议<br>
+                    1.1本协议内容包括协议正文及所有巴已经发布或将来可能发布的各类规则。所有规则为协议不可分割的一部分，与协议正文具有同等法律效力。<br>
+                    1.2您在点击同意本协议之前，应当认真阅读本协议。请您务必审慎阅读、充分理解各条款内容，特别是免除或者限制责任的条款、法律适用和争议解决条款。<br>
+                    1.3当您按照注册页面提示填写信息、阅读并同意本协议且完成全部注册程序，或以任何方式进入合一智造并使用服务即表示您已充分阅读、理解并同意接受本协议的条款和条件。阅读本协议的过程中，如果您不同意本协议或其中任何条款约定，您应立即停止注册程序并停止使用服务。<br>
+                    二、定义<br>
+                    2.1合一智造：指由苏州知行合一网络科技有限公司运营的面向企业间贸易 (S-TO-B)的在线信息发布及交易平台及客户端。<br>
+                    2.2知行合一：指“苏州知行合一网络科技有限公司”，系合一智造平台、系统及客户端的经营者。<br>
+                    2.3合一智造服务：指合一智造基于互联网，以包含合一智造平台、系统、客户端等在内的各种形态（包括未来技术发展出现的新的服务形态）向您提供的各项服务（下称“服务”）。<br>
+                    三、协议范围<br>
+                    3.1签约主体<br>
+                    本协议由您与知行合一共同缔结，本协议对您与知行合一具有同等合同效力。<br>
+                    3.2补充协议<br>
+                    由于互联网高速发展，您与知行合一签署的本协议列明的条款并不能完整罗列并覆盖您与知行合一所有权利与义务，现有的约定也不能保证完全符合未来发展的需求。因此，知行合一法律声明、隐私政策、规则均为本协议的补充协议，与本协议不可分割且具有同等法律效力。如您使用合一智造服务，视为您同意上述补充协议。<br>
+                    四、账户注册与使用<br>
+                    4.1用户资格<br>
+                    4.1.1您确认，在您完成注册程序或以其他合一智造允许的方式实际使用服务时，您应当具备中华人民共和国法律规定的与您行为相适应的民事行为能力。若您不具备前述与您行为相适应的民事行为能力，则您及您的监护人应依照法律规定承担因此而导致的一切后果，且知行合一有权终止向您提供服务并注销您的账户。如您代表一家公司或其他法律主体在合一智造注册，则您声明和保证，您有权使该公司或该法律主体受本协议的约束。<br>
+                    4.1.2此外，您还需确保您不是任何国家、国际组织或者地域实施的贸易限制、制裁或其他法律、规则限制的对象，否则您可能无法正常注册及使用服务。<br>
+                    五、服务及规范<br>
+                    您有权在合一智造上享受产品及/或服务的报价、销售与推广、产品及/或服务的询价、采购与评价、交易争议处理等服务。<br>
+                    5.1产品及/或服务的报价、销售与推广<br>
+                    5.1.1通过合一智造提供的服务，您有权通过文字、图片等形式在合一智造平台上发布产品及/或服务信息、进行报价。<br>
+                    5.1.2您应当确保您对您在合一智造上发布的产品及/或服务享有相应的权利，您不得在合一智造上销售以下产品及/或提供以下服务：<br>
+                    （一）国家禁止或限制的；<br>
+                    （二）侵犯他人知识产权或其它合法权益的；<br>
+                    （三）合一智造规则、公告、通知或各平台与您单独签署的协议中已明确说明不适合在合一智造上销售及/或提供的。<br>
+                    5.1.3您应当遵守诚实信用原则，确保您所发布的产品及/或服务信息真实、与您实际所销售的产品及/或提供的服务相符，并在交易过程中切实履行您的交易承诺。<br>
+                    5.2产品及/或服务的询价、采购与评价<br>
+                    5.2.1当您在合一智造询价、采购产品及/或服务时，请您务必仔细确认采购产品的品名、价格、数量、型号、规格、尺寸或服务的时间、内容、限制性要求等重要事项，并在采购下单时核实您的联系地址、电话、收货人等信息。如您填写的收货人非您本人，则该收货人的行为和意思表示产生的法律后果均由您承担。<br>
+                    5.2.2您充分了解并同意，合一智造是一个商业贸易采购平台，而并非面向消费者的消费购买市场，故您的询价、采购行为应当基于真实的贸易需求，不得存在对产品及/或服务实施恶意询价、采购、恶意维权等扰乱合一智造正常交易秩序的行为。基于维护合一智造交易秩序及交易安全的需要，合一智造现上述情形时可主动执行关闭相关交易订单等操作。<br>
+                    5.2.3您有权在合一智造提供的评价系统中对与您达成交易的其他用户产品及/或服务进行评价。您的所有评价行为应遵守合一智造平台规则的相关规定，评价内容应当客观真实，不应包含任何污言秽语、色情低俗、广告信息及法律法规与本协议列明的其他禁止性信息；您不应以不正当方式帮助他人提升信用或利用评价权利对其他用户实施威胁、敲诈勒索。知行合一可按照合一智造平台规则的相关规定对您实施上述行为所产生的评价信息进行删除或屏蔽。<br>
+                    六、费用<br>
+                    6.1知行合一为合一智造平台向您提供的服务付出了大量的成本，除合一智造明示的收费业务外，合一智造向您提供的服务目前是免费的。如未来合一智造向您收取合理费用，知行合一会采取合理途径并提前通过法定程序以本协议约定的有效方式通知您，确保您有充分选择的权利。<br>
+                    6.2您因进行交易、向合一智造获取有偿服务或接触合一智造服务器而发生的所有应纳税赋，以及相关硬件、软件、通讯、网络服务及其他方面的费用均由您自行承担。<br>
+                    七、责任限制<br>
+                    7.1知行合一依照法律规定履行基础保障义务，但对于下述原因导致的合同履行障碍、履行瑕疵、履行延后或履行内容变更等情形，知行合一并不承担相应的违约责任：<br>
+                    （一）因自然灾害、罢工、暴乱、战争、政府行为、司法行政命令等不可抗力因素；<br>
+                    （二）因电力供应故障、通讯网络故障等公共服务因素或第三人因素；<br>
+                    （三）在知行合一已尽善意管理的情况下，因常规或紧急的设备与系统维护、设备与系统故障、网络信息与数据安全等因素。<br>
+                    7.2知行合一向您提供本协议约定之服务，您了解合一智造平台上的信息系用户自行发布，且可能存在风险和瑕疵。知行合一将通过依照法律规定建立相关检查监控制度尽可能保障您在合一智造平台的合法权益及良好体验。同时，鉴于合一智造平台具备存在海量信息及信息网络环境下信息与实物相分离的特点，知行合一无法逐一审查产品及/或服务的信息，无法逐一审查交易所涉及的产品及/或服务的质量、安全以及合法性、真实性、准确性，对此您应谨慎判断。<br>
+                    八、用户信息的保护及授权<br>
+                    8.1个人信息的保护<br>
+                    知行合一非常重视用户个人信息（即能够独立或与其他信息结合后识别用户身份的信息）的保护，在您使用合一智造提供的服务时，您同意知行合一按照在合一智造平台上公布的隐私政策收集、存储、使用、披露和保护您的个人信息。<br>
+                    8.2非个人信息的保证与授权<br>
+                    8.2.1您声明并保证，您对您所发布的信息拥有相应、合法的权利。否则，合一智造可对您发布的信息依法或依本协议进行删除或屏蔽。<br>
+                    8.2.2您应当确保您所发布的信息不包含以下内容：<br>
+                    （一）违反国家法律法规禁止性规定的；<br>
+                    （二）政治宣传、封建迷信、淫秽、色情、赌博、暴力、恐怖或者教唆犯罪的；<br>
+                    （三）欺诈、虚假、不准确或存在误导性的；<br>
+                    （四）侵犯他人知识产权或涉及第三方商业秘密及其他专有权利的；<br>
+                    （五）侮辱、诽谤、恐吓、涉及他人隐私等侵害他人合法权益的；<br>
+                    （六）存在可能破坏、篡改、删除、影响合一智造平台任何系统正常运行或未经授权秘密获取合一智造及其他用户的数据、个人资料的病毒、木马、爬虫等恶意软件、程序代码的；<br>
+                    （七）其他违背社会公共利益或公共道德或依据相关合一智造平台协议、规则的规定不适合在合一智造上发布的。<br>
+                    8.2.3对于您提供、发布及在使用合一智造服务中形成的除个人信息外的文字、图片、视频、音频等非个人信息，在法律规定的保护期限内您免费授予合一智造及其关联公司获得全球排他的许可使用权利及再授权给其他第三方使用并可以自身名义对第三方侵权行为取证及提起诉讼的权利。您同意合一智造其关联公司存储、使用、复制、修订、编辑、发布、展示、翻译、分发您的非个人信息或制作其派生作品，并以已知或日后开发的形式、媒体或技术将上述信息纳入其它作品内。<br>
+                    8.2.4为方便您使用合一智造平台相关服务，您授权知行合一将您在账户注册和使用合一智造服务过程中提供、形成的信息传递给合一智造平台及其他相关服务提供者，或从合一智造等其他相关服务提供者获取您在注册、使用相关服务期间提供、形成的信息。<br>
+                    九、用户的违约及处理<br>
+                    9.1违约认定<br>
+                    发生如下情形之一的，视为您违约：<br>
+                    （一）使用合一智造服务时违反有关法律法规规定的；<br>
+                    （二）违反本协议或本协议补充协议（即本协议第3.2条）约定的。<br>
+                    为适应电子商务发展和满足海量用户对高效优质服务的需求，您理解并同意，知行合一可在合一智造平台规则中约定违约认定的程序和标准。如：知行合一可依据您的用户数据与海量用户数据的关系来认定您是否构成违约；您有义务对您的数据异常现象进行充分举证和合理解释，否则将被认定为违约。<br>
+                    9.2违约处理措施<br>
+                    9.2.1您在合一智造平台上发布的信息构成违约的，知行合一可根据相应规则立即对相应信息进行删除、屏蔽处理或对您的产品进行下架、删除、监管。<br>
+                    9.2.2您在合一智造平台上实施的行为，或虽未在合一智造平台上实施但对合一智造平台及其用户产生影响的行为构成违约的，知行合一可依据相应规则对您执行账户扣分、限制参加营销活动、中止向您提供部分或全部服务、划扣违约金等处理措施。如您的行为构成根本违约的，知行合一可关闭您的账户，终止向您提供服务。<br>
+                    十、协议的变更<br>
+                    10.1知行合一可根据国家法律法规变化及维护市场秩序、保护用户合法权益需要，不时修改本协议、补充协议，变更后的协议、补充协议（下称“变更事项”）将通过法定程序并以本协议约定的有效通知方式通知您。<br>
+                    10.2如您不同意变更事项，您有权于变更事项确定的生效日前联系知行合一反馈意见。如反馈意见得以采纳，知行合一将酌情调整变更事项。如您对已生效的变更事项仍不同意的，您应当于变更事项确定的生效之日起停止使用合一智造平台服务，变更事项对您不产生效力；如您在变更事项生效后仍继续使用合一智造服务，则视为您同意已生效的变更事项。<br>
+                    十一、有效通知<br>
+                    11.1有效联系方式<br>
+                    您在注册成为合一智造用户，并接受合一智造服务时，您应该向知行合一提供真实有效的联系方式（包括您的电子邮件地址、联系电话、联系地址等），对于联系方式发生变更的，您有义务及时更新有关信息，并保持可被有效联系的状态。<br>
+                    合一智造将向您的上述联系方式的其中之一或其中若干向您送达各类通知，而此类通知的内容可能对您的权利义务产生重大的有利或不利影响，请您务必及时关注。<br>
+                    11.2通知的送达<br>
+                    11.2.1合一智造通过上述联系方式向您发出通知，其中以电子的方式发出的书面通知，包括但不限于在合一智造公告，向您提供的联系电话发送手机短信，向您提供的电子邮件地址发送电子邮件、系统消息以及站内信信息，在发送成功后即视为送达；以纸质载体发出的书面通知，按照提供联系地址交邮后的第五个自然日即视为送达。<br>
+                    11.2.2对于在合一智造平台上因交易活动引起的任何纠纷，您同意司法机关（包括但不限于人民法院）可以通过手机短信、电子邮件等现代通讯方式或邮寄方式向您送达法律文书（包括但不限于诉讼文书）。您指定接收法律文书的手机号码、电子邮箱等联系方式为您在合一智造平台注册、更新时提供的手机号码、电子邮箱联系方式以及在注册合一智造用户时生成的个人账号，司法机关向上述联系方式发出法律文书即视为送达。您指定的邮寄地址为您的法定联系地址或您提供的有效联系地址。<br>
+                    您同意司法机关可采取以上一种或多种送达方式向您达法律文书，司法机关采取多种方式向您送达法律文书，送达时间以上述送达方式中最先送达的为准。<br>
+                    您同意上述送达方式适用于各个司法程序阶段。如进入诉讼程序的，包括但不限于一审、二审、再审、执行以及督促程序等。<br>
+                    你应当保证所提供的联系方式是准确、有效的，并进行实时更新。如果因提供的联系方式不确切，或不及时告知变更后的联系方式，使法律文书无法送达或未及时送达，由您自行承担由此可能产生的法律后果。<br>
+                    十二、协议终止<br>
+                    12.1协议终止的情形<br>
+                    12.1.1您有权通过以下任一方式终止本协议：<br>
+                    （一）在满足合一智造平台要求的账户注销条件时您通过网站自助服务注销您的账户的；<br>
+                    （二）变更事项生效前您停止使用合一智造服务并明示不愿接受变更事项的；<br>
+                    （三）您明示不愿继续使用合一智造服务，且符合合一智造要求的终止条件的。<br>
+                    12.1.2出现以下情况时，合一智造可以本协议约定的有效方式通知您终止本协议：<br>
+                    （一）您的实名认证身份无效、不再合法存续或无法有效核实；<br>
+                    （二）您违反本协议约定，知行合一依据违约条款终止本协议的；<br>
+                    （三）您盗用他人账户、发布违禁信息、欺诈、售假、扰乱市场秩序、采取不正当手段牟利等行为，知行合一依据合一智造规则对您的账户予以关闭的；<br>
+                    （四）除上述情形外，因您多次违反合一智造平台规则相关规定且情节严重，知行合一依据合一智造规则对您的账户予以关闭的；<br>
+                    （五）您的账户被知行合一依据本协议回收的；<br>
+                    （六）您在合一智造平台有欺诈、发布或销售假冒伪劣/侵权产品、侵犯他人合法权益或其他严重违法违约行为的；<br>
+                    （七）知行合一基于合理理由相信您的行为可能会使您、知行合一及合一智造用户等相关方发生严重损害或产生法律责任；<br>
+                    （八）其它应当终止服务的情况。<br>
+                    12.2协议终止后的处理<br>
+                    12.2.1本协议终止后，除法律有明确规定外，知行合一无义务向您或您指定的第三方披露您账户中的任何信息。<br>
+                    12.2.2本协议终止后，知行合一仍享有下列权利：<br>
+                    （一）继续保存您留存于知行合一的本协议第八条所列的各类信息；<br>
+                    （二）对于您过往的违约行为，知行合一仍可依据本协议向您追究违约责任。<br>
+                    12.2.3本协议终止后，对于您在本协议存续期间产生的交易订单，知行合一可通知交易相对方并根据交易相对方的意愿决定是否关闭该等交易订单；如交易相对方要求继续履行的，则您应当就该等交易订单继续履行本协议及交易订单的约定，并承担因此产生的任何损失或增加的任何费用。<br>
+                    十三、链接<br>
+                    知行合一或第三者均可提供与其他万维网网站或资源的链接。由于知行合一并不控制该等网站和资源，您理解并同意，知行合一并不对该等外在网站或资源的可用性负责，且不认可该等网站或资源上或可从该等网站或资源获取的任何内容、宣传、产品、服务或其他材料，也不对其等负责或承担任何责任。您进一步理解和同意，对于任何因使用或信赖从此类网站或资源上获取的此类内容、宣传、产品、服务或其他材料而造成（或声称造成）的任何直接或间接损失，知行合一均不承担责任。<br>
+                    十四、法律适用、管辖及其他<br>
+                    14.1本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国大陆地区法律；如无相关法律规定的，则应参照商业惯例和（或）行业惯例。<br>
+                    14.2您与知行合一仅为独立订约人关系。本协议无意结成或创设任何代理、合伙、合营、雇佣与被雇佣或特性授权与被授权关系。<br>
+                    14.3您同意知行合一因经营业务需要有权将本协议项下的权利义务就部分或全部进行转让，并采取合理途径提前通过法定程序以本协议约定的有效方式通知您。<br>
+                    14.4因本协议或知行合一服务所引起或与其有关的任何争议，由知行合一与您协商解决。协商不成时，任何一方均可向被告住所地人民法院提起诉讼。<br>
+                    14.5倘若本协议任何条款被裁定为无效或不可强制执行，该项条款应被撤销，而其余条款应予遵守和执行。条款标题仅为方便参阅而设，并不以任何方式界定、限制、解释或描述该条款的范围或限度。知行合一未就您或其他人士的某项违约行为采取行动，并不表明知行合一撤回就任何继后或类似的违约事件采取动的权利。<br>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div style="width: 100%" type="button" data-dismiss="modal">关闭</div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>"+"<"+"/script>");
+</script>
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/head.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/bottom.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/register.js"></script>
+</body>
+</html>

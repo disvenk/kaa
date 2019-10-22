@@ -1,0 +1,91 @@
+.vip-section {
+    height: 136px;
+    line-height: 28px;
+    padding-left: 170px;
+    padding-top: 25px;
+    font-size: 18px;
+    background: #f3f2f4 url("../../../assets/img/salePlat/box-icon.png") 40px 23px no-repeat;
+}
+
+.record-no {
+    display: inline-block;
+    margin-right: 24px;
+}
+
+.record-topic {
+    height: 60px;
+    background-color: #f3f2f4;
+    margin-top: 10px;
+}
+
+.record-topic-item {
+    float: left;
+    height: 30px;
+    margin-top: 15px;
+    border-left: 1px solid #ccc;
+    width: 14%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.record-topic-item.brl0 {
+    border-left: 0;
+    width: 30%;
+    min-width: 244px;
+}
+
+.record-img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.record-name {
+    display: inline-block;
+    width: 178px;
+    height: 70px;
+    padding: 6px 10px 8px 10px;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: left;
+    overflow: hidden;
+}
+
+.forbid-order {
+    height: 500px;
+    text-align: center;
+    padding-top: 238px;
+    background: #f3f2f4 url("../../../assets/img/salePlat/forbid.png") center 80px no-repeat;
+}
+
+.forbid-text {
+    width: 400px;
+    line-height: 35px;
+    font-size: 18px;
+    color: #666;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.forbid-btn {
+    display: block;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    line-height: 48px;
+    border: 1px solid #3c9ed8;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 100px;
+    background-color: #3c9ed8;
+    margin: 60px auto;
+}
+
+.forbid-btn:hover {
+    color:#3c9ed8;
+    background-color: #fff;
+}
+
+.state2 {
+    display: none;
+}

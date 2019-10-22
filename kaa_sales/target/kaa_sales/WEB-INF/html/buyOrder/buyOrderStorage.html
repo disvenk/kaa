@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+		<meta name="description" content="Restyling jQuery UI Widgets and Elements" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+		<link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+        <link rel="stylesheet" href="../assets/css/salePlat/common.css" />
+		<link rel="stylesheet" href="../assets/css/salePlat/buyOrderStorage.css" />
+		<link rel="stylesheet" href="../assets/css/salePlat/infoTable.css" />
+
+	</head>
+
+	<body class="no-skin">
+
+		<div class="main-container" id="main-container">
+			<div class="main-content">
+				<div class="page-content">
+
+					<!-- /section:settings.box -->
+					<div class="page-content-area">
+						<div class="row">
+							<div class="col-xs-12">
+
+								<!-- PAGE CONTENT BEGINS -->
+
+								<div class="buy-order-topic">下单</div>
+								<div class="buy-order-topic mt2 mb30">
+									<ul class="buy-order-items clearfix">
+										<li class="buy-order-item w1">
+											<button class="buy-order-btn" id="add">添加</button>
+										</li>
+										<li class="buy-order-item w2">
+											货号<input class="buy-order-input" id="pno" type="text" placeholder="请输入货号">
+										</li>
+										<li class="buy-order-item w2">
+											名称<input class="buy-order-input" id="name" type="text" placeholder="请输入商品名称">
+										</li>
+										<li class="buy-order-item w3">
+											分类
+											<select id="type">
+												<option value="">全部</option>
+											</select>
+										</li>
+										<li class="buy-order-item w4">
+											<button class="buy-order-btn" id="orderSearch">搜索</button>
+										</li>
+										<li class="buy-order-item w4">
+											<button class="buy-order-btn" id="resert">重置</button>
+										</li>
+									</ul>
+								</div>
+
+								<table id="sample-table-1" class="table">
+									<!-- 采购订单列表标题 -->
+									<thead>
+										<tr>
+											<!--<th class="center"><input type="checkbox" id="check"></th>-->
+											<th class="center">货号</th>
+											<th class="center">图片</th>
+											<th class="center">商品名称</th>
+											<th class="center">品牌</th>
+											<th class="center">分类</th>
+											<th class="center">价格</th>
+											<th class="center">单件供货周期</th>
+											<th class="center">更新时间</th>
+											<th class="center">操作</th>
+										</tr>
+									</thead>
+									<!-- 循环加载订单列表 -->
+									<tbody class="center" id="tbody">
+										<!--<tr>-->
+											<!--<td><input type="checkbox"></td>-->
+											<!--<td>HJW-001</td>-->
+											<!--<td><img src="../assets/img/pic3.png" alt=""></td>-->
+											<!--<td>婚纱礼服伴娘</td>-->
+											<!--<td>知射</td>-->
+											<!--<td>婚纱</td>-->
+											<!--<td>200</td>-->
+											<!--<td>7天</td>-->
+											<!--<td>2017-05-17 10:10:00</td>-->
+											<!--<td><span class="to-goods-detail color-blue">详情</span></td>-->
+										<!--</tr>-->
+										<!--<tr>-->
+											<!--<td><input type="checkbox"></td>-->
+											<!--<td>HJW-001</td>-->
+											<!--<td><img src="../assets/img/pic3.png" alt=""></td>-->
+											<!--<td>婚纱礼服伴娘</td>-->
+											<!--<td>知射</td>-->
+											<!--<td>婚纱</td>-->
+											<!--<td>200</td>-->
+											<!--<td>7天</td>-->
+											<!--<td>2017-05-17 10:10:00</td>-->
+											<!--<td><span class="to-goods-detail color-blue">详情</span></td>-->
+										<!--</tr>-->
+										<!--<tr>-->
+											<!--<td><input type="checkbox"></td>-->
+											<!--<td>HJW-001</td>-->
+											<!--<td><img src="../assets/img/pic3.png" alt=""></td>-->
+											<!--<td>婚纱礼服伴娘</td>-->
+											<!--<td>知射</td>-->
+											<!--<td>婚纱</td>-->
+											<!--<td>200</td>-->
+											<!--<td>7天</td>-->
+											<!--<td>2017-05-17 10:10:00</td>-->
+											<!--<td><span class="to-goods-detail color-blue">详情</span></td>-->
+										<!--</tr>-->
+									</tbody>
+								</table>
+								<!--分页-->
+								<div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+								<!-- PAGE CONTENT ENDS -->
+
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content-area -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script>
+		<script src="../assets/js/jquery.page.js"></script>
+		<!-- ace scripts -->
+		<script src="../assets/js/ace-elements.min.js"></script>
+		<script src="../assets/js/ace.min.js"></script>
+
+        <script src="../assets/js/salePlat/buyOrderStorage.js"></script>
+
+	</body>
+</html>

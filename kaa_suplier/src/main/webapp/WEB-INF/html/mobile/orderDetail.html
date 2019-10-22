@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/orderConfirm.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div class="main-container">
+    <div class="order-info bg1">收  货 人：<span>${receiver}</span></div>
+    <div class="order-info bg2">联系电话：<span>${mobile}</span></div>
+    <div class="order-info bg3">收货地址：<span class="order-info-address">${address}</span></div>
+    <div class="order-infos clearfix">
+        <img class="order-infos-model" src="${href}" alt="">
+        <div class="order-infos-item">
+            <span>${name}</span><br>
+            <span class="order-infos-span">${pno}</span><br>
+            <span class="order-infos-span"></span><br>
+            <span class="order-infos-span">颜色：<span>${color}</span> 尺寸：<span>${size}</span></span>
+        </div>
+        <div class="order-infos-count">
+            <span class="infos-count-num">X${qty}</span><br>
+            <span class="infos-count-price">￥${price}</span>
+        </div>
+    </div>
+    <div class="order-count bb1 mt10">
+        共<span>1</span>件商品
+        <div class="order-count-sum">合计：￥ <span>${subtotal}</span></div>
+    </div>
+    <div class="order-count">
+        订单总价
+        <div class="order-count-sum">￥${subtotal}<br><div class="order-state">${producedStatusName}</div></div>
+    </div>
+    <div class="order-item">
+        <span class="order-item-name">胸围</span> <span>${bust}</span><br>
+        <span class="order-item-name">腰围</span> <span>${waist}</span><br>
+        <span class="order-item-name">臀围</span> <span>${hipline}</span><br>
+        <span class="order-item-name">肩宽</span> <span>${shoulder}</span><br>
+        <span class="order-item-name">身高</span> <span>${height}</span><br>
+        <span class="order-item-name">体重</span> <span>${weight}</span><br>
+        <span class="order-item-name">喉到地</span> <span>${throatheight}</span><br>
+        <span class="order-item-name">其他</span> <span>${other}</span><br>
+        <span class="order-item-name">期望发货日期</span> <span>${expectsendDate}</span>
+    </div>
+    <div class="order-item pdl20">
+        订单编号<span>${orderNo}</span><br>
+        创建时间<span>${createDate}</span>
+
+    </div>
+    <div class="order-confirm-btn" style="display: none" id="delivery">交付记录</div>
+    <div class="order-confirm-btn" style="display: none" id="confirm" onclick="updateProducedStatus()">确认订单</div>
+    <div class="order-item" style="display: none" id="instruction">
+        <div class="instruction-head">说明</div>
+        <textarea class="instruction-text" id="instructionContent"></textarea>
+    </div>
+    <div class="order-confirm-btn" style="display: none" id="modification" onclick="updateProducedStatus()">修改完成</div>
+    <div class="order-confirm-btn" style="display: none" id="produced" onclick="updateProducedStatus()">生产完成</div>
+
+    <!--模态框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="../assets/images/img/modalHead.png" alt="">
+                </div>
+                <div class="modal-body" id="myModalInfo">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="border: none">
+                        <img class="modal-confirm" src="../assets/images/img/modalConfirm.png" alt="">
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/delivery.js"></script>
+<script>
+    var producedStatus = '${producedStatus}';
+    if (producedStatus == 1) {
+        $('#confirm').css('display', 'block');
+    } else if (producedStatus == 2) {
+        $('#instruction').css('display', 'block');
+        $('#produced').css('display', 'block');
+    } else if (producedStatus == 5) {
+        $('#instruction').css('display', 'block');
+        $('#modification').css('display', 'block');
+    } else {
+        $('#delivery').css('display', 'block');
+    }
+
+    var orderId = '${id}';
+    function updateProducedStatus() {
+        var instructionContent = $('#instructionContent').val();
+        $.ajax({
+            type: 'POST',
+            url: '../suplierOrder/updateProducedStatus',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({orderId:orderId, producedStatus:producedStatus, instruction:instructionContent}),
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            success: function (res) {
+                if(res.stateCode == 100){
+                    window.location.reload();
+                }else{
+                    layer.msg(res.message);
+                }
+            },
+            error: function (err) {
+                layer.msg(err)
+            }
+        });
+    }
+
+    $("#delivery").click(function () {
+        delivery(orderId);
+    })
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>平台端商品库管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/goodsManage/goodsManage.css"/>
+
+</head>
+<body>
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+                        <div class="admin-detail">商品列表</div>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1" style="margin-right: 120px"><button id="adminAdd" class="admin-btn w80p">新增</button></li>
+                            <!--<li class="admin-operate-item w2"><button id="addFromStorage" class="admin-btn w30p">从供应商仓储新增</button></li>-->
+                            <li class="admin-operate-item w3">名称 <input id="goodsName" class="admin-input" type="text" placeholder="请输入商品名称"></li>
+                            <li class="admin-operate-item w4">商品ID <input id="goodsPho" class="admin-input" type="text" placeholder="请输入商品ID"></li>
+                            <li class="admin-operate-item w5">
+                                分类
+                                <select id="Suplierscope"></select>
+                            </li>
+                            <li class="admin-operate-item w6">
+                              <select style="width: 90px" id="secCategory">
+
+                              </select>
+                            </li>
+                            <li class="admin-operate-item w7">
+                                门店默认商品
+                                <select id="isMoren">
+                                    <option value=""></option>
+                                    <option value="">是</option>
+                                    <option value="">否</option>
+                                </select>
+                            </li>
+                            <li class="admin-operate-item w8">
+                                设计师款
+                                <select id="isDesign">
+                                    <option value=""></option>
+                                    <option value="">是</option>
+                                    <option value="">否</option>
+                                </select>
+                            </li>
+                            <li class="admin-operate-item w7" style="float: right"><button id="search" class="admin-btn w60">搜索</button><button id="resert" class="admin-btn w60 ml6p">重置</button></li>
+                        </ul>
+
+                        <!--表格-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>商品ID</th>
+                                <th>名称</th>
+                                <th>图片</th>
+                                <th>品牌</th>
+                                <th>分类</th>
+                                <th>是否设计师款</th>
+                                <th>颜色</th>
+                                <th>尺寸</th>
+                                <th>更新日期</th>
+                                <th>销售渠道</th>
+                                <th>线上售价</th>
+                                <th>线下售价</th>
+                                <th>门店默认商品</th>
+                                <th>备注</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+    <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">删除确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>您确认要删除该件商品吗？</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" id="sure">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/goodsManage/goodsManage.js"></script>
+<script>
+</script>
+</body>
+</html>

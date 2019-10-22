@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>商品详情页面</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/showGoods/goodsManageDetail.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="admin-detail">商品详情</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">商品ID</div>
+                            <div class="order-detail w81 r" id="productCode"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">商品名称</div>
+                            <div class="order-detail w81 r" id="goodsName"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">商品图片</div>
+                            <div class="order-detail h170 w81 r" id="img">
+                                <!--这里放图片-->
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">视频</div>
+                            <div class="order-detail h170 w81 r" style="padding: 5px 20px">
+                                <!--这里放图片-->
+                                <!--这里放视频-->
+                                <video id="video" src="" height="160" controls></video>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l" style="height: 70px;line-height: 70px">商品标签</div>
+                            <div class="order-detail w81 r" id="labelNmae" style="height: 70px;line-height: 30px">
+
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">品牌</div>
+                            <div class="order-detail w81 r" id="brand"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">分类</div>
+                            <div class="order-detail w81 r" id="categoryName"></div>
+                        </div>
+                        <!--<div class="order-detail-wrap clearfix">-->
+                            <!--<div class="order-detail w17 l">供应商产品编号</div>-->
+                            <!--<div class="order-detail w81 r" id="pno"></div>-->
+                        <!--</div>-->
+                        <!--<div class="order-detail-wrap clearfix">-->
+                            <!--<div class="order-detail w17 l">供应商</div>-->
+                            <!--<div class="order-detail w81 r" id="productSupplierName"></div>-->
+                        <!--</div>-->
+                        <!--<div class="order-detail-wrap clearfix">-->
+                            <!--<div class="order-detail w17 l">单件供货周期</div>-->
+                            <!--<div class="order-detail w81 r" id="suplierDay"></div>-->
+                        <!--</div>-->
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">建议零售价</div>
+                            <div class="order-detail w81 r" id="price"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">材料说明</div>
+                            <div class="order-detail w81 r" id="material"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">是否设计师款</div>
+                            <div class="order-detail w81 r" id="isDesigner"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">销售渠道</div>
+                            <div class="order-detail w81 r" id="saleschannelName"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix mb30" style="margin-bottom: 0">
+                            <div class="order-detail w17 l h136">备注</div>
+                            <div class="order-detail w81 r h136" id="remark"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">颜色</div>
+                            <div class="order-detail w81 r" id="color"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">尺寸</div>
+                            <div class="order-detail w81 r" id="size"></div>
+                        </div>
+
+
+                        <!--表格-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>颜色</th>
+                                <th>尺码</th>
+                                <th>库存</th>
+                                <th>线上销售价</th>
+                                <th>线下销售价</th>
+                                <th>备注</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                        </table>
+
+                        <div class="admin-detail">商品图文详情</div>
+                        <div class="goods-detail-show" id="description">
+                            <!--这里放置商品的图文详情-->
+                        </div>
+
+                        <div class="bottom-operate" style="text-align: center">
+                            <button id="add" style="padding: 9px 38px;background-color: #0e90d2;color: #ffffff;display: none">添加至展示商品</button>
+                            <button id="beenAdd" style="padding: 9px 38px;background-color: #999;color: #ffffff;display: none">添加至展示商品</button>
+                            <button class="admin-btn w100" id="goBack">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>添加成功！</span>
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="sure" style="width: 100%">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/showGoods/goodsManageDetail.js"></script>
+
+
+</body>
+</html>

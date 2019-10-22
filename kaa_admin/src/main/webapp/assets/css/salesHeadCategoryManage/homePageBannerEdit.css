@@ -1,0 +1,33 @@
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.h170 {
+    height: 170px;
+    line-height: 170px;
+}
+
+.goods-video {
+    width: 288px;
+    height: 138px;
+    margin-top: 14px;
+    margin-right: 10px;
+    background-color: teal;
+    border-radius: 5px;
+    float: left;
+}
+
+.storage-admin-select {
+    width: 200px;
+}
+
+.order-textarea {
+    width: 500px;
+    height: 120px;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding: 14px 12px 14px;
+    line-height: 22px;
+    margin-top: 8px;
+}

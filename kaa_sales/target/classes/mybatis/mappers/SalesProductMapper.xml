@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.SalesProductMapper">
+
+    <select id="salesProductList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select
+          sp.id, sp.href, sp.`name`, sp.views, sp.min_price price
+        From sal_product sp
+        LEFT JOIN pla_product pp ON sp.plat_product_id = pp.id
+        LEFT JOIN sal_product_label spl ON spl.pid = sp.id
+        LEFT JOIN sal_product_price spp ON spp.pid = sp.id
+        Where sp.`status` = 1  And sp.logicDeleted = 0
+        <if test="categoryIdList!=null and categoryIdList!=''">And sp.category_id in (${categoryIdList})</if>
+        <if test="nameOrCode!=null and nameOrCode!=''">And (pp.product_code LIKE '%${nameOrCode}%' OR sp.name LIKE '%${nameOrCode}%')</if>
+        <if test="labelIdList!=null and labelIdList!=''">And spl.label_id in (${labelIdList})</if>
+        <if test="startPrice!=null and startPrice!=''">And spp.offline_price &gt; '${startPrice}'</if>
+        <if test="endPrice!=null and endPrice!=''">And spp.offline_price &lt; '${endPrice}'</if>
+        GROUP BY sp.id
+        ORDER BY
+        <if test="sortType == 1">sp.colligate DESC</if>
+        <if test="sortType == 2">sp.sales DESC</if>
+        <if test="sortType == 3">sp.createdDate DESC</if>
+        <if test="sortType == 4">sp.min_price DESC</if>
+        <if test="sortType == 5">sp.min_price ASC</if>
+    </select>
+
+
+    <select id="findProductLabel" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select
+        ppb.id, ppb.name, ppb.sort
+        From sal_product sp
+        LEFT JOIN sal_product_label spl ON spl.pid = sp.id
+        LEFT JOIN pla_product_base ppb ON ppb.id = spl.label_id
+        Where sp.`status` = 1 And sp.logicDeleted = 0
+        <if test="categoryId !=null and categoryId != '' ">And sp.category_id = #{categoryId}</if>
+        And ppb.id is not null
+        GROUP BY ppb.id
+        ORDER BY ppb.id
+    </select>
+
+    <!-- 获取订阅盒子的商品数 -->
+    <select id="findOrderCount" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT count(1) 'orderCount',box_product_id boxProductId FROM `box_use_log_product`
+        where box_product_id = #{orderCount} And logicDeleted = 0
+        AND status = 1
+        group by boxProductId;
+    </select>
+
+</mapper>

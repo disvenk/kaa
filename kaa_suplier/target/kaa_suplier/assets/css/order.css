@@ -1,0 +1,176 @@
+body {
+    background-color: #f6f6f6 !important;
+    color: #333;
+    height:auto;
+    font-size: 14px;
+}
+
+.clearfix {
+    overflow:auto;
+    zoom:1;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main-header {
+    height: 70px;
+    line-height: 70px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1976d2;
+    text-align: center;
+    position: relative;
+    border-top: 1px solid #1970c6;
+}
+
+.main-container {
+    width: 92%;
+    margin: 10px auto 0;
+}
+
+
+.order-info-topic {
+    height: 40px;
+    line-height: 40px;
+}
+
+.order-infos {
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-infos-model {
+    width: 25%;
+    max-width: 170px;
+    max-height: 100px;
+    float: left;
+
+}
+
+.order-infos-item {
+    width: 70%;
+    float: left;
+    line-height: 22px;
+    margin-top: 8px;
+    margin-left: 2%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.order-infos-span {
+    font-size: 12px;
+    color: #9c9da1;
+}
+
+.pruduct-condition {
+    float: right;
+}
+
+.order-confirm-btn {
+    width: 90px;
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 100px;
+    color: #fff;
+    text-align: center;
+    background-color: #1976d2;
+    float: right;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.order-confirm-btn:hover {
+    background-color: #2a2e36;
+}
+
+
+.main-bottom {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 10px;
+    text-align: center;
+}
+.main-bottom img {
+    max-width: 310px;
+}
+
+/*模态框样式*/
+
+.modal-footer {
+    text-align: center;
+}
+
+
+.modal-header {
+    padding: 0 !important;
+    text-align: center;
+    border-bottom: 0 !important;
+}
+
+.modal-header img {
+    max-width: 100%;
+}
+
+.modal-confirm {
+    max-width: 60%;
+}
+
+.btn-primary {
+    background-color: #fff!important;
+    border: 0 !important;
+}
+
+.btn {
+    padding: 0 !important;
+}
+
+.modal-info {
+    height: 60px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.modal-info-item {
+    display: inline-block;
+    float: left;
+    height: 50px;
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w40{
+    width: 40%;
+}
+.weui-tabbar p{
+    margin: 0;
+}
+

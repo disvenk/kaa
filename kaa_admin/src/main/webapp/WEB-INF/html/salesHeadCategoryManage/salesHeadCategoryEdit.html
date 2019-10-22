@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>首页运营新增</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/salesHeadCategoryManage/salesHeadCategoryEdit.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!--loading flash-->
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+                        <div class="admin-detail">首页运营位编辑</div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">名称</div>
+                            <div class="order-detail w81 r">
+                                <!--<input id="name" type="text">-->
+                                <input id="name" class="supplier-name check-supplier" type="text" onblur="checkSupplierName()">
+                                <span class="error-info error-supplier">名称长度超出限制,最长30个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">排序</div>
+                            <div class="order-detail w81 r"><input id="sort" type="number"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix mb30" style="margin-bottom: 0">
+                            <div class="order-detail w17 l h136">描述</div>
+                            <div class="order-detail w81 r h136">
+                                <textarea id="description" class="order-textarea"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="submit">提交</button>
+                            <button class="admin-btn w100 ml20" id="back">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/salesHeadCategoryManage/salesHeadCategoryEdit.js"></script>
+
+</body>
+</html>

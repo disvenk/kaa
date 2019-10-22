@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css">
+</head>
+<style type="text/css">
+
+    body {
+        overflow-y: auto;
+        background-color: #fff;
+    }
+
+    .clearfix {
+        overflow: auto;
+        zoom: 1;
+    }
+
+    .l {
+        float: left;
+    }
+
+    .r {
+        float: right;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .service-form {
+        width: 1050px;
+        margin: 0 auto;
+    }
+
+    .service-topic {
+        height: 166px;
+        line-height: 166px;
+        text-align: center;
+        font-size: 18px;
+        color: #2589ff;
+    }
+
+    .service-desc {
+        float: left;
+        width: 290px;
+        height: 300px;
+    }
+
+    .service-desc-topic {
+        line-height: 20px;
+        font-size: 16px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .service-desc-cont {
+        font-size: 14px;
+        line-height: 30px;
+        margin-top: 20px;
+    }
+
+    .service-form-left {
+        float: left;
+        width: 316px;
+        margin-left: 50px;
+    }
+
+    .service-form-right {
+        float: left;
+        width: 342px;
+        margin-left: 50px;
+    }
+
+    .service-info {
+        width: 314px;
+        height: 36px;
+        border-bottom: 1px solid #e3e3e3;
+        text-align: right;
+    }
+
+    .service-info.bg1 {
+        background: url("../assets/img/guide/kefu1.png") 17px 7px no-repeat;
+    }
+
+    .service-info.bg2 {
+        background: url("../assets/img/guide/kefu2.png") 18px 7px no-repeat;
+        margin-top: 30px;
+    }
+
+    .service-info input {
+        width: 254px;
+        height: 34px;
+        border: 0;
+        outline: 0;
+    }
+
+    .service-form-text {
+        width: 326px;
+        height: 120px;
+        padding: 6px;
+        border: 1px solid #e3e3e3;
+    }
+
+    .service-submit {
+        display: block;
+        width: 316px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #2589ff;
+        font-size: 16px;
+        color: #fff;
+        border: 0;
+        outline: 0;
+        margin: 60px auto 0;
+        cursor: pointer;
+    }
+
+    .service-info-input::-webkit-input-placeholder {/*Chrome/Safari*/
+        color:#e1e1e1;
+    }
+
+    .service-form-text::-webkit-input-placeholder {/*Chrome/Safari*/
+        color:#e1e1e1;
+    }
+
+</style>
+
+<body>
+<div id="head"></div>
+<div class="guide-container" style="width: 1200px;margin: auto;margin-top: 105px;margin-bottom: 30px">
+    <div class="service-topic">联系客服</div>
+    <div class="service-form clearfix">
+        <div class="service-desc">
+            <div class="service-desc-topic">
+                CORPORATE CULTURE<br>
+                合一智造
+            </div>
+            <div class="service-desc-cont">
+                合一智造成立于2016年,总部设于中国苏州,是国内唯一一家专注于礼服行业的柔性供应链平台。合一智造致力于礼服行业设计生产的创新,依托于互联网建立高效数据模型,实现自由交易与高效协同,打造礼服行业设计生产的优质生态环境。
+            </div>
+        </div>
+        <div class="service-form-left">
+            <div class="service-info bg1">
+                <input class="service-info-input" type="text" placeholder="请输入您的姓名" id="name">
+            </div>
+            <div class="service-info bg2">
+                <input class="service-info-input" type="tel" placeholder="请输入您的联系方式" id="tel">
+            </div>
+        </div>
+        <div class="service-form-right">
+            <textarea class="service-form-text" placeholder="留言信息" id="textarea" maxlength="500"></textarea>
+        </div>
+    </div>
+    <button class="service-submit" id="submit">提交信息</button>
+</div>
+<div id="bottom"></div>
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/head.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/bottom.js"></script>
+<script>
+    $('#submit').click(function () {
+        var name = $('#name').val();
+        var tel = $('#tel').val();
+        var textarea = $('#textarea').val();
+        if(name == ''){
+            layer.alert('请留下姓名，谢谢', {icon: 0})
+        }else  if(tel == ''){
+            layer.alert('请留下手机号，谢谢', {icon: 0})
+        }else if(textarea == ''){
+            layer.alert('请留下您的建议或意见，谢谢', {icon: 0})
+        }else{
+            $.ajax({
+                type: 'POST',
+                url: '../salesHome/saveFeedback',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                headers: {
+                    'Accept': 'application/json; charset=utf-8',
+                    'Authorization': 'Basic ' + sessionStorage.getItem('token')
+                },
+                data: JSON.stringify({
+                    name: name,
+                    telephone: tel,
+                    description: textarea
+                }),
+                success: function (res) {
+                    if(res.stateCode == 100){
+                        layer.alert('感谢您的反馈！', {icon: 1})
+                        $('#name').val('');
+                        $('#tel').val('');
+                        $('#textarea').val('');
+                    }else{
+                        // alert(res.message);
+                    }
+                },
+                error: function (err) {
+                    layer.alert('请您先注册登录，谢谢！', {icon:0})
+                }
+            });
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.input-address  {
+    width: 470px;
+    height: 94px;
+    line-height: 18px;
+    border-radius: 5px !important;
+    padding: 14px;
+    vertical-align: middle;
+    resize: none;
+}
+
+.h118 {
+    height: 118px;
+}

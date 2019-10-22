@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--<link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />-->
+
+    <!--[if lte IE 8]>
+    <script src="../assets/js/html5shiv.min.js"></script>
+    <script src="../assets/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/salesOrder.css">
+</head>
+<style type="text/css">
+    .bui-side-menu .bui-menu-title, .bui-side-menu .bui-menu-title s, .bui-side-menu .menu-leaf a, .bui-side-menu .menu-leaf em {
+        background-image: none;
+    }
+</style>
+<body style="overflow-y: auto">
+<div id="head">
+</div>
+<div class="content" style="overflow: hidden;margin-top: 105px">
+    <ul id="J_NavContent" class="dl-tab-conten"></ul>
+    <div id="bottom">
+    </div>
+</div>
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bui.js"></script>
+    <script type="text/javascript" src="../assets/js/config.js"></script>
+    <script type="text/javascript" src="../assets/js/salePlat/head.js"></script>
+    <script type="text/javascript" src="../assets/js/salePlat/bottom.js"></script>
+    <script>
+        BUI.use('common/main', function () {
+            var config = [{
+                id: 'menu',
+                homePage: 'code',
+                menu: [{
+                    text: '',
+                    items: [
+                        {id: 'code', text: '会员中心', href: '../userCenter/vipCenterHtml', closeable: false},
+                        {id: 'box', text: '合一盒子', href: '../userCenter/boxHtml'},
+                        {id: 'yun-menu', text: '云商品库', href: '../storeProductManage/goodsManageFromStoreHtml'},
+                        {id: 'se-menu', text: '我的商品库', href: '../storeProductManage/showGoodsHtml'},
+                        {id: 'menu', text: '门店销售订单', href: '../storeSalesOrder/salesOrderHtml'},
+                        {id: 'second-menu', text: '工厂采购订单', href: '../storeSuplierOrder/buyOrderHtml'}
+                    ]
+                }]
+            }];
+
+            new PageUtil.MainPage({
+                modulesConfig: config
+            });
+        });
+
+    </script>
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>" + "<" + "/script>");
+    </script>
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../assets/js/jquery1x.min.js'>" + "<" + "/script>");
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+        var token = sessionStorage.getItem('token');
+        var urllen = sessionStorage.setItem('urllen', '../');
+        if (!token) {
+            alert("请先登录")
+            location.href = "../salesHome/loginHtml";
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: '../account/loginInfo',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                headers: {
+                    'Accept': 'application/json; charset=utf-8',
+                    'Authorization': 'Basic ' + sessionStorage.getItem('token')
+                },
+                success: function (res) {
+                    if (res.stateCode == 100) {
+                        $("#userName").html(res.data.name);
+                        if (res.data.userStatus == '0') {
+                            $("#J_NavContent li[data-id='se-menu']").css('display', 'block');
+                            $("#J_NavContent li[data-id='menu']").css('display', 'block');
+                        }
+                    } else {
+//                    alert(res.message);
+                    }
+                },
+                error: function (err) {
+//                alert(err.message);
+                }
+            });
+        }
+    </script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bui.js"></script>
+    <script type="text/javascript" src="../assets/js/config.js"></script>
+</body>
+</html>

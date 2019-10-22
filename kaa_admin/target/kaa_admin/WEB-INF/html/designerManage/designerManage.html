@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>salesGoodsManage</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/designerManage/designerManage.css"/>
+
+</head>
+<body>
+<!--loading flash-->
+<div class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+</div>
+
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <div class="admin-detail">设计师新增</div>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1"><button class="admin-btn w80p" id="designAdd">新增</button></li>
+                            <li class="admin-operate-item w1"></li>
+                            <li class="admin-operate-item w2"></li>
+                            <li class="admin-operate-item w6"></li>
+                            <li class="admin-operate-item w5">用户名 <input class="admin-input" type="text" placeholder="请输入用户名" id="name"></li>
+                            <li class="admin-operate-item w4">
+                                手机号 <input class="admin-input" type="text" placeholder="请输入手机号" id="phone">
+                            </li>
+                            <li class="admin-operate-item w7"><button class="admin-btn w60" id="orderSearch">搜索</button><button class="admin-btn w60 ml6p" id="resert">重置</button></li>
+                        </ul>
+
+                        <!--表格-->
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>手机号</th>
+                                <th>头像</th>
+                                <th>真实姓名</th>
+                                <th>性别</th>
+                                <th>身份</th>
+                                <th>城市</th>
+                                <th>备注</th>
+                                <th>是否展示</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认删除</h4>
+            </div>
+            <div class="modal-body">
+                <span>您确认要删除该设计师吗？</span>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-primary sure">确认</button>-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>-->
+                <div class="sure" id="sure">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/designerManage/designerManage.js"></script>
+
+
+</body>
+</html>

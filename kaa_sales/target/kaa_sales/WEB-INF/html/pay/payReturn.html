@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+</head>
+<body>
+</body>
+<script src="../assets/js/jquery.min.js"></script>
+<script>
+    window.location.href = "${returnUrl}";
+    var type = "${type}";
+//    var sendVerify = "${sendVerify}";
+    if (type == '1') {
+        $.ajax({
+            type: 'POST',
+            url: '../verify/sendMessage',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            headers: {
+                'Accept': 'application/json; charset=utf-8',
+                'Authorization': 'Basic ' + sessionStorage.getItem('token')
+            },
+            data: JSON.stringify({status:1})
+        });
+    }
+</script>
+</html>

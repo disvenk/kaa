@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    background-color: rgb(34,120,207);
+}
+#login{
+    width: 100%;
+    background-color: rgb(34,120,207);
+    text-align: center;
+}
+#login .logo_container{
+    width: 100%;
+    text-align: center;
+}
+#login .logo_container img{
+    width: 100px;
+    margin: 40px 0;
+}
+.vertify {
+    width: 40% !important;
+}
+
+#login .tel_container{
+    width: 76%;
+    margin-bottom: 30px;
+    margin-left: 12%;
+    border: 1px solid rgb(59,147,234);
+    height: 39px;
+    border-radius: 18px;
+    color: rgb(128,174,218);
+    background-color: rgb(30,107,183);
+    text-align: left;
+}
+#login .tel_container div:nth-child(1){
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(34,120,207);
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-top: 3px;
+    text-align: center;
+}
+#login input{
+    caret-color:#fff;
+}
+input:focus{
+    outline: none;
+}
+input::placeholder{
+    color: rgb(128,174,218);
+}
+.tel_container img{
+    width: 13px;
+    position: relative;
+    top:5px;
+}
+.forget{
+    width: 76%;
+    margin-left: 12%;
+    color: #ffffff;
+    text-align: right;
+    font-size: 12px;
+}
+.forget > span:nth-of-type(1){
+    padding: 0 6px;
+    /*border-right: 1px solid #ffffff;*/
+}
+.forget img{
+    width: 15px;
+    margin-right: 4px;
+    position: relative;
+    top:2px;
+}
+.login{
+    width: 76%;
+    margin-bottom: 16px;
+    margin-left: 12%;
+    height: 39px;
+    border-radius: 18px;
+    color: #ffffff;
+    background-color: rgb(171,171,171);
+    text-align: center;
+    line-height: 39px;
+    font-size: 14px;
+    margin-top: 70px;
+}
+
+.get-code {
+    float: right;
+    display: inline-block;
+    width: 26%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 100px;
+    background-color: #fff;
+    color: #1976d2;
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.read {
+    display: inline-block;
+    width: 14px !important;
+    height: 14px !important;
+    background-color: #fff !important;
+    margin-right: 4px;
+    color: #000 !important;
+}
+
+
+.modal-header {
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal-info {
+    font-size: 12px;
+}
+
+.modal-dialog {
+    margin: 0 auto;
+}
+#phone{
+    background-color: rgb(30,107,183);
+    -webkit-appearance: none;
+    border: none;
+    padding-left: 10px;
+    height: 30px;
+    width: 70%;
+    color: #fff;
+    font-size: 13px;
+}
+#password{
+    background-color: rgb(30,107,183);
+    -webkit-appearance: none;
+    border: none;
+    padding-left: 10px;
+    height: 30px;
+    width: 70%;
+    color: #fff;
+    font-size: 13px;
+}
+#password2{
+    background-color: rgb(30,107,183);
+    -webkit-appearance: none;
+    border: none;
+    padding-left: 10px;
+    height: 30px;
+    width: 70%;
+    color: #fff;
+    font-size: 13px;
+}
+#code{
+    background-color: rgb(30,107,183);
+    -webkit-appearance: none;
+    border: none;
+    padding-left: 10px;
+    height: 30px;
+    width: 70%;
+    color: #fff;
+    font-size: 13px;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+		<meta name="description" content="Restyling jQuery UI Widgets and Elements" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+		<link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+		<link rel="stylesheet" href="../assets/css/salePlat/common.css" />
+		<link rel="stylesheet" href="../assets/css/salePlat/salesOrder.css" />
+        <link rel="stylesheet" href="../assets/css/salePlat/infoTable.css" />
+	</head>
+	<style>
+		#myModal1{
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1050;
+		}
+		.order-info-items li{
+			width: 270px;
+		}
+		.order-info-items li button{
+			outline: 0;
+			border: 0;
+			width: 90px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			border-radius: 15px;
+			background-color: #3c9ed8;
+		}
+	</style>
+	<body class="no-skin">
+	<!--loading flash-->
+	<div class="spinner">
+		<div class="rect1"></div>
+		<div class="rect2"></div>
+		<div class="rect3"></div>
+		<div class="rect4"></div>
+		<div class="rect5"></div>
+	</div>
+	<div id="display" style="background: #000;width: 100%;height: 100%;position: fixed;top: 0;left: 0;opacity: 0.6;z-index: 100000;display: none"></div>
+	<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<div class="main-content">
+				<div class="page-content">
+
+					<!-- /section:settings.box -->
+					<div class="page-content-area">
+						<div class="row">
+							<div class="col-xs-12">
+
+								<!-- PAGE CONTENT BEGINS -->
+									<div class="order-right-topic bg-324">线下销售订单</div>
+									<div class="order-right-info bg-324 mt2" style="width: 100%;padding-left: 20px;margin-bottom: 5px">
+										<ul class="order-info-items clearfix">
+											<li class="order-info-item l">采购订单编号<input style="width: 150px" id="orderBuyNo" class="order-info-input" type="text" placeholder="请输入采购订单编号"></li>
+											<li class="order-info-item l" style="width: 230px">购买人<input style="width: 150px" id="orderBuyer" class="order-info-input" type="text" placeholder="请输入购买人姓名"></li>
+											<li class="order-info-item l" style="width: 230px">手机号<input style="width: 150px" id="orderBuyerPhone" class="order-info-input" type="text" placeholder="请输入购买人手机"></li>
+											<li class="order-info-item l" style="width: 230px">订单编号<input style="width: 150px" id="orderInputNo" class="order-info-input" type="text" placeholder="请输入订单编号"></li>
+											<li class="order-info-item l"><button id="orderSearch">搜  索</button>
+												<button id="orderReset">重  置</button></li>
+										</ul>
+									</div>
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th class="order-topic center">商品信息</th>
+                                        <th class="order-topic center">单价</th>
+                                        <th class="order-topic center">数量</th>
+                                        <th class="order-topic center">价格</th>
+                                        <th class="order-topic center">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                    </tbody>
+                                </table>
+								<!--分页-->
+								<div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+                                <!-- PAGE CONTENT ENDS -->
+
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content-area -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+
+        <!--确认取消摸态窗-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLab">订单确认</h4>
+                    </div>
+                    <div class="modal-body">
+                        <span>您确认要取消该订单吗？</span>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="sure" id="sure">确认</div>
+                        <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!--立即发货模态框-->
+		<div class="modal fade" id="sendNow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							直接发货
+						</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modal-express-name" style="margin-top: 20px">
+                            快递公司
+                            <select class="modal-express-select" id="deliveryCompany" style="width: 200px">
+                            </select>
+                        </div>
+                        <div class="modal-express-num" style="margin: 30px 0">
+                            快递单号
+                            <input type="text" id="deliveryNo" style="width: 200px">
+                        </div>
+					</div>
+					<div class="modal-footer">
+						<!--<button type="button" class="btn" data-dismiss="modal">返回-->
+						<!--</button>-->
+						<!--<button type="button" class="btn" id="sendN">-->
+							<!--提交-->
+						<!--</button>-->
+						<div data-dismiss="modal" style="color: #0e90d2">取消</div>
+						<div class="sure" id="sendN">确认</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+		<!--快递物流查询-->
+		<div class="modal fade" id="sendInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog" style="margin-top: 60px;width: 100%">
+				<div class="modal-content" style="width: 50%;height: 500px;margin-top: 90px">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLa">
+							物流信息
+						</h4>
+					</div>
+					<div class="modal-body" style="padding: 10px 0">
+						<div style="text-align: left;padding-left: 64px;font-size: 15px">快递公司：<span id="deliveryCom" style="margin-right: 50px"></span><br>
+							快递单号：<span id="deliveryNum"></span></div>
+						<iframe id="iframe" src="" frameborder="0" width="90%" height="869px" style="zoom: 40%"></iframe>
+					</div>
+					<div class="modal-footer"style="border-top-left-radius: 0;border-top-right-radius: 0">
+						<div data-dismiss="modal" style="width: 100%">确定</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	<div id="myModal1" style="display: none;z-index: 10000000;margin: auto auto;width: 360px;height: 160px;background-color: #fff;border-radius: 6px;font-size: 16px;text-align: center">
+		<div>
+			<div style="height: 119px;line-height: 119px">
+				您需完成入驻，才能体验此功能
+			</div>
+			<a target="view_window" id="storeJoin" style="width: 100%;height: 40px;border-top: 1px solid #f5f5f5;display: block;line-height: 40px" href="">确定</a>
+		</div>
+	</div>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script>
+		<script src="../assets/js/jquery.page.js"></script>
+	<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+		<!--本页面JS-->
+		<script src="../assets/js/salePlat/salesOrder.js"></script>
+	</body>
+</html>

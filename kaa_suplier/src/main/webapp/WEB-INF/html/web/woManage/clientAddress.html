@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <!--<link rel="stylesheet" href="../assets/css/ace.min.css"/>-->
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/clientAddress.css"/>
+
+</head>
+<body onkeydown="keyLogin()">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">地址列表</div>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1"><button id="btnAdd" class="admin-btn" style="width: 68px">新增</button></li>
+                            <li class="admin-operate-item w2"></li>
+                            <li class="admin-operate-item w3"></li>
+                        </ul>
+                        <!--表格-->
+                        <table id="sample-table-2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>收件人</th>
+                                <th>收件人手机</th>
+                                <th>收件人地址</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            <!--<tr>-->
+                                <!--<td>张三</td>-->
+                                <!--<td>18767678908</td>-->
+                                <!--<td>无</td>-->
+                                <!--<td>-->
+                                    <!--<div class="btnDel">删除</div>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            </tbody>
+                        </table>
+                        <!--暂无数据-->
+                        <div style="width: 100%;text-align: center;font-size: 26px;margin-top: 135px;color: #999;display: none" id="display">
+                            暂无数据
+                        </div>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--确认删除摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">确认删除</h4>
+            </div>
+            <div class="modal-body">
+                确定删除该客户吗？
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="suredelete">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--重置密码摸态窗-->
+<div class="modal fade" id="resertModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">确认</h4>
+            </div>
+            <div class="modal-body">
+                确认重置密码吗？<br>(重置后密码为888888)
+            </div>
+            <div class="modal-footer">
+                <div class="sure" id="sure">确认</div>
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/WOManage/clientAddress.js"></script>
+
+
+</body>
+</html>

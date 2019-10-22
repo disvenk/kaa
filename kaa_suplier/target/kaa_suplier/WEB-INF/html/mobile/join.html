@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>供应商入驻</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/join.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="wrap">
+    <div class="main-container">
+        <div class="goods-info-topic">公司信息</div>
+        <div class="goods-add-info">公司名称：<input class="goods-add-input" type="text" placeholder="请输入公司名称" id="companyName"><span class="necessary">*</span></div>
+        <div class="goods-add-info">工厂地址：<input class="goods-add-input" type="text" placeholder="请输入工厂地址" id="address"><span class="necessary">*</span></div>
+        <div class="goods-add-info">开厂年限：<input class="goods-add-input" type="number" placeholder="请输入开厂年限" id="openYears">年</div>
+        <div class="goods-add-info">主营业务<span class="necessary">*</span></div>
+        <ul class="goods-color-items clearfix">
+            <li class="goods-color-item"><input type="checkbox" value="婚纱">婚纱</li>
+            <li class="goods-color-item"><input type="checkbox" value="秀禾">秀禾</li>
+            <li class="goods-color-item"><input type="checkbox" value="礼服">礼服</li>
+
+            <!--<li class="goods-color-item bg-color"></span>自定义</li>-->
+        </ul>
+        <div class="goods-add-info">其他：<input class="goods-add-input" type="text" placeholder="请填写其他分类" id="rests"></div>
+        <div class="goods-info-topic">工厂规模</div>
+        <div class="goods-add-info">车工<input class="goods-add-input" type="number" placeholder="车工人数" id="smith"><span class="necessary">*</span></div>
+        <div class="goods-add-info">裁剪<input class="goods-add-input" type="number" placeholder="裁剪人数" id="sewer"><span class="necessary">*</span></div>
+        <div class="goods-add-info">版型师<input class="goods-add-input" type="number" placeholder="版型师人数" id="editer"></div>
+        <!--<div class="goods-add-info">裁剪<input class="goods-add-input" type="text" placeholder="裁剪人数"><span class="necessary">*</span></div>-->
+        <div class="goods-add-info">
+            模架
+            <div class="model-check">
+                <input type="radio" name="modelSet" value="0">无
+                <input type="radio" name="modelSet" value="1">外模
+                <input type="radio" name="modelSet" value="2">内模
+            </div>
+            <span class="necessary">*</span>
+        </div>
+        <div class="goods-add-info bb0">公司介绍</div>
+        <textarea class="goods-add-text" id="description" placeholder="公司介绍及优势"></textarea>
+        <div class="goods-add-info">资质信息</div>
+        <div class="goods-temp" style="position: relative"><img id="photo" style="width: 100%;height: 100%" src="" alt="">
+            <img id="camera" src="../assets/images/img/camera.png" alt="">
+            <img id="delete" src="../assets/images/img/delete.png" alt="">
+        </div>
+        <div class="goods-add-info">联系人信息</div>
+        <div class="goods-add-info">姓名：<input class="goods-add-input" type="text" placeholder="请输入姓名" id="name"><span class="necessary">*</span></div>
+        <div class="goods-add-info">
+            性别
+            <div class="model-check">
+                <input type="radio" name="sex" value="1">男
+                <input type="radio" name="sex" value="2">女
+            </div>
+            <span class="necessary">*</span>
+        </div>
+        <div class="goods-add-info">身份证号：<input class="goods-add-input" type="text" placeholder="请输入身份证号" id="personID"><span class="necessary">*</span></div>
+        <div class="goods-add-info bb0">手机号：<input class="goods-add-input" type="tel" placeholder="请输入手机号" id="phone"><span class="necessary">*</span></div>
+    </div>
+</div>
+<div id="btnSave" class="order-confirm-btn">保存</div>
+
+
+
+
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/join.js"></script>
+
+<script>
+
+</script>
+</body>
+
+</html>

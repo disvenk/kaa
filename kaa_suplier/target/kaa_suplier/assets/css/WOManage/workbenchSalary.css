@@ -1,0 +1,41 @@
+body {
+    min-width: 1490px !important;
+}
+
+.admin-operate-item {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.page-state {
+    color: #3b5999;
+}
+
+.admin-detail-topic {
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #d7d7d7;
+}
+
+
+.admin-operate-item input {
+    display: inline-block;
+    border-radius: 5px !important;
+    padding-left: 14px;
+    height: 40px;
+    line-height: 38px;
+    margin: 0 16px;
+    border: 1px solid #d1d1d1;
+}
+
+#tbody tr div{
+     cursor: pointer;
+     color: rgb(113,161,197);
+ }
+
+

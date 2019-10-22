@@ -1,0 +1,129 @@
+
+
+.h178 {
+    height: 178px;
+    line-height: 178px;
+}
+
+.h118 {
+    height: 118px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.h120 {
+    height: 120px;
+    line-height: 120px;
+    padding-left: 120px;
+}
+
+.input-address {
+    width: 470px;
+    height: 94px;
+    line-height: 18px;
+    border-radius: 5px !important;
+    padding: 14px;
+    vertical-align: middle;
+}
+
+@media screen and (max-width:800px)  {
+    .input-address {
+        width: 370px;
+    }
+}
+
+.goods-detail-item input {
+    width: 90%;
+    height: 20px;
+    line-height: 20px;
+    border:1px solid #dfdee1;
+}
+
+.tip-name {
+    width: 60px;
+    display: inline-block;
+}
+
+.txr {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+#sample-table-1 {
+    background-color: #f3f2f4;
+}
+
+#sample-table-1 input {
+    width: 76%;
+    height: 26px;
+    border-radius: 6px !important;
+}
+
+.detail-edit-topic {
+    margin: 0 auto;
+    width: 200px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.modal-footer div {
+    width: 100%;
+}
+
+#myModal .modal-content {
+    border-radius: 8px;
+}
+
+#myModal .modal-dialog {
+    margin: 100px auto;
+    width: 450px;
+}
+
+#myModal .modal-body {
+    text-align: center;
+    color: #666;
+    padding: 30px 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#mymodalSelf .modal-title {
+    text-align: center;
+}
+
+#mymodalSelf .modal-header .close {
+    font-size: 26px;
+}
+
+#mymodalSelf .modal-footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 0;
+    height: 46px;
+    line-height: 46px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#mymodalSelf .modal-footer div {
+    font-size: 15px;
+    color: #666;
+    height: 44px;
+    cursor: pointer;
+}
+
+.sure {
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: auto auto;
+    margin-top: 200px;
+    width: 360px;
+    border-radius: 0;
+    background-color: #fff;
+    color: #333;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>商品库</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.css">
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOproduct.css"/>
+
+</head>
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">商品库</div>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1"></li>
+                            <li class="admin-operate-item w2">
+                                供应商产品编号 <input id="pno" type="text">
+                                商品名称 <input id="name" type="text">
+
+                            </li>
+                            <li class="admin-operate-item w3"><button id="btnQuery" class="admin-btn w60">搜索</button></li>
+                        </ul>
+                        <ul class="admin-operate-items clearfix">
+                            <li class="admin-operate-item w1">
+                            </li>
+                            <li class="admin-operate-item w2">
+                                供应商
+                                <select id="supplierList">
+                                    <option value="">全部</option>
+                                </select>
+                            </li>
+                            <li class="admin-operate-item w3"><button id="resert" class="admin-btn w60">重置</button></li>
+                        </ul>
+
+                        <!--表格-->
+                        <table id="sample-table-2" class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>供应商产品编号</th>
+                                <th>商品名称</th>
+                                <th>图片</th>
+                                <th>分类</th>
+                                <th>颜色</th>
+                                <th>尺码</th>
+                                <th>更新时间</th>
+                                <th>备注</th>
+                                <th>供应商名称</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                        </table>
+                        <!--分页-->
+                        <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/WOManage/WOproduct.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+/*.main-content {*/
+    /*width: 98%;*/
+    /*margin: 0 auto;*/
+/*}*/
+
+.worker-operate {
+    width: 49.49%;
+    height: 74px;
+    border-bottom: 1px dashed #ccc;
+    text-align: center;
+    padding-top: 44px;
+    color: #1976d2;
+    box-sizing: border-box;
+}
+
+.worker-operate.bg1 {
+    border-right: 1px dashed #ccc;
+    background: url("../../../assets/img/out.png") center 10px no-repeat;
+    background-size: 30px 30px;
+}
+
+.worker-operate.bg2 {
+    background: url("../../../assets/img/homepage.png") center 10px no-repeat;
+    background-size: 30px 30px;
+}
+
+.date-items {
+    width: 96%;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    margin: 20px auto 0;
+}
+
+.date-item {
+    float: left;
+    width: 16.666%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-right:1px solid #ccc;
+    color: #ccc;
+}
+
+@media screen and (max-width: 340px) {
+    .date-item {
+        width: 16.6%;
+    }
+}
+
+.date-item.br0 {
+    border-right: 0;
+    /*float: right;*/
+}
+
+.date-item.active {
+    background-color: #1976d2;
+    color: #fff;
+}
+
+.salary {
+    height: 300px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.salary-trend {
+    height: 360px;
+    /*border-bottom: 1px dashed #ccc;*/
+}
+
+.toDetail {
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    border: 0;
+    background-color: #1976d2;
+}
+
+.detail-btn {
+    text-align: right;
+    padding-top: 8px;
+    padding-right: 10px;
+}
+
+.my-salary {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    background: url("../../../assets/img/slim.jpg") left 12px no-repeat;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#tbody tr>td:nth-child(1) {
+    text-align: right;
+}
+
+#tbody tr:nth-child(2n+1) {
+    background-color: #f2f2f2;
+}
+
+
+
+.flag {
+    background: url("../../../assets/img/flag.png") left no-repeat;
+    background-size: 10px 14px;
+}
+
+.section {
+    height: 10px;
+    background-color: #f2f2f2;
+    margin-top: 8px;
+}

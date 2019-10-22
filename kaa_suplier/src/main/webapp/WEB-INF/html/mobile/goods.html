@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/goods.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="main-container" id="goodsList">
+    <!--<div class="order-infos clearfix">-->
+        <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+        <!--<div class="order-infos-item">-->
+            <!--<span>货号<span>PW-H75</span></span><br>-->
+            <!--<span class="order-infos-span">库存数量：<span>1000</span></span><br>-->
+            <!--<span class="order-infos-span">价格：<span>￥1504</span></span><br>-->
+        <!--</div>-->
+        <!--<div class="make-order">-->
+            <!--<div class="make-order-btn">编辑</div>-->
+            <!--<div class="make-order-btn">删除</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="order-infos clearfix">-->
+        <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+        <!--<div class="order-infos-item">-->
+            <!--<span>货号<span>PW-H75</span></span><br>-->
+            <!--<span class="order-infos-span">库存数量：<span>1000</span></span><br>-->
+            <!--<span class="order-infos-span">价格：<span>￥1504</span></span><br>-->
+        <!--</div>-->
+        <!--<div class="make-order">-->
+            <!--<div class="make-order-btn">编辑</div>-->
+            <!--<div class="make-order-btn">删除</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="order-infos clearfix">-->
+        <!--<img class="order-infos-model" src="../assets/images/img/model1.jpg" alt="">-->
+        <!--<div class="order-infos-item">-->
+            <!--<span>货号<span>PW-H75</span></span><br>-->
+            <!--<span class="order-infos-span">库存数量：<span>1000</span></span><br>-->
+            <!--<span class="order-infos-span">价格：<span>￥1504</span></span><br>-->
+        <!--</div>-->
+        <!--<div class="make-order">-->
+            <!--<div class="make-order-btn">编辑</div>-->
+            <!--<div class="make-order-btn">删除</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<img src="../assets/images/img/add.png" alt="" style="position: fixed;right: 16px;bottom: 130px;z-index: 300;width: 60px;height: 60px" onclick="editPro('')">
+<!--底部mark-->
+<!--<div class="main-bottom">-->
+    <!--<img src="../../assets/images/img/mark.jpg" alt="">-->
+<!--</div>-->
+
+
+
+<!--底部tab-->
+<div class="weui-tab">
+    <div class="weui-tab__panel">
+    </div>
+    <div class="weui-tabbar">
+        <a href="../suplierHome/homePageHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/homepage.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label selectTable">首页</p>
+        </a>
+
+        <a href="../suplierHome/orderHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/order.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">订单</p>
+        </a>
+
+        <a href="javascript:" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/goodsL.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label" style="color: #ffffff">货品</p>
+        </a>
+        <a href="../suplierHome/personalInfoHtml" class="weui-tabbar__item bottom_tabbar">
+            <img src="../assets/images/img/self.png" alt="" class="weui-tabbar__icon">
+            <p class="weui-tabbar__label">个人</p>
+        </a>
+    </div>
+</div>
+
+<!--摸态窗-->
+<div class="modal" tabindex="-1" role="dialog" id="myModal" style="top: 30%">
+    <div class="modal-dialog" role="document" style="width: 70%;margin: auto">
+        <div class="modal-content">
+            <div class="modal-body" style="padding: 38px 15px">
+                <p style="text-align: center;font-size: 18px;margin: 0">确认删除</p>
+            </div>
+            <div class="modal-footer">
+                <div id="sure">确定</div>
+                <div data-dismiss="modal">取消</div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--图片展示-->
+<div id="myPictureModal" onclick="$(this).css('display', 'none')">
+
+</div><!-- /.modal -->
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/weixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/goods.js"></script>
+
+<script>
+
+</script>
+</body>
+
+</html>

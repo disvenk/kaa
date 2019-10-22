@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mappers.StoreSuplierOrderMapper">
+
+    <select id="findStoreSuplierOrderList" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        Select
+            sso.id, sso.orderno suplierOrderNo, sso.orderdate orderDate, sso.status, sso.channel_name channelName
+            ,det.href, det.product_name productName, det.color, det.size, det.qty, det.price, det.subtotal
+            ,sal.orderno salesOrderNo
+        From sto_suplierorder sso
+        LEFT JOIN sto_suplierorder_detail det ON sso.id = det.order_id
+        LEFT JOIN sto_salesorder sal ON sal.id = sso.salesorder_id
+        WHERE
+            sso.store_id = ${storeId}
+            and sso.logicDeleted = false
+            <if test="productName!=null and productName!=''">And det.product_name LIKE '%${productName}%'</if>
+            <if test="suplierOrderNo!=null and suplierOrderNo!=''">And sso.orderno LIKE '%${suplierOrderNo}%'</if>
+            <if test="salesOrderNo!=null and salesOrderNo!=''">And sal.orderno LIKE '%${salesOrderNo}%'</if>
+            <if test="orderStatus!=null and orderStatus!='' or orderStatus == 0">And sso.status = #{orderStatus}</if>
+            <if test="startTime!=null and startTime!=''">And sso.orderdate &gt; '${startTime}'</if>
+            <if test="endTime!=null and endTime!=''">And sso.orderdate &lt; '${endTime}'</if>
+        order by sso.orderdate desc
+    </select>
+
+    <select id="orderCount" parameterType="java.util.HashMap" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT COUNT(id) orderCount, status FROM sto_suplierorder WHERE store_id = ${storeId} GROUP BY status
+    </select>
+
+</mapper>

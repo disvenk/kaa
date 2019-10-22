@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/main-min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <!--<link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />-->
+    <link rel="stylesheet" href="../assets/css/salePlat/salesOrder.css">
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css">
+</head>
+<style type="text/css">
+    a:hover{
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    a {
+        color: #666;
+    }
+    .content {
+        margin: auto;
+        width: 1200px;
+    }
+
+    .bui-nav-tab-item {
+        display: none !important;
+    }
+
+    .dl-second-nav {
+        background-color: #fff;
+    }
+
+    .tab-nav-bar {
+        display: none;
+    }
+
+    .dl-second-slib {
+        border-left: 0 !important;
+    }
+
+    .bui-side-menu {
+        border-left: 1px solid #C3C3D6;
+        border-right: 1px solid #C3C3D6;
+    }
+
+    .dl-second-slib {
+        display: none;
+    }
+
+    .bui-side-menu .menu-leaf a {
+        text-indent: 0;
+    }
+
+    .bui-side-menu .menu-leaf a em {
+        text-align: center;
+    }
+
+    .bui-nav-tab {
+        height: auto !important;
+    }
+
+    .tab-content-container {
+        min-height: 875px;
+    }
+    #head{
+        position: fixed;
+        top:0;
+        z-index: 1000;
+        width: 100%;
+    }
+    #cnzz_stat_icon_1271449140{
+        bottom: -420px !important;
+    }
+    .content_header .search .glyphicon{
+        position: relative;
+        top:2px !important;
+    }
+</style>
+<body style="overflow-y: auto;">
+<div id="head"></div>
+<div class="content" style="overflow: hidden;margin-top: 105px">
+    <ul id="J_NavContent" class="dl-tab-conten"></ul>
+</div>
+<div id="bottom"></div>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui.js"></script>
+<script type="text/javascript" src="../assets/js/config.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/head.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/bottom.js"></script>
+
+<script>
+    BUI.use('common/main', function () {
+        var config = [{
+            id: 'menu',
+            homePage: 'login',
+            menu: [{
+                text: '新手入门',
+                items: [
+                    {id: 'login', text: '登录注册', href: '../guideHome/loginHtml'},
+                    {id: 'buy', text: '选货采购', href: '../guideHome/pickHtml'},
+                    {id: 'code', text: '下单流程', href: '../guideHome/buyStepHtml'},
+                    {id: 'offline', text: '线下入口', href: '../guideHome/offLineHtml'}
+                ]
+            }, {
+                text: '会员服务',
+                items: [
+                    {id: 'contact', text: '合一盒子', href: '../guideHome/contactHtml'}
+                ]
+            }, {
+                text: '合一保障',
+                items: [
+                    {id: 'insurance', text: '交易售后', href: '../guideHome/insuranceHtml'}
+                ]
+            }, {
+                text: '门店入驻',
+                items: [
+                    {id: 'guiding', text: '入驻说明', href: '../guideHome/guidingHtml'}
+                ]
+            }]
+        }]
+//            menu:[{
+//                text:'',
+//                items:[
+//                    {id:'code',text:'下单流程',href:'../guideHome/buyStepHtml',closeable : false},
+//                    {id:'login',text:'登录注册',href:'../guideHome/loginHtml'},
+//                    {id:'buy',text:'选货采购',href:'../guideHome/pickHtml'},
+//                    {id:'upload',text:'上传淘宝',href:'../guideHome/uploadHtml'},
+//                    {id:'offline',text:'线下入口',href:'../guideHome/offLineHtml'},
+//                    {id:'contact',text:'联系我们',href:'../guideHome/contactHtml'},
+//                    {id:'insurance',text:'合一保障',href:'../guideHome/insuranceHtml'},
+//                    {id:'guiding',text:'新手入门',href:'../guideHome/guidingHtml'},
+//                    {id:'servant',text:'在线客服',href:'../guideHome/servantHtml'},
+//                    {id:'about',text:'关于我们',href:'../guideHome/aboutUsHtml'},
+//                    {id:'privacy',text:'隐私保护',href:'../guideHome/privacyHtml'},
+//                    {id:'treatment',text:'用户协议',href:'../guideHome/treatmentHtml'}
+//                ]
+//            }]
+//        }];
+
+        new PageUtil.MainPage({
+            modulesConfig: config
+        });
+    });
+</script>
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>" + "<" + "/script>");
+</script>
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery1x.min.js'>" + "<" + "/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+
+
+</script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui.js"></script>
+<script type="text/javascript" src="../assets/js/config.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+.order-pay-wrap {
+    height: 514px;
+}
+
+.order-pay-item {
+    width: 49.9%;
+    height: 514px;
+    background-color: #f3f2f4;
+    text-align: center;
+}
+
+.order-pay-right {
+    display: inline-block;
+    margin-left: 24%;
+    margin-top: 116px;
+}
+
+.order-pay-code {
+    width: 292px;
+    height: 292px;
+    line-height: 292px;
+    text-align: center;
+    background: url("../../img/salePlat/pay_frame.png") center top no-repeat;
+    margin: 38px auto 18px;
+}
+
+.order-pay-f5,
+.order-pay-overtime {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.order-pay-f5 {
+    color: #000;
+    font-weight: bold;
+}
+
+.order-pay-overtime {
+    color: #333;
+}
+
+.order-detail-btn {
+    width: 190px;
+    height: 46px;
+    text-align: center;
+    line-height: 44px;
+    font-size: 20px;
+    border:1px solid #4c8fbd;
+    color: #4c8fbd;
+    border-radius: 30px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.order-detail-btn:hover {
+    background-color: #4c8fbd;
+    color: #fff;
+}

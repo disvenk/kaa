@@ -1,0 +1,38 @@
+.admin-operate-item {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.admin-operate-item.w1 {
+    width: 8%;
+}
+
+.admin-operate-item.w2 {
+    width: 22%;
+}
+
+.admin-operate-item.w3 {
+    width: 12%;
+}
+
+.admin-operate-item.w4 {
+    width: 18%;
+}
+
+.admin-operate-item.w5 {
+    width: 18%;
+}
+
+.admin-operate-item.w6 {
+    width: 12%;
+}
+
+.admin-operate-item.w7 {
+    width: 10%;
+}
+
+.admin-input {
+    width: 60%;
+    height: 30px;
+}

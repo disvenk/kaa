@@ -1,0 +1,48 @@
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.h170 {
+    height: 170px;
+    line-height: 170px;
+}
+
+.order-textarea {
+    width: 500px;
+    height: 120px;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding: 14px 12px 14px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+.h178 {
+    height: 178px;
+
+}
+
+.h118 {
+    height: 122px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.pdl0 {
+    padding-left: 0;
+}
+
+.input-address {
+    width: 470px;
+    height: 94px;
+    line-height: 18px;
+    border-radius: 5px !important;
+    padding: 14px;
+    margin-left: 20px;
+    vertical-align: middle;
+    resize: none;
+}
+
+.modal-footer div {
+    width: 100%;
+}

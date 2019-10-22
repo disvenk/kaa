@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>首页</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/weui.css" />
+    <link rel="stylesheet" href="../assets/css/workerCode/common.css" />
+    <link rel="stylesheet" href="../assets/css/workerCode/home.css" />
+</head>
+<body>
+
+<div class="main-content">
+    <div class="worker-operate-wrap clearfix">
+        <div id="logOut" class="worker-operate l bg1">退出</div>
+        <div id="scan" class="worker-operate r bg2">扫一扫</div>
+    </div>
+    <ul class="date-items clearfix" id="salaryMonth">
+        <!--<li class="date-item active">8月</li>-->
+        <!--<li class="date-item">9月</li>-->
+        <!--<li class="date-item">10月</li>-->
+        <!--<li class="date-item">11月</li>-->
+        <!--<li class="date-item">12月</li>-->
+        <!--<li class="date-item br0">当月</li>-->
+    </ul>
+    <!--工资占比图-->
+    <div class="salary" id="salary"></div>
+
+    <div class="detail-btn">
+        <button class="toDetail">查看明细</button>
+    </div>
+    <div class="section"></div>
+    <div class="my-salary">我的收入 <span style="font-size: 14px">（单位：元）</span></div>
+    <!--工资走势图-->
+    <div class="salary-trend" id="salaryTrend"></div>
+    <div class="section"></div>
+    <div class="my-salary">我已扫码的工单</div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>工单号</td>
+                <td>工序</td>
+                <td>领取时间</td>
+                <td>交货时间</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!--<tr>-->
+                <!--<td class="flag">GYZZ</td>-->
+                <!--<td>排花</td>-->
+                <!--<td>2018-01-09 17:48:20</td>-->
+                <!--<td>2018-01-09 17:48:20</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td class="flag">AAA</td>-->
+                <!--<td>排花</td>-->
+                <!--<td>2018-01-09 17:48:20</td>-->
+                <!--<td>2018-01-09 17:48:20</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>GYZZT</td>-->
+                <!--<td>排花</td>-->
+                <!--<td>2018-01-09 17:48:20</td>-->
+                <!--<td>2018-01-09 17:48:20</td>-->
+            <!--</tr>-->
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/echarts.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="../assets/js/weui/weui.min.js"></script>
+<script type="text/javascript" src="../assets/js/weui/zepto.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script>
+    var token = '${token}';
+    if (token != '') {
+        sessionStorage.setItem("token", token);
+    }
+    //登录校验
+    var token = sessionStorage.getItem('token');
+    if (!token) {
+        location.href = "../suplierHome/loginHtml";
+    }
+
+</script>
+<script type="text/javascript" src="../assets/js/workerCode/home.js"></script>
+</body>
+</html>

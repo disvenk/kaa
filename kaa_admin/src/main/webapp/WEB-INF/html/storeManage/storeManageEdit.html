@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>线下门店列表编辑</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/storeManage/storeManageEdit.css"/>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="spinner-wrap">
+                            <div class="spinner-x">
+                                <div class="rect1"></div>
+                                <div class="rect2"></div>
+                                <div class="rect3"></div>
+                                <div class="rect4"></div>
+                                <div class="rect5"></div>
+                            </div>
+                        </div>
+                        <!--loading flash-->
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
+                        </div>
+                        <div class="admin-detail">门店编辑</div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">头像</div>
+                            <div class="order-detail h170 w81 r" id="img1">
+                                <div class="img_container1" style="display: inline-block">
+                                </div>
+                                <div id="addPosition1"><a href="javascript:;" class="file">选择文件 <input id="upLoad1" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>用户名</div>
+                            <div id="" class="order-detail w81 r">
+                                <!--<input id="userCode" type="text">-->
+                                <input id="userCode" class="supplier-name check-name" type="text" onblur="checkUerName()">
+                                <span class="error-info error-user">名称长度超出限制,最长20个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>手机号</div>
+                            <div class="order-detail w81 r">
+                                <input id="mobile" class="phone-num" type="text" onblur="checkStoreTel()">
+                                <span class="error-info error-phone">请输入正确的手机号</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">真实姓名</div>
+                            <div class="order-detail w81 r"><input id="userName" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">性别</div>
+                            <div class="order-detail w81 r" id="sex">
+                                <input style="margin-right: 5px" type="radio" name="sex" value="男">男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input style="margin-right: 5px" type="radio" name="sex" value="女">女
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">最后登录时间</div>
+                            <div  class="order-detail w81 r"><input id="finalLogindate" style="border: 0px" type="text"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>用户身份</div>
+                            <div class="order-detail w81 r" >
+                                <select class="storage-admin-select" id="userType">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">备注</div>
+                            <div class="order-detail w81 r"><input id="remarks" type="text"></div>
+                        </div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>门店名称</div>
+                            <div class="order-detail w81 r">
+                                <!--<input id="storeName" type="text">-->
+                                <input id="storeName" class="supplier-name check-supplier" type="text" onblur="checkSupplierName()">
+                                <span class="error-info error-supplier">门店名称长度超出限制,最长30个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 h178 l"><span class="necessary">*</span>门店地址</div>
+                            <div class="w81 pdl0 r">
+                                <div class="order-detail pdl0">
+                                    <div class="order-detail h56" id="province" style="padding-left: 20px">
+                                        <select id="cmbProvince" name="cmbProvince"></select>
+                                        <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                                        <select id="cmbArea" name="cmbArea"></select>
+                                    </div>
+                                </div>
+                                <div class="order-detail pdl0 h118">
+                                    <textarea id="address" class="input-address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>销售商品</div>
+                            <div class="order-detail w81 r">
+                                <input type="checkbox" value="婚纱">婚纱
+                                <input type="checkbox" value="礼服">礼服
+                                <input type="checkbox" value="秀禾">秀禾
+                                <input type="checkbox" value="男装">男装
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">门店图片</div>
+                            <div class="order-detail h170 w81 r" id="img2">
+                                <div id="addPosition2"><a href="javascript:;" class="file">选择文件 <input multiple id="upLoad2" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail h170 w17 l">资质信息</div>
+                            <div class="order-detail h170 w81 r" id="img3">
+                                <div class="img_container3" style="display: inline-block">
+                                </div>
+                                <div id="addPosition3"><a href="javascript:;" class="file">选择文件 <input id="upLoad3" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>联系人</div>
+                            <div class="order-detail w81 r">
+                                <!--<input id="storeContact" type="text">-->
+                                <input id="storeContact" class="supplier-name check-lxr" type="text" onblur="checkContactName()">
+                                <span class="error-info error-lxr">名称长度超出限制,最长20个字符</span>
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span class="necessary">*</span>联系人电话</div>
+                            <div class="order-detail w81 r">
+                                <!--<input id="storeContactPhone" type="text">-->
+                                <input id="storeContactPhone" class="phone-num" type="text" onblur="checkContacTel()">
+                                <span class="error-info error-contact">请输入正确的手机号</span>
+                            </div>
+                        </div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">审核状态</div>
+                            <div class="order-detail w81 r">
+                                <select id="approveStatus" >
+                                    <option id="0">待审核</option>
+                                    <option id="1">审核通过</option>
+                                    <option id="2">审核不通过</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>修改成功！</span>
+            </div>
+            <div class="modal-footer">
+                <div id="sure" type="button" class="sure">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/storeManage/storeManageEdit.js"></script>
+
+</body>
+</html>

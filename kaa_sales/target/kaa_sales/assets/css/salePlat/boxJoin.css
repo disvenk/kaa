@@ -1,0 +1,162 @@
+body {
+    background-color: #fff;
+}
+
+.box-container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.box-join-img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    float: left;
+}
+
+.box-join-detail {
+    width: 528px;
+    float: left;
+    margin-left: 30px;
+}
+
+.join-detail-topic1 {
+    font-size: 24px;
+}
+
+.join-detail-topic {
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+}
+
+.join-detail-pay {
+    height: 132px;
+    line-height: 132px;
+    font-size: 14px;
+    color: #666;
+}
+
+.zfb-pay,.wx-pay {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.mid-pay {
+    display: inline-block;
+}
+
+.zfb-pay {
+    background: url("../../../assets/img/salePlat/zfb-pay.jpg") center 6px no-repeat;
+    border: 2px solid #00aff0;
+    margin-left: 20px;
+}
+
+.wx-pay {
+    background: url("../../../assets/img/salePlat/wx-pay.jpg") center 6px no-repeat;
+}
+
+.join-detail-date {
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #666;
+}
+
+.join-date-item {
+    font-size: 14px;
+    padding: 8px 16px 8px 16px;
+    border: 1px solid #ccc;
+    margin-left: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.join-date-item.border-pick {
+    border: 1px solid #3c9ed8;
+    background-color: #2b3646;
+    color: #bd946e;
+}
+
+.join-detail-price {
+    height: 70px;
+    line-height: 70px;
+    font-size: 14px;
+    color: #666;
+}
+
+.red-price {
+    color: #ec4545;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 18px;
+}
+
+.blue-tip {
+    color: #67aedd;
+}
+
+.blue-tip img {
+    display: inline-block;
+    margin-left: 6px;
+    margin-right: 4px;
+}
+
+.buy-btn {
+    width: 120px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #ec4545;
+    margin-top: 30px;
+    cursor: pointer;
+    border: 1px solid #ec4545;
+}
+
+.pay-way {
+    margin-left: 10px;
+}
+
+/*.buy-btn:hover {*/
+    /*color: #ec4545;*/
+    /*background-color: #fff;*/
+/*}*/
+
+.join-intro {
+    margin-top: 50px;
+}
+
+.join-items {
+    margin-top: 100px;
+    border-bottom: 1px solid #2b3646;
+}
+
+.join-item {
+    float: left;
+    font-size: 20px;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.join-item.active {
+    background-color: #2b3646;
+    color: #fff;
+}
+
+.join-img2,.join-img3 {
+    display: none;
+}

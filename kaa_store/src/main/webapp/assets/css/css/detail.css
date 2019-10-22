@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 600px !important;
+    max-width: 1980px !important;
+    background-color: rgb(238,236,239);
+}
+.main-content{
+    margin-left: 11%;
+}
+#breadcrumbs{
+    height: 70px;
+    border-bottom: 2px solid rgb(194, 194, 194);
+    font-size: 19px;
+    padding: 0;
+    line-height: 70px;
+}
+#breadcrumbs .breadcrumbs_nav{
+    padding: 0 50px;
+    height: 100%;
+}
+#breadcrumbs .breadcrumbs_nav>span:nth-child(1){
+    float: left;
+}
+#breadcrumbs .breadcrumbs_nav>span:nth-child(2){
+    float: right;
+}
+#breadcrumbs .breadcrumbs_nav #buyCar>span{
+    background-color: rgb(20, 95, 154);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    padding: 8px 18px;
+}
+.page-content1{
+    background-color: #f5f5f5;
+    padding: 20px 50px 50px 50px;
+    position: relative;
+    min-height: calc(100vh - 5vw);
+}
+.page-content{
+    background-color: #f5f5f5;
+}
+a,img{
+    border:0;
+}
+.demoh2{
+    font-size:14px;margin:20px;color:#ff6600;
+}
+.preview{
+    width:100%;
+}
+.smallImg{
+    position:relative;
+    width:14%;
+    overflow:hidden;
+    float:left;
+}
+#imageMenu ul{
+    margin: 0;
+    min-width: 68px;
+}
+#imageMenu {
+    height:400px;
+    overflow:hidden;
+}
+#imageMenu li {
+    height:85px;
+    width:68px;
+    overflow:hidden;
+    min-width: 60px;
+}
+#imageMenu li img{
+    padding:1px;
+    border:1px solid #E8E8E8;
+    width:100%;
+    min-width: 68px;
+    cursor:pointer;
+}
+#imageMenu li#onlickImg img{
+    border:1px solid #990000;
+}
+/* bigImg */
+.bigImg{
+    position:relative;
+    width:400px;
+    overflow:hidden;
+    max-width: 400px;
+    margin-left: 16px;
+}
+.bigImg #midimg{
+    width:100%;
+    max-width: 400px;
+    min-width: 360px;
+}
+.bigImg #winSelector{
+    width:235px;
+    height:210px;
+}
+#winSelector{
+    position:absolute;
+    cursor:crosshair;
+    filter:alpha(opacity=15);
+    -moz-opacity:0.15;
+    opacity:0.15;
+    background-color:#000;
+    border:none;
+}
+/* bigView */
+#bigView{
+    position:absolute;
+    border: none;
+    overflow: hidden;
+    width:260px;
+    height:295.652px;
+    top:300px;
+    left:540px !important;
+    z-index:999;
+}
+#bigView img{
+    position:absolute;
+}
+.profile-info-name{
+    width: 15%;
+    min-width: 80px;
+}
+.profile-info-value{
+    padding: 13px;
+}
+.profile-info-value>span+span:before{
+    content: '';
+}
+#seletor span{
+    display: inline-block;
+    background-color: #fff;
+    margin-right: 10px;
+    width: 27%;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    max-width: 120px;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+#size span{
+    display: inline-block;
+    background-color: #fff;
+    margin-right: 10px;
+    width: 16%;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    max-width: 80px;
+    min-width: 38px;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+.profile-info-value .glyphicon{
+    font-size: 22px;
+}
+.profile-info-value input{
+    width: 80px;
+    height: 26px;
+    position: relative;
+    top: -4px;
+    margin: 0 15px;
+    text-align: center;
+}
+#nowBuy>span{
+    display: inline-block;
+    width: 33%;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 18px;
+    border: 1px solid rgb(20,95,154);
+    text-align: center;
+    min-width: 120px;
+    cursor: pointer;
+}
+#nowBuy>span .glyphicon{
+    position: relative;
+    top:5px;
+    left: -8px;
+    font-size: 20px;
+}
+#nowBuy>span:nth-of-type(1){
+    margin-right: 4%;
+    background-color: rgb(20,95,154);
+    color: #fff;
+}
+#nowBuy>span:nth-of-type(2){
+    background-color: #fff;
+    color: rgb(20,95,154);
+}
+#goodsDetail{
+    margin-top: 40px;
+    border-top: 1px dotted rgba(20,95,154,0.5);
+    padding-top: 20px;
+}
+.selectedColor{
+    background-color: rgb(20,95,154) !important;
+    color: #fff;
+}
+.selectedSize{
+    background-color: rgb(20,95,154) !important;
+    color: #fff;
+}
+

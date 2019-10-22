@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+} 
+body{
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0 10pt;
+}
+body >div> .div{
+    display: block;
+    padding: 15pt 10pt;
+    width: 100%;
+    height: 80pt;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3pt;
+    margin-top: 6pt;
+    position: relative;
+}
+.headImg{
+    position: absolute;
+    top: 15pt;
+    width: 50pt;
+    height: 50pt;
+    border-radius: 50%;
+    border: 1pt solid rgb(67, 73, 83);
+}
+div span{
+    position: absolute;
+}
+.login{
+    position: fixed;
+    bottom: 50pt;
+    right: 18pt;
+    width: 60pt;
+    height: 60pt;
+}
+.name{
+    top:16pt;
+    font-size:12pt;
+    color:rgb(28, 30, 33);
+    left:70pt
+}
+.profession{
+    top:35pt;
+    font-size:10pt;
+    color:rgba(28, 30, 33,0.5);
+    left:70pt
+}
+.produces{
+    bottom:15pt;
+    font-size:9pt;
+    color:rgba(28, 30, 33,0.5);
+    left:70pt
+}
+.views{
+    bottom:15pt;
+    font-size:9pt;
+    color:rgba(28, 30, 33,0.5);
+    right:60pt
+}
+.forks{
+    bottom:15pt;
+    font-size:9pt;
+    color:rgba(28, 30, 33,0.5);
+    right: 14pt;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>合一智造－场景化服装智能供应链集成服务商｜全球新品 店铺管理系统 营销解决方案</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css" />
+    <link rel="Shortcut Icon" href="../assets/img/salePlat/head-lodo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style" />
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/storeJoin.css">
+</head>
+<body>
+<div id="head"></div>
+<!--<div class="content_header" id="header">-->
+    <!--<img src="../assets/img/salePlat/logo1.png" alt="">-->
+    <!--<a href="../salesHome/designHtml">设计师区</a>-->
+    <!--<span class="search"><input type="text" placeholder="搜索商品名称/编号" id="search"><span class="glyphicon glyphicon-search"></span></span>-->
+<!--</div>-->
+<div class="main-content" style="margin-top: 105px">
+    <div class="main-wrap">
+        <div class="join-header">
+            <img class="join-header-img step1" src="../assets/img/salePlat/join1.jpg" alt="">
+            <img class="join-header-img step2" src="../assets/img/salePlat/join2.jpg" alt="">
+            <img class="join-header-img step3" src="../assets/img/salePlat/join3.jpg" alt="">
+        </div>
+        <div class="join-part1">
+            <div class="vip-section">
+                <div class="">门店信息</div>
+            </div>
+            <div class="order-detail-wrap clearfix">
+                <div class="order-detail w17 l"><span class="order-detail-tip">*</span>门店名称</div>
+                <div class="order-detail w81 r"><input id="storeName" type="text">
+                <span style="margin-left: 27px;color: red">请填写真实的门店名称，将作为您的云店名称展示至客户</span></div>
+            </div>
+            <div class="order-detail-wrap clearfix">
+                <div class="order-detail w17 h178 l"><span class="order-detail-tip">*</span>门店地址</div>
+                <div class="w81 pdl0 r">
+                    <div class="order-detail pdl0">
+                        <div class="order-detail h56" id="province" style="padding-left: 20px">
+                            <select id="cmbProvince" name="cmbProvince"></select>
+                            <select id="cmbCity" name="cmbCity" style="margin: 0 20px"></select>
+                            <select id="cmbArea" name="cmbArea"></select>
+                        </div>
+                    </div>
+                    <div class="order-detail pdl0 h118">
+                        <textarea id="address" class="input-address"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="order-detail-wrap clearfix">
+                <div class="order-detail h170 w17 l"><span class="order-detail-tip">*</span>门店图片</div>
+                <div class="order-detail h170 w81 r" id="img">
+                    <div class="img_container" style="display: inline-block">
+                    </div>
+                    <div id="addPosition"><a href="javascript:;" class="file">选择文件 <input id="upLoad" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                </div>
+            </div>
+            <div class="order-detail-wrap clearfix">
+                <div class="order-detail h170 w17 l"><span class="order-detail-tip">*</span>资质照片</div>
+                <div class="order-detail h170 w81 r" id="img1">
+                    <div class="img_container1" style="display: inline-block">
+                    </div>
+                    <div id="addPosition1"><a href="javascript:;" class="file">选择文件 <input id="upLoad1" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"> </a></div>
+                </div>
+            </div>
+            <div class="order-detail-wrap clearfix">
+                <div class="order-detail w17 l" style="line-height: 46px"><span class="order-detail-tip">*</span>销售商品</div>
+                <div id="saleGoods" class="order-detail w81 r" style="line-height: 46px">
+                    <label style="margin-right: 16px"><input style="margin-right: 5px" name="saleschannelName" type="checkbox" value="婚纱"/>婚纱</label>
+                    <label style="margin-right: 16px"><input style="margin-right: 5px" name="saleschannelName" type="checkbox" value="礼服"/>礼服</label>
+                    <label style="margin-right: 16px"><input style="margin-right: 5px" name="saleschannelName" type="checkbox" value="秀禾"/>秀禾</label>
+                    <label style="margin-right: 16px"><input style="margin-right: 5px" name="saleschannelName" type="checkbox" value="男装"/>男装</label>
+                </div>
+            </div>
+            <div class="order-detail-wrap clearfix">
+                <div class="order-detail w17 l"><span class="order-detail-tip">*</span>联系人</div>
+                <div class="order-detail w81 r">
+                    <input type="text" id="name">
+                </div>
+            </div>
+            <div class="order-detail-wrap clearfix">
+                <div class="order-detail w17 l"><span class="order-detail-tip">*</span>联系电话</div>
+                <div class="order-detail w81 r">
+                    <input type="text" id="tel">
+                </div>
+            </div>
+
+            <div class="operation">
+                <button id="submit" class="operation-btn">提交审核</button>
+            </div>
+        </div>
+        <!--审核中-->
+        <div class="join-part2">
+            <img class="auditing" src="../assets/img/salePlat/auditing.png" alt="">
+        </div>
+        <!--入驻成功-->
+        <div class="join-part3">入驻成功!</div>。
+    </div>
+</div>
+<!--footer部分-->
+<div id="bottom"></div>
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery.min.js'>"+"<"+"/script>");
+</script>
+<!-- <![endif]-->
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='../assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='../assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/salePlat/head.js"></script>
+<script src="../assets/js/salePlat/bottom.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script type="text/javascript" src="../assets/js/salePlat/storeJoin.js"></script>
+</body>
+</html>

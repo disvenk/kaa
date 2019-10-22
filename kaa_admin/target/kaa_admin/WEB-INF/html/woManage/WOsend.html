@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>本地工单管理 收货</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOsend.css"/>
+
+</head>
+<body onkeydown="keyLogin()">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="admin-detail">收货</div>
+                        <div class="send-left">
+                            <!--表格-->
+                            <table id="sample-table-2" class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>工单号</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody">
+
+                                </tbody>
+                            </table>
+                            <div class="bottom-operate">
+                                <button id="download" class="admin-btn w100">提交</button>
+                                <button id="back" class="admin-btn w100 ml10" onclick="history.go('-1')">返回</button>
+                            </div>
+                        </div>
+                        <div class="send-right">
+                            <div class="send-right-div mt200">
+                                <span class="send-right-span">工单号</span> <input placeholder="请扫描或输入工单号按enter键" class="send-right-input" id="wo1" type="text">
+                            </div>
+                            <div class="send-right-div mt20">
+                                <span class="send-right-span"></span> <input placeholder="请再次扫描或输入工单号按enter键" class="send-right-input" id="wo2" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/WOManage/WOsend.js"></script>
+
+
+</body>
+</html>

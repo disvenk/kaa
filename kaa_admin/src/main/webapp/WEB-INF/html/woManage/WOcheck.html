@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>本地工单管理 质检</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOcheck.css"/>
+
+</head>
+<body onkeydown="keyLogin()">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+
+                    <div class="col-xs-12">
+                        <div class="admin-detail">质检</div>
+                        <div class="send-left">
+                            <div class="order-info clearfix">
+                                <div class="order-info-left">
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">采购订单号</span><span
+                                            class="left-wrap-cont" id="suplierOrderNo">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">工单号</span><span
+                                            class="left-wrap-cont" id="orderNo">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">供应商</span><span
+                                            class="left-wrap-cont" id="suplierName">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">商品ID</span><span
+                                            class="left-wrap-cont" id="productCode">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">供应商产品编号</span><span
+                                            class="left-wrap-cont" id="supplierProductCode">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">下单时间</span><span
+                                            class="left-wrap-cont" id="supOrderDate">无</span></div>
+                                </div>
+                                <div class="order-info-right">
+                                    <img id="code"/>
+                                </div>
+                            </div>
+                            <div class="send-left-topic">详情规格</div>
+                            <div class="order-info clearfix">
+                                <div class="order-info-left">
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">颜色</span><span
+                                            class="left-wrap-cont" id="color">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">尺码</span><span
+                                            class="left-wrap-cont" id="size">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">喉到地</span><span
+                                            class="left-wrap-cont" id="throatheight">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">重要说明</span><span
+                                            class="left-wrap-cont" id="description">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">材料说明</span><span
+                                            class="left-wrap-cont" id="material">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">工艺说明</span><span
+                                            class="left-wrap-cont" id="technics">无</span></div>
+                                </div>
+                                <div class="order-info-right">
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">胸围</span><span
+                                            class="left-wrap-cont" style="border-right: 0" id="bust">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">腰围</span><span
+                                            class="left-wrap-cont" style="border-right: 0" id="waist">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">臀围</span><span
+                                            class="left-wrap-cont" style="border-right: 0" id="hipline">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">肩宽</span><span
+                                            class="left-wrap-cont" style="border-right: 0" id="shoulder">无</span></div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">身高</span><span
+                                            class="left-wrap-cont" style="border-right: 0" id="height">无</span>
+                                    </div>
+                                    <div class="info-left-wrap"><span class="left-wrap-topic">体重</span><span
+                                            class="left-wrap-cont" style="border-right: 0" id="weight">无</span></div>
+                                </div>
+                            </div>
+                            <div class="send-left-topic" id="imgDetail">详情图片</div>
+                            <div id="imgContainer">
+
+                            </div>
+                        </div>
+                        <div class="send-right">
+                            <div class="send-right-div mt200">
+                                <span class="send-right-span">工单号</span> <input class="send-right-input" id="wo1"
+                                                                                type="text">
+                            </div>
+                            <div class="send-right-div mt20">
+                                <span class="send-right-span"></span> <input class="send-right-input" id="wo2"
+                                                                             type="text">
+                            </div>
+                            <div class="send-operate">
+                                <button id="download" class="admin-btn w100">通过</button>
+                                <button id="back" class="admin-btn w100 ml10">不通过</button>
+                            </div>
+                            <div id="fail" style="text-align: center;color:red;margin-top: 20px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jsBarCode.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/WOManage/WOcheck.js"></script>
+
+
+</body>
+</html>

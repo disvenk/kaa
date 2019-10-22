@@ -1,0 +1,318 @@
+/*公共样式*/
+li {
+    list-style-type: none;
+}
+
+ol,ul {
+    margin: 0;
+}
+
+.clearfix {
+    overflow:auto;
+    zoom:1;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+/*覆盖模板样式*/
+
+.page-content {
+    padding: 4px 14px 10px;
+}
+
+/*距离*/
+
+.mt2 {
+    margin-top: 2px;
+}
+
+.mt4 {
+    margin-top: 4px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt100 {
+    margin-top: 100px;
+}
+
+.mb4 {
+    margin-bottom: 4px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.pdl10 {
+    padding-left: 10px;
+}
+
+.pd30 {
+    padding-left: 30px;
+}
+
+.pdl60 {
+    padding-left: 60px;
+}
+
+.ml40 {
+    margin-left: 40px;
+}
+
+.ml42 {
+    margin-left: 42px;
+}
+
+.ml0 {
+    margin-left: 0 !important;
+}
+
+.pdl0 {
+    padding-left: 0 !important;
+}
+
+
+/*长宽高*/
+
+.w12 {
+    width: 12%;
+}
+
+.w16 {
+    width: 16%;
+}
+
+.w25 {
+    width: 25%;
+}
+
+.w32 {
+    width: 32%;
+}
+
+.w48 {
+    width: 48%;
+}
+
+.w60 {
+    width: 60%;
+}
+
+.w140 {
+    width: 140px;
+}
+
+.h56 {
+    height: 56px;
+}
+
+
+
+
+
+/*背景*/
+
+.bg-324 {
+    height: 54px;
+    line-height: 54px;
+    background-color: #f3f2f4;
+}
+
+/*颜色*/
+
+.color-blue {
+    color: #3c9ed8;
+    cursor: pointer;
+}
+
+/*编辑订单、订单详情等*/
+/*表格头部信息*/
+
+.order-detail {
+    height: 54px;
+    line-height: 54px;
+    background-color: #f3f2f4;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.order-detail input[type=text] {
+    width: 314px;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 5px !important;
+}
+
+.mt0 {
+    margin-top: 0 !important;
+    padding-left: 18px;
+    font-size: 18px !important;
+    margin-bottom: 2px;
+}
+
+.w17 {
+    width: 17.2%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.w81 {
+    width: 82.7%;
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .w17 {
+        width: 24%;
+    }
+
+    .w81 {
+        width: 75.7%;
+    }
+}
+.tcdPageCode a:hover {
+    text-decoration: none;
+    border: 1px solid #428bca;
+}
+.tcdPageCode a {
+    display: inline-block;
+    color: #428bca;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    margin: 0 2px;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.tcdPageCode span.current {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    margin: 0 2px;
+    color: #fff;
+    background-color: #428bca;
+    border: 1px solid #428bca;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+.tcdPageCode span.disabled {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    margin: 0 2px;
+    color: #bfbfbf;
+    background: #f2f2f2;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+#myModal .modal-content{
+    border-radius: 8px;
+}
+#myModal .modal-dialog{
+    margin: 100px auto;
+    width: 450px;
+}
+#myModal .modal-body{
+    text-align: center;
+    color: #666;
+    padding: 30px 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+#myModal .modal-title{
+    text-align: center;
+}
+#myModal .modal-header .close{
+    font-size: 26px;
+}
+#myModal .modal-footer{
+    background-color: #fff;
+    text-align: center;
+    padding: 0;
+    height: 46px;
+    line-height: 46px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#myModal .modal-footer div{
+    float: left;
+    width: 50%;
+    font-size: 15px;
+    color: #666;
+    height: 44px;
+    cursor: pointer;
+}
+#myModal .modal-footer div:nth-child(1){
+    border-right: 1px solid #e5e5e5;
+}
+.sure{
+    cursor: pointer;
+}
+.modal-content{
+    margin: auto auto;
+    margin-top: 200px;
+    width: 360px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle !important;
+}
+#editor1{
+    min-height: 230px;
+}
+
+/*.dl-second-nav {*/
+/*background-color: #f3f2f4 !important;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport" />
+    <title>设计师作品</title>
+    <link rel="stylesheet" href="./../../../assets/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="./../../../assets/css/channel/detail.css">
+</head>
+<body>
+       <div style="padding: 0 8pt">
+            <div id="self">
+                    <div class="headImg"><img id="headImg" style="width:100%;border-radius:50%" src="http://p0.so.qhimgs1.com/bdr/_240_/t0116b832af1505307c.jpg" alt=""> </div>
+                        <span class="name">白小纯</span>
+                        <span class="profession">一枚设计师</span>
+                       <span class="produces">作品 50</span>
+                       <span class="views">
+                           <img style="width:16pt;position:relative;top:2px" src="./../../../assets/img/channel/eye2.png" alt=""> 1000
+                       </span>
+                       <span class="forks">
+                         <img style="width:16pt;position:relative;top:2px" src="./../../../assets/img/channel/zhuanfa2.png" alt=""> 1000
+                     </span>
+                     <div class="order">
+                       我要约他/她
+                     </div>
+                    </div>
+            <div class="introduce">
+                    <div class="hr"></div>
+                    <div class="jianli">
+                            <span class="zhong">个人简历</span><span class="ying">Curriculum Vitae</span>
+                        </div>
+                        <div class="hr"></div>
+               <div style="width:100%;padding: 10pt 0;font-size: 11pt">
+                    白小纯，水电费是高手都过得很好电放费，和他人格和改革规划和改革和规范反对反对。水电费是高手都过得很好电放费，和他人格和改革规划和改革和规范反对反对
+                    水电费是高手都过得很好电放费，和他人格和改革规划和改革和规范反对反对水电费是高手都过得很好电放费，和他人格和改革规划和改革和规范反对反对
+                    水电费是高手都过得很好电放费，和他人格和改革规划和改革和规范反对反对水电费是高手都过得很好电放费，和他人格和改革规划和改革和规范反对反对
+               </div>
+            </div>
+       </div>
+       <!-- 图片轮播 -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                     <img src="http://p4.so.qhimgs1.com/bdr/_240_/t01e6bd7cedd09d7ae4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="http://p4.so.qhimgs1.com/bdr/_240_/t01e6bd7cedd09d7ae4.jpg" alt="">
+               </div>
+               <div class="swiper-slide">
+                <img src="http://p4.so.qhimgs1.com/bdr/_240_/t01e6bd7cedd09d7ae4.jpg" alt="">
+           </div>
+           <div class="swiper-slide">
+            <img src="http://p4.so.qhimgs1.com/bdr/_240_/t01e6bd7cedd09d7ae4.jpg" alt="">
+       </div>
+       <div class="swiper-slide">
+        <img src="http://p4.so.qhimgs1.com/bdr/_240_/t01e6bd7cedd09d7ae4.jpg" alt="">
+    </div>
+            </div>
+        </div>
+        <!-- 图片详情 -->
+        <div class="detailImg">
+                <img src="http://p4.so.qhimgs1.com/bdr/_240_/t01e6bd7cedd09d7ae4.jpg" alt="">
+        </div>
+        <div style="padding: 10pt;background-color:#fff;width:calc(100% - 40pt);margin-left:10pt;padding-bottom:47pt">
+           <div class="title">《田埂上的梦》</div>
+           <div style="text-align:center;font-size:13pt;color:#000;line-height:26pt">
+               <p>你天天这样加班</p>
+               <p>不担心身体出问题么</p>
+               <p style="margin: 45pt 0">他发来一句话</p>
+               <p style="font-size:13pt;color:rgb(175, 179, 185)">比你优秀的人还比你拼命</p>
+               <p style="font-size:13pt;color:rgb(175, 179, 185);margin-bottom:48pt">你还有什么选择</p>
+           </div>
+           <img style="width:100%;border-radius:3pt" src="http://p4.so.qhimgs1.com/bdr/_240_/t01e6bd7cedd09d7ae4.jpg" alt="">
+           <p style="text-align:center;font-size:13pt;color:#000;margin:47pt 0 23pt 0">鸡汤文说</p>
+           <p style="text-align:center;font-size:13pt;color:rgb(175, 179, 185)">年轻人，你不熬夜凭什么有机会！</p>
+        </div>
+        <img class="footer" src="./../../../assets/img/channel/1660245322.jpg" alt="">
+</body>
+<script type="text/javascript" src="./../../../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="./../../../assets/js/swiper-3.4.2.jquery.min.js"></script>
+<script type="text/javascript">
+	var mySwiper = new Swiper('.swiper-container', {
+		// autoplay: 3000,
+		initialSlide : 1,
+		effect : 'coverflow',
+		slidesPerView: 2,
+		centeredSlides: true,
+		coverflow: {
+					rotate: 5,
+					stretch: 0,
+					depth: 10,
+					modifier: 8,
+					slideShadows : false
+				},
+		loop: true,
+		grabCursor: true,
+        onInit: function(swiper){
+            
+        }
+	})
+	</script>
+</html>

@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(246, 246, 246);
+    margin: 0;
+    padding: 0;
+    font-family: "黑体";
+}
+.img1{
+    width: 100%;
+}
+.form{
+    width: calc(100% - 16pt);
+    margin-left: 8pt;
+    background-color: rgb(255, 255, 255);
+    padding: 0 14pt;
+    padding-bottom: 37pt;
+    margin-bottom: 12pt;
+}
+.form .companion{
+    padding-top: 31pt;
+    color: rgb(42, 46, 54);
+    font-size: 16pt;
+    width: 100%;
+    text-align: center;
+}
+.form .partnaers{
+    color: rgba(42, 46, 54, 0.5);
+    font-size: 16pt;
+    margin-bottom: 39pt;
+    width: 100%;
+    margin-top: 7pt;
+    text-align: center;
+}
+label{
+    font-size: 13pt;
+    color: rgba(42, 46, 54,0.5);
+    margin-right: 10pt;
+}
+input{
+    border:  none;
+    width: 57%;
+    color: rgb(42, 46, 54);
+    position: absolute;
+    right: 20pt;
+    height: 26px;
+}
+.hr{
+    width: 100%;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+    border: 0.4pt solid rgba(184,184,184,0.5);
+}
+#radio{
+    width: 94%;
+    padding: 24pt 3%;
+}
+#radio div{
+    display: inline-block;
+}
+#radio input[type="radio"] {
+     display: none;
+  }
+  #radio label {
+    color: rgba(42, 46, 54, 0.5);
+    font-size: 10pt;
+    position: relative;
+    left: 28pt;
+  }
+  input:-moz-placeholder{
+      color: rgba(42, 46, 54, 0.5);
+      font-size: 11pt;
+  }
+  input:-ms-input-placeholder{
+    color: rgba(42, 46, 54, 0.5);
+    font-size: 11pt;
+  }
+  input::-webkit-input-placeholder{
+      color: rgba(42, 46, 54, 0.5);
+      font-size: 11pt;
+  }
+  #radio label:before{
+    content: "";
+    display: inline-block;
+    width: 12pt;
+    height: 12pt;
+    position: absolute;
+    left: -20pt;
+    bottom: 1px;
+    background-color: rgb(255, 255, 255);
+    border: 1pt solid rgb(175, 179, 185);
+    border-radius: 3pt;
+     }
+     #radio input[type='radio']:checked+label:before{
+        width: 13pt;
+        height: 13pt;
+        background-color: rgb(0, 123, 255);
+    }
+    #province{
+        width: 57%;
+        color: rgba(42, 46, 54,0.5);
+        position: absolute;
+        right: 20pt;
+        height: 26px;
+        line-height: 26px;
+        font-size: 11pt;
+    }
+.province{
+    width: calc(100% - 25pt);
+    padding-top: 25pt;
+    margin-left: -13pt;
+}
+.province input{
+    width: 100%;
+    border: 1pt solid #d1d1d1;
+    text-align: center;
+    color: #f2f2f2;
+}
+.address{
+    margin-top: 12pt;
+    border: 1pt solid #d1d1d1;
+    width: calc(100% - 12pt);
+    height: 90pt;
+    margin-left: 10pt;
+    resize:none;
+    padding: 14pt;
+    font-size: 12pt;
+    color: rgba(42, 46, 54, 0.5);
+}
+.tijiao img{
+    width: 100%;
+}
+.footer{
+    width: 100%;
+    position: absolute;
+}
+.tip{
+    background-color: #fff;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 76%;
+    height: 110pt;
+    border-radius: 3pt;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+}
+.tip_title{
+    font-size: 13pt;
+    color: rgb(42, 46, 54);
+    height: 40pt;
+    line-height: 40pt;
+    font-weight: 800;
+}
+.tip_content{
+    font-size: 12pt;
+    color: rgb(42, 46, 54);
+    padding-top: 2pt;
+    padding-bottom: 20pt;
+    border-bottom: 0.4pt solid rgba(42, 46, 54, 0.5);
+}
+.tip_sure{
+    width: 80%;
+    margin-left: 10%;
+    height: 30pt;
+    font-size: 13pt;
+    background-color: #fff;
+    border-radius: 3pt;
+    line-height: 30pt;
+}
+.sure{
+    width: 215pt;
+    height: 144pt;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 8pt;
+    display: none;
+}
+.sure .img{
+    width: 50pt;
+    height: 50pt;
+    position: relative;
+    left: 82.5pt;
+    top: -15pt;
+}
+.sure #close{
+    width: 165pt;
+    height: 36pt;
+    position: relative;
+    left: 25pt;
+    top: 3pt;
+}
+.zindex{
+    width:100%;
+    height:100%;
+    background-color:#000;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:50;
+    opacity:0.7;
+    display: none;
+}
+.show{
+	display: none;
+}
+.picker .picker-panel .wheel-wrapper .wheel .wheel-scroll .wheel-item{
+    font-size: 17px !important;
+}

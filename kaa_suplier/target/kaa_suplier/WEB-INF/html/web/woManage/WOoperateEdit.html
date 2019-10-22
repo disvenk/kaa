@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="UTF-8">
+    <title>生产管理系统</title>
+
+    <meta name="description" content="Restyling jQuery UI Widgets and Elements"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <!--公共样式-->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!--页面CSS-->
+    <link rel="stylesheet" href="../assets/css/common/common.css"/>
+    <link rel="stylesheet" href="../assets/css/WOManage/WOoperateEdit.css"/>
+</head>
+
+<body>
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-content-area">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="admin-detail">工人维护编辑</div>
+
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span style="color: red">*</span>工号</div>
+                            <div class="order-detail w81 r"><input type="text" id="workerNo"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span style="color: red">*</span>姓名</div>
+                            <div class="order-detail w81 r"><input type="text" id="workerName"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span style="color: red">*</span>手机号</div>
+                            <div class="order-detail w81 r"><input type="text" id="workerPhone"></div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l"><span style="color: red">*</span>所属工位</div>
+                            <div class="order-detail w81 r" id="type">
+                                <!--<input type="checkbox" name="opera" value="1">打版-->
+                                <!--<input type="checkbox" name="opera" value="2">车位-->
+                                <!--<input type="checkbox" name="opera" value="3">排花-->
+                                <!--<input type="checkbox" name="opera" value="4">裁剪-->
+                                <!--<input type="checkbox" name="opera" value="5">质检-->
+                            </div>
+                        </div>
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l h118">备注</div>
+                            <div class="order-detail w81 r pdl0 h118"><textarea class="input-address" id="remark"></textarea></div>
+                        </div>
+
+                        <!--<div class="order-detail-wrap clearfix">-->
+                            <!--<div class="order-detail w17 l">操作权限</div>-->
+                            <!--<div class="order-detail w81 r">-->
+                                <!--<input type="radio" name="qx" checked>是<input style="margin-left: 10px;" type="radio" name="qx">否-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="order-detail-wrap clearfix">-->
+                            <!--<div class="order-detail w17 l">价格查看</div>-->
+                            <!--<div class="order-detail w81 r">-->
+                                <!--<input type="radio" name="price" checked>是<input style="margin-left: 10px;" type="radio" name="price">否-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="order-detail-wrap clearfix">
+                            <div class="order-detail w17 l">更新时间</div>
+                            <div class="order-detail w81 r" id="data"></div>
+                        </div>
+
+                        <div class="bottom-operate">
+                            <button class="admin-btn w100" id="confirm">提交</button>
+                            <button class="admin-btn w100 ml20"id="goBack" onclick="history.go('-1')">返回</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--摸态窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 41px;padding: 7px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">确认</h4>
+            </div>
+            <div class="modal-body">
+                <span>修改成功！</span>
+            </div>
+            <div class="modal-footer">
+                <div id="sure" type="button" class="sure">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script type="text/javascript" src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/common/validate.js"></script>
+<script src="../assets/js/WOManage/WOoperateEdit.js"></script>
+
+</body>
+</html>

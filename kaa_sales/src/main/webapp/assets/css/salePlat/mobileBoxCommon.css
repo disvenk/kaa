@@ -1,0 +1,39 @@
+/*公共样式*/
+li {
+    list-style-type: none;
+}
+
+ol,ul {
+    margin: 0;
+}
+
+.clearfix {
+    overflow:auto;
+    zoom:1;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.mobile-container {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.mobile-img {
+    width: 100%;
+}

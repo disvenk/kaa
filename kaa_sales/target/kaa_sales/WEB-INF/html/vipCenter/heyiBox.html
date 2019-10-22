@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title>合一盒子</title>
+    <!--<meta name="description" content="Restyling jQuery UI Widgets and Elements"/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" id="main-ace-style"/>
+
+    <link rel="stylesheet" href="../assets/css/salePlat/infoTable.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/heyiBox.css"/>
+    <link rel="stylesheet" href="../assets/css/salePlat/common.css"/>
+</head>
+<body class="no-skin">
+<div class="main-container" id="main-container">
+    <div class="main-content">
+        <div class="page-content">
+            <!-- /section:settings.box -->
+            <div class="page-content-area">
+                <!--已订阅时显示-->
+                <div class="state1">
+                    <div class="vip-section">
+                        尊敬的用户 <img src="../assets/img/salePlat/vip.png" alt=""><br>
+                        您已订阅合一盒子，剩余次数 <span class="box-time" style="color: red">0</span> 次，有效期至  <span style="color: red" class="box-date">2017年12月4日</span><br>
+                        押金：<span style="color: red" class="box-money">800.00</span>。
+                    </div>
+                    <div class="record-topic">
+                        <ul class="record-topic-items clearfix">
+                            <li class="record-topic-item brl0">商品信息</li>
+                            <li class="record-topic-item">单价</li>
+                            <li class="record-topic-item">数量</li>
+                            <li class="record-topic-item">付款状态</li>
+                            <li class="record-topic-item">状态</li>
+                            <li class="record-topic-item">物流</li>
+                        </ul>
+                    </div>
+                    <!--table-->
+                <div id="list">
+
+                </div>
+                </div>
+                <!--未订阅时显示-->
+                <div class="state2" style="height: 100vh;background-color: #f2f2f2">
+                    <div class="forbid-order">
+                        <div class="forbid-text">
+                            尊敬的用户，您暂未订阅合一盒子服务!<br>
+                            部分功能无法使用，期待您的订阅解锁全部功能！
+                        </div>
+                        <button class="forbid-btn">合一盒子订阅服务</button>
+                    </div>
+                </div>
+                <!--分页-->
+                <div class="tcdPageCode" style="text-align: center;position: relative;bottom: 0"></div>
+
+            </div><!-- /.page-content-area -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+</div><!-- /.main-container -->
+<!--快递物流查询-->
+<div class="modal fade" id="sendInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 100%">
+        <div class="modal-content" style="width: 50%;height: 500px;margin-top: 0">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLa">
+                    物流信息
+                </h4>
+            </div>
+            <div class="modal-body" style="padding: 10px 0">
+                <div style="text-align: left;padding-left: 64px;font-size: 15px">快递公司：<span id="deliveryCom" style="margin-right: 50px"></span><br>
+                    快递单号：<span id="deliveryNum"></span></div>
+                <iframe id="iframe" src="" frameborder="0" width="90%" height="869px" style="zoom: 40%"></iframe>
+            </div>
+            <div class="modal-footer"style="border-top-left-radius: 0;border-top-right-radius: 0;border: none">
+                <div data-dismiss="modal" style="width: 100%">确定</div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--立即发货模态框-->
+<div class="modal fade" id="sendNow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    退回
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-express-name" style="margin-top: 20px">
+                    快递公司
+                    <select class="modal-express-select" id="deliveryCompany" style="width: 200px">
+                    </select>
+                </div>
+                <div class="modal-express-num" style="margin: 30px 0">
+                    快递单号
+                    <input type="text" id="deliveryNo" style="width: 200px">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div data-dismiss="modal" style="color: #0e90d2">取消</div>
+                <div class="sure" id="sendN">确认</div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+<script src="../assets/js/layer/layer.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/jquery.page.js"></script>
+<script src="../assets/js/salePlat/heyiBox.js"></script>
+
+
+</body>
+</html>

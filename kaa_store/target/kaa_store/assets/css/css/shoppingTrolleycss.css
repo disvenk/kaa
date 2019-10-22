@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-width: 980px !important;
+    max-width: 1980px !important;
+    background-color: rgb(238,236,239);
+}
+.main-content{
+    margin-left: 11%;
+}
+.modal-content{
+    border-radius: 8px;
+}
+.modal-dialog{
+    margin: 100px auto;
+    width: 450px;
+}
+.modal-body{
+    text-align: center;
+    color: rgb(25,98,155);
+}
+.modal-title{
+    text-align: center;
+}
+.modal-header .close{
+    font-size: 26px;
+}
+.modal-footer{
+    background-color: #fff;
+    text-align: center;
+    padding: 0;
+    height: 46px;
+    line-height: 46px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    line-height: 46px;
+}
+.modal-footer div{
+    float: left;
+    width: 50%;
+    font-size: 15px;
+    color: rgb(25,98,155);
+    height: 44px;
+}
+.modal-footer div:nth-child(1){
+    border-right: 1px solid #e5e5e5;
+}
+.btn{
+    padding: 3px 20px;
+}
+#breadcrumbs{
+    height: 70px;
+    border-bottom: 2px solid rgb(194, 194, 194);
+    font-size: 19px;
+    padding: 0;
+    line-height: 70px;
+}
+#breadcrumbs .breadcrumbs_nav{
+    padding: 0 50px;
+    height: 100%;
+}
+#breadcrumbs .breadcrumbs_nav>span:nth-child(1){
+    float: left;
+}
+#breadcrumbs .breadcrumbs_nav>span:nth-child(2){
+    float: right;
+}
+#breadcrumbs .breadcrumbs_nav #buyCar>span{
+    background-color: rgb(20, 95, 154);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    padding: 8px 18px;
+}
+.page-content1{
+    background-color: #f5f5f5;
+    padding: 20px 50px 50px 50px;
+    position: relative;
+    min-height: calc(100vh - 5vw);
+    position: relative;
+}
+.page-content-nav .breadcrumb{
+    padding: 0;
+    margin: 0;
+}
+.page-content-nav .breadcrumb{
+    width: 46%;
+}
+
+.breadcrumb>li+li:before{
+    content: "";
+}
+.breadcrumb>li{
+    border-left: 2px solid rgb(49, 111, 163);
+    padding: 2px 10px;
+}
+#sample-table-1{
+    background-color: rgb(243,242,244);
+}
+input[type=checkbox].ace+.lbl::before, input[type=radio].ace+.lbl::before{
+    border-radius: 50%;
+}
+#sample-table-1 .delete{
+    border: 1px solid rgb(224,224,224);
+    border-radius: 8px;
+    color: rgb(197,197,197);
+    padding:2px 20px;
+    cursor: pointer;
+}
+#container .page-content{
+    background-color: #f5f5f5;
+    padding: 0;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+#sample-table-1 .information{
+    width: 20%;
+    text-align: left;
+    float: left;
+    min-width: 50px;
+}
+#sample-table-1 .information img{
+    width: 100%;
+    border-radius: 6px;
+    margin-right: 5%;
+}
+#sample-table-1 th{
+    min-width: 86px;
+}
+#sample-table-1 .information_container{
+    max-width: 300px;
+    font-size: 12px;
+    color: rgb(69,72,79);
+    position: relative;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    vertical-align: middle;
+}
+#sample-table-1 .introduce_container{
+    width: 75%;
+    margin-left: 25%;
+    text-align: left;
+    padding-top: 1%;
+}
+#sample-table-1 .introduce_container .color{
+    color: rgb(172,172,172);
+    position: absolute;
+    bottom: 13%;
+    left:calc(25% + 4px);
+}
+#sample-table-1 .introduce_container .chinese_introduce{
+    max-height: 34px;
+    overflow: hidden;
+    position: relative;
+    top:3%;
+}
+#footer{
+    position: absolute;
+    bottom:35px;
+    width: calc(100% - 100px);
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+}
+#footer>div{
+    background-color: rgb(243,242,244);
+}
+#footer .delete_all{
+    color: rgb(172,172,172);
+    font-size: 14px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#footer .jiesuan{
+    padding: 3px 22px;
+    color: #fff;
+    background-color: rgb(20,95,154);
+    border-radius: 6px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+#checkAll{
+    margin-right: 6px;
+}
+#sample-table-1 .xuanzhong{
+    background-color: #f1f1f1;
+}
+#sample-table-1 .number{
+    width: 52px;
+    height: 25px;
+    margin: 0 5px;
+    position: relative;
+    top: -4px;
+    text-align: center;
+}
+#sample-table-1 td .glyphicon{
+    font-size: 22px;
+}

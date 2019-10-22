@@ -1,0 +1,133 @@
+
+.trade-info {
+    font-size: 16px;
+    color: grey;
+    height: 42px;
+    line-height: 40px;
+    margin-top: 20px;
+}
+
+.trade-pay-no {
+    color: red;
+}
+
+.trade-pay {
+    float: right;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+/*.pay-way {*/
+    /*height: 120px;*/
+    /*line-height: 120px;*/
+    /*border: 1px solid #f3f2f4;*/
+    /*border-top: 0;*/
+/*}*/
+
+
+.pay-btn {
+    border: 0;
+    outline: 0;
+    width: 160px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #0e90d2;
+    position: absolute;
+    right: 50px;
+    bottom: 70px;
+
+}
+
+.time-info {
+    text-align: right;
+    padding-right: 60px;
+    padding-top: 60px;
+    margin-bottom: 100px;
+}
+
+.pay-time {
+    display: inline-block;
+    width: 200px;
+    line-height: 36px;
+    padding-right: 20px;
+}
+
+.remain-time {
+    color: red;
+}
+
+.pay-way-img {
+    display: inline-block;
+    width: 148px;
+    height: 62px;
+}
+
+.pay-way-border {
+    display: inline-block;
+    width: 152px;
+    height: 66px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#myModal .modal-footer div {
+    width: 50%;
+}
+
+.pay-container {
+    width: 1212px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.pay-tip {
+    font-size: 20px;
+}
+
+.pay-way {
+    position: relative;
+    width: 1212px;
+    height: 394px;
+    margin-top: 34px;
+    padding-top: 80px;
+    background: url("../../../assets/img/salePlat/pay-way-bg.png") center top no-repeat;
+}
+
+.pay-way-choice {
+    width: 1096px;
+    height: 56px;
+    border: 2px solid #fff;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    cursor: pointer;
+    background: url("../../../assets/img/salePlat/grey-radio.jpg") 28px 20px no-repeat;
+    padding-left: 90px;
+    padding-top: 18px;
+}
+
+.pay-way-choice.bg-blue {
+    background: url("../../../assets/img/salePlat/blue-radio.jpg") 28px 20px no-repeat;
+    border: 2px solid #3c9ed8;
+}
+
+.pay-choice {
+    width: 120px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    padding-left: 36px;
+    font-size: 16px;
+}
+
+.pay-choice.wx {
+    background: url("../../../assets/img/salePlat/samll-wx.png") left top no-repeat;
+}
+
+.pay-choice.zfb {
+    background: url("../../../assets/img/salePlat/small-zfb.png") left top no-repeat;
+}

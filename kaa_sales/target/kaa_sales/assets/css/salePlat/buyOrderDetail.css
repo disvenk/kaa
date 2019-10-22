@@ -1,0 +1,58 @@
+/*采购订单详情*/
+
+.h136 {
+    height: 136px;
+    line-height: 136px;
+}
+
+.order-textarea {
+    width: 500px;
+    height: 120px;
+    padding-left: 12px;
+    padding-top: 14px;
+    padding: 14px 12px 14px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+.txr {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+.order-detail-account {
+    color: #4c8fbd;
+}
+
+.order-detail-operate {
+    height: 172px;
+    line-height: 172px;
+    text-align: center;
+}
+
+.order-detail-btn {
+    display: inline-block;
+    width: 222px;
+    height: 52px;
+    text-align: center;
+    line-height: 52px;
+    font-size: 20px;
+    border:1px solid #4c8fbd;
+    color: #4c8fbd;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.order-detail-btn:hover {
+    background-color: #4c8fbd;
+    color: #fff;
+}
+
+.order-info-img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-right: 14px;
+}
